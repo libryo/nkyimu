@@ -8,7 +8,7 @@
   "files": [
     "build/src"
   ],
-  "license": "Apache-2.0",
+  "license": "GNU General Public License v3.0",
   "keywords": [],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

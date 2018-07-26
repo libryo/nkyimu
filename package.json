@@ -23,16 +23,23 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.0",
+    "awesome-typescript-loader": "^5.2.0",
     "gts": "^0.8.0",
     "jest": "^23.4.1",
+    "source-map-loader": "^0.2.3",
     "ts-jest": "^23.0.1",
-    "typescript": "~2.8.0"
+    "typescript": "~2.8.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "xmlserializer": "^0.6.1"
   },
   "jest": {
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testMatch": [
+      "**/__tests__/**/*.(ts|tsx|js)?(x)"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

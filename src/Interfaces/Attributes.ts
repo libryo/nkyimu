@@ -1,3 +1,5 @@
+import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+
 export interface Attributes {
-  [key: string]: string;
+  [key: string]: AbstractAttribute;
 }

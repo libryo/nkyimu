@@ -1,11 +1,30 @@
-import { AkomaNtoso } from "./AkomaNtoso";
+import { AbstractNode } from "../../Abstract/AbstractNode";
+import { NodeType } from "../../enums";
+import { XMLXSINamespaceAttribute } from "../../Attributes/XMLXSINamespaceAttribute";
+import { XMLDateNamespaceAttribute } from "../../Attributes/XMLDateNamespaceAttribute";
+import { XMLNamespaceAttribute } from "../../Attributes/XMLNamespaceAttribute";
 
-export class AKNDocument {
+export class AKNDocument extends AbstractNode {
   private doc: Document;
-  
-  constructor(rootNode: AkomaNtoso) {
+
+  nodeType: NodeType = NodeType.ELEMENT_NODE;
+
+  abbreviation = '';
+
+  nodeName = 'akomaNtoso';
+
+  protected nodeRx: RegExp = new RegExp('<(amendmentList|officialGazette|documentCollection|act|bill|debateReport|debate|statement|amendment|judgment|portion|doc)>');
+
+  constructor() {
+    super();
     this.doc = new Document();
-    this.doc.appendChild(rootNode.toXml(this.doc));
+    this.setRootAttributes();
+  }
+
+  setRootAttributes() {
+    this.setAttribute(new XMLNamespaceAttribute('http://docs.oasis-open.org/legaldocml/ns/akn/3.0'));
+    this.setAttribute(new XMLXSINamespaceAttribute('http://www.w3.org/2001/XMLSchema-instance'));
+    this.setAttribute(new XMLDateNamespaceAttribute('http://exslt.org/dates-and-times'));
   }
 
   /**
@@ -24,6 +43,8 @@ export class AKNDocument {
    */
   toXML(): string {
     const serializer = new XMLSerializer();
+
+    this.doc.appendChild(super.toXml(this.doc));
 
     return serializer.serializeToString(this.doc);
   }

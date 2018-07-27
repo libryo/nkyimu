@@ -1,8 +1,9 @@
-import { AkomaNtoso } from "./Elements/Root/AkomaNtoso";
 import { AKNDocument } from "./Elements/Root/AKNDocument";
+import { AgentRefAttribute } from "./Attributes/AgentRefAttribute";
 
-const akn = new AkomaNtoso();
-const doc = new AKNDocument(akn);
+const doc = new AKNDocument();
+
+const fakeAttr = new AgentRefAttribute('#lots of spaces');
 
 console.log(doc.toXML());
 

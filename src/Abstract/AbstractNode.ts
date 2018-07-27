@@ -1,5 +1,6 @@
 import { NodeType } from '../enums';
 import { Attributes } from '../Interfaces/Attributes';
+import { AbstractAttribute } from './AbstractAttribute';
 
 export abstract class AbstractNode {
 
@@ -44,11 +45,10 @@ export abstract class AbstractNode {
   /**
    * Set the attributes of the nodes.
    * 
-   * @param name string
-   * @param value string
+   * @param attribute: AbstractAttribute
    */
-  setAttribute(name: string, value: string): void {
-    this.attributes[name] = value;
+  setAttribute(attribute: AbstractAttribute): void {
+    this.attributes[attribute.getName()] = attribute;
   }
 
   /**
@@ -87,7 +87,7 @@ export abstract class AbstractNode {
     const node = doc.createElement(this.nodeName);
 
     Object.keys(this.attributes).forEach((attr: string) => {
-      node.setAttribute(attr, this.attributes[attr]);
+      node.setAttribute(attr, this.attributes[attr].getValue());
     });
 
     this.children.forEach((child: AbstractNode) => {

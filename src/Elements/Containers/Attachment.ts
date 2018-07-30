@@ -1,18 +1,17 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
 import { NodeType } from "../../enums";
-import { Prefaceopt } from "../ComplexTypes/Prefaceopt";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
- * The element preface is used as a container of all prefacing
- * material (e.g. headers, formulas, etc.)
+ * The element attachment is used as a container of individual
+ * attachment elements.
  */
-export class Preface extends AbstractNode {
+export class Attachment extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'preface';
+  nodeName = 'attachment';
 
-  protected nodeRx: RegExp = Prefaceopt.getRegExp();
+  protected nodeRx: RegExp = new RegExp('');
 
   readonly CHILDREN_MAP: NodeRules = {
     meta: { maxOccur: 1, minOccur: 1, options: {} },

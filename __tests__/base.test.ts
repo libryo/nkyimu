@@ -39,6 +39,7 @@ describe("Base test", () => {
 
     expect(() => {
       doc.appendChild(meta);
-    }).toThrow(`Node ${meta.nodeName} is not allowed as a child.`);
+      doc.validate();
+    }).toThrow('Node meta is not allowed as a child.');
   });
 });

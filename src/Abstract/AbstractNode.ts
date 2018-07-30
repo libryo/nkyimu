@@ -1,4 +1,4 @@
-import { NodeType, NodeMap } from '../enums';
+import { NodeType } from '../enums';
 import { Attributes } from '../Interfaces/Attributes';
 import { AbstractAttribute } from './AbstractAttribute';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';

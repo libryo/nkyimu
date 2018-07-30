@@ -1,5 +1,4 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { NodeType } from "../../enums";
 import { Basicopt } from "../ComplexTypes/Basicopt";
 import { NodeRules } from "../../Interfaces/NodeRules";
 

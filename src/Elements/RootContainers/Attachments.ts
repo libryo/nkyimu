@@ -1,6 +1,4 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { NodeType } from "../../enums";
-import { Container } from "../../Interfaces/Container";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Attachments extends AbstractNode {

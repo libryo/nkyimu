@@ -1,24 +1,17 @@
-import { AbstractNode } from "../Abstract/AbstractNode";
-import { NodeRules } from "../Interfaces/NodeRules";
+import { AbstractNode } from "../../Abstract/AbstractNode";
+import { NodeType } from "../../enums";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
-export class Section extends AbstractNode {
-  abbreviation = 'sec';
+/**
+ * The element attachment is used as a container of individual
+ * attachment elements.
+ */
+export class Attachment extends AbstractNode {
+  abbreviation = '';
 
-  nodeName = 'section';
-  
-  protected nodeRx: RegExp = new RegExp('.+');
+  nodeName = 'attachment';
 
-
-  readonly ALLOWED_CHILDREN: string[] = [
-    'meta',
-    'coverPage',
-    'preface',
-    'preamble',
-    'body',
-    'conclusions',
-    'attachments',
-    'components'
-  ];
+  protected nodeRx: RegExp = new RegExp('');
 
   readonly CHILDREN_MAP: NodeRules = {
     meta: { maxOccur: 1, minOccur: 1, options: {} },

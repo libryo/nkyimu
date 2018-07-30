@@ -1,18 +1,12 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
-import { Prefaceopt } from "../ComplexTypes/Prefaceopt";
+import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
- * The element preface is used as a container of all prefacing
- * material (e.g. headers, formulas, etc.)
+ * the type hierarchicalStructure specifies the overall content model
+ * of the document types that are hierarchical in nature, especially
+ * acts and bills.
  */
-export class Preface extends AbstractNode {
-  abbreviation = '';
-
-  nodeName = 'preface';
-
-  protected nodeRx: RegExp = Prefaceopt.getRegExp();
-
+export class HierarchicalStructure implements HasChildrenMap {
   readonly CHILDREN_MAP: NodeRules = {
     meta: { maxOccur: 1, minOccur: 1, options: {} },
     coverPage: { maxOccur: 1, options: {} },
@@ -26,13 +20,16 @@ export class Preface extends AbstractNode {
 
   readonly SEQUENCE: string[] = [
     'meta',
-    'coverPage',
-    'preface',
-    'preamble',
+    'coverPage:?',
+    'preface:?',
+    'preamble:?',
     'body',
-    'conclusions',
-    'attachments',
-    'components'
+    'conclusions:?',
+    'attachments:?',
+    'components:?'
   ];
 
+  static getRegExp(): RegExp {
+    return /<meta>(<coverPage>)?(<preface>)?(<preamble>)?<body>(<conclusions>)?(<attachments>)?(<components>)?/;
+  }
 }

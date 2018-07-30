@@ -3,17 +3,27 @@ import { NodeType } from "../../enums";
 import { XMLXSINamespaceAttribute } from "../../Attributes/XMLXSINamespaceAttribute";
 import { XMLDateNamespaceAttribute } from "../../Attributes/XMLDateNamespaceAttribute";
 import { XMLNamespaceAttribute } from "../../Attributes/XMLNamespaceAttribute";
+import { AkomaNtosoType } from "../ComplexTypes/AkomaNtosoType";
+import { NodeRules } from "../../Interfaces/NodeRules";
+
+const aknType = new AkomaNtosoType();
 
 export class AKNDocument extends AbstractNode {
   private doc: Document;
-
-  nodeType: NodeType = NodeType.ELEMENT_NODE;
 
   abbreviation = '';
 
   nodeName = 'akomaNtoso';
 
-  protected nodeRx: RegExp = new RegExp('<(amendmentList|officialGazette|documentCollection|act|bill|debateReport|debate|statement|amendment|judgment|portion|doc)>');
+  readonly CHILDREN_MAP: NodeRules = {
+    ...aknType.CHILDREN_MAP
+  };
+  
+  readonly SEQUENCE: string[] = [
+    ...aknType.SEQUENCE,
+  ];
+
+  protected nodeRx: RegExp = new RegExp('.+');
 
   constructor() {
     super();

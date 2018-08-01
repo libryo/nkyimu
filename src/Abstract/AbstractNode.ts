@@ -48,13 +48,6 @@ export abstract class AbstractNode implements HasChildrenMap {
   readonly abstract SEQUENCE: string[];
 
   /**
-   * @deprecated
-   * 
-   * Used to validate the children.
-   */
-  protected abstract nodeRx: RegExp;
-
-  /**
    * List of attributes to be added to the node
    */
   protected attributes: Attributes = {};
@@ -301,23 +294,6 @@ export abstract class AbstractNode implements HasChildrenMap {
           /** Carry on to the next sequence item */
           return false;
         });
-    }
-  }
-
-  /**
-   * @deprecated
-   * 
-   * Validate the current node and throw exception if invalid.
-   * 
-   * @throws Error
-   */
-  validate(): void {
-    const childrenStr = this.children
-      .map((child: AbstractNode) => child.toRegex())
-      .join('');
-
-    if (!this.nodeRx.test(childrenStr)) {
-      throw new Error(`${this.nodeName} has invalid children. Current: ${childrenStr}. Expected: ${this.nodeRx.source}`);
     }
   }
 

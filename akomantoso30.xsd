@@ -89,8 +89,7 @@ The group ANhier lists the elements that belong to the Akoma Ntoso legislative h
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANcontainers</name>
-				<comment>
-The group ANcontainers lists the elements that are containers and are specific to the Akoma Ntoso debate vocabulary</comment>
+				<comment>The group ANcontainers lists the elements that are containers and are specific to the Akoma Ntoso debate vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -169,8 +168,7 @@ The group ANblock lists the elements that are blocks and are specific to the Ako
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANinline</name>
-				<comment>
-The group ANinline lists the elements that are inline and are specific to the Akoma Ntoso vocabulary</comment>
+				<comment>The group ANinline lists the elements that are inline and are specific to the Akoma Ntoso vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -200,8 +198,7 @@ The group ANinline lists the elements that are inline and are specific to the Ak
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANtitleInline</name>
-				<comment>
-The group ANtitleInline lists the elements that are inline, are specific to the Akoma Ntoso vocabulary, and should only be used within the initial elements (preface, preamble and coverpage)</comment>
+				<comment>The group ANtitleInline lists the elements that are inline, are specific to the Akoma Ntoso vocabulary, and should only be used within the initial elements (preface, preamble and coverpage)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -228,8 +225,7 @@ The group ANtitleInline lists the elements that are inline, are specific to the 
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANheaderInline</name>
-				<comment>
-The group ANheaderInline lists the elements that are inline, are specific to the Akoma Ntoso vocabulary, and should only be used within the header element</comment>
+				<comment>The group ANheaderInline lists the elements that are inline, are specific to the Akoma Ntoso vocabulary, and should only be used within the header element</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -247,8 +243,7 @@ The group ANheaderInline lists the elements that are inline, are specific to the
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANsemanticInline</name>
-				<comment>
-The group ANsemanticInline lists additional elements that are inline, and are specific to the Akoma Ntoso vocabulary</comment>
+				<comment>The group ANsemanticInline lists additional elements that are inline, and are specific to the Akoma Ntoso vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -273,8 +268,7 @@ The group ANsemanticInline lists additional elements that are inline, and are sp
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANmarker</name>
-				<comment>
-The group ANmarker lists the elements that are markers and are specific to the Akoma Ntoso vocabulary</comment>
+				<comment>The group ANmarker lists the elements that are markers and are specific to the Akoma Ntoso vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -288,8 +282,7 @@ The group ANmarker lists the elements that are markers and are specific to the A
 			<xsd:documentation>
 				<type>Group</type>
 				<name>ANsubFlow</name>
-				<comment>
-The group ANsubFlow lists the elements that are subFlows and are specific to the Akoma Ntoso vocabulary</comment>
+				<comment>The group ANsubFlow lists the elements that are subFlows and are specific to the Akoma Ntoso vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -301,8 +294,7 @@ The group ANsubFlow lists the elements that are subFlows and are specific to the
 			<xsd:documentation>
 				<type>Group</type>
 				<name>HTMLcontainers</name>
-				<comment>
-The group HTMLcontainers lists the elements that are containers and were inherited from the HTML vocabulary</comment>
+				<comment>The group HTMLcontainers lists the elements that are containers and were inherited from the HTML vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -330,8 +322,7 @@ The group HTMLblock lists the elements that are blocks and were inherited from t
 			<xsd:documentation>
 				<type>Group</type>
 				<name>HTMLinline</name>
-				<comment>
-The group HTMLinline lists the elements that are inline and were inherited from the HTML vocabulary</comment>
+				<comment>The group HTMLinline lists the elements that are inline and were inherited from the HTML vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -350,8 +341,7 @@ The group HTMLinline lists the elements that are inline and were inherited from 
 			<xsd:documentation>
 				<type>Group</type>
 				<name>HTMLmarker</name>
-				<comment>
-The group HTMLmarker lists the elements that are marker and were inherited from the HTML vocabulary</comment>
+				<comment>The group HTMLmarker lists the elements that are marker and were inherited from the HTML vocabulary</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -398,8 +388,7 @@ The group amendmentBlock lists the structures that should be found in an amendme
 			<xsd:documentation>
 				<type>Group</type>
 				<name>amendmentInline</name>
-				<comment>
-The group amendmentInline lists the inline elements that should be found in the preface of an amendment</comment>
+				<comment>The group amendmentInline lists the inline elements that should be found in the preface of an amendment</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -413,8 +402,7 @@ The group amendmentInline lists the inline elements that should be found in the 
 			<xsd:documentation>
 				<type>Group</type>
 				<name>speechSection</name>
-				<comment>
-The group speechSection lists the structures that should contain speeches</comment>
+				<comment>The group speechSection lists the structures that should contain speeches</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -458,8 +446,7 @@ The group speechSection lists the structures that should contain speeches</comme
 			<xsd:documentation>
 				<type>Group</type>
 				<name>containerElements</name>
-				<comment>
-The group containerElements lists all the elements that are containers</comment>
+				<comment>The group containerElements lists all the elements that are containers</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -488,8 +475,7 @@ The group containerElements lists all the elements that are containers</comment>
 			<xsd:documentation>
 				<type>Group</type>
 				<name>inlineElements</name>
-				<comment>
-The group inlineElements lists all the elements that are inline</comment>
+				<comment>The group inlineElements lists all the elements that are inline</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -507,8 +493,7 @@ The group inlineElements lists all the elements that are inline</comment>
 			<xsd:documentation>
 				<type>Group</type>
 				<name>subFlowElements</name>
-				<comment>
-The group subFlowElements lists all the elements that are subFlows</comment>
+				<comment>The group subFlowElements lists all the elements that are subFlows</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -521,8 +506,7 @@ The group subFlowElements lists all the elements that are subFlows</comment>
 			<xsd:documentation>
 				<type>Group</type>
 				<name>markerElements</name>
-				<comment>
-The group markerElements lists all the elements that are markers</comment>
+				<comment>The group markerElements lists all the elements that are markers</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -536,8 +520,7 @@ The group markerElements lists all the elements that are markers</comment>
 			<xsd:documentation>
 				<type>Group</type>
 				<name>inlineCM</name>
-				<comment>
-The group inlineCM is the content model of blocks and inlines, and is composed of all the inlines and all the markers</comment>
+				<comment>The group inlineCM is the content model of blocks and inlines, and is composed of all the inlines and all the markers</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -1869,8 +1852,7 @@ the complex type blocksopt defines the content model and attributes shared by al
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>inline</name>
-				<comment>
-the complex type inline defines the content model and attributes shared by all blocks and inlines. Here the eId attribute is optional</comment>
+				<comment>the complex type inline defines the content model and attributes shared by all blocks and inlines. Here the eId attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1883,8 +1865,7 @@ the complex type inline defines the content model and attributes shared by all b
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>inlinereq</name>
-				<comment>
-the complex type inlinereq defines the content model and attributes shared by all blocks and inlines. Here the eId attribute is required</comment>
+				<comment>the complex type inlinereq defines the content model and attributes shared by all blocks and inlines. Here the eId attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1897,8 +1878,7 @@ the complex type inlinereq defines the content model and attributes shared by al
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>inlinereqreq</name>
-				<comment>
-the complex type inlinereq defines the content model and attributes shared by all blocks and inlines. Here the eId attribute is required and also the refersTo is required</comment>
+				<comment>the complex type inlinereq defines the content model and attributes shared by all blocks and inlines. Here the eId attribute is required and also the refersTo is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1996,8 +1976,7 @@ the complex type speechType defines the content model and attributes shared by a
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>itemType</name>
-				<comment>
-The complex type itemType is similar to a hierarchical element, but is isolated and does not belong to a full hierarchy.</comment>
+				<comment>The complex type itemType is similar to a hierarchical element, but is isolated and does not belong to a full hierarchy.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -3617,8 +3596,7 @@ the element vote is an inline that wraps either the name of the voter (when orga
 			<xsd:documentation>
 				<type>Element</type>
 				<name>outcome</name>
-				<comment>
-the element outcome is an inline that wraps the outcome of a vote</comment>
+				<comment>the element outcome is an inline that wraps the outcome of a vote</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3783,8 +3761,7 @@ this element is a structural container for the section of an amendment containin
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>blockContainerType</name>
-				<comment>
-the blockContainerType is the type of element blockContainer</comment>
+				<comment>the blockContainerType is the type of element blockContainer</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -3807,8 +3784,7 @@ the blockContainerType is the type of element blockContainer</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>blockContainer</name>
-				<comment>
-the element blockContainer is used as a container of many individual block elements in a block context</comment>
+				<comment>the element blockContainer is used as a container of many individual block elements in a block context</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3833,8 +3809,7 @@ the blockListType is the type of element blockList</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>blockList</name>
-				<comment>
-the element blockList is used as in a block context as a container of many individual item elements to be treated as in a list</comment>
+				<comment>the element blockList is used as in a block context as a container of many individual item elements to be treated as in a list</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3873,8 +3848,7 @@ the element listWrapUp is an optional element of blockList after all items of th
 			<xsd:documentation>
 				<type>Element</type>
 				<name>tblock</name>
-				<comment>
-The element tblock (titled block) is used to specify a container for blocks introduced by heading elements, similarly to a hierarchical structure</comment>
+				<comment>The element tblock (titled block) is used to specify a container for blocks introduced by heading elements, similarly to a hierarchical structure</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3891,8 +3865,7 @@ The element tblock (titled block) is used to specify a container for blocks intr
 			<xsd:documentation>
 				<type>Element</type>
 				<name>tocItem</name>
-				<comment>
-the element tocItem is a component of the table of content and contains header information about sections or parts of the rest of the document</comment>
+				<comment>the element tocItem is a component of the table of content and contains header information about sections or parts of the rest of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -3909,8 +3882,7 @@ the element tocItem is a component of the table of content and contains header i
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docType</name>
-				<comment>
-the element docType is an inline element within preface to identify the string used by the document for its own type</comment>
+				<comment>the element docType is an inline element within preface to identify the string used by the document for its own type</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3919,8 +3891,7 @@ the element docType is an inline element within preface to identify the string u
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docTitle</name>
-				<comment>
-the element docTitle is an inline element within preface to identify the string used by the document for its own title</comment>
+				<comment>the element docTitle is an inline element within preface to identify the string used by the document for its own title</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3929,8 +3900,7 @@ the element docTitle is an inline element within preface to identify the string 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docNumber</name>
-				<comment>
-the element docNumber is an inline element within preface to identify the string used by the document for its own number</comment>
+				<comment>the element docNumber is an inline element within preface to identify the string used by the document for its own number</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3939,8 +3909,7 @@ the element docNumber is an inline element within preface to identify the string
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docProponent</name>
-				<comment>
-the element docProponent is an inline element within preface to identify the string used by the document for its proponent</comment>
+				<comment>the element docProponent is an inline element within preface to identify the string used by the document for its proponent</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -3956,8 +3925,7 @@ the element docProponent is an inline element within preface to identify the str
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docDate</name>
-				<comment>
-the element docDate is an inline element within preface to identify the string used by the document for its own date(s). Documents with multiple dates may use multiple docDate elements.</comment>
+				<comment>the element docDate is an inline element within preface to identify the string used by the document for its own date(s). Documents with multiple dates may use multiple docDate elements.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -3973,8 +3941,7 @@ the element docDate is an inline element within preface to identify the string u
 			<xsd:documentation>
 				<type>Element</type>
 				<name>legislature</name>
-				<comment>
-the element legislature is an inline element within preface to identify the string used by the document for the legislature relative to the document. Use #refersTo to a TLCEvent to refer to the event of the specific legislature.</comment>
+				<comment>the element legislature is an inline element within preface to identify the string used by the document for the legislature relative to the document. Use #refersTo to a TLCEvent to refer to the event of the specific legislature.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4007,8 +3974,7 @@ the element session is an inline element within preface to identify the string u
 			<xsd:documentation>
 				<type>Element</type>
 				<name>shortTitle</name>
-				<comment>
-the element shortTitle is an inline element within preface to identify the string used by the document for the short title of the document.</comment>
+				<comment>the element shortTitle is an inline element within preface to identify the string used by the document for the short title of the document.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4017,8 +3983,7 @@ the element shortTitle is an inline element within preface to identify the strin
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docAuthority</name>
-				<comment>
-the element docAuthority is an inline element within preface to identify the string used by the document detailing the Auhtority to which the document was submitted</comment>
+				<comment>the element docAuthority is an inline element within preface to identify the string used by the document detailing the Auhtority to which the document was submitted</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4027,8 +3992,7 @@ the element docAuthority is an inline element within preface to identify the str
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docPurpose</name>
-				<comment>
-the element docPurpose is an inline element within preface to identify the string used by the document detailing its own purpose</comment>
+				<comment>the element docPurpose is an inline element within preface to identify the string used by the document detailing its own purpose</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4037,8 +4001,7 @@ the element docPurpose is an inline element within preface to identify the strin
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docCommittee</name>
-				<comment>
-the element docCommittee is an inline element within preface to identify the string used by the document detailing the committee within which the document originated</comment>
+				<comment>the element docCommittee is an inline element within preface to identify the string used by the document detailing the committee within which the document originated</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4054,8 +4017,7 @@ the element docCommittee is an inline element within preface to identify the str
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docIntroducer</name>
-				<comment>
-the element docIntroducer is an inline element within preface to identify the string used by the document detailing the individual introducing of the document</comment>
+				<comment>the element docIntroducer is an inline element within preface to identify the string used by the document detailing the individual introducing of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4064,8 +4026,7 @@ the element docIntroducer is an inline element within preface to identify the st
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docStage</name>
-				<comment>
-the element docStage is an inline element within preface to identify the string used by the document detailing the stage in which the document sits</comment>
+				<comment>the element docStage is an inline element within preface to identify the string used by the document detailing the stage in which the document sits</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4074,8 +4035,7 @@ the element docStage is an inline element within preface to identify the string 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docStatus</name>
-				<comment>
-the element docStatus is an inline element within preface to identify the string used by the document detailing the status of the document</comment>
+				<comment>the element docStatus is an inline element within preface to identify the string used by the document detailing the status of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4084,8 +4044,7 @@ the element docStatus is an inline element within preface to identify the string
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docJurisdiction</name>
-				<comment>
-the element docJurisdiction is an inline element within preface to identify the string used by the document detailing the jurisdiction of the document</comment>
+				<comment>the element docJurisdiction is an inline element within preface to identify the string used by the document detailing the jurisdiction of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4094,8 +4053,7 @@ the element docJurisdiction is an inline element within preface to identify the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>docketNumber</name>
-				<comment>
-the element docketNumber is an inline element within preface to identify the string used by the document for the number of the docket, case, file, etc which the document belongs to</comment>
+				<comment>the element docketNumber is an inline element within preface to identify the string used by the document for the number of the docket, case, file, etc which the document belongs to</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4175,8 +4133,7 @@ the element lawyer is an inline element within judgments to identify where the d
 			<xsd:documentation>
 				<type>Element</type>
 				<name>opinion</name>
-				<comment>
-the element opinion is an inline element to identify where the document defines the opinion of an actor</comment>
+				<comment>the element opinion is an inline element to identify where the document defines the opinion of an actor</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4212,8 +4169,7 @@ the element signature is an inline element within conclusions to identify where 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>date</name>
-				<comment>
-the element date is an inline element to identify a date expressed in the text and to propose a normalized representation in the date attribute.</comment>
+				<comment>the element date is an inline element to identify a date expressed in the text and to propose a normalized representation in the date attribute.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4229,8 +4185,7 @@ the element date is an inline element to identify a date expressed in the text a
 			<xsd:documentation>
 				<type>Element</type>
 				<name>time</name>
-				<comment>
-the element time is an inline element to identify a time expressed in the text and to propose a normalized representation in the time attribute.</comment>
+				<comment>the element time is an inline element to identify a time expressed in the text and to propose a normalized representation in the time attribute.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4246,8 +4201,7 @@ the element time is an inline element to identify a time expressed in the text a
 			<xsd:documentation>
 				<type>Element</type>
 				<name>entity</name>
-				<comment>
-the element entity is a generic inline element to identify a text fragment introducing or referring to a concept in the ontology</comment>
+				<comment>the element entity is a generic inline element to identify a text fragment introducing or referring to a concept in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4263,8 +4217,7 @@ the element entity is a generic inline element to identify a text fragment intro
 			<xsd:documentation>
 				<type>Element</type>
 				<name>person</name>
-				<comment>
-the element person is an inline element to identify a text fragment introducing or referring to a person in the ontology. Attribute as allows to specify a TLCrole the person is holding in the context of the document's mention</comment>
+				<comment>the element person is an inline element to identify a text fragment introducing or referring to a person in the ontology. Attribute as allows to specify a TLCrole the person is holding in the context of the document's mention</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4280,8 +4233,7 @@ the element person is an inline element to identify a text fragment introducing 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>organization</name>
-				<comment>
-The element organization is an inline element to identify a text fragment introducing or referring to an organization in the ontology</comment>
+				<comment>The element organization is an inline element to identify a text fragment introducing or referring to an organization in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4290,8 +4242,7 @@ The element organization is an inline element to identify a text fragment introd
 			<xsd:documentation>
 				<type>Element</type>
 				<name>concept</name>
-				<comment>
-The element concept is is an inline element to identify a text fragment introducing or referring to a concept in the ontology</comment>
+				<comment>The element concept is is an inline element to identify a text fragment introducing or referring to a concept in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4300,8 +4251,7 @@ The element concept is is an inline element to identify a text fragment introduc
 			<xsd:documentation>
 				<type>Element</type>
 				<name>object</name>
-				<comment>
-The element object is is an inline element to identify a text fragment introducing or referring to an object in the ontology</comment>
+				<comment>The element object is is an inline element to identify a text fragment introducing or referring to an object in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4310,8 +4260,7 @@ The element object is is an inline element to identify a text fragment introduci
 			<xsd:documentation>
 				<type>Element</type>
 				<name>event</name>
-				<comment>
-The element event is an inline element to identify a text fragment introducing or referring to an event in the ontology</comment>
+				<comment>The element event is an inline element to identify a text fragment introducing or referring to an event in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4320,8 +4269,7 @@ The element event is an inline element to identify a text fragment introducing o
 			<xsd:documentation>
 				<type>Element</type>
 				<name>location</name>
-				<comment>
-The element location is an inline element to identify a text fragment introducing or referring to a location in the ontology</comment>
+				<comment>The element location is an inline element to identify a text fragment introducing or referring to a location in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4330,8 +4278,7 @@ The element location is an inline element to identify a text fragment introducin
 			<xsd:documentation>
 				<type>Element</type>
 				<name>process</name>
-				<comment>
-The element process is an inline element to identify a text fragment introducing or referring to a process in the ontology</comment>
+				<comment>The element process is an inline element to identify a text fragment introducing or referring to a process in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4340,8 +4287,7 @@ The element process is an inline element to identify a text fragment introducing
 			<xsd:documentation>
 				<type>Element</type>
 				<name>role</name>
-				<comment>
-The element role is an inline element to identify a text fragment introducing or referring to a role in the ontology</comment>
+				<comment>The element role is an inline element to identify a text fragment introducing or referring to a role in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4350,8 +4296,7 @@ The element role is an inline element to identify a text fragment introducing or
 			<xsd:documentation>
 				<type>Element</type>
 				<name>term</name>
-				<comment>
-The element term is an inline element to identify a text fragment introducing or referring to a term in the ontology</comment>
+				<comment>The element term is an inline element to identify a text fragment introducing or referring to a term in the ontology</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4360,8 +4305,7 @@ The element term is an inline element to identify a text fragment introducing or
 			<xsd:documentation>
 				<type>Element</type>
 				<name>quantity</name>
-				<comment>
-The element quantity is an inline element to identify a text fragment introducing or referring to a quantity. This could be a dimensionless number, or a number referring to a length, weight, duration, etc. or even a sum of money. The attribute normalized contains the value normalized in a number, if appropriate.</comment>
+				<comment>The element quantity is an inline element to identify a text fragment introducing or referring to a quantity. This could be a dimensionless number, or a number referring to a length, weight, duration, etc. or even a sum of money. The attribute normalized contains the value normalized in a number, if appropriate.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4377,8 +4321,7 @@ The element quantity is an inline element to identify a text fragment introducin
 			<xsd:documentation>
 				<type>Element</type>
 				<name>def</name>
-				<comment>
-the element def is an inline element used for the definition of a term used in the rest of the document</comment>
+				<comment>the element def is an inline element used for the definition of a term used in the rest of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4387,8 +4330,7 @@ the element def is an inline element used for the definition of a term used in t
 			<xsd:documentation>
 				<type>Element</type>
 				<name>ref</name>
-				<comment>
-the element ref is an inline element containing a legal reference</comment>
+				<comment>the element ref is an inline element containing a legal reference</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4404,8 +4346,7 @@ the element ref is an inline element containing a legal reference</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>mref</name>
-				<comment>
-the element mref is an inline element containing multiple references (each in turn represented by a ref element)</comment>
+				<comment>the element mref is an inline element containing multiple references (each in turn represented by a ref element)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4414,8 +4355,7 @@ the element mref is an inline element containing multiple references (each in tu
 			<xsd:documentation>
 				<type>Element</type>
 				<name>rref</name>
-				<comment>
-the element rref is an inline element containing a range of references between the IRI specified in the from attribute and the one specified in the upTo attribute.</comment>
+				<comment>the element rref is an inline element containing a range of references between the IRI specified in the from attribute and the one specified in the upTo attribute.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4431,8 +4371,7 @@ the element rref is an inline element containing a range of references between t
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>modType</name>
-				<comment>
-the complex type modType specifies the content that is allowed within mod, mmod and rmod elements, i.e. it adds quotedText and quotedStructure to the normal list of inline elements. Attribute for is used to point to the eId of the corresponding ref element.</comment>
+				<comment>the complex type modType specifies the content that is allowed within mod, mmod and rmod elements, i.e. it adds quotedText and quotedStructure to the normal list of inline elements. Attribute for is used to point to the eId of the corresponding ref element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -4448,8 +4387,7 @@ the complex type modType specifies the content that is allowed within mod, mmod 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>mod</name>
-				<comment>
-the element mod is an inline element containing the specification of a modification on another document</comment>
+				<comment>the element mod is an inline element containing the specification of a modification on another document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4458,8 +4396,7 @@ the element mod is an inline element containing the specification of a modificat
 			<xsd:documentation>
 				<type>Element</type>
 				<name>mmod</name>
-				<comment>
-the element mmod is an inline element containing multiple specifications of modifications on another document</comment>
+				<comment>the element mmod is an inline element containing multiple specifications of modifications on another document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4468,8 +4405,7 @@ the element mmod is an inline element containing multiple specifications of modi
 			<xsd:documentation>
 				<type>Element</type>
 				<name>rmod</name>
-				<comment>
-the element rmod is an inline element containing the specification of a range of modifications on another document</comment>
+				<comment>the element rmod is an inline element containing the specification of a range of modifications on another document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4503,8 +4439,7 @@ the element quotedText is an inline element containing a small string that is us
 			<xsd:documentation>
 				<type>Element</type>
 				<name>remark</name>
-				<comment>
-the element remark is an inline element for the specification of editorial remarks (e.g., applauses, laughters, etc.) especially within debate records</comment>
+				<comment>the element remark is an inline element for the specification of editorial remarks (e.g., applauses, laughters, etc.) especially within debate records</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4520,8 +4455,7 @@ the element remark is an inline element for the specification of editorial remar
 			<xsd:documentation>
 				<type>Element</type>
 				<name>recordedTime</name>
-				<comment>
-the element recordedTime is an inline element for the specification of an explicit mention of a time (e.g., in a debate)</comment>
+				<comment>the element recordedTime is an inline element for the specification of an explicit mention of a time (e.g., in a debate)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4538,8 +4472,7 @@ the element recordedTime is an inline element for the specification of an explic
 			<xsd:documentation>
 				<type>Element</type>
 				<name>ins</name>
-				<comment>
-the element ins is an inline element for the specification of editorial insertions</comment>
+				<comment>the element ins is an inline element for the specification of editorial insertions</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4548,8 +4481,7 @@ the element ins is an inline element for the specification of editorial insertio
 			<xsd:documentation>
 				<type>Element</type>
 				<name>del</name>
-				<comment>
-the element del is an inline element for the specification of editorial deletions</comment>
+				<comment>the element del is an inline element for the specification of editorial deletions</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4558,8 +4490,7 @@ the element del is an inline element for the specification of editorial deletion
 			<xsd:documentation>
 				<type>Element</type>
 				<name>omissis</name>
-				<comment>
-the element omissis is an inline element for the specification of a text that substitutes a textual omission (e.g., dots, spaces, the word "omissis", etc.</comment>
+				<comment>the element omissis is an inline element for the specification of a text that substitutes a textual omission (e.g., dots, spaces, the word "omissis", etc.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4568,8 +4499,7 @@ the element omissis is an inline element for the specification of a text that su
 			<xsd:documentation>
 				<type>Element</type>
 				<name>placeholder</name>
-				<comment>
-the element placeholder is an inline element containing the text of a computable expression (e.g., '30 days after the publication of this act') that can be replaced editorially with an actual value</comment>
+				<comment>the element placeholder is an inline element containing the text of a computable expression (e.g., '30 days after the publication of this act') that can be replaced editorially with an actual value</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4585,8 +4515,7 @@ the element placeholder is an inline element containing the text of a computable
 			<xsd:documentation>
 				<type>Element</type>
 				<name>fillIn</name>
-				<comment>
-the element fillIn is an inline element shown as a dotted line or any other typoaphical characteristics to represent a fill-in element in a printed form, that is as ane example of an actual form. It is NOT meant to be used for form elements as in HTML, i.e. as a way to collect input from the reader and deliver to some server-side process.</comment>
+				<comment>the element fillIn is an inline element shown as a dotted line or any other typoaphical characteristics to represent a fill-in element in a printed form, that is as ane example of an actual form. It is NOT meant to be used for form elements as in HTML, i.e. as a way to collect input from the reader and deliver to some server-side process.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4602,8 +4531,7 @@ the element fillIn is an inline element shown as a dotted line or any other typo
 			<xsd:documentation>
 				<type>Element</type>
 				<name>decoration</name>
-				<comment>
-the element decoration is an inline element to represent a decorative aspect that is present in the orignal text and that is meant as additional information to the text (e.g., the annotation 'new' on the side of a freshly inserted structure.</comment>
+				<comment>the element decoration is an inline element to represent a decorative aspect that is present in the orignal text and that is meant as additional information to the text (e.g., the annotation 'new' on the side of a freshly inserted structure.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4692,8 +4620,7 @@ the element eop (end of page) is a marker for where in the original text the pag
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>subFlowStructure</name>
-				<comment>
-the type subFlowStructure specifies the overall content model of the elements that are subFlows</comment>
+				<comment>the type subFlowStructure specifies the overall content model of the elements that are subFlows</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -4747,8 +4674,7 @@ the element quotedStructure is a subFlow element containing a full structure pro
 			<xsd:documentation>
 				<type>Element</type>
 				<name>embeddedText</name>
-				<comment>
-the element embeddedText is an inline element containing a string used as an extract from another document. Attribute quote is used to specify the quote character used in the original; no quote attribute implies that the quote is left in the text; quote="" implies that there is no quote character.</comment>
+				<comment>the element embeddedText is an inline element containing a string used as an extract from another document. Attribute quote is used to specify the quote character used in the original; no quote attribute implies that the quote is left in the text; quote="" implies that there is no quote character.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4765,8 +4691,7 @@ the element embeddedText is an inline element containing a string used as an ext
 			<xsd:documentation>
 				<type>Element</type>
 				<name>embeddedStructure</name>
-				<comment>
-the element embeddedStructure is a subFlow element containing a full structure used as an extract from another document or position. Attribute quote is used to specify the quote character used in the original; no quote attribute implies that the quote is left in the text; quote="" implies that there is no quote character.</comment>
+				<comment>the element embeddedStructure is a subFlow element containing a full structure used as an extract from another document or position. Attribute quote is used to specify the quote character used in the original; no quote attribute implies that the quote is left in the text; quote="" implies that there is no quote character.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -4910,8 +4835,7 @@ the element block is a generic element for a block. It can be placed in a contai
 			<xsd:documentation>
 				<type>Element</type>
 				<name>inline</name>
-				<comment>
-the element inline is a generic element for an inline. It can be placed inside a block instead of any of the other inlines. The attribute name is required and gives a name to the element.</comment>
+				<comment>the element inline is a generic element for an inline. It can be placed inside a block instead of any of the other inlines. The attribute name is required and gives a name to the element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">

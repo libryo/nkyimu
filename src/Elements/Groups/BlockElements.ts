@@ -1,13 +1,13 @@
-import { ANblock } from "./ANblock";
-import { HTMLblock } from "./HTMLblock";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { ANblock } from "./ANblock";
+import { HTMLblock } from "./HTMLblock";
 
 /**
  * The group blockElements lists all the elements that are blocks.
  */
 export class BlockElements implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -19,7 +19,7 @@ export class BlockElements implements HasChildrenMap {
       }
     }
   };
-  
+
   static getRegExp():RegExp {
     const anBlock = ANblock.getRegExp().source;
     const htmlBlock = HTMLblock.getRegExp().source;

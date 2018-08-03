@@ -1838,8 +1838,7 @@ the complex type blocksreq defines the content model and attributes shared by al
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>blocksopt</name>
-				<comment>
-the complex type blocksopt defines the content model and attributes shared by all containers. Here the eId attribute is optional</comment>
+				<comment>the complex type blocksopt defines the content model and attributes shared by all containers. Here the eId attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1902,8 +1901,7 @@ the complex type markerreq defines the content model and attributes shared by al
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>markeropt</name>
-				<comment>
-the complex type markeropt defines the content model and attributes shared by all marker elements. Here the eId attribute is optional</comment>
+				<comment>the complex type markeropt defines the content model and attributes shared by all marker elements. Here the eId attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="coreopt"/>
@@ -2007,8 +2005,7 @@ the complex type referenceType defines the empty content model and the list of a
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>srcType</name>
-				<comment>
-the complex type srcType defines the empty content model and the list of attributes for manifestation-level references to external resources</comment>
+				<comment>the complex type srcType defines the empty content model and the list of attributes for manifestation-level references to external resources</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="core"/>
@@ -2021,8 +2018,7 @@ the complex type srcType defines the empty content model and the list of attribu
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>linkType</name>
-				<comment>
-the complex type linkType defines the empty content model and the list of attributes for Work- or Expression-level references to external resources</comment>
+				<comment>the complex type linkType defines the empty content model and the list of attributes for Work- or Expression-level references to external resources</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="core"/>
@@ -2035,8 +2031,7 @@ the complex type linkType defines the empty content model and the list of attrib
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>anyOtherType</name>
-				<comment>
-the complex type anyOtherType defines an open content model for elements that may use elements from other namespaces.</comment>
+				<comment>the complex type anyOtherType defines an open content model for elements that may use elements from other namespaces.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
@@ -2710,8 +2705,7 @@ the element recitals is the section of the preamble that contains recitals</comm
 			<xsd:documentation>
 				<type>Element</type>
 				<name>recital</name>
-				<comment>
-the element recital is the individual element of the preface that is called recital</comment>
+				<comment>the element recital is the individual element of the preface that is called recital</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -2745,8 +2739,7 @@ the element citations is the section of the preamble that contains citations</co
 			<xsd:documentation>
 				<type>Element</type>
 				<name>citation</name>
-				<comment>
-the element citation is the individual element of the preface that is called citation</comment>
+				<comment>the element citation is the individual element of the preface that is called citation</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -2861,8 +2854,7 @@ the element coverPage is used as a container of the text that acts as a cover pa
 			<xsd:documentation>
 				<type>Element</type>
 				<name>header</name>
-				<comment>
-the element header is used as a container of all prefacing material of judgments (e.g. headers, formulas, etc.)</comment>
+				<comment>the element header is used as a container of all prefacing material of judgments (e.g. headers, formulas, etc.)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -2897,8 +2889,7 @@ the element interstitial is used as a container of text elements and blocks that
 			<xsd:documentation>
 				<type>Element</type>
 				<name>componentRef</name>
-				<comment>
-the element componentRef is a reference to a separate manifestation-level resource that holds the content of the component of the document not physically placed at the position specified. Actual resources can either be external (e.g. in the package or even in a different position) or internal (within the components element)</comment>
+				<comment>the element componentRef is a reference to a separate manifestation-level resource that holds the content of the component of the document not physically placed at the position specified. Actual resources can either be external (e.g. in the package or even in a different position) or internal (within the components element)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -2907,8 +2898,7 @@ the element componentRef is a reference to a separate manifestation-level resour
 			<xsd:documentation>
 				<type>Element</type>
 				<name>documentRef</name>
-				<comment>
-the element documentRef is a reference to a separate work- or expression-level resource that should be placed in this position. Actual resources are external (e.g. in the package or even in a different position) and are (an expression or any expression of) a separate Work.</comment>
+				<comment>the element documentRef is a reference to a separate work- or expression-level resource that should be placed in this position. Actual resources are external (e.g. in the package or even in a different position) and are (an expression or any expression of) a separate Work.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3196,8 +3186,7 @@ this element is a hierarchical container called "transitional" either explicitly
 			<xsd:documentation>
 				<type>Element</type>
 				<name>content</name>
-				<comment>
-the element content is the final container in a hierarchy, and is where the blocks of text of the content of the structure are finally specified</comment>
+				<comment>the element content is the final container in a hierarchy, and is where the blocks of text of the content of the structure are finally specified</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3206,8 +3195,7 @@ the element content is the final container in a hierarchy, and is where the bloc
 			<xsd:documentation>
 				<type>Element</type>
 				<name>num</name>
-				<comment>
-the element num is a heading element in a hierarchy that contains a number or any other ordered mechanism to identify the structure.</comment>
+				<comment>the element num is a heading element in a hierarchy that contains a number or any other ordered mechanism to identify the structure.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3216,8 +3204,7 @@ the element num is a heading element in a hierarchy that contains a number or an
 			<xsd:documentation>
 				<type>Element</type>
 				<name>heading</name>
-				<comment>
-the element heading is a heading element in a hierarchy that contains a title or any other textual content to describe the structure.</comment>
+				<comment>the element heading is a heading element in a hierarchy that contains a title or any other textual content to describe the structure.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3226,8 +3213,7 @@ the element heading is a heading element in a hierarchy that contains a title or
 			<xsd:documentation>
 				<type>Element</type>
 				<name>subheading</name>
-				<comment>
-the element subheading is a heading element in a hierarchy that contains a subtitle or any other textual content to further describe the structure.</comment>
+				<comment>the element subheading is a heading element in a hierarchy that contains a subtitle or any other textual content to further describe the structure.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3236,8 +3222,7 @@ the element subheading is a heading element in a hierarchy that contains a subti
 			<xsd:documentation>
 				<type>Element</type>
 				<name>crossHeading</name>
-				<comment>
-the element crossHeading is a heading element that is placed side by side with hierarchical containers .</comment>
+				<comment>the element crossHeading is a heading element that is placed side by side with hierarchical containers.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3246,8 +3231,7 @@ the element crossHeading is a heading element that is placed side by side with h
 			<xsd:documentation>
 				<type>Element</type>
 				<name>intro</name>
-				<comment>
-the element intro is a heading element in a hierarchy that contains paragraphs introducing one or more lower hierarchical elements.</comment>
+				<comment>the element intro is a heading element in a hierarchy that contains paragraphs introducing one or more lower hierarchical elements.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3256,8 +3240,7 @@ the element intro is a heading element in a hierarchy that contains paragraphs i
 			<xsd:documentation>
 				<type>Element</type>
 				<name>wrapUp</name>
-				<comment>
-the element wrapUp is a concluding element in a hierarchy that contains paragraphs wrapping up the preceding lower hierarchical elements.</comment>
+				<comment>the element wrapUp is a concluding element in a hierarchy that contains paragraphs wrapping up the preceding lower hierarchical elements.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3818,8 +3801,7 @@ the blockListType is the type of element blockList</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>item</name>
-				<comment>
-The element item is a container belonging to a blockList</comment>
+				<comment>The element item is a container belonging to a blockList</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3828,8 +3810,7 @@ The element item is a container belonging to a blockList</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>listIntroduction</name>
-				<comment>
-the element listIntroduction is an optional element of blockList before any item of the list itself.</comment>
+				<comment>the element listIntroduction is an optional element of blockList before any item of the list itself.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -3838,8 +3819,7 @@ the element listIntroduction is an optional element of blockList before any item
 			<xsd:documentation>
 				<type>Element</type>
 				<name>listWrapUp</name>
-				<comment>
-the element listWrapUp is an optional element of blockList after all items of the list itself.</comment>
+				<comment>the element listWrapUp is an optional element of blockList after all items of the list itself.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4116,8 +4096,7 @@ the element judge is an inline element within judgments to identify where the do
 			<xsd:documentation>
 				<type>Element</type>
 				<name>lawyer</name>
-				<comment>
-the element lawyer is an inline element within judgments to identify where the document defines one of the lawyers, his/her role, which party it represents, and the other lawyer, if any, this lawyer received the power delegation of power in some role</comment>
+				<comment>the element lawyer is an inline element within judgments to identify where the document defines one of the lawyers, his/her role, which party it represents, and the other lawyer, if any, this lawyer received the power delegation of power in some role</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4149,8 +4128,7 @@ the element lawyer is an inline element within judgments to identify where the d
 			<xsd:documentation>
 				<type>Element</type>
 				<name>argument</name>
-				<comment>
-the element argument is an inline element within judgments for classifying the arguments in the motivation part of the judgment</comment>
+				<comment>the element argument is an inline element within judgments for classifying the arguments in the motivation part of the judgment</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4159,8 +4137,7 @@ the element argument is an inline element within judgments for classifying the a
 			<xsd:documentation>
 				<type>Element</type>
 				<name>signature</name>
-				<comment>
-the element signature is an inline element within conclusions to identify where the document defines one of the signatures</comment>
+				<comment>the element signature is an inline element within conclusions to identify where the document defines one of the signatures</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4421,8 +4398,7 @@ the element signature is an inline element within conclusions to identify where 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>quotedText</name>
-				<comment>
-the element quotedText is an inline element containing a small string that is used either as the text being replaced, or the replacement, or the positioning at which some modification should take place. Attribute quote is used to specify the quote character used in the original; no quote attribute implies that the quote is left in the text; quote="" implies that there is no quote character. Attribute for is used to point to the eId of the corresponding ref element.</comment>
+				<comment>the element quotedText is an inline element containing a small string that is used either as the text being replaced, or the replacement, or the positioning at which some modification should take place. Attribute quote is used to specify the quote character used in the original; no quote attribute implies that the quote is left in the text; quote="" implies that there is no quote character. Attribute for is used to point to the eId of the corresponding ref element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4552,8 +4528,7 @@ the element quotedText is an inline element containing a small string that is us
 			<xsd:documentation>
 				<type>Element</type>
 				<name>noteRef</name>
-				<comment>
-the element noteRef is a reference to a editorial note placed in the notes metadata section</comment>
+				<comment>the element noteRef is a reference to a editorial note placed in the notes metadata section</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -4570,8 +4545,7 @@ the element noteRef is a reference to a editorial note placed in the notes metad
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>eolType</name>
-				<comment>
-the complex type eolType is shared by eol and eop elements as being able to specify a hyphen character and a position within the next word in which the break can happen, and the number if any, associated to the page or line at issue</comment>
+				<comment>the complex type eolType is shared by eol and eop elements as being able to specify a hyphen character and a position within the next word in which the break can happen, and the number if any, associated to the page or line at issue</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -4588,8 +4562,9 @@ the complex type eolType is shared by eol and eop elements as being able to spec
 				<type>Element</type>
 				<name>eol</name>
 				<comment>
-the element eol (end of line) is a marker for where in the original text the line breaks. If the line breaks within a word, place the element BEFORE the word and place the number of characters before the break in the attribute breakAt. One can also specify, if relevant, the hyphen or other character used to signal
-the break of a word at the end of the line with the attribute breakWith.</comment>
+					the element eol (end of line) is a marker for where in the original text the line breaks. If the line breaks within a word, place the element BEFORE the word and place the number of characters before the break in the attribute breakAt. One can also specify, if relevant, the hyphen or other character used to signal
+					the break of a word at the end of the line with the attribute breakWith.
+				</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4598,8 +4573,7 @@ the break of a word at the end of the line with the attribute breakWith.</commen
 			<xsd:documentation>
 				<type>Element</type>
 				<name>eop</name>
-				<comment>
-the element eop (end of page) is a marker for where in the original text the page breaks. Do NOT use a eol element, too. If the page breaks within a word, place the element BEFORE the word and place the number of characters before the break in the attribute breakAt. One can also specify, if relevant, the hyphen or other character used to signal the break of a word at the end of the page with the attribute breakWith.</comment>
+				<comment>the element eop (end of page) is a marker for where in the original text the page breaks. Do NOT use a eol element, too. If the page breaks within a word, place the element BEFORE the word and place the number of characters before the break in the attribute breakAt. One can also specify, if relevant, the hyphen or other character used to signal the break of a word at the end of the page with the attribute breakWith.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4708,8 +4682,7 @@ the element quotedStructure is a subFlow element containing a full structure pro
 			<xsd:documentation>
 				<type>Element</type>
 				<name>authorialNote</name>
-				<comment>
-the element authorialNote is a subFlow element containing an authorial (non-editorial) note in the main flow of the text.</comment>
+				<comment>the element authorialNote is a subFlow element containing an authorial (non-editorial) note in the main flow of the text.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -4725,8 +4698,7 @@ the element authorialNote is a subFlow element containing an authorial (non-edit
 			<xsd:documentation>
 				<type>Element</type>
 				<name>subFlow</name>
-				<comment>
-the element subFlow is a generic element for a subFlow.</comment>
+				<comment>the element subFlow is a generic element for a subFlow.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -4742,8 +4714,7 @@ the element subFlow is a generic element for a subFlow.</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>foreign</name>
-				<comment>
-the element foreign is a generic container for elements not belonging to the Akoma Ntoso namespace (e.g., mathematical formulas). It is a block element and thus can be placed in a container.</comment>
+				<comment>the element foreign is a generic container for elements not belonging to the Akoma Ntoso namespace (e.g., mathematical formulas). It is a block element and thus can be placed in a container.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4818,8 +4789,7 @@ the element container is a generic element for a container.</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>block</name>
-				<comment>
-the element block is a generic element for a block. It can be placed in a container instead of any of the other blocks. The attribute name is required and gives a name to the element.</comment>
+				<comment>the element block is a generic element for a block. It can be placed in a container instead of any of the other blocks. The attribute name is required and gives a name to the element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4868,8 +4838,7 @@ the element marker is a generic element for a marker. It can be placed in a bloc
 			<xsd:documentation>
 				<type>Element</type>
 				<name>div</name>
-				<comment>
-The element div is an HTML element, but is NOT used in Akoma Ntoso as in HTML. Instead of being used as a generic block, Akoma Ntoso uses div as a generic container (as in common practice)</comment>
+				<comment>The element div is an HTML element, but is NOT used in Akoma Ntoso as in HTML. Instead of being used as a generic block, Akoma Ntoso uses div as a generic container (as in common practice)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4878,8 +4847,7 @@ The element div is an HTML element, but is NOT used in Akoma Ntoso as in HTML. I
 			<xsd:documentation>
 				<type>Element</type>
 				<name>p</name>
-				<comment>
-The element p is an HTML element and is used in Akoma Ntoso as in HTML, for the generic paragraph of text (a block)</comment>
+				<comment>The element p is an HTML element and is used in Akoma Ntoso as in HTML, for the generic paragraph of text (a block)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4888,8 +4856,7 @@ The element p is an HTML element and is used in Akoma Ntoso as in HTML, for the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>span</name>
-				<comment>
-The element span is an HTML element and is used in Akoma Ntoso as in HTML, for the generic inline</comment>
+				<comment>The element span is an HTML element and is used in Akoma Ntoso as in HTML, for the generic inline</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4898,8 +4865,7 @@ The element span is an HTML element and is used in Akoma Ntoso as in HTML, for t
 			<xsd:documentation>
 				<type>Element</type>
 				<name>br</name>
-				<comment>
-The element br is an HTML element and is used in Akoma Ntoso as in HTML, for the breaking of a line</comment>
+				<comment>The element br is an HTML element and is used in Akoma Ntoso as in HTML, for the breaking of a line</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4908,8 +4874,7 @@ The element br is an HTML element and is used in Akoma Ntoso as in HTML, for the
 			<xsd:documentation>
 				<type>Element</type>
 				<name>b</name>
-				<comment>
-The element b is an HTML element and is used in Akoma Ntoso as in HTML, for the bold style (an inline)</comment>
+				<comment>The element b is an HTML element and is used in Akoma Ntoso as in HTML, for the bold style (an inline)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4918,8 +4883,7 @@ The element b is an HTML element and is used in Akoma Ntoso as in HTML, for the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>i</name>
-				<comment>
-The element i is an HTML element and is used in Akoma Ntoso as in HTML, for the italic style (an inline)</comment>
+				<comment>The element i is an HTML element and is used in Akoma Ntoso as in HTML, for the italic style (an inline)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4928,8 +4892,7 @@ The element i is an HTML element and is used in Akoma Ntoso as in HTML, for the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>u</name>
-				<comment>
-The element u is an HTML element and is used in Akoma Ntoso as in HTML, for the underline style (an inline)</comment>
+				<comment>The element u is an HTML element and is used in Akoma Ntoso as in HTML, for the underline style (an inline)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4938,8 +4901,7 @@ The element u is an HTML element and is used in Akoma Ntoso as in HTML, for the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>sup</name>
-				<comment>
-The element sup is an HTML element and is used in Akoma Ntoso as in HTML, for the superscript style (an inline)</comment>
+				<comment>The element sup is an HTML element and is used in Akoma Ntoso as in HTML, for the superscript style (an inline)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4948,8 +4910,7 @@ The element sup is an HTML element and is used in Akoma Ntoso as in HTML, for th
 			<xsd:documentation>
 				<type>Element</type>
 				<name>sub</name>
-				<comment>
-The element sub is an HTML element and is used in Akoma Ntoso as in HTML, for the subscript style (an inline)</comment>
+				<comment>The element sub is an HTML element and is used in Akoma Ntoso as in HTML, for the subscript style (an inline)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4958,8 +4919,7 @@ The element sub is an HTML element and is used in Akoma Ntoso as in HTML, for th
 			<xsd:documentation>
 				<type>Element</type>
 				<name>abbr</name>
-				<comment>
-The element abbr is an HTML element and is used in Akoma Ntoso as in HTML, for the specification of an abbreviation or an acronym (an inline). As in HTML, use attribute title to specify the full expansion of the abbreviation or acronym.</comment>
+				<comment>The element abbr is an HTML element and is used in Akoma Ntoso as in HTML, for the specification of an abbreviation or an acronym (an inline). As in HTML, use attribute title to specify the full expansion of the abbreviation or acronym.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4968,8 +4928,7 @@ The element abbr is an HTML element and is used in Akoma Ntoso as in HTML, for t
 			<xsd:documentation>
 				<type>Element</type>
 				<name>a</name>
-				<comment>
-The element a is an HTML element and is used in Akoma Ntoso as in HTML, for the generic link to a web resource (NOT to an Akoma Ntoso document: use ref for that). It is an inline.</comment>
+				<comment>The element a is an HTML element and is used in Akoma Ntoso as in HTML, for the generic link to a web resource (NOT to an Akoma Ntoso document: use ref for that). It is an inline.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4986,8 +4945,7 @@ The element a is an HTML element and is used in Akoma Ntoso as in HTML, for the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>img</name>
-				<comment>
-The element img is an HTML element and is used in Akoma Ntoso as in HTML, for including an image. It is a marker.</comment>
+				<comment>The element img is an HTML element and is used in Akoma Ntoso as in HTML, for including an image. It is a marker.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5004,8 +4962,7 @@ The element img is an HTML element and is used in Akoma Ntoso as in HTML, for in
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>listItems</name>
-				<comment>
-the complex type listItems specifies the content model of elements ul and ol, and specifies just a sequence of list items (elements li).</comment>
+				<comment>the complex type listItems specifies the content model of elements ul and ol, and specifies just a sequence of list items (elements li).</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -5018,8 +4975,7 @@ the complex type listItems specifies the content model of elements ul and ol, an
 			<xsd:documentation>
 				<type>Element</type>
 				<name>ul</name>
-				<comment>
-The element ul is an HTML element and is used in Akoma Ntoso as in HTML, for an unordered list of list item (elements li)</comment>
+				<comment>The element ul is an HTML element and is used in Akoma Ntoso as in HTML, for an unordered list of list item (elements li)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5028,8 +4984,7 @@ The element ul is an HTML element and is used in Akoma Ntoso as in HTML, for an 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>ol</name>
-				<comment>
-The element ol is an HTML element and is used in Akoma Ntoso as in HTML, for an ordered list of list item (elements li)</comment>
+				<comment>The element ol is an HTML element and is used in Akoma Ntoso as in HTML, for an ordered list of list item (elements li)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>

@@ -1,9 +1,9 @@
 import { NodeType } from '../enums';
 import { Attributes } from '../Interfaces/Attributes';
-import { AbstractAttribute } from './AbstractAttribute';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
 import { NodeRules } from '../Interfaces/NodeRules';
 import { Rule } from '../Interfaces/Rule';
+import { AbstractAttribute } from './AbstractAttribute';
 
 export abstract class AbstractNode implements HasChildrenMap {
 
@@ -73,7 +73,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   /**
    * Extract the nodes from the nested CHILDREN_MAP object.
-   * 
+   *
    * @param rules NodeRules
    */
   private extractNodeNames(rules: NodeRules): string[] {
@@ -90,7 +90,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     if (keys.indexOf('sequence') !== -1) {
       children = children.concat(this.extractNodeNames(rules.sequence.options));
     }
-  
+
     return children;
   }
 
@@ -108,7 +108,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   /**
    * Get the available children.
-   * 
+   *
    * @returns AbstractNode[]
    */
   getChildren(): AbstractNode[] {
@@ -124,7 +124,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    */
   appendChild(node: AbstractNode): AbstractNode {
     if (this.allowedChildren.length < 1) {
-      this.setupValidationParams(); 
+      this.setupValidationParams();
     }
 
     this.validateChild(node);
@@ -137,7 +137,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   /**
    * Set the attributes of the nodes.
-   * 
+   *
    * @param attribute: AbstractAttribute
    */
   setAttribute(attribute: AbstractAttribute): void {
@@ -146,12 +146,12 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   /**
    * Validate the child being added.
-   * 
+   *
    * @param node AbstractNode
    */
   validateChild(node: AbstractNode): void {
-    /** Check if the node is allowed as a child. */
-    if (this.allowedChildren.indexOf(node.nodeName) === -1) {
+    /** Check if the node is allowed as a child. We also validate for any that matches AnyOtherType complexType */
+    if (this.allowedChildren.indexOf('any') === -1 && this.allowedChildren.indexOf(node.nodeName) === -1) {
       throw new Error(`Node ${node.nodeName} is not allowed as a child.`);
     }
 
@@ -161,15 +161,15 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   /**
    * Extract the node rules to be used to validate the children.
-   * 
+   *
    * @param node AbstractNode
    * @param rules NodeRules
    * @param isChoice boolean
    * @param choiceMinOccur number
    * @param choiceMaxOccur number
-   * 
+   *
    * @throws Error
-   * 
+   *
    * @returns Rule
    */
   private extractRule(node: AbstractNode, rules: NodeRules, isChoice = false, choiceMinOccur ?: number, choiceMaxOccur ?: number): Rule {
@@ -196,7 +196,7 @@ export abstract class AbstractNode implements HasChildrenMap {
         rules['choice'].maxOccur
       );
     }
-    
+
     if (keys.indexOf('sequence') !== -1) {
       return this.extractRule(
         node,
@@ -207,21 +207,31 @@ export abstract class AbstractNode implements HasChildrenMap {
       );
     }
 
+    /** Lastly, lets check if there is any present */
+    if (keys.indexOf('any') !== -1) {
+      return {
+        ...rules.any,
+        isChoice,
+        choiceMinOccur,
+        choiceMaxOccur,
+      };
+    }
+
     throw new Error(`Node ${node.nodeName} is not allowed as a child.`);
   }
 
   /**
    * Validate the child being added. If invalid throw Error Exception.
-   * 
+   *
    * @param node AbstractNode
    * @param rule Rule
-   * 
+   *
    * @throws Error
    */
   private validateNode(node: AbstractNode, rule: Rule) {
     /** The node we are attempting to add exists */
     const exists = this.childrenOrder.indexOf(node.nodeName) !== -1;
-    
+
     /** The node already exists and can only exist once as a child. */
     if (exists && rule.maxOccur === 1 && rule.isChoice === false) {
       throw new Error(`The child node ${node.nodeName} should only appear once`);

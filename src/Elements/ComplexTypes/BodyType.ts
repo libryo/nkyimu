@@ -1,6 +1,6 @@
-import { HierElements } from "../Groups/HierElements";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { HierElements } from "../Groups/HierElements";
 
 const type = new HierElements();
 
@@ -23,7 +23,7 @@ export class BodyType implements HasChildrenMap {
   };
 
   readonly SEQUENCE: string[] = [];
-  
+
   static getRegExp():RegExp {
     return new RegExp(`(<componentRef>|${HierElements.getRegExp().source})+`);
   }

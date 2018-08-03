@@ -3,13 +3,14 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 import { BlockElements } from "../Groups/BlockElements";
 
 /**
- * The complex type blocksreq defines the content model and
- * attributes shared by all containers. Here the eId attribute is required
+ * The complex type blocksopt defines the content model and attributes
+ * shared by all containers. Here the eId attribute is optional
  */
-export class Blocksreq implements HasChildrenMap {
+export class Blocksopt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     sequence: {
+      minOccur: 0,
       options: {
         ...(new BlockElements()).CHILDREN_MAP,
       }

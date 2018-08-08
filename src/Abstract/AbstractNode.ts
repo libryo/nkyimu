@@ -326,7 +326,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     const node = doc.createElement(this.nodeName);
 
     Object.keys(this.attributes).forEach((attr: string) => {
-      node.setAttribute(attr, this.attributes[attr].getValue());
+      node.setAttribute(attr, this.attributes[attr].getValue().toString());
     });
 
     this.children.forEach((child: AbstractNode) => {

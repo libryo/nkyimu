@@ -1,48 +1,43 @@
-export abstract class AbstractAttribute {
-  private value: string;
 
+export abstract class AbstractAttribute {
+
+  /**
+   * The name of the attribute.
+   */
   readonly abstract name: string;
 
   /**
+   * The default value of the attribute.
+   */
+  readonly abstract defaultValue: string;
+
+  /**
+   * The current value of the attribute.
+   */
+  private value: string|number|boolean;
+
+  /**
    * Constructor
-   * 
+   *
    * @param name string
    * @param value string
-   * 
+   *
    * @throws Exception
    */
-  constructor(value: string) {
-    if (!this.validate(value)) {
-      this.throwError();
-    }
-    
+  constructor(value: string|number|boolean) {
+    this.validate(value);
+
     this.value = value;
   }
 
   /**
    * Validate that the attributes are correct.
-   * 
+   *
    * @param value string
-   * 
+   *
    * @returns boolean
    */
-  protected abstract validate(value: string): boolean;
-
-  /**
-   * Get the error message to throw when validation fails.
-   * 
-   * @returns string
-   */
-  protected abstract getErrorMessage(): string;
-
-  /**
-   * Throw the described error.
-   * 
-   * @throws Error
-   */
-  throwError(): void {
-    throw new Error(this.getErrorMessage());
-  }
+  abstract validate(value: string|boolean|number): boolean;
 
   /**
    * Get the name of the attribute
@@ -54,7 +49,7 @@ export abstract class AbstractAttribute {
   /**
    * Get the value of the attribute
    */
-  getValue(): string {
+  getValue(): string|number|boolean {
     return this.value;
   }
 }

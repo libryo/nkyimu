@@ -543,8 +543,7 @@ The group amendmentBlock lists the structures that should be found in an amendme
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>contains</name>
-				<comment>
-The attribute contains is used in the root of document types to indicate whether the document is original or modified wrt the orignal version</comment>
+				<comment>The attribute contains is used in the root of document types to indicate whether the document is original or modified wrt the orignal version</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="contains" type="versionType" default="originalVersion"/>
@@ -554,8 +553,7 @@ The attribute contains is used in the root of document types to indicate whether
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>alt</name>
-				<comment>
-The attribute alternativeTo is used to specify, when the element contains an alternative version of some content, the eId of the main element which this element is an alternative copy of</comment>
+				<comment>The attribute alternativeTo is used to specify, when the element contains an alternative version of some content, the eId of the main element which this element is an alternative copy of</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="alternativeTo" type="eIdRef"/>
@@ -565,8 +563,7 @@ The attribute alternativeTo is used to specify, when the element contains an alt
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>name</name>
-				<comment>
-The attribute name is used to give a name to all generic elements</comment>
+				<comment>The attribute name is used to give a name to all generic elements</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
@@ -576,8 +573,7 @@ The attribute name is used to give a name to all generic elements</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>number</name>
-				<comment>
-The attribute number is used to specify a number in the publication of the document</comment>
+				<comment>The attribute number is used to specify a number in the publication of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="number" type="xsd:string"/>
@@ -587,8 +583,7 @@ The attribute number is used to specify a number in the publication of the docum
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>source</name>
-				<comment>
-The attribute source links to the agent (person, organization) providing the specific annotation or markup</comment>
+				<comment>The attribute source links to the agent (person, organization) providing the specific annotation or markup</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="source" type="agentRef" use="required"/>
@@ -598,8 +593,7 @@ The attribute source links to the agent (person, organization) providing the spe
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>date</name>
-				<comment>
-The attribute date is used to give a normalized value for a date according to the XSD syntax YYYY-MM-DD or a normalized value for a dateTime according to the XSD syntax YYYY-MM-DDThh:mm:ss(zzzz)</comment>
+				<comment>The attribute date is used to give a normalized value for a date according to the XSD syntax YYYY-MM-DD or a normalized value for a dateTime according to the XSD syntax YYYY-MM-DDThh:mm:ss(zzzz)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="date" use="required">
@@ -613,8 +607,7 @@ The attribute date is used to give a normalized value for a date according to th
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>time</name>
-				<comment>
-The attribute time is used to give a normalized value for a time according to the XSD syntax HH:MM:SS</comment>
+				<comment>The attribute time is used to give a normalized value for a time according to the XSD syntax HH:MM:SS</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="time" use="required">
@@ -628,8 +621,7 @@ The attribute time is used to give a normalized value for a time according to th
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>link</name>
-				<comment>
-The attribute href is used to specify an internal or external destination for a reference, a citation, an access to the ontology or a hypertext link. In elements using this attribute definition the href attribute is required</comment>
+				<comment>The attribute href is used to specify an internal or external destination for a reference, a citation, an access to the ontology or a hypertext link. In elements using this attribute definition the href attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="href" type="xsd:anyURI" use="required"/>
@@ -639,8 +631,7 @@ The attribute href is used to specify an internal or external destination for a 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>linkopt</name>
-				<comment>
-The attribute href is used to specify an internal or external destination for a reference, a citation, an access to the ontology or a hypertext link. In elements using this attribute definition the href attribute is optional</comment>
+				<comment>The attribute href is used to specify an internal or external destination for a reference, a citation, an access to the ontology or a hypertext link. In elements using this attribute definition the href attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="href" type="xsd:anyURI"/>
@@ -650,8 +641,7 @@ The attribute href is used to specify an internal or external destination for a 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>value</name>
-				<comment>
-The attribute value is used to specify a value for metadata elements. In elements using this attribute definition the value attribute is required</comment>
+				<comment>The attribute value is used to specify a value for metadata elements. In elements using this attribute definition the value attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="value" type="xsd:string" use="required"/>
@@ -661,8 +651,7 @@ The attribute value is used to specify a value for metadata elements. In element
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>optvalue</name>
-				<comment>
-The attribute value is used to specify a value for metadata elements. In elements using this attribute definition the value attribute is optional</comment>
+				<comment>The attribute value is used to specify a value for metadata elements. In elements using this attribute definition the value attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="value" type="xsd:string"/>
@@ -672,8 +661,7 @@ The attribute value is used to specify a value for metadata elements. In element
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>booleanvalue</name>
-				<comment>
-The attribute value is used here to specify a boolean value for metadata elements. In elements using this attribute definition the value attribute is required</comment>
+				<comment>The attribute value is used here to specify a boolean value for metadata elements. In elements using this attribute definition the value attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="value" type="xsd:boolean" use="required"/>
@@ -683,8 +671,7 @@ The attribute value is used here to specify a boolean value for metadata element
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>interval</name>
-				<comment>
-The start and end attributes are used to specify events that mark the beginning and the end of a time interval. Both are references to eventRef elements in the lifecycle element</comment>
+				<comment>The start and end attributes are used to specify events that mark the beginning and the end of a time interval. Both are references to eventRef elements in the lifecycle element</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="start" type="eventRefRef"/>
@@ -695,8 +682,7 @@ The start and end attributes are used to specify events that mark the beginning 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>duration</name>
-				<comment>
-The duration attribute is used to specify a duration when either the start or the end event of a time interval is not known.</comment>
+				<comment>The duration attribute is used to specify a duration when either the start or the end event of a time interval is not known.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="duration" type="xsd:duration"/>
@@ -706,8 +692,7 @@ The duration attribute is used to specify a duration when either the start or th
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>speechAtts</name>
-				<comment>
-The attributes in speechAtts are used in speeches to identify agents and roles of speeches. In particular, attribute 'by' identifies the speaker, optional attribute 'as' identifies the role under which the speaker is speaking, optional attribute startTime specifies the absolute date and time where the individual speech item started, optional attribute endTime specifies the absolute date and time where the individual speech item ended, and  optional attribute to identifies the addressee of the speech. All of them are references to person or organization elements in the references section</comment>
+				<comment>The attributes in speechAtts are used in speeches to identify agents and roles of speeches. In particular, attribute 'by' identifies the speaker, optional attribute 'as' identifies the role under which the speaker is speaking, optional attribute startTime specifies the absolute date and time where the individual speech item started, optional attribute endTime specifies the absolute date and time where the individual speech item ended, and  optional attribute to identifies the addressee of the speech. All of them are references to person or organization elements in the references section</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="agent"/>
@@ -721,8 +706,7 @@ The attributes in speechAtts are used in speeches to identify agents and roles o
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>voteAtts</name>
-				<comment>
-The attributes in voteAtts are used in votes to identify agents and choices in votes. In particular, attribute 'by' identifies the voter, optional attribute 'as' identifies the role under which the voter is acting, optional attribute 'choice' specifies the vote that was casted.</comment>
+				<comment>The attributes in voteAtts are used in votes to identify agents and choices in votes. In particular, attribute 'by' identifies the voter, optional attribute 'as' identifies the role under which the voter is acting, optional attribute 'choice' specifies the vote that was casted.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="agent"/>
@@ -734,8 +718,7 @@ The attributes in voteAtts are used in votes to identify agents and choices in v
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>frozen</name>
-				<comment>
-The attribute frozen for the condition element specifies whether the condition is frozen or not in the time period of this expression.</comment>
+				<comment>The attribute frozen for the condition element specifies whether the condition is frozen or not in the time period of this expression.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="frozen" type="xsd:boolean"/>
@@ -745,8 +728,7 @@ The attribute frozen for the condition element specifies whether the condition i
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>lawyerAtts</name>
-				<comment>
-The attributes in lawyerAtts are used in the inline element lawyer to identify representation aspects of lawyers. In particular, attribute 'as' identifies his/her role, attribute 'for' identifies which party it represents, and attribute 'empoweredBy' identifies another lawyer, if any, this lawyer received the power delegation of power.</comment>
+				<comment>The attributes in lawyerAtts are used in the inline element lawyer to identify representation aspects of lawyers. In particular, attribute 'as' identifies his/her role, attribute 'for' identifies which party it represents, and attribute 'empoweredBy' identifies another lawyer, if any, this lawyer received the power delegation of power.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="role"/>
@@ -794,8 +776,7 @@ The mappingAtts attributes represent the reference to the permanent wId (attribu
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>originating</name>
-				<comment>
-The attribute originating is used to identify whether the event is the one originating this expression</comment>
+				<comment>The attribute originating is used to identify whether the event is the one originating this expression</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="originatingExpression" type="xsd:boolean"/>
@@ -827,8 +808,7 @@ the attribute includedIn specifies the eId of the element of the references sect
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>level</name>
-				<comment>
-the attribute level specifies the level of the toc element.</comment>
+				<comment>the attribute level specifies the level of the toc element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="level" type="xsd:integer" use="required"/>
@@ -838,8 +818,7 @@ the attribute level specifies the level of the toc element.</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>target</name>
-				<comment>
-the attribute target specifies the target of the a element.</comment>
+				<comment>the attribute target specifies the target of the a element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="target" type="xsd:string"/>
@@ -849,8 +828,7 @@ the attribute target specifies the target of the a element.</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>imgAtts</name>
-				<comment>
-these attributes specify the dimension of the image.</comment>
+				<comment>these attributes specify the dimension of the image.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="width" type="xsd:integer"/>
@@ -861,8 +839,7 @@ these attributes specify the dimension of the image.</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>tableAtts</name>
-				<comment>
-these attributes specify the characteristics of the table.</comment>
+				<comment>these attributes specify the characteristics of the table.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="width" type="xsd:integer"/>
@@ -875,8 +852,7 @@ these attributes specify the characteristics of the table.</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>originalText</name>
-				<comment>
-the attribute originalText contains the original text of a placeholder</comment>
+				<comment>the attribute originalText contains the original text of a placeholder</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="originalText" type="xsd:string"/>
@@ -886,8 +862,7 @@ the attribute originalText contains the original text of a placeholder</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>fillInWidth</name>
-				<comment>
-the attribute width of the element fillIn specifies the width of the fillIn element.</comment>
+				<comment>the attribute width of the element fillIn specifies the width of the fillIn element.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="width" type="xsd:string"/>
@@ -897,8 +872,7 @@ the attribute width of the element fillIn specifies the width of the fillIn elem
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>upTo</name>
-				<comment>
-The attribute upTo is used in range-based elements to specify the eId of the ending element of the range.</comment>
+				<comment>The attribute upTo is used in range-based elements to specify the eId of the ending element of the range.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="upTo" type="eIdRef" use="required"/>
@@ -911,8 +885,7 @@ The attribute upTo is used in range-based elements to specify the eId of the end
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>range</name>
-				<comment>
-These attributes are used in range-based elements to specify the eId of the beginning and ending element of the range.</comment>
+				<comment>These attributes are used in range-based elements to specify the eId of the beginning and ending element of the range.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="from" type="eIdRef" use="required"/>
@@ -927,9 +900,7 @@ These attributes are used in range-based elements to specify the eId of the begi
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>pos</name>
-				<comment>
-The attribute pos is used to identify the specific position of the reference (e.g., in source or destination)
-with respect to the element being identified with the relative eId.</comment>
+				<comment>The attribute pos is used to identify the specific position of the reference (e.g., in source or destination) with respect to the element being identified with the relative eId.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="pos" type="posType"/>
@@ -939,8 +910,7 @@ with respect to the element being identified with the relative eId.</comment>
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>language</name>
-				<comment>
-This attribute specifies the human language in which the document the element refers to is expressed. Values are taken from the RFC 4646.</comment>
+				<comment>This attribute specifies the human language in which the document the element refers to is expressed. Values are taken from the RFC 4646.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="language" type="language" use="required"/>
@@ -950,8 +920,7 @@ This attribute specifies the human language in which the document the element re
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>fromLanguage</name>
-				<comment>
-This attribute specifies the human language of the expression this is a translation of. Values are taken from the RFC 4646.</comment>
+				<comment>This attribute specifies the human language of the expression this is a translation of. Values are taken from the RFC 4646.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="fromLanguage" type="language" use="required"/>
@@ -961,8 +930,7 @@ This attribute specifies the human language of the expression this is a translat
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>pivot</name>
-				<comment>
-This attribute specifies the human language used as a pivot in the translation. Values are taken from the RFC 4646.</comment>
+				<comment>This attribute specifies the human language used as a pivot in the translation. Values are taken from the RFC 4646.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="pivot" type="language"/>
@@ -983,8 +951,7 @@ This attribute specifies whether the translation is authoritative or not</commen
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>dictionary</name>
-				<comment>
-This attribute specifies the eId of the element in the references section detailing the dictionary used for the keyword.</comment>
+				<comment>This attribute specifies the eId of the element in the references section detailing the dictionary used for the keyword.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="dictionary" type="referenceRef" use="required"/>
@@ -1003,8 +970,7 @@ This attribute specifies the eId of the element in the references section detail
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>type</name>
-				<comment>
-The type attribute is used in various element to identify a type without restrictions as to its values.</comment>
+				<comment>The type attribute is used in various element to identify a type without restrictions as to its values.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="type" type="xsd:string"/>
@@ -1033,8 +999,7 @@ The type attribute is used in various element to identify a type without restric
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>opinionType</name>
-				<comment>
-This is the list of allowed values for the type attribute of the opinion element</comment>
+				<comment>This is the list of allowed values for the type attribute of the opinion element</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1052,8 +1017,7 @@ This is the list of allowed values for the type attribute of the opinion element
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>resultType</name>
-				<comment>
-This is the list of allowed values for the type attribute of the result element</comment>
+				<comment>This is the list of allowed values for the type attribute of the result element</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1075,8 +1039,7 @@ This is the list of allowed values for the type attribute of the result element<
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>restrictionType</name>
-				<comment>
-This is the list of allowed values for the restriction type attribute</comment>
+				<comment>This is the list of allowed values for the restriction type attribute</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1110,8 +1073,7 @@ This is the list of allowed values for the type attribute of the remark element 
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>timeType</name>
-				<comment>
-This is the list of allowed values for the type attribute of the recordedTime element for the specification of an explicit mention of a time (e.g., in a debate)</comment>
+				<comment>This is the list of allowed values for the type attribute of the recordedTime element for the specification of an explicit mention of a time (e.g., in a debate)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1330,8 +1292,7 @@ These attributes are used in the analysis to allow manifestation editors to spec
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>role</name>
-				<comment>
-The attribute role is used to identify the role of an individual mentioned in the text. It is a reference to a TLCRole element in the references section</comment>
+				<comment>The attribute role is used to identify the role of an individual mentioned in the text. It is a reference to a TLCRole element in the references section</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="as" type="roleRef"/>
@@ -1341,8 +1302,7 @@ The attribute role is used to identify the role of an individual mentioned in th
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>agent</name>
-				<comment>
-The attribute by is used to identify the agent of an action. It is a reference to a TLCPerson or TLCOrganization element in the references section</comment>
+				<comment>The attribute by is used to identify the agent of an action. It is a reference to a TLCPerson or TLCOrganization element in the references section</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="by" type="agentRef" use="required"/>
@@ -1538,8 +1498,7 @@ This is the list of the core attributes that all elements in the content part of
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>noWhiteSpace</name>
-				<comment>
-These values are those of ids such as eId, wId and GUID as a collection of any printable character except whitespaces.</comment>
+				<comment>These values are those of ids such as eId, wId and GUID as a collection of any printable character except whitespaces.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1551,8 +1510,7 @@ These values are those of ids such as eId, wId and GUID as a collection of any p
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>eIdRef</name>
-				<comment>
-These values are references to existing eIds only, i.e., given an existing eId of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing eIds only, i.e., given an existing eId of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1562,8 +1520,7 @@ These values are references to existing eIds only, i.e., given an existing eId o
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>wIdRef</name>
-				<comment>
-These values are references to existing wIds only, i.e., given an existing wId of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing wIds only, i.e., given an existing wId of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1573,8 +1530,7 @@ These values are references to existing wIds only, i.e., given an existing wId o
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>roleRef</name>
-				<comment>
-These values are references to existing roles (i.e., TLCRole) only, i.e., given an existing eId of a role of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing roles (i.e., TLCRole) only, i.e., given an existing eId of a role of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1584,8 +1540,7 @@ These values are references to existing roles (i.e., TLCRole) only, i.e., given 
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>agentRef</name>
-				<comment>
-These values are references to existing agents (i.e., TLCPerson or TLCOrganization) only, i.e., given an existing eId of an agent of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing agents (i.e., TLCPerson or TLCOrganization) only, i.e., given an existing eId of an agent of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1595,8 +1550,7 @@ These values are references to existing agents (i.e., TLCPerson or TLCOrganizati
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>conceptRef</name>
-				<comment>
-These values are references to existing concepts (i.e., TLCConcept) only, i.e., given an existing eId of a concept of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing concepts (i.e., TLCConcept) only, i.e., given an existing eId of a concept of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1606,8 +1560,7 @@ These values are references to existing concepts (i.e., TLCConcept) only, i.e., 
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>referenceRef</name>
-				<comment>
-These values are references to existing References elements only, i.e., given an existing eId of an element of the References section of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing References elements only, i.e., given an existing eId of an element of the References section of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1617,8 +1570,7 @@ These values are references to existing References elements only, i.e., given an
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>voteRef</name>
-				<comment>
-These values are references to existing votes (i.e., quorum or count) only, i.e., given an existing eId of a vote element of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing votes (i.e., quorum or count) only, i.e., given an existing eId of a vote element of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1628,8 +1580,7 @@ These values are references to existing votes (i.e., quorum or count) only, i.e.
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>eventRefRef</name>
-				<comment>
-These values are references to existing event references (i.e., eventRef) only, i.e., given an existing eId of an eventRef of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing event references (i.e., eventRef) only, i.e., given an existing eId of an eventRef of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1639,8 +1590,7 @@ These values are references to existing event references (i.e., eventRef) only, 
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>temporalGroupRef</name>
-				<comment>
-These values are references to existing temporal groups only, i.e., given an existing eId of a temporal group of the form XYZ, the value is necessarily #XYZ</comment>
+				<comment>These values are references to existing temporal groups only, i.e., given an existing eId of a temporal group of the form XYZ, the value is necessarily #XYZ</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1650,8 +1600,7 @@ These values are references to existing temporal groups only, i.e., given an exi
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>manifestationURI</name>
-				<comment>
-These values are references of a manifestation-Level document only</comment>
+				<comment>These values are references of a manifestation-Level document only</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI"/>
@@ -1661,8 +1610,7 @@ These values are references of a manifestation-Level document only</comment>
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>language</name>
-				<comment>
-This type specifies the human language in which the document the element refers to is expressed. Values are taken from the RFC 4646.</comment>
+				<comment>This type specifies the human language in which the document the element refers to is expressed. Values are taken from the RFC 4646.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string"/>
@@ -1672,8 +1620,7 @@ This type specifies the human language in which the document the element refers 
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>versionType</name>
-				<comment>
-This is the list of allowed values for the contains attribute</comment>
+				<comment>This is the list of allowed values for the contains attribute</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1687,8 +1634,7 @@ This is the list of allowed values for the contains attribute</comment>
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>placementType</name>
-				<comment>
-This is the list of allowed values for the placement attribute of notes</comment>
+				<comment>This is the list of allowed values for the placement attribute of notes</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1736,8 +1682,7 @@ This is the list of allowed values for the status attribute. This is the list of
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>posType</name>
-				<comment>
-This is the list of possible positions of the text being analyzed by the element in the analysis section</comment>
+				<comment>This is the list of possible positions of the text being analyzed by the element in the analysis section</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">

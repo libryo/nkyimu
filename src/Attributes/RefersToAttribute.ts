@@ -1,28 +1,25 @@
 import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { ReferenceRef } from "../SimpleTypes/ReferenceRef";
 
 export class RefersToAttribute extends AbstractAttribute {
+  /**
+   * The name of the attribute.
+   */
+  readonly name: string = 'refersTo';
 
-  readonly name ='refersTo';
-  
+  /**
+   * The default value of the attribute.
+   */
+  readonly defaultValue = '';
+
   /**
    * Validate that the attributes are correct.
-   * 
+   *
    * @param value string
-   * 
+   *
    * @returns boolean
    */
-  protected validate(value: string): boolean {
-    const regExp = new RegExp(/\s/, 'gi');
-
-    return !regExp.test(value);
-  }
-
-  /**
-   * Get the error message to throw when validation fails.
-   * 
-   * @returns string
-   */
-  protected getErrorMessage(): string {
-    return 'The refersTo attribute should not contain white spaces';
+  validate(value: string): boolean {
+    return (new ReferenceRef()).validate(value, 'refersTo');
   }
 }

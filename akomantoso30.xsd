@@ -1216,8 +1216,7 @@ The simple type LegalSystemMods lists all the types of modifications in the lega
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>show</name>
-				<comment>
-These attributes are used in metadata to propose visible representations of the metadata itself. Both a full visualization (attribute showAs) and an abbreviated one (attribute shortForm) can be specified</comment>
+				<comment>These attributes are used in metadata to propose visible representations of the metadata itself. Both a full visualization (attribute showAs) and an abbreviated one (attribute shortForm) can be specified</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="showAs" type="xsd:string" use="required"/>
@@ -1232,8 +1231,7 @@ These attributes are used in metadata to propose visible representations of the 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>src</name>
-				<comment>
-These attributes are used in manifestation-level references to specify external manifestation-level resources to be loaded in place. The src attribute holds the manifestation-level IRI of the resource, while the alt attribute holds the text to be displayed in case the loading of the external resource is not possible for any reason.</comment>
+				<comment>These attributes are used in manifestation-level references to specify external manifestation-level resources to be loaded in place. The src attribute holds the manifestation-level IRI of the resource, while the alt attribute holds the text to be displayed in case the loading of the external resource is not possible for any reason.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="src" type="manifestationURI" use="required"/>
@@ -1244,8 +1242,7 @@ These attributes are used in manifestation-level references to specify external 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>period</name>
-				<comment>
-The period attribute is used in versioned content and metadata elements to indicate a time interval in which they were in force, in efficacy, or in any other type of interval as specified in the corresponding temporalGroup.</comment>
+				<comment>The period attribute is used in versioned content and metadata elements to indicate a time interval in which they were in force, in efficacy, or in any other type of interval as specified in the corresponding temporalGroup.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="period" type="temporalGroupRef"/>
@@ -1255,8 +1252,7 @@ The period attribute is used in versioned content and metadata elements to indic
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>enactment</name>
-				<comment>
-These attributes are those already defined in attribute list "period", plus the attribute status, that allows to specify the status of the piece of text it wraps.</comment>
+				<comment>These attributes are those already defined in attribute list "period", plus the attribute status, that allows to specify the status of the piece of text it wraps.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="period"/>
@@ -1267,8 +1263,7 @@ These attributes are those already defined in attribute list "period", plus the 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>notes</name>
-				<comment>
-These attributes are used by notes, both authorial and editorial. The marker is the string to be used as a marker of the note, the placement is the position where the note should be placed, and placementBase is the eId of the element respect to which the note should be placed near.</comment>
+				<comment>These attributes are used by notes, both authorial and editorial. The marker is the string to be used as a marker of the note, the placement is the position where the note should be placed, and placementBase is the eId of the element respect to which the note should be placed near.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="marker" type="xsd:string"/>
@@ -1312,8 +1307,7 @@ These attributes are used in the analysis to allow manifestation editors to spec
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>quote</name>
-				<comment>
-The attributes startQuote and endQuote are used in quotedText, quotedStructure, embeddedText and embeddedStructure to specify the start and quote character delimiting the quoted or embedded part. If the characters are the same, one can use only startQuote. Attribute inlineQuote is used for marking the character showing continuation of a quote e.g. at the beginning of each page or at the beginning of each line of the quote</comment>
+				<comment>The attributes startQuote and endQuote are used in quotedText, quotedStructure, embeddedText and embeddedStructure to specify the start and quote character delimiting the quoted or embedded part. If the characters are the same, one can use only startQuote. Attribute inlineQuote is used for marking the character showing continuation of a quote e.g. at the beginning of each page or at the beginning of each line of the quote</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="startQuote" type="xsd:string"/>
@@ -1325,8 +1319,7 @@ The attributes startQuote and endQuote are used in quotedText, quotedStructure, 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>cellattrs</name>
-				<comment>
-These attributes are used to specify that table cells span more than one row or one column, exactly as in HTML</comment>
+				<comment>These attributes are used to specify that table cells span more than one row or one column, exactly as in HTML</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="rowspan" type="xsd:integer" default="1"/>
@@ -1337,8 +1330,7 @@ These attributes are used to specify that table cells span more than one row or 
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>HTMLattrs</name>
-				<comment>
-These attributes are used to specify class, style and title of the element, exactly as in HTML</comment>
+				<comment>These attributes are used to specify class, style and title of the element, exactly as in HTML</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="class" type="xsd:string"/>
@@ -1350,8 +1342,7 @@ These attributes are used to specify class, style and title of the element, exac
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>core</name>
-				<comment>
-This attribute list are used to specify the fact that any attribute can be specified for this element if it belongs to a different namespace.</comment>
+				<comment>This attribute list are used to specify the fact that any attribute can be specified for this element if it belongs to a different namespace.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:anyAttribute namespace="##other" processContents="lax"/>
@@ -1361,8 +1352,7 @@ This attribute list are used to specify the fact that any attribute can be speci
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>idreq</name>
-				<comment>
-These attributes identify the element in an absolute manner. In elements using this attribute definition the eId attribute is required whenever the Akoma Ntoso naming Convention is used. The wId is used to mark the identifier that the structure used to have in the original version, and is only needed when a renumbering occurred.</comment>
+				<comment>These attributes identify the element in an absolute manner. In elements using this attribute definition the eId attribute is required whenever the Akoma Ntoso naming Convention is used. The wId is used to mark the identifier that the structure used to have in the original version, and is only needed when a renumbering occurred.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="eId" type="noWhiteSpace"/>
@@ -1374,8 +1364,7 @@ These attributes identify the element in an absolute manner. In elements using t
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>idopt</name>
-				<comment>
-These attributes identify the element in an absolute manner. In elements using this attribute definition the eId attribute is optional. The wId is used to mark the identifier that the structure used to have in the original version, and is only needed when a renumbering occurred.</comment>
+				<comment>These attributes identify the element in an absolute manner. In elements using this attribute definition the eId attribute is optional. The wId is used to mark the identifier that the structure used to have in the original version, and is only needed when a renumbering occurred.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="eId" type="noWhiteSpace"/>
@@ -1387,8 +1376,7 @@ These attributes identify the element in an absolute manner. In elements using t
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>refersreq</name>
-				<comment>
-This attribute creates a connection between the element and an element of the Akoma Ntoso ontology to which it refers. In elements using this attribute definition the refersTo attribute is required</comment>
+				<comment>This attribute creates a connection between the element and an element of the Akoma Ntoso ontology to which it refers. In elements using this attribute definition the refersTo attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="refersTo" use="required">
@@ -1406,8 +1394,7 @@ This attribute creates a connection between the element and an element of the Ak
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>refers</name>
-				<comment>
-This attribute creates a connection between the element and an element of the Akoma Ntoso ontology to which it refers. In elements using this attribute definition the refersTo attribute is optional</comment>
+				<comment>This attribute creates a connection between the element and an element of the Akoma Ntoso ontology to which it refers. In elements using this attribute definition the refersTo attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="refersTo">
@@ -1425,8 +1412,7 @@ This attribute creates a connection between the element and an element of the Ak
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>xmllang</name>
-				<comment>
-These attribute specify the human language in which the content of the element is expressed as well as the rules for whitespace management in the element. Values for xml:lang are taken from the RFC 4646. Both xml:lang and xml:space are reserved attributes of the XML language, and cannot be used for any other purpose than these ones.</comment>
+				<comment>These attribute specify the human language in which the content of the element is expressed as well as the rules for whitespace management in the element. Values for xml:lang are taken from the RFC 4646. Both xml:lang and xml:space are reserved attributes of the XML language, and cannot be used for any other purpose than these ones.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute ref="xml:lang"/>
@@ -1438,8 +1424,7 @@ These attribute specify the human language in which the content of the element i
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>corereq</name>
-				<comment>
-This is the list of the core attributes that all elements in the content part of the document must have. In elements using this attribute definition the refersTo attribute is optional but the eId attribute is required</comment>
+				<comment>This is the list of the core attributes that all elements in the content part of the document must have. In elements using this attribute definition the refersTo attribute is optional but the eId attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="core"/>
@@ -1455,8 +1440,7 @@ This is the list of the core attributes that all elements in the content part of
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>corereqreq</name>
-				<comment>
-This is the list of the core attributes that all elements in the content part of the document must have. In elements using this attribute definition both the refersTo attribute and the eId attribute are required</comment>
+				<comment>This is the list of the core attributes that all elements in the content part of the document must have. In elements using this attribute definition both the refersTo attribute and the eId attribute are required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="core"/>
@@ -1472,8 +1456,7 @@ This is the list of the core attributes that all elements in the content part of
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>coreopt</name>
-				<comment>
-This is the list of the core attributes that all elements in the content part of the document must have. In elements using this attribute definition both the refersTo attribute and the eId attribute are optional</comment>
+				<comment>This is the list of the core attributes that all elements in the content part of the document must have. In elements using this attribute definition both the refersTo attribute and the eId attribute are optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="core"/>

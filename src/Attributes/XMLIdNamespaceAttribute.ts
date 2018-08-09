@@ -1,10 +1,10 @@
 import { AbstractAttribute } from "../Abstract/AbstractAttribute";
 
-export class XMLXSINamespaceAttribute extends AbstractAttribute {
+export class XMLIdNamespaceAttribute extends AbstractAttribute {
   /**
    * The name of the attribute.
    */
-  readonly name: string = 'xmlns:xsi';
+  readonly name: string = 'xmlns:id';
 
   /**
    * The default value of the attribute.

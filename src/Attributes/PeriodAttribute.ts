@@ -1,15 +1,17 @@
 import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { TemporalGroupRef } from "../SimpleTypes/TemporalGroupRef";
 
-export class XMLXSINamespaceAttribute extends AbstractAttribute {
+export class PeriodAttribute extends AbstractAttribute {
+
   /**
    * The name of the attribute.
    */
-  readonly name: string = 'xmlns:xsi';
+  readonly name: string = 'period';
 
   /**
    * The default value of the attribute.
    */
-  readonly defaultValue = '';
+  readonly defaultValue: string = '';
 
   /**
    * Validate that the attributes are correct.
@@ -19,6 +21,6 @@ export class XMLXSINamespaceAttribute extends AbstractAttribute {
    * @returns boolean
    */
   validate(value: string): boolean {
-    return true;
+    return (new TemporalGroupRef()).validate(value, 'period');
   }
 }

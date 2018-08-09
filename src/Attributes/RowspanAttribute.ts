@@ -1,15 +1,16 @@
 import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
-export class XMLXSINamespaceAttribute extends AbstractAttribute {
+export class RowspanAttribute extends AbstractAttribute {
   /**
    * The name of the attribute.
    */
-  readonly name: string = 'xmlns:xsi';
+  readonly name: string = 'rowspan';
 
   /**
    * The default value of the attribute.
    */
-  readonly defaultValue = '';
+  readonly defaultValue = '1';
 
   /**
    * Validate that the attributes are correct.
@@ -18,7 +19,7 @@ export class XMLXSINamespaceAttribute extends AbstractAttribute {
    *
    * @returns boolean
    */
-  validate(value: string): boolean {
-    return true;
+  validate(value: number): boolean {
+    return (new OnlyNumbers()).validate(value, 'rowspan');
   }
 }

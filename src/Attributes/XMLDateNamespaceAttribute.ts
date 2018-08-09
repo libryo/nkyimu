@@ -18,7 +18,7 @@ export class XMLDateNamespaceAttribute extends AbstractAttribute {
    *
    * @returns boolean
    */
-  validate(value: number): boolean {
+  validate(value: string): boolean {
     return true;
   }
 }

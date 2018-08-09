@@ -1,10 +1,11 @@
 import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { Language } from "../SimpleTypes/Language";
 
-export class XMLXSINamespaceAttribute extends AbstractAttribute {
+export class XMLLangNamespaceAttribute extends AbstractAttribute {
   /**
    * The name of the attribute.
    */
-  readonly name: string = 'xmlns:xsi';
+  readonly name: string = 'xmlns:lang';
 
   /**
    * The default value of the attribute.
@@ -19,6 +20,6 @@ export class XMLXSINamespaceAttribute extends AbstractAttribute {
    * @returns boolean
    */
   validate(value: string): boolean {
-    return true;
+    return (new Language()).validate(value, 'xmlns:lang');
   }
 }

@@ -1,6 +1,10 @@
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { BaseHierarchy } from "./BaseHierarchy";
+
+const type = new BaseHierarchy();
 
 /**
  * The element citations is the section of the preamble that contains
@@ -9,7 +13,7 @@ import { BaseHierarchy } from "./BaseHierarchy";
 export class CitationHierarchy implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    ...(new BaseHierarchy()).CHILDREN_MAP,
+    ...type.CHILDREN_MAP,
     sequence: {
       options: {
         intro: { maxOccur: 1, options: {} },
@@ -23,4 +27,9 @@ export class CitationHierarchy implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new Corereq()).items
+  ];
 }

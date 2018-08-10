@@ -1,6 +1,7 @@
-import { DocumentType } from "../Groups/DocumentType";
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
+import { DocumentType } from "../Groups/DocumentType";
 
 const docType = new DocumentType();
 
@@ -19,4 +20,7 @@ export class AkomaNtosoType implements HasChildrenMap {
   };
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

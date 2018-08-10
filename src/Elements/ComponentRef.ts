@@ -1,6 +1,9 @@
 import { AbstractNode } from "../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../Interfaces/NodeRules";
 import { SrcType } from "./ComplexTypes/SrcType";
+
+const type = new SrcType();
 
 /**
  * The element componentRef is a reference to a separate manifestation-level
@@ -14,8 +17,12 @@ export class ComponentRef extends AbstractNode {
 
   nodeName = 'componentRef';
 
-  readonly CHILDREN_MAP: NodeRules = (new SrcType()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 
 }

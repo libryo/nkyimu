@@ -1,12 +1,11 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Meta extends AbstractNode {
   abbreviation = '';
 
   nodeName = 'meta';
-
-  protected nodeRx: RegExp = new RegExp('<identification>(<publication>)?(<classification>)*(<lifecycle>)*(<workflow>)*(<analysis>)*(<temporalData>)*(<references>)*(<notes>)*(<proprietary>)*(<presentation>)*');
 
   readonly CHILDREN_MAP: NodeRules = {
     identification: { maxOccur: 1, minOccur: 1, options: {} },
@@ -36,4 +35,5 @@ export class Meta extends AbstractNode {
     'presentation',
   ];
 
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [];
 }

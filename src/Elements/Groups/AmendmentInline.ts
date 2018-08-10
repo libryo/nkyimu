@@ -1,12 +1,13 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group amendmentInline lists the inline elements that
  * should be found in the preface of an amendment.
  */
 export class AmendmentInline implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -18,4 +19,7 @@ export class AmendmentInline implements HasChildrenMap {
       },
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

@@ -1,5 +1,6 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group ANtitleInline lists the elements that are inline,
@@ -7,7 +8,7 @@ import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
  * be used within the initial elements (preface, preamble and coverpage)
  */
 export class ANtitleInline implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -32,4 +33,7 @@ export class ANtitleInline implements HasChildrenMap {
       },
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

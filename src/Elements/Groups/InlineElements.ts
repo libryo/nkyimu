@@ -1,3 +1,4 @@
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { AmendmentInline } from "./AmendmentInline";
@@ -25,4 +26,7 @@ export class InlineElements implements HasChildrenMap {
       },
     }},
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

@@ -1,11 +1,13 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The blockListType is the type of element blockList
  */
 export class BlockListType implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     sequence: {
       options: {
@@ -15,4 +17,8 @@ export class BlockListType implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items
+  ];
 }

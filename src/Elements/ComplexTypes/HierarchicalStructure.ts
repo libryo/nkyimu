@@ -1,3 +1,6 @@
+import { Contains } from "../../AttributeGroups/Contains";
+import { Name } from "../../AttributeGroups/Name";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -29,7 +32,8 @@ export class HierarchicalStructure implements HasChildrenMap {
     'components:?'
   ];
 
-  static getRegExp(): RegExp {
-    return /<meta>(<coverPage>)?(<preface>)?(<preamble>)?<body>(<conclusions>)?(<attachments>)?(<components>)?/;
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Name()).items,
+    ...(new Contains()).items,
+  ];
 }

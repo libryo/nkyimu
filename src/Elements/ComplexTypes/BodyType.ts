@@ -1,3 +1,5 @@
+import { Coreopt } from "../../AttributeGroups/Coreopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { HierElements } from "../Groups/HierElements";
@@ -24,7 +26,7 @@ export class BodyType implements HasChildrenMap {
 
   readonly SEQUENCE: string[] = [];
 
-  static getRegExp():RegExp {
-    return new RegExp(`(<componentRef>|${HierElements.getRegExp().source})+`);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Coreopt()).items
+  ];
 }

@@ -1,3 +1,4 @@
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { ANblock } from "./ANblock";
@@ -20,10 +21,6 @@ export class BlockElements implements HasChildrenMap {
     }
   };
 
-  static getRegExp():RegExp {
-    const anBlock = ANblock.getRegExp().source;
-    const htmlBlock = HTMLblock.getRegExp().source;
-
-    return new RegExp(`((${anBlock})|(${htmlBlock})|<(foreign|block)>)`);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

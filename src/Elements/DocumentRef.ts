@@ -1,6 +1,9 @@
 import { AbstractNode } from "../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../Interfaces/NodeRules";
 import { LinkType } from "./ComplexTypes/LinkType";
+
+const type = new LinkType();
 
 /**
  * the element documentRef is a reference to a separate work- or expression-level
@@ -13,8 +16,12 @@ export class DocumentRef extends AbstractNode {
 
   nodeName = 'documentRef';
 
-  readonly CHILDREN_MAP: NodeRules = (new LinkType()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 
 }

@@ -1,6 +1,9 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { DocContainerType } from "../ComplexTypes/DocContainerType";
+
+const type = new DocContainerType();
 
 /**
  * The element attachment is used as a container of individual
@@ -11,8 +14,11 @@ export class Attachment extends AbstractNode {
 
   nodeName = 'attachment';
 
-  readonly CHILDREN_MAP: NodeRules = (new DocContainerType()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
 
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

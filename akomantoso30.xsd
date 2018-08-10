@@ -740,8 +740,7 @@ The group amendmentBlock lists the structures that should be found in an amendme
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>normalizedAtt</name>
-				<comment>
-The attribute normalized is used in the inline element quantity to provide a normalized value of the number, if appropriate.</comment>
+				<comment>The attribute normalized is used in the inline element quantity to provide a normalized value of the number, if appropriate.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="normalized" type="xsd:string"/>
@@ -751,8 +750,7 @@ The attribute normalized is used in the inline element quantity to provide a nor
 			<xsd:documentation>
 				<type>Attlist</type>
 				<name>for</name>
-				<comment>
-The attribute for is used in modification elements to specify the element this is a modification of.</comment>
+				<comment>The attribute for is used in modification elements to specify the element this is a modification of.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="for" type="eIdRef"/>
@@ -1054,8 +1052,7 @@ This attribute specifies whether the translation is authoritative or not</commen
 			<xsd:documentation>
 				<type>Simple</type>
 				<name>remarkType</name>
-				<comment>
-This is the list of allowed values for the type attribute of the remark element for the specification of editorial remarks (e.g., applauses, laughters, etc.) especially within debate records</comment>
+				<comment>This is the list of allowed values for the type attribute of the remark element for the specification of editorial remarks (e.g., applauses, laughters, etc.) especially within debate records</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -1752,8 +1749,7 @@ The complex type althierarchy is used by most or all the hierarchical elements o
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>blocksreq</name>
-				<comment>
-the complex type blocksreq defines the content model and attributes shared by all containers. Here the eId attribute is required</comment>
+				<comment>the complex type blocksreq defines the content model and attributes shared by all containers. Here the eId attribute is required</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
@@ -3704,8 +3700,7 @@ this element is a structural container for the section of an amendment containin
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>blockListType</name>
-				<comment>
-the blockListType is the type of element blockList</comment>
+				<comment>the blockListType is the type of element blockList</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -3865,8 +3860,7 @@ the blockListType is the type of element blockList</comment>
 			<xsd:documentation>
 				<type>Element</type>
 				<name>session</name>
-				<comment>
-the element session is an inline element within preface to identify the string used by the document for the session of the legislature relative to the document. Use #refersTo to a TLCEvent to refer to the event of the specific session.</comment>
+				<comment>the element session is an inline element within preface to identify the string used by the document for the session of the legislature relative to the document. Use #refersTo to a TLCEvent to refer to the event of the specific session.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
@@ -4707,8 +4701,7 @@ the complex type containerType is the content model for the generic element for 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>container</name>
-				<comment>
-the element container is a generic element for a container.</comment>
+				<comment>the element container is a generic element for a container.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>

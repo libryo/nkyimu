@@ -1,7 +1,7 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { NodeType } from "../../enums";
-import { HierarchicalStructure } from "../ComplexTypes/HierarchicalStructure";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { HierarchicalStructure } from "../ComplexTypes/HierarchicalStructure";
 
 const type = new HierarchicalStructure();
 
@@ -12,14 +12,16 @@ export class Act extends AbstractNode {
   abbreviation = '';
 
   nodeName = 'act';
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP
   };
-  
+
   readonly SEQUENCE: string[] = [
     ...type.SEQUENCE,
   ];
 
-  protected nodeRx: RegExp = HierarchicalStructure.getRegExp();
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

@@ -1,4 +1,6 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Toc extends AbstractNode {
@@ -16,4 +18,8 @@ export class Toc extends AbstractNode {
   };
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items,
+  ];
 }

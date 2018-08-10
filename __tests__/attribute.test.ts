@@ -5,6 +5,8 @@ import { ByAttribute } from '../src/Attributes/ByAttribute';
 import { CellpaddingAttribute } from '../src/Attributes/CellpaddingAttribute';
 import { CellspacingAttribute } from '../src/Attributes/CellspacingAttribute';
 import { ChoiceAttribute } from '../src/Attributes/ChoiceAttribute';
+import { ClassAttribute } from '../src/Attributes/ClassAttribute';
+import { ContainsAttribute } from '../src/Attributes/ContainsAttribute';
 import { DateAttribute } from '../src/Attributes/DateAttribute';
 import { DictionaryAttribute } from '../src/Attributes/DictionaryAttribute';
 import { DurationAttribute } from '../src/Attributes/DurationAttribute';
@@ -12,7 +14,7 @@ import { EIdAttribute } from '../src/Attributes/EIdAttribute';
 import { EmpoweredByAttribute } from '../src/Attributes/EmpoweredByAttribute';
 import { EndAttribute } from '../src/Attributes/EndAttribute';
 import { EndTimeAttribute } from '../src/Attributes/EndTimeAttribute';
-import { ForAttribute } from '../src/Attributes/ForAttribute';
+import { ForTypeAgentRefAttribute } from '../src/Attributes/ForTypeAgentRefAttribute';
 import { FromAttribute } from '../src/Attributes/FromAttribute';
 import { FromLanguageAttribute } from '../src/Attributes/FromLanguageAttribute';
 import { FrozenAttribute } from '../src/Attributes/FrozenAttribute';
@@ -25,14 +27,17 @@ import { NameAttribute } from '../src/Attributes/NameAttribute';
 import { NumberAttribute } from '../src/Attributes/NumberAttribute';
 import { OriginalTextAttribute } from '../src/Attributes/OriginalTextAttribute';
 import { OriginatingExpressionAttribute } from '../src/Attributes/OriginatingExpressionAttribute';
+import { PeriodAttribute } from '../src/Attributes/PeriodAttribute';
 import { PosAttribute } from '../src/Attributes/PosAttribute';
 import { RefersToAttribute } from '../src/Attributes/RefersToAttribute';
 import { SourceAttribute } from '../src/Attributes/SourceAttribute';
 import { StartAttribute } from '../src/Attributes/StartAttribute';
 import { StartTimeAttribute } from '../src/Attributes/StartTimeAttribute';
 import { StatusAttribute } from '../src/Attributes/StatusAttribute';
+import { StyleAttribute } from '../src/Attributes/StyleAttribute';
 import { TargetAttribute } from '../src/Attributes/TargetAttribute';
 import { TimeAttribute } from '../src/Attributes/TimeAttribute';
+import { TitleAttribute } from '../src/Attributes/TitleAttribute';
 import { ToAttribute } from '../src/Attributes/ToAttribute';
 import { TypeAttribute } from '../src/Attributes/TypeAttribute';
 import { TypeEventTypeAttribute } from '../src/Attributes/TypeEventTypeAttribute';
@@ -41,10 +46,12 @@ import { TypeRestrictionTypeAttribute } from '../src/Attributes/TypeRestrictionT
 import { TypeResultTypeAttribute } from '../src/Attributes/TypeResultTypeAttribute';
 import { UpToAttribute } from '../src/Attributes/UpToAttribute';
 import { ValueAttribute } from '../src/Attributes/ValueAttribute';
-
 import { WIdAttribute } from '../src/Attributes/WIdAttribute';
 import { XMLDateNamespaceAttribute } from '../src/Attributes/XMLDateNamespaceAttribute';
+import { XMLIdNamespaceAttribute } from '../src/Attributes/XMLIdNamespaceAttribute';
+import { XMLLangNamespaceAttribute } from '../src/Attributes/XMLLangNamespaceAttribute';
 import { XMLNamespaceAttribute } from '../src/Attributes/XMLNamespaceAttribute';
+import { XMLSpaceNamespaceAttribute } from '../src/Attributes/XMLSpaceNamespaceAttribute';
 import { XMLXSINamespaceAttribute } from '../src/Attributes/XMLXSINamespaceAttribute';
 
 /**
@@ -128,6 +135,29 @@ describe("Attributes test", () => {
     }).toThrow('choice: voteRef accepts only valid eIds in the form #abc');
   });
 
+  it("validates the ClassAttribute", () => {
+    const attr = new ClassAttribute('white');
+
+    expect(attr.getName()).toBe('class');
+    expect(attr.getValue()).toBe('white');
+  });
+
+  it("validates the ContainsAttribute", () => {
+    let attr = new ContainsAttribute('originalVersion');
+    expect(attr.getName()).toBe('contains');
+    expect(attr.getValue()).toBe('originalVersion');
+
+    attr = new ContainsAttribute('singleVersion');
+    expect(attr.getValue()).toBe('singleVersion');
+
+    attr = new ContainsAttribute('multipleVersions');
+    expect(attr.getValue()).toBe('multipleVersions');
+
+    expect(() => {
+      const fakeAttr = new ContainsAttribute('version 2');
+    }).toThrow('contains: versionType should be either originalVersion, singleVersion or multipleVersions');
+  });
+
   it("validates the DateAttribute", () => {
     // implement this
     const attr = new DateAttribute('2017');
@@ -194,14 +224,14 @@ describe("Attributes test", () => {
     expect(attr.getValue()).toBe('21:00');
   });
 
-  it("validates the ForAttribute", () => {
-    const attr = new ForAttribute('#something');
+  it("validates the ForTypeAgentRefAttribute", () => {
+    const attr = new ForTypeAgentRefAttribute('#something');
 
     expect(attr.getName()).toBe('for');
     expect(attr.getValue()).toBe('#something');
 
     expect(() => {
-      const fakeAttr = new ForAttribute('fake id');
+      const fakeAttr = new ForTypeAgentRefAttribute('fake id');
     }).toThrow('for: agentRef accepts only valid eIds in the form #abc');
   });
 
@@ -328,6 +358,17 @@ describe("Attributes test", () => {
     expect(attr.getValue()).toBe('some text');
   });
 
+  it("validates the PeriodAttribute", () => {
+    const attr = new PeriodAttribute('#real_id');
+
+    expect(attr.getName()).toBe('period');
+    expect(attr.getValue()).toBe('#real_id');
+
+    expect(() => {
+      const fakeAttr = new PeriodAttribute('fake id');
+    }).toThrow('period: temporalGroupRef accepts only valid eIds in the form #abc');
+  });
+
   it("validates the PosAttribute", () => {
     let attr = new PosAttribute('start');
     expect(attr.getName()).toBe('pos');
@@ -427,6 +468,13 @@ describe("Attributes test", () => {
     }).toThrow('status: statusType should be either removed, temporarilyRemoved, translated, editorial, edited, verbatim, incomplete, unknown, undefined or ignored');
   });
 
+  it("validates the StyleAttribute", () => {
+    const attr = new StyleAttribute('some style');
+
+    expect(attr.getName()).toBe('style');
+    expect(attr.getValue()).toBe('some style');
+  });
+
   it("validates the TargetAttribute", () => {
     const attr = new TargetAttribute('something');
 
@@ -453,6 +501,13 @@ describe("Attributes test", () => {
     expect(() =>  new TimeAttribute('13:00 pm')).toThrow('The time attribute expects a valid time');
     expect(() =>  new TimeAttribute('24:00')).toThrow('The time attribute expects a valid time');
     expect(() =>  new TimeAttribute('10:70')).toThrow('The time attribute expects a valid time');
+  });
+
+  it("validates the TitleAttribute", () => {
+    const attr = new TitleAttribute('This is Nkyimu');
+
+    expect(attr.getName()).toBe('title');
+    expect(attr.getValue()).toBe('This is Nkyimu');
   });
 
   it("validates the ToAttribute", () => {
@@ -544,5 +599,91 @@ describe("Attributes test", () => {
     expect(() => {
       const fakeAttr = new TypeResultTypeAttribute('new');
     }).toThrow('type: resultType should be either deny, dismiss, uphold, revert, replace, remit, decide or approve.');
+  });
+
+  it("validates the UpToAttribute", () => {
+    const attr = new UpToAttribute('#real_id');
+
+    expect(attr.getName()).toBe('upTo');
+    expect(attr.getValue()).toBe('#real_id');
+
+    expect(() => {
+      const fakeAttr = new UpToAttribute('fake id');
+    }).toThrow('upTo: eIdRef accepts only valid eIds in the form #abc');
+  });
+
+  it("validates the ValueAttribute", () => {
+    const attr = new ValueAttribute('This is Nkyimu');
+
+    expect(attr.getName()).toBe('value');
+    expect(attr.getValue()).toBe('This is Nkyimu');
+  });
+
+  it("validates the WIdAttribute", () => {
+    const attr = new WIdAttribute('#real_id');
+
+    expect(attr.getName()).toBe('wId');
+    expect(attr.getValue()).toBe('#real_id');
+
+    expect(() => {
+      const fakeAttr = new WIdAttribute('fake id');
+    }).toThrow('wId: noWhiteSpace should not contain any white spaces.');
+  });
+
+  it("validates the XMLDateNamespaceAttribute", () => {
+    const attr = new XMLDateNamespaceAttribute('2017');
+
+    expect(attr.getName()).toBe('xmlns:date');
+    expect(attr.getValue()).toBe('2017');
+  });
+
+  it("validates the XMLIdNamespaceAttribute", () => {
+    const attr = new XMLIdNamespaceAttribute('real_id');
+
+    expect(attr.getName()).toBe('xmlns:id');
+    expect(attr.getValue()).toBe('real_id');
+  });
+
+  it("validates the XMLLangNamespaceAttribute", () => {
+    let attr = new XMLLangNamespaceAttribute('en-GB');
+    expect(attr.getName()).toBe('xmlns:lang');
+    expect(attr.getValue()).toBe('en-GB');
+
+    attr = new XMLLangNamespaceAttribute('en-US');
+    expect(attr.getValue()).toBe('en-US');
+
+    attr = new XMLLangNamespaceAttribute('mr-IN');
+    expect(attr.getValue()).toBe('mr-IN');
+
+    expect(() => {
+      const fakeAttr = new XMLLangNamespaceAttribute('fake language');
+    }).toThrow('xmlns:lang: language accepts only valid RFC 4646 languages');
+  });
+
+  it("validates the XMLNamespaceAttribute", () => {
+    const attr = new XMLNamespaceAttribute('https://nkyimu.com');
+
+    expect(attr.getName()).toBe('xmlns');
+    expect(attr.getValue()).toBe('https://nkyimu.com');
+  });
+
+  it("validates the XMLSpaceNamespaceAttribute", () => {
+    let attr = new XMLSpaceNamespaceAttribute('default');
+    expect(attr.getName()).toBe('xmlns:space');
+    expect(attr.getValue()).toBe('default');
+
+    attr = new XMLSpaceNamespaceAttribute('preserve');
+    expect(attr.getValue()).toBe('preserve');
+
+    expect(() => {
+      const fakeAttr = new XMLSpaceNamespaceAttribute('fake space');
+    }).toThrow('xmlns:space: xml:space should be either default or preserve');
+  });
+
+  it("validates the XMLXSINamespaceAttribute", () => {
+    const attr = new XMLXSINamespaceAttribute('real xsi');
+
+    expect(attr.getName()).toBe('xmlns:xsi');
+    expect(attr.getValue()).toBe('real xsi');
   });
 });

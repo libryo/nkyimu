@@ -1,6 +1,9 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { BlockContainerType } from "../ComplexTypes/BlockContainerType";
+
+const type = new BlockContainerType();
 
 /**
  * The element blockContainer is used as a container of many
@@ -11,7 +14,11 @@ export class BlockContainer extends AbstractNode {
 
   nodeName = 'blockContainer';
 
-  readonly CHILDREN_MAP: NodeRules = (new BlockContainerType()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

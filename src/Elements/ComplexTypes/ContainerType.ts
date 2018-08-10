@@ -1,6 +1,9 @@
-import { BlockElements } from "../Groups/BlockElements";
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { Name } from "../../AttributeGroups/Name";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
+import { BlockElements } from "../Groups/BlockElements";
 
 /**
  * The complex type containerType is the content model for the generic
@@ -9,7 +12,7 @@ import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
  * a name to the element.
  */
 export class ContainerType implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       options: {
@@ -18,4 +21,9 @@ export class ContainerType implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items,
+    ...(new Name()).items,
+  ];
 }

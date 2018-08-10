@@ -1,6 +1,9 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { EolType } from "../ComplexTypes/EolType";
+
+const type = new EolType();
 
 /**
  * The element eop (end of page) is a marker for where in the
@@ -16,7 +19,11 @@ export class Eop extends AbstractNode {
 
   nodeName = 'eop';
 
-  readonly CHILDREN_MAP: NodeRules = (new EolType()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

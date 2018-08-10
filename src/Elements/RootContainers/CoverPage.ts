@@ -1,6 +1,9 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { Basicopt } from "../ComplexTypes/Basicopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { Basicopt } from "../ComplexTypes/Basicopt";
+
+const type = new Basicopt();
 
 /**
  * The element coverPage is used as a container of the text
@@ -11,10 +14,11 @@ export class CoverPage extends AbstractNode {
 
   nodeName = 'coverPage';
 
-  protected nodeRx: RegExp = Basicopt.getRegExp();
-
-  readonly CHILDREN_MAP: NodeRules = (new Basicopt()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
 
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

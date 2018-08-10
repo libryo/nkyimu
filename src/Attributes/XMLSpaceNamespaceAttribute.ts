@@ -21,6 +21,6 @@ export class XMLSpaceNamespaceAttribute extends AbstractAttribute {
    * @returns boolean
    */
   validate(value: string): boolean {
-    return (new XMLSpaceType()).validate(value);
+    return (new XMLSpaceType()).validate(value, 'xmlns:space');
   }
 }

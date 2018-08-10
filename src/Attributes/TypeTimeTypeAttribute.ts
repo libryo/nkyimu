@@ -1,11 +1,11 @@
 import { AbstractAttribute } from "../Abstract/AbstractAttribute";
-import { AgentRef } from "../SimpleTypes/AgentRef";
+import { TimeType } from "../SimpleTypes/TimeType";
 
-export class ForAttribute extends AbstractAttribute {
+export class TypeTimeTypeAttribute extends AbstractAttribute {
   /**
    * The name of the attribute.
    */
-  readonly name: string = 'for';
+  readonly name: string = 'type';
 
   /**
    * The default value of the attribute.
@@ -20,6 +20,6 @@ export class ForAttribute extends AbstractAttribute {
    * @returns boolean
    */
   validate(value: string): boolean {
-    return (new AgentRef()).validate(value, 'for');
+    return (new TimeType()).validate(value, 'type');
   }
 }

@@ -1,12 +1,13 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group ANhier lists the elements that belong to the Akoma Ntoso
  * legislative hierarchy
  */
 export class ANhier implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -41,13 +42,8 @@ export class ANhier implements HasChildrenMap {
       },
     }},
   };
-  
-  private static ELEMENTS: string[] = [
-    
-  ];
 
-  static getRegExp():RegExp {
-    return new RegExp(`<${ANhier.ELEMENTS.join('|')}>`);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }
 

@@ -1,3 +1,7 @@
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { For } from "../../AttributeGroups/For";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
+import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { InlineCM } from "../Groups/InlineCM";
 
@@ -8,7 +12,7 @@ import { InlineCM } from "../Groups/InlineCM";
  * of inline elements. Attribute for is used to point
  * to the eId of the corresponding ref element.
  */
-export class ModType {
+export class ModType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
@@ -20,4 +24,9 @@ export class ModType {
       }
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items,
+    ...(new For()).items,
+  ];
 }

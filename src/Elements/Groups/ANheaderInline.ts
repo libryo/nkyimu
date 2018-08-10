@@ -1,5 +1,6 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group ANheaderInline lists the elements that are inline, are
@@ -7,7 +8,7 @@ import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
  * within the header element
  */
 export class ANheaderInline implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -23,4 +24,7 @@ export class ANheaderInline implements HasChildrenMap {
       },
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

@@ -1,3 +1,7 @@
+import { Core } from "../../AttributeGroups/Core";
+import { Idopt } from "../../AttributeGroups/Idopt";
+import { Linkopt } from "../../AttributeGroups/Linkopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -14,4 +18,10 @@ export class AnyOtherType implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Core()).items,
+    ...(new Idopt()).items,
+    ...(new Linkopt()).items,
+  ];
 }

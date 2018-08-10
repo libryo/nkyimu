@@ -1,6 +1,10 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { Role } from "../../AttributeGroups/Role";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Inline } from "../ComplexTypes/Inline";
+
+const type = new Inline();
 
 /**
  * The element docProponent is an inline element within preface
@@ -11,7 +15,12 @@ export class DocProponent extends AbstractNode {
 
   nodeName = 'docProponent';
 
-  readonly CHILDREN_MAP: NodeRules = (new Inline()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new Role()).items,
+  ];
 }

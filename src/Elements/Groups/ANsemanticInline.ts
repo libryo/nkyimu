@@ -1,12 +1,13 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group ANsemanticInline lists additional elements that are
  * inline, and are specific to the Akoma Ntoso vocabulary
  */
 export class ANsemanticInline implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -29,4 +30,7 @@ export class ANsemanticInline implements HasChildrenMap {
       },
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

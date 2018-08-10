@@ -1,5 +1,6 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group ANblock lists the elements that are blocks and are specific to
@@ -18,8 +19,7 @@ export class ANblock implements HasChildrenMap {
       }
     }
   };
-  
-  static getRegExp(): RegExp {
-    return new RegExp('<(blockList|blocktblock|container|toc)>');
-  }
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

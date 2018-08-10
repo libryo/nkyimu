@@ -1,3 +1,4 @@
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -26,8 +27,7 @@ export class DocumentType implements HasChildrenMap {
     }
   };
 
-  static getRegExp():RegExp {
-    return /<amendmentList|officialGazette|documentCollection|act|bill|debateReport|debate|statement|amendment|judgment|portion|doc>/;
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }
 

@@ -1,6 +1,10 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { Date as DateGroup } from '../../AttributeGroups/Date';
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Inline } from "../ComplexTypes/Inline";
+
+const type = new Inline();
 
 /**
  * the element docDate is an inline element within preface to
@@ -13,7 +17,12 @@ export class DocDate extends AbstractNode {
 
   nodeName = 'docDate';
 
-  readonly CHILDREN_MAP: NodeRules = (new Inline()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new DateGroup()).items,
+  ];
 }

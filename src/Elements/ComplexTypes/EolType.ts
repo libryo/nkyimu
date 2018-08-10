@@ -1,3 +1,7 @@
+import { Number as NumberGroup } from "../../AttributeGroups/Number";
+import { BreakAtAttribute } from "../../Attributes/BreakAtAttribute";
+import { BreakWithAttribute } from "../../Attributes/BreakWithAttribute";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Markeropt } from "./Markeropt";
@@ -11,4 +15,11 @@ import { Markeropt } from "./Markeropt";
 export class EolType extends Markeropt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {};
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Markeropt()).ATTRIBUTE_GROUPS,
+    ...(new NumberGroup()).items,
+    { attribute: BreakAtAttribute, required: false },
+    { attribute: BreakWithAttribute, required: false },
+  ];
 }

@@ -1,6 +1,6 @@
 import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
 import { EmpoweredByAttribute } from "../Attributes/EmpoweredByAttribute";
-import { ForAttribute } from "../Attributes/ForAttribute";
+import { ForTypeAgentRefAttribute } from "../Attributes/ForTypeAgentRefAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { Role } from "./Role";
 
@@ -18,7 +18,7 @@ export class LawyerAtts extends AbstractAttributeGroup {
    */
   readonly items: AttributeGroupItem[] = [
     ...(new Role()).items,
-    { attribute: ForAttribute, required: false },
+    { attribute: ForTypeAgentRefAttribute, required: false },
     { attribute: EmpoweredByAttribute, required: false },
   ];
 }

@@ -1,3 +1,5 @@
+import { Coreopt } from "../../AttributeGroups/Coreopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { BlockElements } from "../Groups/BlockElements";
@@ -16,4 +18,8 @@ export class Blocksopt implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Coreopt()).items
+  ];
 }

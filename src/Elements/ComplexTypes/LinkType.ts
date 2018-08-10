@@ -1,3 +1,8 @@
+import { Core } from "../../AttributeGroups/Core";
+import { Idreq } from "../../AttributeGroups/Idreq";
+import { Link } from "../../AttributeGroups/Link";
+import { Show } from "../../AttributeGroups/Show";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -9,4 +14,11 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class LinkType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {};
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Core()).items,
+    ...(new Idreq()).items,
+    ...(new Link()).items,
+    ...(new Show()).items,
+  ];
 }

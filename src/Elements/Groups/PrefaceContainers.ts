@@ -1,5 +1,6 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group prefaceContainers lists the elements that are containers
@@ -17,8 +18,7 @@ export class PrefaceContainers implements HasChildrenMap {
       }
     }
   };
-  
-  static getRegExp(): RegExp {
-    return new RegExp('<(longTitle|formula|container)>');
-  }
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

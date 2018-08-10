@@ -1,6 +1,10 @@
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { HierElements } from "../Groups/HierElements";
 import { BaseHierarchy } from "./BaseHierarchy";
+
+const type = new BaseHierarchy();
 
 /**
  * The complex type hierarchy is used by most or all the hierarchical
@@ -9,7 +13,7 @@ import { BaseHierarchy } from "./BaseHierarchy";
 export class Hierarchy extends BaseHierarchy {
 
   readonly CHILDREN_MAP: NodeRules = {
-    ...(new BaseHierarchy()).CHILDREN_MAP,
+    ...type.CHILDREN_MAP,
     choice: {
       maxOccur: 1,
       options: {
@@ -30,4 +34,9 @@ export class Hierarchy extends BaseHierarchy {
       }
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new Corereq()).items,
+  ];
 }

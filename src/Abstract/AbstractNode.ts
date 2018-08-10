@@ -1,4 +1,5 @@
 import { NodeType } from '../enums';
+import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
 import { Attributes } from '../Interfaces/Attributes';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
 import { NodeRules } from '../Interfaces/NodeRules';
@@ -46,6 +47,11 @@ export abstract class AbstractNode implements HasChildrenMap {
    * should be set.
    */
   readonly abstract SEQUENCE: string[];
+
+  /**
+   * The attributes that are required in the node.
+   */
+  readonly abstract ATTRIBUTE_GROUPS: AttributeGroupItem[] = [];
 
   /**
    * List of attributes to be added to the node
@@ -157,6 +163,9 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     const rule = this.extractRule(node, this.CHILDREN_MAP);
     this.validateNode(node, rule);
+
+    /** let's finally check if the node has valid children and attributes */
+    node.validate();
   }
 
   /**
@@ -304,6 +313,43 @@ export abstract class AbstractNode implements HasChildrenMap {
           /** Carry on to the next sequence item */
           return false;
         });
+    }
+  }
+
+  /**
+   * Check whether the node is considered valid.
+   */
+  validate() {
+    this.validateAttributes();
+  }
+
+  /**
+   * Validate the required attributes.
+   *
+   * @throws Error
+   */
+  validateAttributes() {
+    const required = this.ATTRIBUTE_GROUPS
+      .filter(e => e.required === true)
+      .map(e => e.attribute.name);
+
+    if (required.length === 0) return;
+
+    const keys = Object.keys(this.attributes);
+
+    if (keys.length === 0) {
+      throw new Error(`Element ${this.nodeName} is missing required attributes: ${required.join(', ')}`);
+    }
+
+    keys.forEach((e) => {
+      const index = required.indexOf(this.attributes[e].constructor.name);
+      if (index !== -1) {
+        required.splice(index, 1);
+      }
+    });
+
+    if (required.length > 0) {
+      throw new Error(`Element ${this.nodeName} is missing required attributes: ${required.join(', ')}`);
     }
   }
 

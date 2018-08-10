@@ -1,6 +1,10 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Inlinereqreq } from "../ComplexTypes/Inlinereqreq";
+
+const type = new Inlinereqreq();
+
 
 /**
  * The element object is is an inline element to identify a
@@ -12,7 +16,11 @@ export class Object extends AbstractNode {
 
   nodeName = 'object';
 
-  readonly CHILDREN_MAP: NodeRules = (new Inlinereqreq()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

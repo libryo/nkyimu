@@ -1,3 +1,5 @@
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { BlockElements } from "../Groups/BlockElements";
@@ -15,4 +17,8 @@ export class Blocksreq implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items
+  ];
 }

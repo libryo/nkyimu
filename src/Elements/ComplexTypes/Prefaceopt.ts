@@ -1,7 +1,9 @@
+import { Coreopt } from "../../AttributeGroups/Coreopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
+import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 import { BlockElements } from "../Groups/BlockElements";
 import { PrefaceContainers } from "../Groups/PrefaceContainers";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 
 /**
  * The complex type prefaceopt defines the content model and
@@ -18,10 +20,7 @@ export class Prefaceopt implements HasChildrenMap {
     }
   };
 
-  static getRegExp():RegExp {
-    const block = BlockElements.getRegExp().source;
-    const containers = PrefaceContainers.getRegExp().source;
-
-    return new RegExp(`((${block})|(${containers}))+`);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Coreopt()).items,
+  ];
 }

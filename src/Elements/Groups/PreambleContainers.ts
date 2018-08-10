@@ -1,5 +1,6 @@
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
  * The group preambleContainers lists the elements that are containers
@@ -19,7 +20,6 @@ export class PreambleContainers implements HasChildrenMap {
     }
   };
 
-  static getRegExp(): RegExp {
-    return new RegExp('<(recitals|citations|formula|container)>');
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

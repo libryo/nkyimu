@@ -1,6 +1,10 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { OriginalText } from "../../AttributeGroups/OriginalText";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Inline } from "../ComplexTypes/Inline";
+
+const type = new Inline();
 
 /**
  * the element placeholder is an inline element containing the text of a
@@ -12,7 +16,12 @@ export class Placeholder extends AbstractNode {
 
   nodeName = 'placeholder';
 
-  readonly CHILDREN_MAP: NodeRules = (new Inline()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new OriginalText()).items,
+  ];
 }

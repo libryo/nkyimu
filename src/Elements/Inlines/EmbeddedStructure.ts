@@ -1,6 +1,11 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { Linkopt } from "../../AttributeGroups/Linkopt";
+import { Quote } from "../../AttributeGroups/Quote";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { SubFlowStructure } from "../ComplexTypes/SubFlowStructure";
+
+const type = new SubFlowStructure();
 
 /**
  * The element embeddedStructure is a subFlow element containing
@@ -15,7 +20,13 @@ export class EmbeddedStructure extends AbstractNode {
 
   nodeName = 'embeddedStructure';
 
-  readonly CHILDREN_MAP: NodeRules = (new SubFlowStructure()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new Quote()).items,
+    ...(new Linkopt()).items,
+  ];
 }

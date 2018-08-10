@@ -1,3 +1,4 @@
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -7,7 +8,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
  * elements
  */
 export class BaseHierarchy implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       options: {
@@ -16,9 +17,8 @@ export class BaseHierarchy implements HasChildrenMap {
         subheading: { options: {} },
       }
     }
-  }; 
+  };
 
-  static getRegExp():RegExp {
-    return new RegExp(/((<num>)?(<heading>)?(<subheading>)?)*/);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

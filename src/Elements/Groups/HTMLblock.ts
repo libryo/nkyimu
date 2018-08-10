@@ -1,3 +1,4 @@
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -6,7 +7,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
  * inherited from the HTML vocabulary
  */
 export class HTMLblock implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       maxOccur: 1,
@@ -19,7 +20,6 @@ export class HTMLblock implements HasChildrenMap {
     }
   };
 
-  static getRegExp(): RegExp {
-    return new RegExp('<(ul|ol|table|p)>');
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

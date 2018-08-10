@@ -1,7 +1,9 @@
-import { BlockElements } from "../Groups/BlockElements";
-import { BasicContainers } from "../Groups/BasicContainers";
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { Coreopt } from "../../AttributeGroups/Coreopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
+import { NodeRules } from "../../Interfaces/NodeRules";
+import { BasicContainers } from "../Groups/BasicContainers";
+import { BlockElements } from "../Groups/BlockElements";
 
 /**
  * the complex type basicopt defines the content model and attributes
@@ -9,7 +11,7 @@ import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
  * Here the eId attribute is optional.
  */
 export class Basicopt implements HasChildrenMap {
-  
+
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
       options: {
@@ -19,10 +21,7 @@ export class Basicopt implements HasChildrenMap {
     }
   };
 
-  static getRegExp():RegExp {
-    const block = BlockElements.getRegExp().source;
-    const basic = BasicContainers.getRegExp().source;
-
-    return new RegExp(`(${block}|${basic})+`);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Coreopt()).items
+  ];
 }

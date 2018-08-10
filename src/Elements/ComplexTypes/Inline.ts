@@ -1,3 +1,6 @@
+import { Coreopt } from "../../AttributeGroups/Coreopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
+import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { InlineCM } from "../Groups/InlineCM";
 
@@ -6,7 +9,7 @@ import { InlineCM } from "../Groups/InlineCM";
  * attributes shared by all blocks and inlines. Here the
  * eId attribute is optional
  */
-export class Inline {
+export class Inline implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
@@ -16,4 +19,8 @@ export class Inline {
       }
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Coreopt()).items,
+  ];
 }

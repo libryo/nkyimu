@@ -1,6 +1,9 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { Preambleopt } from "../ComplexTypes/Preambleopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { Preambleopt } from "../ComplexTypes/Preambleopt";
+
+const type = new Preambleopt();
 
 /**
  * The element preamble is used as a container of the text that opens
@@ -11,10 +14,11 @@ export class Preamble extends AbstractNode {
 
   nodeName = 'preamble';
 
-  protected nodeRx: RegExp = Preambleopt.getRegExp();
-
-  readonly CHILDREN_MAP: NodeRules = (new Preambleopt()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
 
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

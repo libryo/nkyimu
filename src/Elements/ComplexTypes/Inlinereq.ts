@@ -1,3 +1,5 @@
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { InlineCM } from "../Groups/InlineCM";
 
@@ -16,4 +18,8 @@ export class Inlinereq {
       }
     },
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items,
+  ];
 }

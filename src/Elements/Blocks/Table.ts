@@ -1,4 +1,7 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { TableAtts } from "../../AttributeGroups/TableAtts";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 /**
@@ -22,5 +25,10 @@ export class Table extends AbstractNode {
   readonly SEQUENCE: string[] = [
     'caption:?',
     'tr',
+  ];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items,
+    ...(new TableAtts()).items,
   ];
 }

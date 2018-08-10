@@ -1,6 +1,7 @@
-import { ANhier } from './ANhier';
-import { NodeRules } from '../../Interfaces/NodeRules';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
 import { HasChildrenMap } from '../../Interfaces/HasChildrenMap';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { ANhier } from './ANhier';
 
 /**
  * The group hierElements lists all the elements that are hierarchical
@@ -16,10 +17,7 @@ export class HierElements implements HasChildrenMap {
       }
     }
   };
-  
-  static getRegExp():RegExp {
-    const base = ANhier.getRegExp().source;
 
-    return new RegExp(`(${base}|<hcontainer>)`);
-  }
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  ];
 }

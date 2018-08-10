@@ -1,6 +1,10 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
+import { LawyerAtts } from "../../AttributeGroups/LawyerAtts";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Inlinereqreq } from "../ComplexTypes/Inlinereqreq";
+
+const type = new Inlinereqreq();
 
 /**
  * The element lawyer is an inline element within judgments to identify where
@@ -13,7 +17,12 @@ export class Lawyer extends AbstractNode {
 
   nodeName = 'lawyer';
 
-  readonly CHILDREN_MAP: NodeRules = (new Inlinereqreq()).CHILDREN_MAP;
+  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
   readonly SEQUENCE: string[] = [];
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+    ...(new LawyerAtts()).items,
+  ];
 }

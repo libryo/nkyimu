@@ -1,3 +1,5 @@
+import { Corereq } from "../../AttributeGroups/Corereq";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { ANcontainers } from "../Groups/ANcontainers";
@@ -47,4 +49,8 @@ export class SubFlowStructure implements HasChildrenMap {
       }
     }
   };
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Corereq()).items,
+  ];
 }

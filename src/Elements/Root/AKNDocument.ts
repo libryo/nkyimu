@@ -1,10 +1,10 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { NodeType } from "../../enums";
-import { XMLXSINamespaceAttribute } from "../../Attributes/XMLXSINamespaceAttribute";
 import { XMLDateNamespaceAttribute } from "../../Attributes/XMLDateNamespaceAttribute";
 import { XMLNamespaceAttribute } from "../../Attributes/XMLNamespaceAttribute";
-import { AkomaNtosoType } from "../ComplexTypes/AkomaNtosoType";
+import { XMLXSINamespaceAttribute } from "../../Attributes/XMLXSINamespaceAttribute";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { AkomaNtosoType } from "../ComplexTypes/AkomaNtosoType";
 
 const aknType = new AkomaNtosoType();
 
@@ -18,12 +18,14 @@ export class AKNDocument extends AbstractNode {
   readonly CHILDREN_MAP: NodeRules = {
     ...aknType.CHILDREN_MAP
   };
-  
+
   readonly SEQUENCE: string[] = [
     ...aknType.SEQUENCE,
   ];
 
-  protected nodeRx: RegExp = new RegExp('.+');
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...aknType.ATTRIBUTE_GROUPS,
+  ];
 
   constructor() {
     super();
@@ -39,7 +41,7 @@ export class AKNDocument extends AbstractNode {
 
   /**
    * Get the generated document.
-   * 
+   *
    * @returns Document
    */
   getDocument(): Document {
@@ -48,7 +50,7 @@ export class AKNDocument extends AbstractNode {
 
   /**
    * Serialize the document to xml string
-   * 
+   *
    * @returns string
    */
   toXML(): string {

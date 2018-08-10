@@ -1,6 +1,7 @@
 import { AbstractNode } from "../../Abstract/AbstractNode";
-import { BodyType } from "../ComplexTypes/BodyType";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
+import { BodyType } from "../ComplexTypes/BodyType";
 
 const type = new BodyType();
 
@@ -13,8 +14,6 @@ export class Body extends AbstractNode {
 
   nodeName = 'body';
 
-  protected nodeRx: RegExp = BodyType.getRegExp();
-
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP
   };
@@ -23,4 +22,7 @@ export class Body extends AbstractNode {
     ...type.SEQUENCE
   ];
 
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...type.ATTRIBUTE_GROUPS,
+  ];
 }

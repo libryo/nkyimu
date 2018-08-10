@@ -1,3 +1,5 @@
+import { Coreopt } from "../../AttributeGroups/Coreopt";
+import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { HasChildrenMap } from "../../Interfaces/HasChildrenMap";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
@@ -8,4 +10,8 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class Markeropt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {};
+
+  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+    ...(new Coreopt()).items,
+  ];
 }

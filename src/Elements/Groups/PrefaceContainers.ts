@@ -9,7 +9,8 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class PrefaceContainers implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    preCont: {
+      minOccur: 1,
       maxOccur: 1,
       options: {
         longTitle: { maxOccur: 1, options: {} },

@@ -9,11 +9,13 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class BlockListType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    sequence: {
+    blkLstTypeSeq: {
+      minOccur: 1,
+      maxOccur: 1,
       options: {
-        listIntroduction: { maxOccur: 1, options: {} },
+        listIntroduction: { minOccur: 0, maxOccur: 1, options: {} },
         item: { minOccur: 1, options: {} },
-        listWrapUp: { maxOccur: 1, options: {} },
+        listWrapUp: { minOccur: 0, maxOccur: 1, options: {} },
       }
     }
   };

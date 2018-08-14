@@ -14,9 +14,11 @@ export class Table extends AbstractNode {
   nodeName = 'table';
 
   readonly CHILDREN_MAP: NodeRules = {
-    sequence: {
+    tblSeq: {
+      minOccur: 1,
+      maxOccur: 1,
       options: {
-        caption: { options: {} },
+        caption: { minOccur: 0, maxOccur: 1, options: {} },
         tr: { minOccur: 1, options: {} },
       },
     },

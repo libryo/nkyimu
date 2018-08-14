@@ -11,10 +11,16 @@ import { BlockElements } from "../Groups/BlockElements";
 export class Blocksopt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    sequence: {
+    blkOptSeq: {
       minOccur: 0,
       options: {
-        ...(new BlockElements()).CHILDREN_MAP,
+        blkOptSeqGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BlockElements()).CHILDREN_MAP,
+          }
+        }
       }
     }
   };

@@ -9,10 +9,10 @@ export class Toc extends AbstractNode {
   nodeName = 'toc';
 
   readonly CHILDREN_MAP: NodeRules = {
-    sequence: {
+    tocSeq: {
       minOccur: 1,
       options: {
-        tocItem: { minOccur: 1, options: {} },
+        tocItem: { minOccur: 1, maxOccur: 1, options: {} },
       }
     }
   };

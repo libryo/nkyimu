@@ -12,14 +12,18 @@ const type = new HierElements();
  */
 export class BodyType implements HasChildrenMap {
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    bodyTypes: {
+      choice: true,
+      minOccur: 1,
       options: {
-        choice: {
+        bodyTypeGrps: {
+          minOccur: 1,
+          maxOccur: 1,
           options: {
-            ...type.CHILDREN_MAP.choice.options
+            ...type.CHILDREN_MAP
           },
         },
-        componentRef: { maxOccur: 1, options: {} },
+        componentRef: { minOccur: 1, maxOccur: 1, options: {} },
       }
     }
   };

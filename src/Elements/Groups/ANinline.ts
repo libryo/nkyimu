@@ -9,7 +9,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class ANinline implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    anIns: {
       maxOccur: 1,
       minOccur: 1,
       options: {
@@ -31,6 +31,7 @@ export class ANinline implements HasChildrenMap {
         placeholder: { maxOccur: 1, options: {} },
         fillIn: { maxOccur: 1, options: {} },
         decoration: { maxOccur: 1, options: {} },
+        '': { minOccur: 0, options: {} },
       },
     },
   };

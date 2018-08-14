@@ -74,8 +74,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    * requires to set the content should create a method
    * "setContent" and also override the "toXML" method.
    */
-  protected content ?: string;
-
+  protected content = '';
 
   /**
    * Extract the nodes from the nested CHILDREN_MAP object.
@@ -84,18 +83,15 @@ export abstract class AbstractNode implements HasChildrenMap {
    */
   private extractNodeNames(rules: NodeRules): string[] {
     const keys = Object.keys(rules);
+    let children: string[] = [];
 
-    let children = [
-      ...keys.filter(e => e !== 'choice')
-    ];
+    keys.forEach((key) => {
+      if (Object.keys(rules[key].options).length > 0) {
+        children = children.concat(this.extractNodeNames(rules[key].options));
+      }
 
-    if (keys.indexOf('choice') !== -1) {
-      children = children.concat(this.extractNodeNames(rules.choice.options));
-    }
-
-    if (keys.indexOf('sequence') !== -1) {
-      children = children.concat(this.extractNodeNames(rules.sequence.options));
-    }
+      children.push(key);
+    });
 
     return children;
   }
@@ -103,7 +99,7 @@ export abstract class AbstractNode implements HasChildrenMap {
   /**
    * Setup the required validation parameters.
    */
-  protected setupValidationParams(): void {
+  private setupValidationParams(): void {
     this.allowedChildren = this.extractNodeNames(this.CHILDREN_MAP);
     this.SEQUENCE.forEach((e, index) => {
       if (e.indexOf('?') === -1) {
@@ -162,6 +158,11 @@ export abstract class AbstractNode implements HasChildrenMap {
     }
 
     const rule = this.extractRule(node, this.CHILDREN_MAP);
+
+    if (!rule) {
+      throw new Error(`Node ${node.nodeName} is not allowed as a child.`);
+    }
+
     this.validateNode(node, rule);
 
     /** let's finally check if the node has valid children and attributes */
@@ -181,7 +182,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    *
    * @returns Rule
    */
-  private extractRule(node: AbstractNode, rules: NodeRules, isChoice = false, choiceMinOccur ?: number, choiceMaxOccur ?: number): Rule {
+  private extractRule(node: AbstractNode, rules: NodeRules, isChoice = false, choiceMinOccur ?: number, choiceMaxOccur ?: number): Rule|null {
     /** Extract the keys from the rule */
     const keys = Object.keys(rules);
 
@@ -195,26 +196,19 @@ export abstract class AbstractNode implements HasChildrenMap {
       };
     }
 
-    /** Since the node is not present as a key, get the options */
-    if (keys.indexOf('choice') !== -1) {
-      return this.extractRule(
-        node,
-        rules['choice'].options,
-        true,
-        rules['choice'].minOccur,
-        rules['choice'].maxOccur
-      );
-    }
+    let rule = null;
 
-    if (keys.indexOf('sequence') !== -1) {
-      return this.extractRule(
-        node,
-        rules['sequence'].options,
-        true,
-        rules['sequence'].minOccur,
-        rules['sequence'].maxOccur
-      );
-    }
+    keys.some((key) => {
+      if (Object.keys(rules[key].options).length > 0) {
+        rule = this.extractRule(node, rules[key].options, rules[key].isChoice, rules[key].minOccur, rules[key].maxOccur);
+
+        if (rule) return true;
+      }
+
+      return false;
+    });
+
+    if (rule) return rule;
 
     /** Lastly, lets check if there is any present */
     if (keys.indexOf('any') !== -1) {
@@ -226,7 +220,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       };
     }
 
-    throw new Error(`Node ${node.nodeName} is not allowed as a child.`);
+    return null;
   }
 
   /**
@@ -354,21 +348,12 @@ export abstract class AbstractNode implements HasChildrenMap {
   }
 
   /**
-   * Get the regex version of the node.
-   *
-   * @returns string
-   */
-  toRegex(): string {
-    return `<${this.nodeName}>`;
-  }
-
-  /**
    * Serialize the node.
    *
    * @param doc Document
    * @returns HTMLElement
    */
-  toXml(doc: Document): HTMLElement {
+  toXml(doc: Document): HTMLElement|Text {
     const node = doc.createElement(this.nodeName);
 
     Object.keys(this.attributes).forEach((attr: string) => {

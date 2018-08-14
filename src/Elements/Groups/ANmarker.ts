@@ -9,7 +9,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class ANmarker implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    anms: {
       maxOccur: 1,
       options: {
         noteRef: { maxOccur: 1, options: {} },

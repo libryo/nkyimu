@@ -13,7 +13,8 @@ import { HTMLinline } from "./HTMLinline";
  */
 export class InlineElements implements HasChildrenMap {
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    inels: {
+      minOccur: 1,
       maxOccur: 1,
       options: {
         ...(new ANinline()).CHILDREN_MAP,

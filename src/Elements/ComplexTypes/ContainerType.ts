@@ -14,10 +14,17 @@ import { BlockElements } from "../Groups/BlockElements";
 export class ContainerType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    conTypes: {
+      minOccur: 1,
       options: {
-        ...(new BlockElements()).CHILDREN_MAP,
-        container: { maxOccur: 1, options: {} }
+        conTypesGroup: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BlockElements()).CHILDREN_MAP
+          }
+        },
+        container: { minOccur: 1, maxOccur: 1, options: {} }
       }
     }
   };

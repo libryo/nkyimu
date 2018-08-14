@@ -14,23 +14,34 @@ export class Hierarchy extends BaseHierarchy {
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
-    choice: {
+    hieChoice: {
+      choice: true,
+      minOccur: 1,
       maxOccur: 1,
       options: {
-        sequence: {
+        hieChoiceSeq: {
+          minOccur: 1,
+          maxOccur: 1,
           options: {
-            intro: { maxOccur: 1, options: {} },
-            choice: {
+            intro: { minOccur: 1, maxOccur: 1, options: {} },
+            hieChoiceSeqChoice: {
+              minOccur: 0,
               options: {
-                componentRef: { maxOccur: 1, options: {} },
-                ...(new HierElements()).CHILDREN_MAP,
-                crossHeading: { maxOccur: 1, options: {} },
+                componentRef: { minOccur: 1, maxOccur: 1, options: {} },
+                hieChoiceSeqChoiceGrp: {
+                  minOccur: 1,
+                  maxOccur: 1,
+                  options: {
+                    ...(new HierElements()).CHILDREN_MAP,
+                  }
+                },
+                crossHeading: { minOccur: 1, maxOccur: 1, options: {} },
               }
             },
-            wrapUp: { maxOccur: 1, options: {} },
+            wrapUp: { minOccur: 0, maxOccur: 1, options: {} },
           },
         },
-        content: { maxOccur: 1, options: {} },
+        content: { minOccur: 1, maxOccur: 1, options: {} },
       }
     },
   };

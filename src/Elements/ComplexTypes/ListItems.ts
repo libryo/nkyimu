@@ -10,12 +10,12 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class ListItems implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    sequence: {
-      options: {
-        li: { minOccur: 1, options: {} }
-      }
-    }
+    li: { minOccur: 1, options: {} }
   };
+
+  readonly SEQUENCE: string[] = [
+    'li'
+  ];
 
   readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,

@@ -9,7 +9,7 @@ import { ANsubFlow } from "./ANsubFlow";
 export class SubFlowElements implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    subEls: {
       maxOccur: 1,
       minOccur: 1,
       options: {

@@ -10,16 +10,18 @@ export class ANcontainers implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     choice: {
+      choice: true,
+      minOccur: 1,
       maxOccur: 1,
       options: {
-        speechGroup: { maxOccur: 1, options: {} },
-        speech: { maxOccur: 1, options: {} },
-        question: { maxOccur: 1, options: {} },
-        answer: { maxOccur: 1, options: {} },
-        other: { maxOccur: 1, options: {} },
-        scene: { maxOccur: 1, options: {} },
-        narrative: { maxOccur: 1, options: {} },
-        summary: { maxOccur: 1, options: {} },
+        speechGroup: { minOccur: 1, maxOccur: 1, options: {} },
+        speech: { minOccur: 1, maxOccur: 1, options: {} },
+        question: { minOccur: 1, maxOccur: 1, options: {} },
+        answer: { minOccur: 1, maxOccur: 1, options: {} },
+        other: { minOccur: 1, maxOccur: 1, options: {} },
+        scene: { minOccur: 1, maxOccur: 1, options: {} },
+        narrative: { minOccur: 1, maxOccur: 1, options: {} },
+        summary: { minOccur: 1, maxOccur: 1, options: {} },
       }
     }
   };

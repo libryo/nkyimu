@@ -12,11 +12,20 @@ const docType = new DocumentType();
 export class AkomaNtosoType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    ...docType.CHILDREN_MAP,
-    components: {
+    aknSeq: {
       minOccur: 1,
-      options: {}
-    }
+      maxOccur: 1,
+      options: {
+        aknSeqSeq: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...docType.CHILDREN_MAP,
+          }
+        },
+        components: { minOccur: 0, maxOccur: 1, options: {} }
+      }
+    },
   };
 
   readonly SEQUENCE: string[] = [];

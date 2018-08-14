@@ -12,10 +12,24 @@ import { PrefaceContainers } from "../Groups/PrefaceContainers";
 export class Prefaceopt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    prefOptsChoice: {
+      choice: true,
+      minOccur: 1,
       options: {
-        ...(new BlockElements()).CHILDREN_MAP,
-        ...(new PrefaceContainers()).CHILDREN_MAP,
+        preOptsChoiceBlkElGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BlockElements()).CHILDREN_MAP,
+          }
+        },
+        prefOptsChoicePrefContGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new PrefaceContainers()).CHILDREN_MAP,
+          }
+        }
       }
     }
   };

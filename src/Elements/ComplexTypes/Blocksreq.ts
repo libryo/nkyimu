@@ -11,9 +11,16 @@ import { BlockElements } from "../Groups/BlockElements";
 export class Blocksreq implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    sequence: {
+    blkSeq: {
+      minOccur: 0,
       options: {
-        ...(new BlockElements()).CHILDREN_MAP,
+        blkSeqGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BlockElements()).CHILDREN_MAP,
+          }
+        }
       }
     }
   };

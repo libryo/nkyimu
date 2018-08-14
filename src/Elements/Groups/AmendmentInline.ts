@@ -9,13 +9,13 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class AmendmentInline implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    amdInLineSeq: {
       maxOccur: 1,
       minOccur: 1,
       options: {
-        affectedDocument: { maxOccur: 1, options: {} },
-        relatedDocument: { maxOccur: 1, options: {} },
-        change: { maxOccur: 1, options: {} },
+        affectedDocument: { minOccur: 1, maxOccur: 1, options: {} },
+        relatedDocument: { minOccur: 1, maxOccur: 1, options: {} },
+        change: { minOccur: 1, maxOccur: 1, options: {} },
       },
     },
   };

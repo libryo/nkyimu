@@ -9,7 +9,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class HTMLmarker implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    htmlMs: {
       maxOccur: 1,
       minOccur: 1,
       options: {

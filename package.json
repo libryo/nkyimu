@@ -57,5 +57,8 @@
       }
     },
     "collectCoverage": true
+  },
+  "dependencies": {
+    "country-data": "^0.0.31"
   }
 }

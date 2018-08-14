@@ -1045,6 +1045,13 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+country-data@^0.0.31:
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/country-data/-/country-data-0.0.31.tgz#80966b8e1d147fa6d6a589d32933f8793774956d"
+  dependencies:
+    currency-symbol-map "~2"
+    underscore ">1.4.4"
+
 cpx@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/cpx/-/cpx-1.5.0.tgz#185be018511d87270dedccc293171e37655ab88f"
@@ -1142,6 +1149,10 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-0.3.1.tgz#6da9b4cff1bc5d716e6e5fe8e04fcb1b50a49adf"
   dependencies:
     cssom "0.3.x"
+
+currency-symbol-map@~2:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/currency-symbol-map/-/currency-symbol-map-2.2.0.tgz#2b3c1872ff1ac2ce595d8273e58e1fff0272aea2"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -4652,6 +4663,10 @@ uglifyjs-webpack-plugin@^1.2.4:
     uglify-es "^3.3.4"
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
+
+underscore@>1.4.4:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
 
 union-value@^1.0.0:
   version "1.0.0"

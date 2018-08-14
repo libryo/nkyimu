@@ -10,17 +10,19 @@ export class RecitalHierarchy implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
-    sequence: {
+    recHeiSeq: {
       maxOccur: 1,
       options: {
-        intro: { maxOccur: 1, options: {} },
-        choice: {
+        intro: { minOccur: 0, maxOccur: 1, options: {} },
+        recHeiSeqChoice: {
+          choice: true,
+          minOccur: 1,
           options: {
-            componentRef: { maxOccur: 1, options: {} },
-            recital: { maxOccur: 1, options: {} },
+            componentRef: { minOccur: 1, maxOccur: 1, options: {} },
+            recital: { minOccur: 1, maxOccur: 1, options: {} },
           }
         },
-        wrapUp: { maxOccur: 1, options: {} },
+        wrapUp: { minOccur: 0, maxOccur: 1, options: {} },
       }
     }
   };

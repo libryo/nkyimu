@@ -13,10 +13,24 @@ import { BlockElements } from "../Groups/BlockElements";
 export class Basicopt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    bOpts: {
+      choice: true,
+      minOccur: 1,
       options: {
-        ...(new BlockElements()).CHILDREN_MAP,
-        ...(new BasicContainers()).CHILDREN_MAP,
+        bOptsBlkEls: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BlockElements()).CHILDREN_MAP
+          }
+        },
+        bOptsBscConts: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BasicContainers()).CHILDREN_MAP,
+          }
+        },
       }
     }
   };

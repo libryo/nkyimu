@@ -9,7 +9,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class HTMLinline implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    htmlIns: {
       maxOccur: 1,
       minOccur: 1,
       options: {

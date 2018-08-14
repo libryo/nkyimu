@@ -12,7 +12,10 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class AnyOtherType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    aots: {
+      choice: true,
+      minOccur: 1,
+      maxOccur: 1,
       options: {
         any: { minOccur: 0, options: {} },
       }

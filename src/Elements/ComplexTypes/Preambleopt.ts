@@ -12,11 +12,24 @@ import { PreambleContainers } from "../Groups/PreambleContainers";
 export class Preambleopt implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
-      maxOccur: 1,
+    preOptsChoice: {
+      choice: true,
+      minOccur: 1,
       options: {
-        ...(new BlockElements()).CHILDREN_MAP,
-        ...(new PreambleContainers()).CHILDREN_MAP,
+        preOptsChoiceBlkElGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new BlockElements()).CHILDREN_MAP,
+          }
+        },
+        preOptsChoicePreContGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new PreambleContainers()).CHILDREN_MAP,
+          }
+        }
       }
     }
   };

@@ -14,13 +14,21 @@ export class DocContainerType extends BaseHierarchy {
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
-    choice: {
+    docConType: {
+      choice: true,
+      minOccur: 1,
       maxOccur: 1,
       options: {
-        ...(new DocumentType()).CHILDREN_MAP,
-        interstitial: { maxOccur: 1, options: {} },
-        toc: { maxOccur: 1, options: {} },
-        documentRef: { maxOccur: 1, options: {} },
+        docConTypeGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new DocumentType()).CHILDREN_MAP,
+          }
+        },
+        interstitial: { minOccur:1, maxOccur: 1, options: {} },
+        toc: { minOccur:1, maxOccur: 1, options: {} },
+        documentRef: { minOccur:1, maxOccur: 1, options: {} },
       }
     }
   };

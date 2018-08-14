@@ -10,11 +10,13 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class BaseHierarchy implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    bHies: {
+      choice: true,
+      minOccur: 0,
       options: {
-        num: { options: {} },
-        heading: { options: {} },
-        subheading: { options: {} },
+        num: { minOccur: 0, maxOccur: 1, options: {} },
+        heading: { minOccur: 0, maxOccur: 1, options: {} },
+        subheading: { minOccur: 0, maxOccur: 1, options: {} },
       }
     }
   };

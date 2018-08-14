@@ -10,7 +10,7 @@ import { HTMLmarker } from "./HTMLmarker";
 export class MarkerElements implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    mEls: {
       maxOccur: 1,
       minOccur: 1,
       options: {

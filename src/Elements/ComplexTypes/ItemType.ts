@@ -15,7 +15,7 @@ export class ItemType extends BaseHierarchy {
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
-    sequence: {
+    itmTypeSeq: {
       minOccur: 1,
       options: {
         ...(new BlockElements()).CHILDREN_MAP

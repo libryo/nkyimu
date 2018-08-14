@@ -14,16 +14,20 @@ export class CitationHierarchy implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
-    sequence: {
+    citHeiSeq: {
+      minOccur: 1,
+      maxOccur: 1,
       options: {
-        intro: { maxOccur: 1, options: {} },
-        choice: {
+        intro: { minOccur: 0, maxOccur: 1, options: {} },
+        citHeiSeqChoice: {
+          choice: true,
+          minOccur: 1,
           options: {
             componentRef: { maxOccur: 1, options: {} },
             citation: { maxOccur: 1, options: {} },
           }
         },
-        wrapUp: { maxOccur: 1, options: {} },
+        wrapUp: { minOccur: 0, maxOccur: 1, options: {} },
       }
     }
   };

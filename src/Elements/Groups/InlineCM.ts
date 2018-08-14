@@ -11,7 +11,8 @@ import { SubFlowElements } from "./SubFlowElements";
  */
 export class InlineCM implements HasChildrenMap {
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    inCMs: {
+      minOccur: 1,
       maxOccur: 1,
       options: {
         ...(new InlineElements()).CHILDREN_MAP,

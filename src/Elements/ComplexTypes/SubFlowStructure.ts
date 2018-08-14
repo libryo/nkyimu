@@ -14,36 +14,67 @@ import { HierElements } from "../Groups/HierElements";
  */
 export class SubFlowStructure implements HasChildrenMap {
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    subfStrChoice: {
+      choice: true,
       minOccur: 1,
       maxOccur: 1,
       options: {
-        ...(new DocumentType()).CHILDREN_MAP,
-
-        choice: {
+        subfStrChoiceDocTypeGrp: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new DocumentType()).CHILDREN_MAP,
+          }
+        },
+        subfStrChoiceChoice: {
+          choice: true,
           minOccur: 1,
           options: {
-            ...(new BlockElements()).CHILDREN_MAP,
-            ...(new ContainerElements()).CHILDREN_MAP,
-            tr: { maxOccur: 1, options: {} },
-            th: { maxOccur: 1, options: {} },
-            td: { maxOccur: 1, options: {} },
-            ...(new HierElements()).CHILDREN_MAP,
-            content: { maxOccur: 1, options: {} },
-            ...(new ANcontainers()).CHILDREN_MAP,
-            formula: { maxOccur: 1, options: {} },
-            recitals: { maxOccur: 1, options: {} },
-            citations: { maxOccur: 1, options: {} },
-            longTitle: { maxOccur: 1, options: {} },
-            recital: { maxOccur: 1, options: {} },
-            citation: { maxOccur: 1, options: {} },
-            componentRef: { maxOccur: 1, options: {} },
-            documentRef: { maxOccur: 1, options: {} },
-            intro: { maxOccur: 1, options: {} },
-            wrapUp: { maxOccur: 1, options: {} },
-            heading: { maxOccur: 1, options: {} },
-            subheading: { maxOccur: 1, options: {} },
-            num: { maxOccur: 1, options: {} },
+            subfStrChoiceBlkElsGrp: {
+              minOccur: 1,
+              maxOccur: 1,
+              options: {
+                ...(new BlockElements()).CHILDREN_MAP,
+              }
+            },
+            subfStrChoiceContElsGrp: {
+              minOccur: 1,
+              maxOccur: 1,
+              options: {
+                ...(new ContainerElements()).CHILDREN_MAP,
+              }
+            },
+            tr: { minOccur: 1, maxOccur: 1, options: {} },
+            th: { minOccur: 1, maxOccur: 1, options: {} },
+            td: { minOccur: 1, maxOccur: 1, options: {} },
+            subfStrChoiceHierElsGrp: {
+              minOccur: 1,
+              maxOccur: 1,
+              options: {
+                ...(new HierElements()).CHILDREN_MAP,
+              }
+            },
+            content: { minOccur: 1, maxOccur: 1, options: {} },
+            subfStrChoiceAnContsGrp: {
+              minOccur: 1,
+              maxOccur: 1,
+              options: {
+                ...(new ANcontainers()).CHILDREN_MAP,
+              }
+            },
+            formula: { minOccur: 1, maxOccur: 1, options: {} },
+            recitals: { minOccur: 1, maxOccur: 1, options: {} },
+            citations: { minOccur: 1, maxOccur: 1, options: {} },
+            longTitle: { minOccur: 1, maxOccur: 1, options: {} },
+            recital: { minOccur: 1, maxOccur: 1, options: {} },
+            citation: { minOccur: 1, maxOccur: 1, options: {} },
+            componentRef: { minOccur: 1, maxOccur: 1, options: {} },
+            documentRef: { minOccur: 1, maxOccur: 1, options: {} },
+            intro: { minOccur: 1, maxOccur: 1, options: {} },
+            wrapUp: { minOccur: 1, maxOccur: 1, options: {} },
+            heading: { minOccur: 1, maxOccur: 1, options: {} },
+            subheading: { minOccur: 1, maxOccur: 1, options: {} },
+            num: { minOccur: 1, maxOccur: 1, options: {} },
           },
         },
       }

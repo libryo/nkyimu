@@ -12,13 +12,13 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class HierarchicalStructure implements HasChildrenMap {
   readonly CHILDREN_MAP: NodeRules = {
     meta: { maxOccur: 1, minOccur: 1, options: {} },
-    coverPage: { maxOccur: 1, options: {} },
-    preface: { maxOccur: 1, options: {} },
-    preamble: { maxOccur: 1, options: {} },
-    body: { maxOccur: 1, minOccur: 1, options: {} },
-    conclusions: { maxOccur: 1, options: {} },
-    attachments: { maxOccur: 1, options: {} },
-    components: { maxOccur: 1, options: {} },
+    coverPage: { minOccur: 0, maxOccur: 1, options: {} },
+    preface: { minOccur: 0, maxOccur: 1, options: {} },
+    preamble: { minOccur: 0, maxOccur: 1, options: {} },
+    body: { minOccur: 1, maxOccur: 1, options: {} },
+    conclusions: { minOccur: 0, maxOccur: 1, options: {} },
+    attachments: { minOccur: 0, maxOccur: 1, options: {} },
+    components: { minOccur: 0, maxOccur: 1, options: {} },
   };
 
   readonly SEQUENCE: string[] = [

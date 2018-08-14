@@ -15,12 +15,19 @@ import { InlineCM } from "../Groups/InlineCM";
 export class ModType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    modTypeChoice: {
+      choice: true,
       minOccur: 0,
       options: {
-        ...(new InlineCM()).CHILDREN_MAP,
-        quotedText: { minOccur: 1, options: {} },
-        quotedStructure: { minOccur: 1, options: {} },
+        modTypeChoiceInCM: {
+          minOccur: 1,
+          maxOccur: 1,
+          options: {
+            ...(new InlineCM()).CHILDREN_MAP,
+          }
+        },
+        quotedText: { minOccur: 1, maxOccur: 1, options: {} },
+        quotedStructure: { minOccur: 1, maxOccur: 1, options: {} },
       }
     },
   };

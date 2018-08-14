@@ -12,17 +12,27 @@ export class BlockContainerType implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
     ...(new BaseHierarchy()).CHILDREN_MAP,
-    sequence: {
+    blkConTypeSeq: {
+      minOccur: 1,
+      maxOccur: 1,
       options: {
-        intro: { minOccur: 1, options: {} },
-        choice: {
+        intro: { minOccur: 0, maxOccur: 1, options: {} },
+        blkConTypeSeqCh: {
+          choice: true,
+          minOccur: 1,
           options: {
-            componentRef: { minOccur: 1, options: {} },
-            ...(new BlockElements()).CHILDREN_MAP,
-            crossHeading: { minOccur: 1, options: {} },
+            componentRef: { minOccur: 1, maxOccur: 1, options: {} },
+            grpBlkEls: {
+              minOccur: 1,
+              maxOccur: 1,
+              options: {
+                ...(new BlockElements()).CHILDREN_MAP,
+              }
+            },
+            crossHeading: { minOccur: 1, maxOccur: 1, options: {} },
           }
         },
-        wrapUp: { maxOccur: 1, options: {} },
+        wrapUp: { maxOccur: 1, minOccur: 0, options: {} },
       }
     }
   };

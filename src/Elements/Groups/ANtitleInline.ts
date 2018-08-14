@@ -10,7 +10,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class ANtitleInline implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    antIns: {
       maxOccur: 1,
       minOccur: 1,
       options: {

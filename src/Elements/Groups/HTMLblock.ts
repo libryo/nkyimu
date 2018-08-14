@@ -9,7 +9,8 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class HTMLblock implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    htmlBlks: {
+      minOccur: 1,
       maxOccur: 1,
       options: {
         ul: { maxOccur: 1, options: {} },

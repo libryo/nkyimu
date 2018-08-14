@@ -9,13 +9,15 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class ANblock implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    anBlks: {
+      choice: true,
       maxOccur: 1,
+      minOccur: 1,
       options: {
-        blockList: { maxOccur: 1, options: {} },
-        blockContainer: { maxOccur: 1, options: {} },
-        tblock: { maxOccur: 1, options: {} },
-        toc: { maxOccur: 1, options: {} },
+        blockList: { minOccur: 1, maxOccur: 1, options: {} },
+        blockContainer: { minOccur: 1, maxOccur: 1, options: {} },
+        tblock: { minOccur: 1, maxOccur: 1, options: {} },
+        toc: { minOccur: 1, maxOccur: 1, options: {} },
       }
     }
   };

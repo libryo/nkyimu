@@ -247,15 +247,15 @@ describe("Attributes test", () => {
   });
 
   it("validates the FromLanguageAttribute", () => {
-    let attr = new FromLanguageAttribute('en');
+    let attr = new FromLanguageAttribute('swa');
     expect(attr.getName()).toBe('fromLanguage');
-    expect(attr.getValue()).toBe('en');
+    expect(attr.getValue()).toBe('swa');
 
-    attr = new FromLanguageAttribute('en-US');
-    expect(attr.getValue()).toBe('en-US');
+    attr = new FromLanguageAttribute('eng');
+    expect(attr.getValue()).toBe('eng');
 
-    attr = new FromLanguageAttribute('mr-IN');
-    expect(attr.getValue()).toBe('mr-IN');
+    attr = new FromLanguageAttribute('chp');
+    expect(attr.getValue()).toBe('chp');
 
 
     expect(() => {
@@ -264,10 +264,10 @@ describe("Attributes test", () => {
   });
 
   it("validates the FrozenAttribute", () => {
-    const attr = new FrozenAttribute('en-US');
+    const attr = new FrozenAttribute('chp');
 
     expect(attr.getName()).toBe('frozen');
-    expect(attr.getValue()).toBe('en-US');
+    expect(attr.getValue()).toBe('chp');
   });
 
   it("validates the GUIDAttribute", () => {
@@ -300,15 +300,15 @@ describe("Attributes test", () => {
   });
 
   it("validates the LanguageAttribute", () => {
-    let attr = new LanguageAttribute('en');
+    let attr = new LanguageAttribute('eng');
     expect(attr.getName()).toBe('language');
-    expect(attr.getValue()).toBe('en');
+    expect(attr.getValue()).toBe('eng');
 
-    attr = new LanguageAttribute('en-US');
-    expect(attr.getValue()).toBe('en-US');
+    attr = new LanguageAttribute('chp');
+    expect(attr.getValue()).toBe('chp');
 
-    attr = new LanguageAttribute('mr-IN');
-    expect(attr.getValue()).toBe('mr-IN');
+    attr = new LanguageAttribute('swa');
+    expect(attr.getValue()).toBe('swa');
 
     expect(() => {
       const fakeAttr = new LanguageAttribute('english');
@@ -645,15 +645,15 @@ describe("Attributes test", () => {
   });
 
   it("validates the XMLLangNamespaceAttribute", () => {
-    let attr = new XMLLangNamespaceAttribute('en-GB');
+    let attr = new XMLLangNamespaceAttribute('eng');
     expect(attr.getName()).toBe('xmlns:lang');
-    expect(attr.getValue()).toBe('en-GB');
+    expect(attr.getValue()).toBe('eng');
 
-    attr = new XMLLangNamespaceAttribute('en-US');
-    expect(attr.getValue()).toBe('en-US');
+    attr = new XMLLangNamespaceAttribute('chp');
+    expect(attr.getValue()).toBe('chp');
 
-    attr = new XMLLangNamespaceAttribute('mr-IN');
-    expect(attr.getValue()).toBe('mr-IN');
+    attr = new XMLLangNamespaceAttribute('swa');
+    expect(attr.getValue()).toBe('swa');
 
     expect(() => {
       const fakeAttr = new XMLLangNamespaceAttribute('fake language');

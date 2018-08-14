@@ -10,7 +10,8 @@ import { HTMLblock } from "./HTMLblock";
 export class BlockElements implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    blkEls: {
+      minOccur: 1,
       maxOccur: 1,
       options: {
         ...(new ANblock()).CHILDREN_MAP,

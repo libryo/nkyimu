@@ -1847,8 +1847,7 @@ the complex type metareq defines the content model and attributes shared by all 
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>metaopt</name>
-				<comment>
-the complex type metaopt defines the content model and attributes shared by all metadata elements. Here the eId attribute is optional</comment>
+				<comment>the complex type metaopt defines the content model and attributes shared by all metadata elements. Here the eId attribute is optional</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attributeGroup ref="core"/>
@@ -5029,8 +5028,7 @@ The element td is an HTML element and is used in Akoma Ntoso as in HTML, for a d
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>coreProperties</name>
-				<comment>
-The complexType coreProperties lists the identifying properties available at any of the FRBR hierarchy levels.</comment>
+				<comment>The complexType coreProperties lists the identifying properties available at any of the FRBR hierarchy levels.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -5048,8 +5046,7 @@ The complexType coreProperties lists the identifying properties available at any
 			<xsd:documentation>
 				<type>Group</type>
 				<name>workProperties</name>
-				<comment>
-The group workProperties lists the properties that are characteristics of the FRBR Work level.</comment>
+				<comment>The group workProperties lists the properties that are characteristics of the FRBR Work level.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -5066,8 +5063,7 @@ The group workProperties lists the properties that are characteristics of the FR
 			<xsd:documentation>
 				<type>Group</type>
 				<name>exprProperties</name>
-				<comment>
-The group exprProperties lists the properties that are characteristics of the FRBR Expression level.</comment>
+				<comment>The group exprProperties lists the properties that are characteristics of the FRBR Expression level.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -5083,8 +5079,7 @@ The group exprProperties lists the properties that are characteristics of the FR
 			<xsd:documentation>
 				<type>Group</type>
 				<name>manifProperties</name>
-				<comment>
-The group manifProperties lists the properties that are characteristics of the FRBR Manifestation level.</comment>
+				<comment>The group manifProperties lists the properties that are characteristics of the FRBR Manifestation level.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -5097,8 +5092,7 @@ The group manifProperties lists the properties that are characteristics of the F
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRWork</name>
-				<comment>
-The element FRBRWork is the metadata container of identifying properties related to the Work level according to the FRBR hierarchy</comment>
+				<comment>The element FRBRWork is the metadata container of identifying properties related to the Work level according to the FRBR hierarchy</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5116,8 +5110,7 @@ The element FRBRWork is the metadata container of identifying properties related
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRExpression</name>
-				<comment>
-The element FRBRExpression is the metadata container of identifying properties related to the Expression level according to the FRBR hierarchy</comment>
+				<comment>The element FRBRExpression is the metadata container of identifying properties related to the Expression level according to the FRBR hierarchy</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5135,8 +5128,7 @@ The element FRBRExpression is the metadata container of identifying properties r
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRManifestation</name>
-				<comment>
-The element FRBRManifestation is the metadata container of identifying properties related to the Manifestation level according to the FRBR hierarchy</comment>
+				<comment>The element FRBRManifestation is the metadata container of identifying properties related to the Manifestation level according to the FRBR hierarchy</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5154,8 +5146,7 @@ The element FRBRManifestation is the metadata container of identifying propertie
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRItem</name>
-				<comment>
-The element FRBRItem is the metadata container of identifying properties related to the Item level according to the FRBR hierarchy.</comment>
+				<comment>The element FRBRItem is the metadata container of identifying properties related to the Item level according to the FRBR hierarchy.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5164,8 +5155,7 @@ The element FRBRItem is the metadata container of identifying properties related
 			<xsd:documentation>
 				<type>Complex</type>
 				<name>valueType</name>
-				<comment>
-The type valueType specifies a value attribute to FRBR elements.</comment>
+				<comment>The type valueType specifies a value attribute to FRBR elements.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -5196,8 +5186,7 @@ The type booleanValueType specifies a boolean value attribute to FRBR elements.<
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRthis</name>
-				<comment>
-The element FRBRthis is the metadata property containing the IRI of the specific component of the document</comment>
+				<comment>The element FRBRthis is the metadata property containing the IRI of the specific component of the document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5206,8 +5195,7 @@ The element FRBRthis is the metadata property containing the IRI of the specific
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRuri</name>
-				<comment>
-The element FRBRuri is the metadata property containing the IRI of the whole document.</comment>
+				<comment>The element FRBRuri is the metadata property containing the IRI of the whole document.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5216,8 +5204,7 @@ The element FRBRuri is the metadata property containing the IRI of the whole doc
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRalias</name>
-				<comment>
-The element FRBRalias is the metadata property containing additional well-known names of the document in the respective level of the FRBR hierarchy</comment>
+				<comment>The element FRBRalias is the metadata property containing additional well-known names of the document in the respective level of the FRBR hierarchy</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5233,8 +5220,7 @@ The element FRBRalias is the metadata property containing additional well-known 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRdate</name>
-				<comment>
-The element FRBRdate is the metadata property containing a relevant date of the document in the respective level of the FRBR hierarchy. Attribute name specifies which actual date is contained here.</comment>
+				<comment>The element FRBRdate is the metadata property containing a relevant date of the document in the respective level of the FRBR hierarchy. Attribute name specifies which actual date is contained here.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5251,8 +5237,7 @@ The element FRBRdate is the metadata property containing a relevant date of the 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRauthor</name>
-				<comment>
-The element FRBRauthor is the metadata property containing a relevant author of the document in the respective level of the FRBR hierarchy. Attribute as specifies the role of the author.</comment>
+				<comment>The element FRBRauthor is the metadata property containing a relevant author of the document in the respective level of the FRBR hierarchy. Attribute as specifies the role of the author.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5269,8 +5254,7 @@ The element FRBRauthor is the metadata property containing a relevant author of 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRlanguage</name>
-				<comment>
-The element FRBRlanguage is the metadata property containing a RFC4646 (three-letter code) of the main human language used in the content of this expression</comment>
+				<comment>The element FRBRlanguage is the metadata property containing a RFC4646 (three-letter code) of the main human language used in the content of this expression</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -5307,8 +5291,7 @@ The element FRBRtranslation is the metadata property specifying the source of wh
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRsubtype</name>
-				<comment>
-The element FRBRsubtype is the metadata property containing a string for the specific subtype of the document to be used in the work-level IRI of this document</comment>
+				<comment>The element FRBRsubtype is the metadata property containing a string for the specific subtype of the document to be used in the work-level IRI of this document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5317,8 +5300,7 @@ The element FRBRsubtype is the metadata property containing a string for the spe
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRcountry</name>
-				<comment>
-The element FRBRcountry is the metadata property containing a ISO 3166-1 Alpha-2 code for the country or jurisdiction to be used in the work-level IRI of this document</comment>
+				<comment>The element FRBRcountry is the metadata property containing a ISO 3166-1 Alpha-2 code for the country or jurisdiction to be used in the work-level IRI of this document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5327,8 +5309,7 @@ The element FRBRcountry is the metadata property containing a ISO 3166-1 Alpha-2
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRnumber</name>
-				<comment>
-The element FRBRnumber is the metadata property containing a string or number for the number to be used in the work-level IRI of this document</comment>
+				<comment>The element FRBRnumber is the metadata property containing a string or number for the number to be used in the work-level IRI of this document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5337,8 +5318,7 @@ The element FRBRnumber is the metadata property containing a string or number fo
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRname</name>
-				<comment>
-The element FRBRname is the metadata property containing a string for the title to be used in the work-level IRI of this document</comment>
+				<comment>The element FRBRname is the metadata property containing a string for the title to be used in the work-level IRI of this document</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -5366,8 +5346,7 @@ The element FRBRportion is the metadata property containing the eId of the porti
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRformat</name>
-				<comment>
-The element FRBRformat is the metadata property containing the Internet Media Type specification for the data format to be used in the manifestation-level IRI of this document.</comment>
+				<comment>The element FRBRformat is the metadata property containing the Internet Media Type specification for the data format to be used in the manifestation-level IRI of this document.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>

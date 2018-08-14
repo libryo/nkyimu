@@ -12,7 +12,7 @@ import { InlineCM } from "../Groups/InlineCM";
 export class Inline implements HasChildrenMap {
 
   readonly CHILDREN_MAP: NodeRules = {
-    choice: {
+    ins: {
       minOccur: 0,
       options: {
         ...(new InlineCM()).CHILDREN_MAP,

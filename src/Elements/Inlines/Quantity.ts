@@ -17,7 +17,7 @@ const type = new Inlinereqreq();
 export class Quantity extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'quantity';
+  getNodeName(): string { return 'quantity'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

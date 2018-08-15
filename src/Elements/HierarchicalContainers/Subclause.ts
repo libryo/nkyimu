@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Subclause extends AbstractNode {
   abbreviation = 'scl';
 
-  nodeName = 'subclause';
+  getNodeName(): string { return 'subclause'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

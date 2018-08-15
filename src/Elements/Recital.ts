@@ -12,7 +12,7 @@ const type = new ItemType();
 export class Recital extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'recital';
+  getNodeName(): string { return 'recital'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

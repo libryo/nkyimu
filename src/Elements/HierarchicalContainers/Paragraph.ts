@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Paragraph extends AbstractNode {
   abbreviation = 'pg';
 
-  nodeName = 'paragraph';
+  getNodeName(): string { return 'paragraph'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -14,7 +14,7 @@ const type = new LinkType();
 export class DocumentRef extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'documentRef';
+  getNodeName(): string { return 'documentRef'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

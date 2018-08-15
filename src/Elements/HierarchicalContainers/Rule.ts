@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Rule extends AbstractNode {
   abbreviation = 'ru';
 
-  nodeName = 'rule';
+  getNodeName(): string { return 'rule'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

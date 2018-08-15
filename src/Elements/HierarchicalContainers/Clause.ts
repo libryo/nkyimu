@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Clause extends AbstractNode {
   abbreviation = 'cl';
 
-  nodeName = 'clause';
+  getNodeName(): string { return 'clause'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

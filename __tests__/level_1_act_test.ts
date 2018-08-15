@@ -45,7 +45,7 @@ describe("Level 1 Act test", () => {
       act.appendChild(meta);
       act.appendChild(conclusions);
     }).toThrow('The child node conclusions is unexpected. Expected is one of coverPage, preface, preamble, body');
-  
+
     expect(() => {
       act = new Act();
       act.appendChild(meta);
@@ -67,7 +67,7 @@ describe("Level 1 Act test", () => {
     act.appendChild(meta);
     act.appendChild(body);
     act.appendChild(conclusions);
-    
-    expect(act.getChildren().length).toBe(3);
+
+    expect(act.getNode().childNodes.length).toBe(3);
   });
 });

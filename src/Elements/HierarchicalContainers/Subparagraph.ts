@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Subparagraph extends AbstractNode {
   abbreviation = 'spg';
 
-  nodeName = 'subparagraph';
+  getNodeName(): string { return 'subparagraph'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

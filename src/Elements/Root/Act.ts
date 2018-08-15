@@ -11,7 +11,7 @@ const type = new HierarchicalStructure();
 export class Act extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'act';
+  getNodeName(): string { return 'act'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP

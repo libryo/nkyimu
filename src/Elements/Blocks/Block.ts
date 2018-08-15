@@ -14,7 +14,7 @@ const type = new Inline();
 export class Block extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'block';
+  getNodeName(): string { return 'block'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

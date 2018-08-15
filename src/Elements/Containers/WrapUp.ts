@@ -13,7 +13,7 @@ const type = new Blocksreq();
 export class WrapUp extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'wrapUp';
+  getNodeName(): string { return 'wrapUp'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

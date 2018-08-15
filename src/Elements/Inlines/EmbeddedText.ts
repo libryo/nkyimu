@@ -17,7 +17,7 @@ const type = new Inline();
 export class EmbeddedText extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'embeddedText';
+  getNodeName(): string { return 'embeddedText'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

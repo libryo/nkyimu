@@ -11,9 +11,9 @@ const type = new Inline();
  * title of the document.
  */
 export class ShortTitle extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'st';
 
-  nodeName = 'shortTitle';
+  getNodeName(): string { return 'shortTitle'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

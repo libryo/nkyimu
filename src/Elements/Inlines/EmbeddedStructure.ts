@@ -18,7 +18,7 @@ const type = new SubFlowStructure();
 export class EmbeddedStructure extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'embeddedStructure';
+  getNodeName(): string { return 'embeddedStructure'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

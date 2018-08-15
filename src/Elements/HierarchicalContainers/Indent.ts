@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Indent extends AbstractNode {
   abbreviation = 'in';
 
-  nodeName = 'indent';
+  getNodeName(): string { return 'indent'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

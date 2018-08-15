@@ -12,7 +12,7 @@ const type = new Inlinereqreq();
 export class Term extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'term';
+  getNodeName(): string { return 'term'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

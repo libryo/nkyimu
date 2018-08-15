@@ -13,7 +13,7 @@ const type = new ModType();
 export class Rmod extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'rmod';
+  getNodeName(): string { return 'rmod'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

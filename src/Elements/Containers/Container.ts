@@ -11,7 +11,7 @@ const type = new ContainerType();
 export class Container extends AbstractNode {
   abbreviation = 'co';
 
-  nodeName = 'container';
+  getNodeName(): string { return 'container'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Transitional extends AbstractNode {
   abbreviation = 'tra';
 
-  nodeName = 'transitional';
+  getNodeName(): string { return 'transitional'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

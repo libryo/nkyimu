@@ -15,7 +15,7 @@ const type = new Inline();
 export class Legislature extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'legislature';
+  getNodeName(): string { return 'legislature'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

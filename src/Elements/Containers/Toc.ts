@@ -6,7 +6,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class Toc extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'toc';
+  getNodeName(): string { return 'toc'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     tocSeq: {

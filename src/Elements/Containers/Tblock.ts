@@ -12,7 +12,7 @@ const type = new ItemType();
 export class Tblock extends AbstractNode {
   abbreviation = 'tbl';
 
-  nodeName = 'tblock';
+  getNodeName(): string { return 'tblock'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

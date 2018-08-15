@@ -15,7 +15,7 @@ const type = new SrcType();
 export class ComponentRef extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'componentRef';
+  getNodeName(): string { return 'componentRef'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

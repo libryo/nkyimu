@@ -14,7 +14,7 @@ const type = new Markeropt();
 export class NoteRef extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'noteRef';
+  getNodeName(): string { return 'noteRef'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

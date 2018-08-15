@@ -16,7 +16,7 @@ const type = new Blocksreq();
 export class Formula extends AbstractNode {
   abbreviation = 'fo';
 
-  nodeName = 'formula';
+  getNodeName(): string { return 'formula'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

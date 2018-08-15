@@ -12,7 +12,7 @@ const type = new Inlinereqreq();
 export class Location extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'location';
+  getNodeName(): string { return 'location'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

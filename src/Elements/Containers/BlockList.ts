@@ -12,7 +12,7 @@ const type = new BlockListType();
 export class BlockList extends AbstractNode {
   abbreviation = 'bll';
 
-  nodeName = 'blockList';
+  getNodeName(): string { return 'blockList'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

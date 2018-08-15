@@ -15,7 +15,7 @@ const type = new Inline();
 export class TocItem extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'tocItem';
+  getNodeName(): string { return 'tocItem'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

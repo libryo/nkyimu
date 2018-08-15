@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Sublist extends AbstractNode {
   abbreviation = 'sl';
 
-  nodeName = 'sublist';
+  getNodeName(): string { return 'sublist'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

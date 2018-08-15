@@ -13,7 +13,7 @@ const type = new CoreProperties();
 export class FRBRWork extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRWork';
+  getNodeName(): string { return 'FRBRWork'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,

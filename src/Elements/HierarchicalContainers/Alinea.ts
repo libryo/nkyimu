@@ -12,7 +12,7 @@ const type = new Hierarchy();
 export class Alinea extends AbstractNode {
   abbreviation = 'al';
 
-  nodeName = 'alinea';
+  getNodeName(): string { return 'alinea'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

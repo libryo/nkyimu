@@ -13,7 +13,7 @@ const type = new AnyOtherType();
 export class Foreign extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'foreign';
+  getNodeName(): string { return 'foreign'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

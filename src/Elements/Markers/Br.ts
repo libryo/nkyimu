@@ -12,7 +12,7 @@ const type = new Markeropt();
 export class Br extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'br';
+  getNodeName(): string { return 'br'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

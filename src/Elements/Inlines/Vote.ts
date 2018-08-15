@@ -14,7 +14,7 @@ const type = new Inline();
 export class Vote extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'vote';
+  getNodeName(): string { return 'vote'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

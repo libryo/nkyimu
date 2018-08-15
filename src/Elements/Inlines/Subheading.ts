@@ -13,7 +13,7 @@ const type = new Inlinereq();
 export class Subheading extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'subheading';
+  getNodeName(): string { return 'subheading'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

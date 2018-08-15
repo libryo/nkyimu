@@ -7,7 +7,7 @@ import { Source } from "../../AttributeGroups/Source";
 export class Identification extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'identification';
+  getNodeName(): string { return 'identification'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     FRBRWork: { minOccur:1, maxOccur: 1, options: {} },

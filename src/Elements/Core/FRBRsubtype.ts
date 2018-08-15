@@ -11,7 +11,7 @@ const type = new ValueType();
 export class FRBRsubtype extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRsubtype';
+  getNodeName(): string { return 'FRBRsubtype'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

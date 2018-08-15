@@ -14,7 +14,7 @@ const type = new Inlinereqreq();
 export class Entity extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'entity';
+  getNodeName(): string { return 'entity'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

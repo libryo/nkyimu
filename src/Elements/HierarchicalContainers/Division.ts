@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Division extends AbstractNode {
   abbreviation = 'di';
 
-  nodeName = 'division';
+  getNodeName(): string { return 'division'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

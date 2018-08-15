@@ -12,7 +12,7 @@ const type = new Inline();
 export class Del extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'del';
+  getNodeName(): string { return 'del'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

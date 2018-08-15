@@ -11,7 +11,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class Table extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'table';
+  getNodeName(): string { return 'table'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     tblSeq: {

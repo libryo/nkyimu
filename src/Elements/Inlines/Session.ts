@@ -14,7 +14,7 @@ const type = new Inline();
 export class Session extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'session';
+  getNodeName(): string { return 'session'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

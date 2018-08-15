@@ -12,7 +12,7 @@ const type = new ListItems();
 export class Ol extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'ol';
+  getNodeName(): string { return 'ol'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

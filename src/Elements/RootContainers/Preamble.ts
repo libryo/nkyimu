@@ -12,7 +12,7 @@ const type = new Preambleopt();
 export class Preamble extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'preamble';
+  getNodeName(): string { return 'preamble'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -11,7 +11,7 @@ const type = new Blocksreq();
 export class LongTitle extends AbstractNode {
   abbreviation = 'lt';
 
-  nodeName = 'longTitle';
+  getNodeName(): string { return 'longTitle'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

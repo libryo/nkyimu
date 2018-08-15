@@ -6,7 +6,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class Components extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'components';
+  getNodeName(): string { return 'components'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     component: { options: {} },

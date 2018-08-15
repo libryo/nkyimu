@@ -15,7 +15,7 @@ const type = new Inline();
 export class DocCommittee extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'docCommittee';
+  getNodeName(): string { return 'docCommittee'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

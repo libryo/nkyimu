@@ -11,7 +11,7 @@ const type = new ValueType();
 export class FRBRformat extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRformat';
+  getNodeName(): string { return 'FRBRformat'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

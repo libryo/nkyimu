@@ -12,7 +12,7 @@ const type = new ValueType();
 export class FRBRalias extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRalias';
+  getNodeName(): string { return 'FRBRalias'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

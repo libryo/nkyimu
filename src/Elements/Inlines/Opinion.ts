@@ -13,7 +13,7 @@ const type = new Inline();
 export class Opinion extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'opinion';
+  getNodeName(): string { return 'opinion'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

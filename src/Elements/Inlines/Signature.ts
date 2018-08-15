@@ -12,7 +12,7 @@ const type = new Inline();
 export class Signature extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'signature';
+  getNodeName(): string { return 'signature'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

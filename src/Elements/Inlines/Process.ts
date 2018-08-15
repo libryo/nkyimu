@@ -13,7 +13,7 @@ const type = new Inlinereqreq();
 export class Process extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'process';
+  getNodeName(): string { return 'process'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

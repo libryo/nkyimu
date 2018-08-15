@@ -12,7 +12,7 @@ const type = new BlockContainerType();
 export class BlockContainer extends AbstractNode {
   abbreviation = 'blc';
 
-  nodeName = 'blockContainer';
+  getNodeName(): string { return 'blockContainer'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

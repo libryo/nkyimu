@@ -12,7 +12,7 @@ const type = new Blocksopt();
 export class Header extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'header';
+  getNodeName(): string { return 'header'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

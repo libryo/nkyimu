@@ -14,7 +14,7 @@ const type = new Inline();
 export class Date extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'date';
+  getNodeName(): string { return 'date'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

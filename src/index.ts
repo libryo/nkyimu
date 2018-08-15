@@ -28,6 +28,10 @@ import { ShortTitle } from "./Elements/Inlines/ShortTitle";
 import { TextElement } from "./Elements/TextElement";
 import { LongTitle } from "./Elements/Containers/LongTitle";
 import { EIdAttribute } from "./Attributes/EIdAttribute";
+import { NkyimuComment } from "./Interfaces/NkyimuComment";
+import { NkyimuElement } from "./Interfaces/NkyimuElement";
+import { NkyimuText } from "./Interfaces/NkyimuText";
+import { AbstractNode } from "./Abstract/AbstractNode";
 
 // Generation of Wet Tropics of Queensland World Heritage Area Conservation Act 1994
 class TestDocument {
@@ -190,8 +194,38 @@ class TestDocument {
   }
 }
 
-const display = document.querySelector('#display');
+const generated = new TestDocument();
+const node = generated.getDocument().getElement();
+
+/** Lets display the original */
+let display = document.querySelector('#display');
 
 if (display) {
-  display.innerHTML = forDisplay((new TestDocument()).render());
+  display.innerHTML = forDisplay(generated.render());
 }
+
+/** Lets modify the Long title */
+const longTitle: NkyimuElement|null = node.querySelector('longTitle[eId="lt_1"]');
+
+if (longTitle) {
+  // Replace the longTitle text by replacing the node.
+  const pTag: AbstractNode = longTitle.source.firstChild();
+  pTag.replaceChild(new TextElement('Updated Long Title!!'), pTag.firstChild());
+
+
+  // Update the text
+  const textNode: AbstractNode = longTitle.source.firstChild().firstChild();
+  textNode.setTextContent('Updated Long Title');
+
+  // Remove the first child.
+  longTitle.source.removeChild(longTitle.source.firstChild());
+}
+
+display = document.querySelector('#updated_display');
+
+if (display) {
+  display.innerHTML = forDisplay(generated.render());
+}
+
+
+

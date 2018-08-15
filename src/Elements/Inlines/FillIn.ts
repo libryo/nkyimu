@@ -17,7 +17,7 @@ const type = new Inline();
 export class FillIn extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'fillIn';
+  getNodeName(): string { return 'fillIn'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

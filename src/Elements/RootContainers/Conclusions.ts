@@ -11,7 +11,7 @@ const type = new Basicopt();
 export class Conclusions extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'conclusions';
+  getNodeName(): string { return 'conclusions'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -12,7 +12,7 @@ const type = new Inline();
 export class ListWrapUp extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'listWrapUp';
+  getNodeName(): string { return 'listWrapUp'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

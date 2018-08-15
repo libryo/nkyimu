@@ -12,7 +12,7 @@ const type = new Inlinereqreq();
 export class Event extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'event';
+  getNodeName(): string { return 'event'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

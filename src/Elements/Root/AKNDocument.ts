@@ -9,11 +9,7 @@ import { AkomaNtosoType } from "../ComplexTypes/AkomaNtosoType";
 const aknType = new AkomaNtosoType();
 
 export class AKNDocument extends AbstractNode {
-  private doc: Document;
-
   abbreviation = '';
-
-  nodeName = 'akomaNtoso';
 
   readonly CHILDREN_MAP: NodeRules = {
     ...aknType.CHILDREN_MAP
@@ -27,10 +23,8 @@ export class AKNDocument extends AbstractNode {
     ...aknType.ATTRIBUTE_GROUPS,
   ];
 
-  constructor() {
-    super();
-    this.doc = new Document();
-    this.setRootAttributes();
+  getNodeName() {
+    return 'akomaNtoso';
   }
 
   setRootAttributes() {
@@ -40,24 +34,20 @@ export class AKNDocument extends AbstractNode {
   }
 
   /**
-   * Get the generated document.
-   *
-   * @returns Document
-   */
-  getDocument(): Document {
-    return this.doc;
-  }
-
-  /**
    * Serialize the document to xml string
    *
    * @returns string
    */
   toXML(): string {
+    const doc = new Document();
+    this.setRootAttributes();
+
+    this.updateGeneratedIds();
+
     const serializer = new XMLSerializer();
 
-    this.doc.appendChild(super.toXml(this.doc));
+    doc.appendChild(this.getNode());
 
-    return serializer.serializeToString(this.doc);
+    return serializer.serializeToString(doc);
   }
 }

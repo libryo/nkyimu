@@ -12,7 +12,7 @@ const type = new Inlinereqreq();
 export class Role extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'role';
+  getNodeName(): string { return 'role'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

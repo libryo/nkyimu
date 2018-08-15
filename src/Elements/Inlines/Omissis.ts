@@ -13,7 +13,7 @@ const type = new Inline();
 export class Omissis extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'omissis';
+  getNodeName(): string { return 'omissis'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

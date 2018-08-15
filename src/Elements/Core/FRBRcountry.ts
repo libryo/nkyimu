@@ -11,7 +11,7 @@ const type = new ValueType();
 export class FRBRcountry extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRcountry';
+  getNodeName(): string { return 'FRBRcountry'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

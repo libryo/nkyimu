@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Title extends AbstractNode {
   abbreviation = 't';
 
-  nodeName = 'title';
+  getNodeName(): string { return 'title'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

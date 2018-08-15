@@ -13,7 +13,7 @@ const type = new Blocksreq();
 export class Div extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'div';
+  getNodeName(): string { return 'div'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

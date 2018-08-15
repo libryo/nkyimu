@@ -5,7 +5,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class Meta extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'meta';
+  getNodeName(): string { return 'meta'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     identification: { maxOccur: 1, minOccur: 1, options: {} },

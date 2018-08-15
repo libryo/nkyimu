@@ -12,7 +12,7 @@ const type = new SubFlowStructure();
 export class SubFlow extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'subFlow';
+  getNodeName(): string { return 'subFlow'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -11,7 +11,7 @@ const type = new Inline();
 export class Outcome extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'outcome';
+  getNodeName(): string { return 'outcome'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

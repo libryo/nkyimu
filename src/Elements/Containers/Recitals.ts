@@ -10,7 +10,7 @@ const type = new RecitalHierarchy();
 export class Recitals extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'recitals';
+  getNodeName(): string { return 'recitals'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

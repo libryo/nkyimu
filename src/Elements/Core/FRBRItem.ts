@@ -11,7 +11,7 @@ const type = new CoreProperties();
 export class FRBRItem extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRItem';
+  getNodeName(): string { return 'FRBRItem'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

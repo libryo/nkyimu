@@ -12,7 +12,7 @@ const type = new Inline();
 export class Mref extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'mref';
+  getNodeName(): string { return 'mref'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -15,7 +15,7 @@ const type = new Metaopt();
 export class FRBRdate extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRdate';
+  getNodeName(): string { return 'FRBRdate'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

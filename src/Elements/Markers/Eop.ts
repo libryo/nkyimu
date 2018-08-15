@@ -17,7 +17,7 @@ const type = new EolType();
 export class Eop extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'eop';
+  getNodeName(): string { return 'eop'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

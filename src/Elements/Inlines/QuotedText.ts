@@ -19,7 +19,7 @@ const type = new Inline();
 export class QuotedText extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'quotedText';
+  getNodeName(): string { return 'quotedText'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

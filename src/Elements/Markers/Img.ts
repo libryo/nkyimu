@@ -14,7 +14,7 @@ const type = new Markeropt();
 export class Img extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'img';
+  getNodeName(): string { return 'img'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

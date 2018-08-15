@@ -11,7 +11,7 @@ const type = new Prefaceopt();
 export class Preface extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'preface';
+  getNodeName(): string { return 'preface'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

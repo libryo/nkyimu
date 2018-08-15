@@ -13,7 +13,7 @@ const type = new Inline();
 export class DocPurpose extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'docPurpose';
+  getNodeName(): string { return 'docPurpose'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

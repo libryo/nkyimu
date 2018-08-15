@@ -12,7 +12,7 @@ const type = new Inlinereq();
 export class Ref extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'ref';
+  getNodeName(): string { return 'ref'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

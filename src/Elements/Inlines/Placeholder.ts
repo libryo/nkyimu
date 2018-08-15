@@ -14,7 +14,7 @@ const type = new Inline();
 export class Placeholder extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'placeholder';
+  getNodeName(): string { return 'placeholder'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

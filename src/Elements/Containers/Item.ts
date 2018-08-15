@@ -11,7 +11,7 @@ const type = new ItemType();
 export class Item extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'item';
+  getNodeName(): string { return 'item'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -11,7 +11,7 @@ const type = new CitationHierarchy();
 export class Citations extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'citations';
+  getNodeName(): string { return 'citations'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -12,7 +12,7 @@ const type = new Inline();
 export class Num extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'num';
+  getNodeName(): string { return 'num'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

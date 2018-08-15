@@ -10,9 +10,9 @@ const type = new Inline();
  * as in HTML, for the generic paragraph of text (a block)
  */
 export class P extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'p';
 
-  nodeName = 'p';
+  getNodeName(): string { return 'p'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

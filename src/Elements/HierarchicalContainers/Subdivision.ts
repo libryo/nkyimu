@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Subdivision extends AbstractNode {
   abbreviation = 'sdi';
 
-  nodeName = 'subdivision';
+  getNodeName(): string { return 'subdivision'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

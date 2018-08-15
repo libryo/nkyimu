@@ -12,7 +12,7 @@ const type = new Basicopt();
 export class CoverPage extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'coverPage';
+  getNodeName(): string { return 'coverPage'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

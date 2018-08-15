@@ -15,7 +15,7 @@ const type = new Metaopt();
 export class FRBRauthor extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRauthor';
+  getNodeName(): string { return 'FRBRauthor'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

@@ -13,7 +13,7 @@ const type = new SubFlowStructure();
 export class AuthorialNote extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'authorialNote';
+  getNodeName(): string { return 'authorialNote'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

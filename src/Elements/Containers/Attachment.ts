@@ -12,7 +12,7 @@ const type = new DocContainerType();
 export class Attachment extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'attachment';
+  getNodeName(): string { return 'attachment'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

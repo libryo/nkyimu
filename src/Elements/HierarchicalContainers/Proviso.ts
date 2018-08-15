@@ -12,7 +12,7 @@ const type =  new Hierarchy();
 export class Proviso extends AbstractNode {
   abbreviation = 'pr';
 
-  nodeName = 'proviso';
+  getNodeName(): string { return 'proviso'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

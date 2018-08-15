@@ -13,7 +13,7 @@ const type = new ListItems();
 export class Ul extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'ul';
+  getNodeName(): string { return 'ul'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

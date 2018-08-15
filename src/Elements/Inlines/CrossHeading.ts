@@ -12,7 +12,7 @@ const type = new Inlinereq();
 export class CrossHeading extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'crossHeading';
+  getNodeName(): string { return 'crossHeading'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

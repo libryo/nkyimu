@@ -5,7 +5,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 export class Attachments extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'attachments';
+  getNodeName(): string { return 'attachments'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     attachment: { minOccur: 1, options: {} },

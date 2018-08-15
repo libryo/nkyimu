@@ -12,7 +12,7 @@ const type = new BodyType();
 export class Body extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'body';
+  getNodeName(): string { return 'body'; }
 
   readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP

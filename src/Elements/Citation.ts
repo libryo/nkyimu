@@ -12,7 +12,7 @@ const type = new ItemType();
 export class Citation extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'citation';
+  getNodeName(): string { return 'citation'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

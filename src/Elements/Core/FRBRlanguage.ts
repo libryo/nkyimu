@@ -13,7 +13,7 @@ const type = new Metaopt();
 export class FRBRlanguage extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'FRBRlanguage';
+  getNodeName(): string { return 'FRBRlanguage'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

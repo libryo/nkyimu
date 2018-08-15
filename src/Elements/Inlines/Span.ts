@@ -12,7 +12,7 @@ const type = new Inline();
 export class Span extends AbstractNode {
   abbreviation = '';
 
-  nodeName = 'span';
+  getNodeName(): string { return 'span'; }
 
   readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 

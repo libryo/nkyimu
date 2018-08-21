@@ -1,6 +1,6 @@
 {
   "name": "nkyimu",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "A library written in TypeScript that allows creating self validating AkomaNtoso documents",
   "author": "Libryo Ltd",
   "main": "build/src/index.js",
@@ -8,7 +8,7 @@
   "files": [
     "build/src"
   ],
-  "license": "GNU General Public License v3.0",
+  "license": "GPL-3.0-only",
   "keywords": [],
   "scripts": {
     "test": "jest",

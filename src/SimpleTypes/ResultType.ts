@@ -1,4 +1,4 @@
-import { AbstractSimpleType } from "../Abstract/AbstractSimpleType";
+import { AbstractSimpleType } from "../Abstracts/AbstractSimpleType";
 
 /**
  * This is the list of allowed values for the type attribute of the result element

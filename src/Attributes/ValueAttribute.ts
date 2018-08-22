@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 /**
  * The attribute value is used to specify a value for metadata elements.

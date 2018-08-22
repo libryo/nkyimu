@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class AltAttribute extends AbstractAttribute {
 

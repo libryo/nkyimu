@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OpinionType } from "../SimpleTypes/OpinionType";
 
 export class TypeOpinionTypeAttribute extends AbstractAttribute {

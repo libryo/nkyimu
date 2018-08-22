@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 /**
  * The attribute href is used to specify an internal or external destination

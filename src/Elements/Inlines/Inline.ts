@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { Name } from "../../AttributeGroups/Name";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline as InlineType } from "../ComplexTypes/Inline";
+import { Inline as InlineType } from "../../ComplexTypes/Inline";
 
 const type = new InlineType();
 

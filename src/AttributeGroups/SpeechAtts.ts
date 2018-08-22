@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { EndTimeAttribute } from "../Attributes/EndTimeAttribute";
 import { StartTimeAttribute } from "../Attributes/StartTimeAttribute";
 import { ToAttribute } from "../Attributes/ToAttribute";

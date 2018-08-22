@@ -1,4 +1,4 @@
-import { AbstractSimpleType } from "../Abstract/AbstractSimpleType";
+import { AbstractSimpleType } from "../Abstracts/AbstractSimpleType";
 
 /**
  * These values are references to existing agents (i.e., TLCPerson or TLCOrganization)

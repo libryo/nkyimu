@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { CitationHierarchy } from "../ComplexTypes/CitationHierarchy";
+import { CitationHierarchy } from "../../ComplexTypes/CitationHierarchy";
 
 const type = new CitationHierarchy();
 

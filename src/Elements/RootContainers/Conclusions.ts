@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Basicopt } from "../ComplexTypes/Basicopt";
+import { Basicopt } from "../../ComplexTypes/Basicopt";
 
 const type = new Basicopt();
 /**

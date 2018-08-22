@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { TypeTimeTypeAttribute } from "../Attributes/TypeTimeTypeAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 

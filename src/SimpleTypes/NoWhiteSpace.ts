@@ -1,4 +1,4 @@
-import { AbstractSimpleType } from "../Abstract/AbstractSimpleType";
+import { AbstractSimpleType } from "../Abstracts/AbstractSimpleType";
 
 /**
  * These values are those of ids such as eId, wId and GUID as a collection

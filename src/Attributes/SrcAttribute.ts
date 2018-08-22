@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { ManifestationURI } from "../SimpleTypes/ManifestationURI";
 
 export class SrcAttribute extends AbstractAttribute {

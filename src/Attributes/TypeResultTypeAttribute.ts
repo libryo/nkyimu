@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { ResultType } from "../SimpleTypes/ResultType";
 
 export class TypeResultTypeAttribute extends AbstractAttribute {

@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { BorderAttribute } from "../Attributes/BorderAttribute";
 import { CellpaddingAttribute } from "../Attributes/CellpaddingAttribute";
 import { CellspacingAttribute } from "../Attributes/CellspacingAttribute";

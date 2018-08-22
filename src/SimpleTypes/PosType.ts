@@ -1,4 +1,4 @@
-import { AbstractSimpleType } from "../Abstract/AbstractSimpleType";
+import { AbstractSimpleType } from "../Abstracts/AbstractSimpleType";
 
 /**
  * This is the list of possible positions of the text being analyzed

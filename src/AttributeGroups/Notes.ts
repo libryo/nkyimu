@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { MarkerAttribute } from "../Attributes/MarkerAttribute";
 import { PlacementAttribute } from "../Attributes/PlacementAttribute";
 import { PlacementBaseAttribute } from "../Attributes/PlacementBaseAttribute";

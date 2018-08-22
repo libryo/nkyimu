@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { NoWhiteSpace } from "../SimpleTypes/NoWhiteSpace";
 
 export class WIdAttribute extends AbstractAttribute {

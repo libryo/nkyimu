@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { HrefAttribute } from "../Attributes/HrefAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 

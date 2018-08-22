@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { Notes } from "../../AttributeGroups/Notes";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { SubFlowStructure } from "../ComplexTypes/SubFlowStructure";
+import { SubFlowStructure } from "../../ComplexTypes/SubFlowStructure";
 
 const type = new SubFlowStructure();
 

@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { EIdAttribute } from "../Attributes/EIdAttribute";
 import { GUIDAttribute } from "../Attributes/GUIDAttribute";
 import { WIdAttribute } from "../Attributes/WIdAttribute";

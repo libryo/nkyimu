@@ -1,8 +1,7 @@
-import { AbstractNode } from "../Abstract/AbstractNode";
+import { AbstractNode } from "../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../Interfaces/NodeRules";
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
-import { NodeType } from "../enums";
+import { NodeType } from "../common/enums";
 
 /**
  * The element citation is the individual element of the preface

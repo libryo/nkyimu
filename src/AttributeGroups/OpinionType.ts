@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { TypeOpinionTypeAttribute } from "../Attributes/TypeOpinionTypeAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { Agent } from "./Agent";

@@ -1,4 +1,4 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { Corereq } from "../../AttributeGroups/Corereq";
 import { TableAtts } from "../../AttributeGroups/TableAtts";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";

@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { TimeType } from "../SimpleTypes/TimeType";
 
 export class TypeTimeTypeAttribute extends AbstractAttribute {

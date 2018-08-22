@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { CoreProperties } from "../ComplexTypes/CoreProperties";
-import { WorkProperties } from "../Groups/WorkProperties";
+import { CoreProperties } from "../../ComplexTypes/CoreProperties";
+import { WorkProperties } from "../../ElementGroups/WorkProperties";
 
 const type = new CoreProperties();
 /**

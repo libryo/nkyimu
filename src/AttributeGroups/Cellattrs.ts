@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { ColspanAttribute } from "../Attributes/ColspanAttribute";
 import { RowspanAttribute } from "../Attributes/RowspanAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";

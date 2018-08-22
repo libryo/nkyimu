@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { ModType } from "../ComplexTypes/ModType";
+import { ModType } from "../../ComplexTypes/ModType";
 
 const type = new ModType();
 

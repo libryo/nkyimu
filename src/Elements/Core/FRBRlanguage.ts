@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Metaopt } from "../ComplexTypes/Metaopt";
+import { Metaopt } from "../../ComplexTypes/Metaopt";
 import { Language } from "../../AttributeGroups/Language";
 
 const type = new Metaopt();

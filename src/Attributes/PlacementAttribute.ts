@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { PlacementType } from "../SimpleTypes/PlacementType";
 
 export class PlacementAttribute extends AbstractAttribute {

@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { LawyerAtts } from "../../AttributeGroups/LawyerAtts";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inlinereqreq } from "../ComplexTypes/Inlinereqreq";
+import { Inlinereqreq } from "../../ComplexTypes/Inlinereqreq";
 
 const type = new Inlinereqreq();
 

@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { TemporalGroupRef } from "../SimpleTypes/TemporalGroupRef";
 
 export class PeriodAttribute extends AbstractAttribute {

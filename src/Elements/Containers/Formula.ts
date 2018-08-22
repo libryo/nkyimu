@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { Name } from "../../AttributeGroups/Name";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Blocksreq } from "../ComplexTypes/Blocksreq";
+import { Blocksreq } from "../../ComplexTypes/Blocksreq";
 
 const type = new Blocksreq();
 

@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 import { Name } from "../../AttributeGroups/Name";
-import { Metaopt } from "../ComplexTypes/Metaopt";
+import { Metaopt } from "../../ComplexTypes/Metaopt";
 import { Date as DateGroup } from "../../AttributeGroups/Date";
 
 const type = new Metaopt();

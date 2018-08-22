@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Markeropt } from "../ComplexTypes/Markeropt";
+import { Markeropt } from "../../ComplexTypes/Markeropt";
 
 const type = new Markeropt();
 

@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { OriginalTextAttribute } from "../Attributes/OriginalTextAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 

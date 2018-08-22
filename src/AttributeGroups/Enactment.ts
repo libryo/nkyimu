@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { StatusAttribute } from "../Attributes/StatusAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { Period } from "./Period";

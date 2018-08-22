@@ -1,5 +1,5 @@
-import { AbstractSimpleType } from "../Abstract/AbstractSimpleType";
-import { langs } from "../languageCodes";
+import { AbstractSimpleType } from "../Abstracts/AbstractSimpleType";
+import { langs } from "../common/languageCodes";
 
 /**
  * This attribute specifies the human language in which the document the element

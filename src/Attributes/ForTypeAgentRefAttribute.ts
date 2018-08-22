@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { AgentRef } from "../SimpleTypes/AgentRef";
 
 export class ForTypeAgentRefAttribute extends AbstractAttribute {

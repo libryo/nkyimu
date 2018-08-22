@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
 export class CellpaddingAttribute extends AbstractAttribute {

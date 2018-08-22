@@ -1,23 +1,19 @@
-import { AbstractNode } from "../../Abstract/AbstractNode";
+import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { XMLDateNamespaceAttribute } from "../../Attributes/XMLDateNamespaceAttribute";
 import { XMLNamespaceAttribute } from "../../Attributes/XMLNamespaceAttribute";
 import { XMLXSINamespaceAttribute } from "../../Attributes/XMLXSINamespaceAttribute";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { AkomaNtosoType } from "../ComplexTypes/AkomaNtosoType";
+import { AkomaNtosoType } from "../../ComplexTypes/AkomaNtosoType";
 
 const aknType = new AkomaNtosoType();
 
 export class AKNDocument extends AbstractNode {
   abbreviation = '';
 
-  readonly CHILDREN_MAP: NodeRules = {
-    ...aknType.CHILDREN_MAP
-  };
+  readonly CHILDREN_MAP: NodeRules = aknType.CHILDREN_MAP;
 
-  readonly SEQUENCE: string[] = [
-    ...aknType.SEQUENCE,
-  ];
+  readonly SEQUENCE: string[] = aknType.SEQUENCE;
 
   readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...aknType.ATTRIBUTE_GROUPS,

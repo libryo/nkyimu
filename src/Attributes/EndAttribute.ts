@@ -1,4 +1,4 @@
-import { AbstractAttribute } from "../Abstract/AbstractAttribute";
+import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { EventRefRef } from "../SimpleTypes/EventRefRef";
 
 export class EndAttribute extends AbstractAttribute {

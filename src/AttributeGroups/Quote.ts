@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { EndQuoteAttribute } from "../Attributes/EndQuoteAttribute";
 import { InlineQuoteAttribute } from "../Attributes/InlineQuoteAttribute";
 import { StartQuoteAttribute } from "../Attributes/StartQuoteAttribute";

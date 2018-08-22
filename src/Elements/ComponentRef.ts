@@ -1,7 +1,7 @@
-import { AbstractNode } from "../Abstract/AbstractNode";
+import { AbstractNode } from "../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../Interfaces/NodeRules";
-import { SrcType } from "./ComplexTypes/SrcType";
+import { SrcType } from "../ComplexTypes/SrcType";
 
 const type = new SrcType();
 

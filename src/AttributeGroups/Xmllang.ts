@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { XMLIdNamespaceAttribute } from "../Attributes/XMLIdNamespaceAttribute";
 import { XMLLangNamespaceAttribute } from "../Attributes/XMLLangNamespaceAttribute";
 import { XMLSpaceNamespaceAttribute } from "../Attributes/XMLSpaceNamespaceAttribute";

@@ -1,4 +1,4 @@
-import { AbstractAttributeGroup } from "../Abstract/AbstractAttributeGroup";
+import { AbstractAttributeGroup } from "../Abstracts/AbstractAttributeGroup";
 import { ClassAttribute } from "../Attributes/ClassAttribute";
 import { StyleAttribute } from "../Attributes/StyleAttribute";
 import { TitleAttribute } from "../Attributes/TitleAttribute";

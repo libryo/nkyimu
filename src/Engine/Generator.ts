@@ -24,7 +24,7 @@ export class Generator {
 
   generateNodes() {
     const node = this.doc.children[0];
-    const created = this.createNodeAndAttributes(node);
+    const created = Generator.createNodeAndAttributes(node);
 
     this.generateChildNodes(node)
       .forEach((childNode: AbstractNode) => {
@@ -41,7 +41,7 @@ export class Generator {
 
     if (node.children.length !== 0) {
       Object.keys(node.children).forEach((key: string) => {
-        const createdNode:AbstractNode = this.createNodeAndAttributes(node.children[Number(key)]);
+        const createdNode:AbstractNode = Generator.createNodeAndAttributes(node.children[Number(key)]);
 
         this.generateChildNodes(node.children[Number(key)])
           .forEach((childNode: AbstractNode) => {
@@ -67,25 +67,25 @@ export class Generator {
 
   generateAlternateChildNodes(childNode: Node & ChildNode): AbstractNode|null {
     if (childNode.nodeType === Node.TEXT_NODE) {
-      return this.createNode('', childNode.textContent);
+      return Generator.createNode('', childNode.textContent);
     }
 
     return null;
   }
 
-  createNodeAndAttributes(node: Element): AbstractNode {
-    const created = this.createNode(node.nodeName);
+  static createNodeAndAttributes(node: Element): AbstractNode {
+    const created = Generator.createNode(node.nodeName);
 
     Object.keys(node.attributes).forEach((attr: string) => {
       const currentAttr: Attr = node.attributes[Number(attr)];
 
-      created.setAttribute(this.createAttribute(currentAttr.name, currentAttr.value));
+      created.setAttribute(Generator.createAttribute(currentAttr.name, currentAttr.value));
     });
 
     return created;
   }
 
-  createNode<T extends keyof ElementType>(name: T|string, content:string|null = null): AbstractNode {
+  static createNode<T extends keyof ElementType>(name: T|string, content:string|null = null): AbstractNode {
     if (!elementMap[name]) {
       throw new Error(`Element ${name} is not available`);
     }
@@ -93,12 +93,11 @@ export class Generator {
     return new Elements[elementMap[name] as T](content || '');
   }
 
-  createAttribute<T extends keyof AttributeType>(name: T|string, value: string): AbstractAttribute {
+  static createAttribute<T extends keyof AttributeType>(name: T|string, value: string): AbstractAttribute {
     if (!attributeMap[name]) {
       throw new Error(`Element ${name} is not available`);
     }
 
     return new Attributes[attributeMap[name] as T](value);
   }
-
 }

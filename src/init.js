@@ -106,6 +106,9 @@ class Generator {
     const content = this.directories
       .map(dir => `import * as ${dir.replace('./', '')} from '${dir}';`);
 
+    content.push("import * as Engine from './Engine/Generator';");
+    content.push("import * as Helpers from './common/helpers';");
+
     if (includeMaps) {
       content.push("import { elementMap } from './elementMap';");
       content.push("import { attributeMap } from './attributeMap';");
@@ -113,6 +116,9 @@ class Generator {
 
     content.push('');
     const exportList = this.directories.map(dir => dir.replace('./', ''));
+
+    exportList.push('Engine');
+    exportList.push('Helpers');
 
     if (includeMaps) {
       exportList.push('elementMap');

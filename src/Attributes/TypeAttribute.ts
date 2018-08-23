@@ -10,6 +10,8 @@ export class TypeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'type';
 
+  static getName() { return 'type'; }
+
   /**
    * The default value of the attribute.
    */

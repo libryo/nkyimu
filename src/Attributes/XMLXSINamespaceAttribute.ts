@@ -6,6 +6,8 @@ export class XMLXSINamespaceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'xmlns:xsi';
 
+  static getName() { return 'xmlns:xsi'; }
+
   /**
    * The default value of the attribute.
    */

@@ -7,6 +7,8 @@ export class FromAttribute extends AbstractAttribute {
    */
   readonly name: string = 'from';
 
+  static getName() { return 'from'; }
+
   /**
    * The default value of the attribute.
    */

@@ -7,6 +7,8 @@ export class OriginatingExpressionAttribute extends AbstractAttribute {
    */
   readonly name: string = 'originatingExpression';
 
+  static getName() { return 'originatingExpression'; }
+
   /**
    * The default value of the attribute.
    */

@@ -11,6 +11,8 @@ export class UpToAttribute extends AbstractAttribute {
    */
   readonly name: string = 'upTo';
 
+  static getName() { return 'upTo'; }
+
   /**
    * The default value of the attribute.
    */

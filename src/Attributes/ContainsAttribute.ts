@@ -11,6 +11,8 @@ export class ContainsAttribute extends AbstractAttribute {
    */
   readonly name: string = 'contains';
 
+  static getName() { return 'contains'; }
+
   /**
    * The default value of the attribute.
    */

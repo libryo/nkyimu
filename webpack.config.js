@@ -1,11 +1,21 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 module.exports = {
-    entry: "./sample.ts",
+    entry: {
+        'auto generation': './examples/auto generation/index.js',
+        'manual generation': './examples/manual generation/index.js',
+    },
     mode: "development",
     output: {
-        filename: "bundle.js",
-        path: __dirname + "/build"
+        filename: "[name]/index.js",
+        path: __dirname + "/build/examples"
     },
-
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: './examples/auto generation/index.html', to: 'auto generation' },
+            { from: './examples/manual generation/index.html', to: 'manual generation' },
+        ]),
+    ],
     // Enable sourcemaps for debugging webpack output.
     devtool: "source-map",
 

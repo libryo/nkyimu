@@ -7,6 +7,8 @@ export class HeightAttribute extends AbstractAttribute {
    */
   readonly name: string = 'height';
 
+  static getName() { return 'height'; }
+
   /**
    * The default value of the attribute.
    */

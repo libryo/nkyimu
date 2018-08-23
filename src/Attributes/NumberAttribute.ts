@@ -10,6 +10,8 @@ export class NumberAttribute extends AbstractAttribute {
    */
   readonly name: string = 'number';
 
+  static getName() { return 'number'; }
+
   /**
    * The default value of the attribute.
    */

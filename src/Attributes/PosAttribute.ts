@@ -12,6 +12,8 @@ export class PosAttribute extends AbstractAttribute {
    */
   readonly name: string = 'pos';
 
+  static getName() { return 'pos'; }
+
   /**
    * The default value of the attribute.
    */

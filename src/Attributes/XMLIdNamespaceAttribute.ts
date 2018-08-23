@@ -6,6 +6,8 @@ export class XMLIdNamespaceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'xmlns:id';
 
+  static getName() { return 'xmlns:id'; }
+
   /**
    * The default value of the attribute.
    */

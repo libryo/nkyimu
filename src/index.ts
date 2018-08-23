@@ -6,5 +6,6 @@ import * as Elements from './Elements';
 import * as Interfaces from './Interfaces';
 import * as SimpleTypes from './SimpleTypes';
 import { elementMap } from './elementMap';
+import { attributeMap } from './attributeMap';
 
-export { Abstracts, AttributeGroups, Attributes, ComplexTypes, Elements, Interfaces, SimpleTypes, elementMap };
+export { Abstracts, AttributeGroups, Attributes, ComplexTypes, Elements, Interfaces, SimpleTypes, elementMap, attributeMap };

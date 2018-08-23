@@ -7,6 +7,8 @@ export class ToAttribute extends AbstractAttribute {
    */
   readonly name: string = 'to';
 
+  static getName() { return 'to'; }
+
   /**
    * The default value of the attribute.
    */

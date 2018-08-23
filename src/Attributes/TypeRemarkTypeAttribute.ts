@@ -7,6 +7,8 @@ export class TypeRemarkTypeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'type';
 
+  static getName() { return 'type__remark'; }
+
   /**
    * The default value of the attribute.
    */

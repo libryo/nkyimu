@@ -7,6 +7,8 @@ export class RowspanAttribute extends AbstractAttribute {
    */
   readonly name: string = 'rowspan';
 
+  static getName() { return 'rowspan'; }
+
   /**
    * The default value of the attribute.
    */

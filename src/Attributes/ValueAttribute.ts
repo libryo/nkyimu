@@ -10,6 +10,8 @@ export class ValueAttribute extends AbstractAttribute {
    */
   readonly name: string = 'value';
 
+  static getName() { return 'value'; }
+
   /**
    * The default value of the attribute.
    */

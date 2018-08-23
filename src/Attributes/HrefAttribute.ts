@@ -11,6 +11,8 @@ export class HrefAttribute extends AbstractAttribute {
    */
   readonly name: string = 'href';
 
+  static getName() { return 'href'; }
+
   /**
    * The default value of the attribute.
    */

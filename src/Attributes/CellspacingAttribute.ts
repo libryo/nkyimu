@@ -7,6 +7,8 @@ export class CellspacingAttribute extends AbstractAttribute {
    */
   readonly name: string = 'cellspacing';
 
+  static getName() { return 'cellspacing'; }
+
   /**
    * The default value of the attribute.
    */

@@ -8,6 +8,8 @@ export class XMLSpaceNamespaceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'xmlns:space';
 
+  static getName() { return 'xmlns:space'; }
+
   /**
    * The default value of the attribute.
    */

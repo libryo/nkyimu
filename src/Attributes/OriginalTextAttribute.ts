@@ -10,6 +10,8 @@ export class OriginalTextAttribute extends AbstractAttribute {
    */
   readonly name: string = 'originalText';
 
+  static getName() { return 'originalText'; }
+
   /**
    * The default value of the attribute.
    */

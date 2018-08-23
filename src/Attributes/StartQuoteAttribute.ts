@@ -7,6 +7,8 @@ export class StartQuoteAttribute extends AbstractAttribute {
    */
   readonly name: string = 'startQuote';
 
+  static getName() { return 'startQuote'; }
+
   /**
    * The default value of the attribute.
    */

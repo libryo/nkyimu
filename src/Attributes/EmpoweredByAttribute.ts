@@ -8,6 +8,8 @@ export class EmpoweredByAttribute extends AbstractAttribute {
    */
   readonly name: string = 'empoweredBy';
 
+  static getName() { return 'empoweredBy'; }
+
   /**
    * The default value of the attribute.
    */

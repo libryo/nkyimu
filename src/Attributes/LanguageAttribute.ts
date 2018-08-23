@@ -11,6 +11,8 @@ export class LanguageAttribute extends AbstractAttribute {
    */
   readonly name: string = 'language';
 
+  static getName() { return 'language'; }
+
   /**
    * The default value of the attribute.
    */

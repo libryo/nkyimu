@@ -8,6 +8,8 @@ export class LevelAttribute extends AbstractAttribute {
    */
   readonly name: string = 'level';
 
+  static getName() { return 'level'; }
+
   /**
    * The default value of the attribute.
    */

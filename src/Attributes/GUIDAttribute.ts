@@ -7,6 +7,8 @@ export class GUIDAttribute extends AbstractAttribute {
    */
   readonly name: string = 'GUID';
 
+  static getName() { return 'GUID'; }
+
   /**
    * The default value of the attribute.
    */

@@ -7,6 +7,8 @@ export class RefersToAttribute extends AbstractAttribute {
    */
   readonly name: string = 'refersTo';
 
+  static getName() { return 'refersTo'; }
+
   /**
    * The default value of the attribute.
    */

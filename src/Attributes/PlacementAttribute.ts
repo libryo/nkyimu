@@ -8,6 +8,8 @@ export class PlacementAttribute extends AbstractAttribute {
    */
   readonly name: string = 'placement';
 
+  static getName() { return 'placement'; }
+
   /**
    * The default value of the attribute.
    */

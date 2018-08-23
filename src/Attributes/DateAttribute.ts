@@ -11,6 +11,8 @@ export class DateAttribute extends AbstractAttribute {
    */
   readonly name: string = 'date';
 
+  static getName() { return 'date'; }
+
   /**
    * The default value of the attribute.
    */

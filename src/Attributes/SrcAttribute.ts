@@ -8,6 +8,8 @@ export class SrcAttribute extends AbstractAttribute {
    */
   readonly name: string = 'src';
 
+  static getName() { return 'src'; }
+
   /**
    * The default value of the attribute.
    */

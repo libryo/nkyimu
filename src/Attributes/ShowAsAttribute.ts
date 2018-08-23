@@ -7,6 +7,8 @@ export class ShowAsAttribute extends AbstractAttribute {
    */
   readonly name: string = 'showAs';
 
+  static getName() { return 'showAs'; }
+
   /**
    * The default value of the attribute.
    */

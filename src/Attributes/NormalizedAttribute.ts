@@ -10,6 +10,8 @@ export class NormalizedAttribute extends AbstractAttribute {
    */
   readonly name: string = 'normalized';
 
+  static getName() { return 'normalized'; }
+
   /**
    * The default value of the attribute.
    */

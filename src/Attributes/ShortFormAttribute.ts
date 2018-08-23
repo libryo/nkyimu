@@ -7,6 +7,8 @@ export class ShortFormAttribute extends AbstractAttribute {
    */
   readonly name: string = 'shortForm';
 
+  static getName() { return 'shortForm'; }
+
   /**
    * The default value of the attribute.
    */

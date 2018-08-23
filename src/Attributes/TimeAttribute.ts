@@ -10,6 +10,8 @@ export class TimeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'time';
 
+  static getName() { return 'time'; }
+
   /**
    * The default value of the attribute.
    */

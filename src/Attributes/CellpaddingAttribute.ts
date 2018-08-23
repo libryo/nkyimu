@@ -7,6 +7,8 @@ export class CellpaddingAttribute extends AbstractAttribute {
    */
   readonly name: string = 'cellpadding';
 
+  static getName() { return 'cellpadding'; }
+
   /**
    * The default value of the attribute.
    */

@@ -7,6 +7,8 @@ export class EndTimeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'endTime';
 
+  static getName() { return 'endTime'; }
+
   /**
    * The default value of the attribute.
    */

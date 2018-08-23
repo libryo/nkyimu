@@ -6,6 +6,8 @@ export class WidthAttribute extends AbstractAttribute {
    */
   readonly name: string = 'width';
 
+  static getName() { return 'width'; }
+
   /**
    * The default value of the attribute.
    */

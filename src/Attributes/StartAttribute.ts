@@ -8,6 +8,8 @@ export class StartAttribute extends AbstractAttribute {
    */
   readonly name: string = 'start';
 
+  static getName() { return 'start'; }
+
   /**
    * The default value of the attribute.
    */

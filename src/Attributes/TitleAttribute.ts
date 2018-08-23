@@ -7,6 +7,8 @@ export class TitleAttribute extends AbstractAttribute {
    */
   readonly name: string = 'title';
 
+  static getName() { return 'title'; }
+
   /**
    * The default value of the attribute.
    */

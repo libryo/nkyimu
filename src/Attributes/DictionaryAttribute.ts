@@ -12,6 +12,8 @@ export class DictionaryAttribute extends AbstractAttribute {
    */
   readonly name: string = 'dictionary';
 
+  static getName() { return 'dictionary'; }
+
   /**
    * The default value of the attribute.
    */

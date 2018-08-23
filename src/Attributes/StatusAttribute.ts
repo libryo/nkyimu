@@ -8,6 +8,8 @@ export class StatusAttribute extends AbstractAttribute {
    */
   readonly name: string = 'status';
 
+  static getName() { return 'status'; }
+
   /**
    * The default value of the attribute.
    */

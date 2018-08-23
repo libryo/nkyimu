@@ -25,6 +25,7 @@ export class Hierarchy extends BaseHierarchy {
           options: {
             intro: { minOccur: 1, maxOccur: 1, options: {} },
             hieChoiceSeqChoice: {
+              choice: true,
               minOccur: 0,
               options: {
                 componentRef: { minOccur: 1, maxOccur: 1, options: {} },

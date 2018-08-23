@@ -1,9 +1,13 @@
-export const elementMap = {
+export const elementMap: { [key: string]: string } = {
   'block': 'Block',
+  'caption': 'Caption',
   'foreign': 'Foreign',
   'ol': 'Ol',
   'p': 'P',
   'table': 'Table',
+  'td': 'Td',
+  'th': 'Th',
+  'tr': 'Tr',
   'ul': 'Ul',
   'citation': 'Citation',
   'componentRef': 'ComponentRef',
@@ -39,6 +43,8 @@ export const elementMap = {
   'FRBRthis': 'FRBRthis',
   'FRBRuri': 'FRBRuri',
   'identification': 'Identification',
+  'note': 'Note',
+  'notes': 'Notes',
   'documentRef': 'DocumentRef',
   'alinea': 'Alinea',
   'article': 'Article',

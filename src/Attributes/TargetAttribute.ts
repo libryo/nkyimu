@@ -9,6 +9,8 @@ export class TargetAttribute extends AbstractAttribute {
    */
   readonly name: string = 'target';
 
+  static getName() { return 'target'; }
+
   /**
    * The default value of the attribute.
    */

@@ -8,6 +8,8 @@ export class PeriodAttribute extends AbstractAttribute {
    */
   readonly name: string = 'period';
 
+  static getName() { return 'period'; }
+
   /**
    * The default value of the attribute.
    */

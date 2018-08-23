@@ -7,6 +7,8 @@ export class StartTimeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'startTime';
 
+  static getName() { return 'startTime'; }
+
   /**
    * The default value of the attribute.
    */

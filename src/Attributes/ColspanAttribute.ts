@@ -7,6 +7,8 @@ export class ColspanAttribute extends AbstractAttribute {
    */
   readonly name: string = 'colspan';
 
+  static getName() { return 'colspan'; }
+
   /**
    * The default value of the attribute.
    */

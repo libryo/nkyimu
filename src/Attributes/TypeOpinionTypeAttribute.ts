@@ -7,6 +7,8 @@ export class TypeOpinionTypeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'type';
 
+  static getName() { return 'type__opinion'; }
+
   /**
    * The default value of the attribute.
    */

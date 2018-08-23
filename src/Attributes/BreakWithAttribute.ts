@@ -7,6 +7,8 @@ export class BreakWithAttribute extends AbstractAttribute {
    */
   readonly name: string = 'breakWith';
 
+  static getName() { return 'breakWith'; }
+
   /**
    * The default value of the attribute.
    */

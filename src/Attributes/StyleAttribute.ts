@@ -7,6 +7,8 @@ export class StyleAttribute extends AbstractAttribute {
    */
   readonly name: string = 'style';
 
+  static getName() { return 'style'; }
+
   /**
    * The default value of the attribute.
    */

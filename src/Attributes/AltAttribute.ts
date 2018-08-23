@@ -7,6 +7,8 @@ export class AltAttribute extends AbstractAttribute {
    */
   readonly name: string = 'alt';
 
+  static getName() { return 'alt'; }
+
   /**
    * The default value of the attribute.
    */

@@ -6,6 +6,8 @@ export class XMLDateNamespaceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'xmlns:date';
 
+  static getName() { return 'xmlns:date'; }
+
   /**
    * The default value of the attribute.
    */

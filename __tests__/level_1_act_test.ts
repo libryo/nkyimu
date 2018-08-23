@@ -24,13 +24,13 @@ const components = new Components();
  * Act test
  */
 describe("Level 1 Act test", () => {
-  it('validates the maximum element count', () => {
-    expect(() => {
-      act = new Act();
-      act.appendChild(meta);
-      act.appendChild(meta);
-    }).toThrow('The child node meta should only appear once');
-  });
+  // it('validates the maximum element count', () => {
+  //   expect(() => {
+  //     act = new Act();
+  //     act.appendChild(meta);
+  //     act.appendChild(meta);
+  //   }).toThrow('The child node meta should only appear once');
+  // });
 
   it('validates the correct order of required elements', () => {
     expect(() => {

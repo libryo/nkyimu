@@ -7,6 +7,8 @@ export class TypeEventTypeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'type';
 
+  static getName() { return 'type__event'; }
+
   /**
    * The default value of the attribute.
    */

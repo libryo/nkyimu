@@ -9,6 +9,8 @@ export class ChoiceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'choice';
 
+  static getName() { return 'choice'; }
+
   /**
    * The default value of the attribute.
    */

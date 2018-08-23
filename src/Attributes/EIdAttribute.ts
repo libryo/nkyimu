@@ -7,6 +7,8 @@ export class EIdAttribute extends AbstractAttribute {
    */
   readonly name: string = 'eId';
 
+  static getName() { return 'eId'; }
+
   /**
    * The default value of the attribute.
    */

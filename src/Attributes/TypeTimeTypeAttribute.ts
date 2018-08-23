@@ -7,6 +7,8 @@ export class TypeTimeTypeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'type';
 
+  static getName() { return 'type__time'; }
+
   /**
    * The default value of the attribute.
    */

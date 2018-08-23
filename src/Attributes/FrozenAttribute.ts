@@ -7,6 +7,8 @@ export class FrozenAttribute extends AbstractAttribute {
    */
   readonly name: string = 'frozen';
 
+  static getName() { return 'frozen'; }
+
   /**
    * The default value of the attribute.
    */

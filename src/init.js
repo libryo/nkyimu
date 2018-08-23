@@ -38,7 +38,7 @@ class Generator {
         this.clean();
         break;
       case 'elements':
-        this.generateElementsNodeMap();
+        this.generateMaps();
         break;
     }
   }
@@ -66,6 +66,7 @@ class Generator {
 
     fs.unlink(path.resolve(__dirname, 'index.ts'), (err) => {});
     fs.unlink(path.resolve(__dirname, 'elementMap.ts'), (err) => {});
+    fs.unlink(path.resolve(__dirname, 'attributeMap.ts'), (err) => {});
   }
 
   extractFiles(dir, map = []) {
@@ -107,6 +108,7 @@ class Generator {
 
     if (includeMaps) {
       content.push("import { elementMap } from './elementMap';");
+      content.push("import { attributeMap } from './attributeMap';");
     }
 
     content.push('');
@@ -114,6 +116,7 @@ class Generator {
 
     if (includeMaps) {
       exportList.push('elementMap');
+      exportList.push('attributeMap');
     }
 
     content.push(`export { ${exportList.join(', ')} };`);
@@ -121,6 +124,13 @@ class Generator {
     fs.writeFile(main, content.join("\n"), (err) => {
       if (err) throw err;
     });
+  }
+
+  generateMaps() {
+    this.generateElementsNodeMap();
+    this.generateAttributesMap();
+
+    this.generateCommonIndex(true);
   }
 
   generateElementsNodeMap() {
@@ -147,7 +157,7 @@ class Generator {
     });
 
     const content = [
-      'export const elementMap = {',
+      'export const elementMap: { [key: string]: string } = {',
 
       ...map.map(e => `  '${e.name}': '${e.className}',`),
 
@@ -159,8 +169,45 @@ class Generator {
     fs.writeFile(dest, content.join("\n"), (err) => {
       if (err) throw err;
     });
+  }
 
-    this.generateCommonIndex(true);
+  generateAttributesMap() {
+    if (!fs.existsSync(path.resolve(__dirname, '../build/src/Attributes'))) {
+      throw new Error('Please compile first before generating the node map.')
+    }
+
+    const fileList = this.extractFiles(path.resolve(__dirname, './Attributes'));
+    const classes = require(`../build/src/Attributes`);
+    const map = [];
+
+    fileList.map((file) => {
+      const relativePath = path.relative(__dirname, file);
+      const className = path.basename(relativePath);
+      let currentAttrs = classes[className];
+
+      if (!currentAttrs.getName) {
+        console.log(currentAttrs);
+      }
+
+      map.push({
+        name: currentAttrs.getName(),
+        className: className,
+      });
+    });
+
+    const content = [
+      'export const attributeMap: { [key: string]: string } = {',
+
+      ...map.map(e => `  '${e.name}': '${e.className}',`),
+
+      '};',
+    ];
+
+    const dest = path.resolve(__dirname, 'attributeMap.ts');
+
+    fs.writeFile(dest, content.join("\n"), (err) => {
+      if (err) throw err;
+    });
   }
 }
 

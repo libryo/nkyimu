@@ -11,6 +11,8 @@ export class AsAttribute extends AbstractAttribute {
    */
   readonly name: string = 'as';
 
+  static getName() { return 'as'; }
+
   /**
    * The default value of the attribute.
    */

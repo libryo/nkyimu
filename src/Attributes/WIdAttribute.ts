@@ -7,6 +7,8 @@ export class WIdAttribute extends AbstractAttribute {
    */
   readonly name: string = 'wId';
 
+  static getName() { return 'wId'; }
+
   /**
    * The default value of the attribute.
    */

@@ -4,12 +4,8 @@ import { TableAtts } from "../../AttributeGroups/TableAtts";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
-/**
- * The element ol is an HTML element and is used in Akoma Ntoso
- * as in HTML, for an ordered list of list item (elements li)
- */
 export class Table extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'tbl';
 
   getNodeName(): string { return 'table'; }
 

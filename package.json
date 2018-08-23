@@ -1,6 +1,6 @@
 {
   "name": "nkyimu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library written in TypeScript that allows creating self validating AkomaNtoso documents",
   "author": "Libryo Ltd",
   "main": "build/src/index.js",
@@ -14,7 +14,7 @@
     "test": "jest",
     "check": "gts check",
     "clean": "node src/init clean && gts clean",
-    "compile": "node src/init && tsc -p .",
+    "compile": "node src/init && tsc -p . && npm run generate-maps",
     "generate-maps": "node src/init elements && tsc -p .",
     "watch": "tsc -w",
     "fix": "gts fix",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.0",
     "awesome-typescript-loader": "^5.2.0",
+    "copy-webpack-plugin": "^4.5.2",
     "gts": "^0.8.0",
     "jest": "^23.4.1",
     "jsdom": "^12.0.0",

@@ -7,6 +7,8 @@ export class BorderAttribute extends AbstractAttribute {
    */
   readonly name: string = 'border';
 
+  static getName() { return 'border'; }
+
   /**
    * The default value of the attribute.
    */

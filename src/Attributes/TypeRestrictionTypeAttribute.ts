@@ -7,6 +7,8 @@ export class TypeRestrictionTypeAttribute extends AbstractAttribute {
    */
   readonly name: string = 'type';
 
+  static getName() { return 'type__restriction'; }
+
   /**
    * The default value of the attribute.
    */

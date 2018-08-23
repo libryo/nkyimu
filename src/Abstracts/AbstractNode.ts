@@ -296,7 +296,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
     }
 
-    const rule = this.extractRule(node, this.CHILDREN_MAP);
+    const rule = this.optimiseRule(this.extractRule(node, this.CHILDREN_MAP));
 
     if (!rule) {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
@@ -321,7 +321,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    *
    * @returns Rule
    */
-  private extractRule(node: AbstractNode, rules: NodeRules, isChoice = false, choiceMinOccur ?: number, choiceMaxOccur ?: number): Rule|null {
+  private extractRule(node: AbstractNode, rules: NodeRules, parentRule?: Rule): Rule|null {
     /** Extract the keys from the rule */
     const keys = Object.keys(rules);
 
@@ -329,9 +329,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     if (keys.indexOf(node.getNodeName()) !== -1) {
       return {
         ...rules[node.getNodeName()],
-        isChoice,
-        choiceMinOccur,
-        choiceMaxOccur,
+        parentRule: rules[node.getNodeName()].parentRule ? rules[node.getNodeName()].parentRule : parentRule,
       };
     }
 
@@ -339,7 +337,9 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     keys.some((key) => {
       if (Object.keys(rules[key].options).length > 0) {
-        rule = this.extractRule(node, rules[key].options, rules[key].isChoice, rules[key].minOccur, rules[key].maxOccur);
+        rules[key].parentRule = parentRule;
+
+        rule = this.extractRule(node, rules[key].options, rules[key]);
 
         if (rule) return true;
       }
@@ -353,13 +353,32 @@ export abstract class AbstractNode implements HasChildrenMap {
     if (keys.indexOf('any') !== -1) {
       return {
         ...rules.any,
-        isChoice,
-        choiceMinOccur,
-        choiceMaxOccur,
+        parentRule,
       };
     }
 
     return null;
+  }
+
+  private optimiseRule(rule: Rule|null): Rule|null {
+    if (!rule) return null;
+
+    if (!rule.parentRule) return { ...rule };
+
+    const parentRule = this.optimiseRule({ ...rule.parentRule });
+
+    // rule.parentRule = undefined;
+
+    if (!parentRule) return { ...rule };
+
+    if (parentRule.choice && !parentRule.maxOccur) {
+      return {
+        ...rule,
+        maxOccur: parentRule.maxOccur,
+      };
+    }
+
+    return { ...rule };
   }
 
   /**
@@ -375,14 +394,15 @@ export abstract class AbstractNode implements HasChildrenMap {
     const exists = this.childrenOrder.indexOf(node.getNodeName()) !== -1;
 
     /** The node already exists and can only exist once as a child. */
-    if (exists && rule.maxOccur === 1 && rule.isChoice === false) {
-      throw new Error(`The child node ${node.getNodeName()} should only appear once`);
-    }
+    // if (exists && rule.maxOccur === 1) {
+    //   throw new Error(`The child node ${node.getNodeName()} should only appear once`);
+    // }
 
-    /** The node exists but as a choice with a max occurrence of one. */
-    if (exists && rule.isChoice === true && rule.choiceMaxOccur === 1) {
-      throw new Error(`The child node ${node.getNodeName()} should only appear once`);
-    }
+    // /** The node exists but as a choice with a max occurrence of one. */
+    // // if (exists && rule.isChoice === true && rule.choiceMaxOccur === 1) {
+    // if (exists && rule.isChoice === true) {
+    //   throw new Error(`The child node ${node.getNodeName()} should only appear once`);
+    // }
 
     /** If the current node has a predefined sequence. */
     if (this.SEQUENCE && this.SEQUENCE.length > 0) {
@@ -469,12 +489,22 @@ export abstract class AbstractNode implements HasChildrenMap {
     if (required.length === 0) return;
 
     if (this.currentAttributes.length === 0) {
+      if (required.indexOf('EIdAttribute') !== -1) {
+        this.setAttribute(new EIdAttribute(`${this.abbreviation}___replace__`));
+
+        return;
+      }
       throw new Error(`Element ${this.getNodeName()} is missing required attributes: ${required.join(', ')}`);
     }
 
-    required = required.filter((item) => {
-      return this.currentAttributes.indexOf(item) === -1;
-    });
+    required = required.filter((item) => this.currentAttributes.indexOf(item) === -1);
+
+    const index = required.indexOf('EIdAttribute');
+
+    if (index !== -1) {
+      this.setAttribute(new EIdAttribute(`${this.abbreviation}___replace__`));
+      required.splice(index, 1);
+    }
 
     if (required.length > 0) {
       throw new Error(`Element ${this.getNodeName()} is missing required attributes: ${required.join(', ')}`);
@@ -496,8 +526,10 @@ export abstract class AbstractNode implements HasChildrenMap {
       }
 
       if (!nodeCount[child.getNodeName()]) {
-        nodeCount[child.getNodeName()] = 1;
+        nodeCount[child.getNodeName()] = 0;
       }
+
+      nodeCount[child.getNodeName()] += 1;
 
       child.setElementId(`${prefix}${child.abbreviation}_${nodeCount[child.getNodeName()]}`);
 
@@ -508,27 +540,14 @@ export abstract class AbstractNode implements HasChildrenMap {
   setElementId(id: string) {
     this.generatedId = id;
 
-    if (this.getNodeType() === NodeType.ELEMENT_NODE) {
+    if (this.getNodeType() !== NodeType.ELEMENT_NODE) {
+      return;
+    }
+
+    const attr = this.getElement().getAttribute('eId');
+
+    if (attr && attr.indexOf('__replace__') !== -1) {
       this.setAttribute(new EIdAttribute(id));
     }
   }
-
-
-  // private createFromNode(node: Node): AbstractNode {
-
-  // }
-
-  // querySelector(selector: string): AbstractNode|null {
-  //   const node = this.getElement().querySelector(selector);
-
-  //   if (node) return this.createFromNode(node);
-
-  //   return null;
-  // }
-
-  // querySelectorAll(selector: string): AbstractNode[] {
-  //   const node = this.getElement().querySelectorAll(selector);
-
-  //   return [];
-  // }
 }

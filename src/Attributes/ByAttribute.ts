@@ -11,6 +11,8 @@ export class ByAttribute extends AbstractAttribute {
    */
   readonly name: string = 'by';
 
+  static getName() { return 'by'; }
+
   /**
    * The default value of the attribute.
    */

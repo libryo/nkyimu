@@ -7,6 +7,8 @@ export class ForTypeAgentRefAttribute extends AbstractAttribute {
    */
   readonly name: string = 'for';
 
+  static getName() { return 'for'; }
+
   /**
    * The default value of the attribute.
    */

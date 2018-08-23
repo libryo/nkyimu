@@ -12,6 +12,8 @@ export class AlternativeToAttribute extends AbstractAttribute {
    */
   readonly name: string = 'alternativeTo';
 
+  static getName() { return 'alternativeTo'; }
+
   /**
    * The default value of the attribute.
    */

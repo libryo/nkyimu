@@ -10,6 +10,8 @@ export class ForTypeEIdRefAttribute extends AbstractAttribute {
    */
   readonly name: string = 'for';
 
+  static getName() { return 'for__eId'; }
+
   /**
    * The default value of the attribute.
    */

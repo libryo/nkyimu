@@ -4947,8 +4947,7 @@ The element li is an HTML element and is used in Akoma Ntoso as in HTML, for the
 			<xsd:documentation>
 				<type>Element</type>
 				<name>caption</name>
-				<comment>
-The element caption is an HTML element and is used in Akoma Ntoso as in HTML, for the caption of a table (a block)</comment>
+				<comment>The element caption is an HTML element and is used in Akoma Ntoso as in HTML, for the caption of a table (a block)</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -4966,8 +4965,7 @@ The element caption is an HTML element and is used in Akoma Ntoso as in HTML, fo
 			<xsd:documentation>
 				<type>Element</type>
 				<name>th</name>
-				<comment>
-The element th is an HTML element and is used in Akoma Ntoso as in HTML, for a header cell of a table</comment>
+				<comment>The element th is an HTML element and is used in Akoma Ntoso as in HTML, for a header cell of a table</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -4983,8 +4981,7 @@ The element th is an HTML element and is used in Akoma Ntoso as in HTML, for a h
 			<xsd:documentation>
 				<type>Element</type>
 				<name>td</name>
-				<comment>
-The element td is an HTML element and is used in Akoma Ntoso as in HTML, for a data cell of a table</comment>
+				<comment>The element td is an HTML element and is used in Akoma Ntoso as in HTML, for a data cell of a table</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -6572,8 +6569,7 @@ The element TLCreference is a generic metadata reference to the Akoma Ntoso IRI 
 			<xsd:documentation>
 				<type>Element</type>
 				<name>note</name>
-				<comment>
-The element note is a metadata element containing the text of the footnote and endnote specified.</comment>
+				<comment>The element note is a metadata element containing the text of the footnote and endnote specified.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>

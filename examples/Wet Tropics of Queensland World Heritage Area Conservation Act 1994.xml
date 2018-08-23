@@ -32,7 +32,7 @@
       <p>
         <shortTitle>Wet Tropics of Queensland World Heritage Area Conservation Act 1994</shortTitle>
       </p>
-      <longTitle>
+      <longTitle eId="longTitle">
         <p>An Act relating to the conservation of the Wet Tropics of Queensland World Heritage Area</p>
       </longTitle>
     </preface>

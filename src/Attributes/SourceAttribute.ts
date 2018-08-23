@@ -12,6 +12,8 @@ export class SourceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'source';
 
+  static getName() { return 'source'; }
+
   /**
    * The default value of the attribute.
    */

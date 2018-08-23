@@ -7,6 +7,8 @@ export class MarkerAttribute extends AbstractAttribute {
    */
   readonly name: string = 'marker';
 
+  static getName() { return 'marker'; }
+
   /**
    * The default value of the attribute.
    */

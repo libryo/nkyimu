@@ -7,6 +7,8 @@ export class XMLLangNamespaceAttribute extends AbstractAttribute {
    */
   readonly name: string = 'xmlns:lang';
 
+  static getName() { return 'xmlns:lang'; }
+
   /**
    * The default value of the attribute.
    */

@@ -9,6 +9,16 @@ This library will hopefully help in creating AkomaNtoso documents with more skil
 ## Examples
 You can generate the AkN document either manually or using the auto-generator. Both examples are provided in the examples folder.
 
+To generate a Nkyimu node using the `nodeName`, use the available engine module:
+
+```
+import { Engine, Helpers } from 'nkyimu';
+
+const section = Engine.Generator.createNode('section');
+
+const text = Engine.Generator.createNode('', 'Text node over here');
+```
+
 ## Contribution
 After making any addition, modification or removal of the source files, you will need to regenerate the required index files and the element map that is used to link an AkN element and a Nkyimu element:
 

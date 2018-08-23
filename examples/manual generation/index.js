@@ -1,5 +1,4 @@
-import { Elements, Attributes } from '../../build/src';
-import { forDisplay } from '../../build/src/common/helpers';
+import { Elements, Attributes, Helpers } from 'nkyimu';
 
 // Generation of Wet Tropics of Queensland World Heritage Area Conservation Act 1994
 class TestDocument {
@@ -166,7 +165,7 @@ const node = generated.getDocument().getElement();
 /** Lets display the original */
 
 let display = document.createElement('pre');
-display.innerHTML = forDisplay(generated.render());
+display.innerHTML = Helpers.forDisplay(generated.render());
 
 document.querySelector('body').appendChild(display);
 
@@ -188,7 +187,7 @@ if (longTitle) {
 }
 
 display = document.createElement('pre');
-display.innerHTML = forDisplay(generated.render());
+display.innerHTML = Helpers.forDisplay(generated.render());
 
 document.querySelector('body').appendChild(display);
 

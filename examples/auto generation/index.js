@@ -1,8 +1,7 @@
-import { Generator } from '../../build/src/Engine/Generator';
-import { forDisplay } from '../../build/src/common/helpers';
+import { Engine, Helpers } from 'nkyimu';
 
 function displayResult(source) {
-  const generated = (new Generator()).fromText(source);
+  const generated = (new Engine.Generator()).fromText(source);
 
   let display = document.querySelector('pre');
 
@@ -11,7 +10,7 @@ function displayResult(source) {
     document.querySelector('body').appendChild(display);
   }
 
-  display.innerHTML = forDisplay(generated.toXML());
+  display.innerHTML = Helpers.forDisplay(generated.toXML());
 
   console.log(generated);
 }

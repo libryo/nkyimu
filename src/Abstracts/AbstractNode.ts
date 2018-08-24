@@ -19,7 +19,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    * Computed list of nodes that are allowed to be children
    * of the current node.
    */
-  private allowedChildren: string[] = [];
+  protected _allowedChildren: string[] = [];
 
   /**
    * Indices of the child nodes that are required
@@ -72,6 +72,11 @@ export abstract class AbstractNode implements HasChildrenMap {
   private _children: AbstractNode[] = [];
 
   /**
+   * The parent node.
+   */
+  protected _parent: AbstractNode|null = null;
+
+  /**
    * Create a new node.
    */
   constructor(content = '') {
@@ -87,6 +92,20 @@ export abstract class AbstractNode implements HasChildrenMap {
         this.node = Object.assign((new Document()).createComment(content), { source: this });
         break;
     }
+  }
+
+  /**
+   * Parent accessor.
+   */
+  get allowedChildren(): string[] {
+    return this._allowedChildren;
+  }
+
+  /**
+   * Parent accessor.
+   */
+  get parent(): AbstractNode|null {
+    return this._parent;
   }
 
   /**
@@ -183,8 +202,8 @@ export abstract class AbstractNode implements HasChildrenMap {
   /**
    * Setup the required validation parameters.
    */
-  private setupValidationParams(): void {
-    this.allowedChildren = this.extractNodeNames(this.CHILDREN_MAP);
+  setupValidationParams(): void {
+    this._allowedChildren = this.extractNodeNames(this.CHILDREN_MAP);
     this.SEQUENCE.forEach((e, index) => {
       if (e.indexOf('?') === -1) {
         this.requiredIndices.push(index);
@@ -204,13 +223,15 @@ export abstract class AbstractNode implements HasChildrenMap {
       throw new Error('This node does not accepts any children.');
     }
 
-    if (this.allowedChildren.length < 1) {
+    if (this._allowedChildren.length < 1) {
       this.setupValidationParams();
     }
 
     this.validateChild(node);
 
     this.childrenOrder.push(node.getNodeName());
+
+    node._parent = this;
 
     this._children.push(node);
 
@@ -292,7 +313,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    */
   validateChild(node: AbstractNode): void {
     /** Check if the node is allowed as a child. We also validate for any that matches AnyOtherType complexType */
-    if (this.allowedChildren.indexOf('any') === -1 && this.allowedChildren.indexOf(node.getNodeName()) === -1) {
+    if (this._allowedChildren.indexOf('any') === -1 && this._allowedChildren.indexOf(node.getNodeName()) === -1) {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
     }
 

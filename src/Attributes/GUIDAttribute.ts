@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { NoWhiteSpace } from "../SimpleTypes/NoWhiteSpace";
 
 export class GUIDAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'GUIDAttribute'; }
+
+  get className(): string { return 'GUIDAttribute'; }
   /**
    * The name of the attribute.
    */

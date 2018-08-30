@@ -268,6 +268,8 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     this._children.splice(index, 1, replacement);
 
+    replacement._parent = this;
+
     this.node.replaceChild(replacement.getNode(), search.getNode());
 
     return this;
@@ -285,7 +287,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     this.node.setAttribute(attribute.getName(), attribute.getValue().toString());
 
-    this.currentAttributes.push(attribute.constructor.name);
+    this.currentAttributes.push(attribute.className);
   }
 
   /**
@@ -298,7 +300,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       throw new Error('This node does not accepts any attributes.');
     }
 
-    const index = this.currentAttributes.indexOf(attribute.constructor.name);
+    const index = this.currentAttributes.indexOf(attribute.className);
 
     if (index === -1) return;
 
@@ -505,7 +507,7 @@ export abstract class AbstractNode implements HasChildrenMap {
   validateAttributes() {
     let required = this.ATTRIBUTE_GROUPS
       .filter(e => e.required === true)
-      .map(e => e.attribute.name);
+      .map(e => e.attribute.getClassName());
 
     if (required.length === 0) return;
 

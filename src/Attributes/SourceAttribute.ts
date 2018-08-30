@@ -7,6 +7,10 @@ import { AgentRef } from "../SimpleTypes/AgentRef";
  */
 export class SourceAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'SourceAttribute'; }
+
+  get className(): string { return 'SourceAttribute'; }
+
   /**
    * The name of the attribute.
    */

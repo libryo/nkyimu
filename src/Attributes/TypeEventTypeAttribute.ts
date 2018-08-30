@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { EventType } from "../SimpleTypes/EventType";
 
 export class TypeEventTypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeEventTypeAttribute'; }
+
+  get className(): string { return 'TypeEventTypeAttribute'; }
   /**
    * The name of the attribute.
    */

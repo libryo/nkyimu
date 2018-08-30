@@ -5,7 +5,7 @@ module.exports = {
         'auto generation': './examples/auto generation/index.js',
         'manual generation': './examples/manual generation/index.js',
     },
-    mode: "development",
+    mode: "production",
     output: {
         filename: "[name]/index.js",
         path: __dirname + "/build/examples"

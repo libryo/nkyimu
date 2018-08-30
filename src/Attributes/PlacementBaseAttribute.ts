@@ -3,6 +3,10 @@ import { EIdRef } from "../SimpleTypes/EIdRef";
 
 export class PlacementBaseAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'PlacementBaseAttribute'; }
+
+  get className(): string { return 'PlacementBaseAttribute'; }
+
   /**
    * The name of the attribute.
    */

@@ -5,6 +5,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * or the end event of a time interval is not known.
  */
 export class DurationAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'DurationAttribute'; }
+
+  get className(): string { return 'DurationAttribute'; }
   /**
    * The name of the attribute.
    */

@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
 export class BorderAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'BorderAttribute'; }
+
+  get className(): string { return 'BorderAttribute'; }
   /**
    * The name of the attribute.
    */

@@ -4,6 +4,10 @@ import { VoteRef } from "../SimpleTypes/VoteRef";
 
 
 export class ChoiceAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ChoiceAttribute'; }
+
+  get className(): string { return 'ChoiceAttribute'; }
   /**
    * The name of the attribute.
    */

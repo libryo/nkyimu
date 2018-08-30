@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class FrozenAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'FrozenAttribute'; }
+
+  get className(): string { return 'FrozenAttribute'; }
+
   /**
    * The name of the attribute.
    */

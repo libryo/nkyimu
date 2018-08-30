@@ -4,6 +4,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * The attribute name is used to give a name to all generic elements
  */
 export class NameAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'NameAttribute'; }
+
+  get className(): string { return 'NameAttribute'; }
   /**
    * The name of the attribute.
    */

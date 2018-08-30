@@ -5,6 +5,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * In elements using this attribute definition the value attribute is required
  */
 export class ValueAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ValueAttribute'; }
+
+  get className(): string { return 'ValueAttribute'; }
   /**
    * The name of the attribute.
    */

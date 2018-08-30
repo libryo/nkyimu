@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { RemarkType } from "../SimpleTypes/RemarkType";
 
 export class TypeRemarkTypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeRemarkTypeAttribute'; }
+
+  get className(): string { return 'TypeRemarkTypeAttribute'; }
   /**
    * The name of the attribute.
    */

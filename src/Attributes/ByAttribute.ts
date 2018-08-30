@@ -6,6 +6,10 @@ import { AgentRef } from "../SimpleTypes/AgentRef";
  * TLCPerson or TLCOrganization element in the references section
  */
 export class ByAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ByAttribute'; }
+
+  get className(): string { return 'ByAttribute'; }
   /**
    * The name of the attribute.
    */

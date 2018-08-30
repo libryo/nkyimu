@@ -5,6 +5,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * syntax HH:MM:SS
  */
 export class TimeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TimeAttribute'; }
+
+  get className(): string { return 'TimeAttribute'; }
   /**
    * The name of the attribute.
    */

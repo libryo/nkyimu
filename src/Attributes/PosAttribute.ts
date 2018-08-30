@@ -7,6 +7,10 @@ import { PosType } from "../SimpleTypes/PosType";
  * with the relative eId.
  */
 export class PosAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'PosAttribute'; }
+
+  get className(): string { return 'PosAttribute'; }
   /**
    * The name of the attribute.
    */

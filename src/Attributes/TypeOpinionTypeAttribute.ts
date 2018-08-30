@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OpinionType } from "../SimpleTypes/OpinionType";
 
 export class TypeOpinionTypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeOpinionTypeAttribute'; }
+
+  get className(): string { return 'TypeOpinionTypeAttribute'; }
   /**
    * The name of the attribute.
    */

@@ -6,6 +6,10 @@ import { Language } from "../SimpleTypes/Language";
  * Values are taken from the RFC 4646.
  */
 export class FromLanguageAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'FromLanguageAttribute'; }
+
+  get className(): string { return 'FromLanguageAttribute'; }
   /**
    * The name of the attribute.
    */

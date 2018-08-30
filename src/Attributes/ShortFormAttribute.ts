@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class ShortFormAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'ShortFormAttribute'; }
+
+  get className(): string { return 'ShortFormAttribute'; }
+
   /**
    * The name of the attribute.
    */

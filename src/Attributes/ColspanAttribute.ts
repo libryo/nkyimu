@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
 export class ColspanAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ColspanAttribute'; }
+
+  get className(): string { return 'ColspanAttribute'; }
   /**
    * The name of the attribute.
    */

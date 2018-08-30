@@ -6,6 +6,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * to the XSD syntax YYYY-MM-DDThh:mm:ss(zzzz)
  */
 export class DateAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'DateAttribute'; }
+
+  get className(): string { return 'DateAttribute'; }
   /**
    * The name of the attribute.
    */

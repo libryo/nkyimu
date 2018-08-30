@@ -3,6 +3,10 @@ import { StatusType } from "../SimpleTypes/StatusType";
 
 export class StatusAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'StatusAttribute'; }
+
+  get className(): string { return 'StatusAttribute'; }
+
   /**
    * The name of the attribute.
    */

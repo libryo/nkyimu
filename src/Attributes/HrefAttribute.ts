@@ -6,6 +6,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * In elements using this attribute definition the href attribute is required
  */
 export class HrefAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'HrefAttribute'; }
+
+  get className(): string { return 'HrefAttribute'; }
   /**
    * The name of the attribute.
    */

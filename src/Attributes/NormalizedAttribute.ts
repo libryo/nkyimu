@@ -5,6 +5,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * normalized value of the number, if appropriate.
  */
 export class NormalizedAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'NormalizedAttribute'; }
+
+  get className(): string { return 'NormalizedAttribute'; }
   /**
    * The name of the attribute.
    */

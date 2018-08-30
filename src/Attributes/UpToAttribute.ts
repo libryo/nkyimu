@@ -6,6 +6,10 @@ import { EIdRef } from "../SimpleTypes/EIdRef";
  * ending element of the range.
  */
 export class UpToAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'UpToAttribute'; }
+
+  get className(): string { return 'UpToAttribute'; }
   /**
    * The name of the attribute.
    */

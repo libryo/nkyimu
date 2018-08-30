@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class MarkerAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'MarkerAttribute'; }
+
+  get className(): string { return 'MarkerAttribute'; }
+
   /**
    * The name of the attribute.
    */

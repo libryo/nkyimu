@@ -1,6 +1,10 @@
 import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class XMLXSINamespaceAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'XMLXSINamespaceAttribute'; }
+
+  get className(): string { return 'XMLXSINamespaceAttribute'; }
   /**
    * The name of the attribute.
    */

@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { AgentRef } from "../SimpleTypes/AgentRef";
 
 export class ForTypeAgentRefAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ForTypeAgentRefAttribute'; }
+
+  get className(): string { return 'ForTypeAgentRefAttribute'; }
   /**
    * The name of the attribute.
    */

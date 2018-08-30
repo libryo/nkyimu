@@ -1,6 +1,10 @@
 import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class WidthAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'WidthAttribute'; }
+
+  get className(): string { return 'WidthAttribute'; }
   /**
    * The name of the attribute.
    */

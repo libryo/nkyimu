@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class ShowAsAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'ShowAsAttribute'; }
+
+  get className(): string { return 'ShowAsAttribute'; }
+
   /**
    * The name of the attribute.
    */

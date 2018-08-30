@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class InlineQuoteAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'InlineQuoteAttribute'; }
+
+  get className(): string { return 'InlineQuoteAttribute'; }
+
   /**
    * The name of the attribute.
    */

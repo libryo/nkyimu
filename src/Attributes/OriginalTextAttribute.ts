@@ -5,6 +5,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  */
 export class OriginalTextAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'OriginalTextAttribute'; }
+
+  get className(): string { return 'OriginalTextAttribute'; }
+
   /**
    * The name of the attribute.
    */

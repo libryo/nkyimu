@@ -4,6 +4,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * The attribute target specifies the target of the a element.
  */
 export class TargetAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TargetAttribute'; }
+
+  get className(): string { return 'TargetAttribute'; }
   /**
    * The name of the attribute.
    */

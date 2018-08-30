@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
 export class HeightAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'HeightAttribute'; }
+
+  get className(): string { return 'HeightAttribute'; }
   /**
    * The name of the attribute.
    */

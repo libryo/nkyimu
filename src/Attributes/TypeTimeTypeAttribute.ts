@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { TimeType } from "../SimpleTypes/TimeType";
 
 export class TypeTimeTypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeTimeTypeAttribute'; }
+
+  get className(): string { return 'TypeTimeTypeAttribute'; }
   /**
    * The name of the attribute.
    */

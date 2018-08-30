@@ -5,6 +5,10 @@ import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
  * The attribute number is used to specify a number in the publication of the document
  */
 export class NumberAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'NumberAttribute'; }
+
+  get className(): string { return 'NumberAttribute'; }
   /**
    * The name of the attribute.
    */

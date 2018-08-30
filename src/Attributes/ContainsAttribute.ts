@@ -6,6 +6,10 @@ import { VersionType } from "../SimpleTypes/VersionType";
  * whether the document is original or modified wrt the original version
  */
 export class ContainsAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ContainsAttribute'; }
+
+  get className(): string { return 'ContainsAttribute'; }
   /**
    * The name of the attribute.
    */

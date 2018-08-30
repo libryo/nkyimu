@@ -7,6 +7,10 @@ import { ReferenceRef } from "../SimpleTypes/ReferenceRef";
  */
 export class DictionaryAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'DictionaryAttribute'; }
+
+  get className(): string { return 'DictionaryAttribute'; }
+
   /**
    * The name of the attribute.
    */

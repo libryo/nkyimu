@@ -6,6 +6,10 @@ import { RoleRef } from "../SimpleTypes/RoleRef";
  * the text. It is a reference to a TLCRole element in the references section
  */
 export class AsAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'AsAttribute'; }
+
+  get className(): string { return 'AsAttribute'; }
   /**
    * The name of the attribute.
    */

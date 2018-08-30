@@ -3,6 +3,10 @@ import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
 export class LevelAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'LevelAttribute'; }
+
+  get className(): string { return 'LevelAttribute'; }
+
   /**
    * The name of the attribute.
    */

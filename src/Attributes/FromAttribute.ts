@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { EIdRef } from "../SimpleTypes/EIdRef";
 
 export class FromAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'FromAttribute'; }
+
+  get className(): string { return 'FromAttribute'; }
   /**
    * The name of the attribute.
    */

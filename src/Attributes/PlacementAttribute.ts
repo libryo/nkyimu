@@ -3,6 +3,10 @@ import { PlacementType } from "../SimpleTypes/PlacementType";
 
 export class PlacementAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'PlacementAttribute'; }
+
+  get className(): string { return 'PlacementAttribute'; }
+
   /**
    * The name of the attribute.
    */

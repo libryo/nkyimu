@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class EndTimeAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'EndTimeAttribute'; }
+
+  get className(): string { return 'EndTimeAttribute'; }
+
   /**
    * The name of the attribute.
    */

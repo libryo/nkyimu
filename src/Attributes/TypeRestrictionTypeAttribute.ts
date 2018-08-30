@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { RestrictionType } from "../SimpleTypes/RestrictionType";
 
 export class TypeRestrictionTypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeRestrictionTypeAttribute'; }
+
+  get className(): string { return 'TypeRestrictionTypeAttribute'; }
   /**
    * The name of the attribute.
    */

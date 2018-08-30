@@ -7,6 +7,10 @@ import { EIdRef } from "../SimpleTypes/EIdRef";
  * copy of
  */
 export class AlternativeToAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'AlternativeToAttribute'; }
+
+  get className(): string { return 'AlternativeToAttribute'; }
   /**
    * The name of the attribute.
    */

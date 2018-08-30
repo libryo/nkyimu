@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class BreakWithAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'BreakWithAttribute'; }
+
+  get className(): string { return 'BreakWithAttribute'; }
+
   /**
    * The name of the attribute.
    */

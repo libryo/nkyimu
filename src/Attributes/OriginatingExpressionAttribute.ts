@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class OriginatingExpressionAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'OriginatingExpressionAttribute'; }
+
+  get className(): string { return 'OriginatingExpressionAttribute'; }
+
   /**
    * The name of the attribute.
    */

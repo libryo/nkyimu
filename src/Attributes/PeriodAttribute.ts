@@ -3,6 +3,10 @@ import { TemporalGroupRef } from "../SimpleTypes/TemporalGroupRef";
 
 export class PeriodAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'PeriodAttribute'; }
+
+  get className(): string { return 'PeriodAttribute'; }
+
   /**
    * The name of the attribute.
    */

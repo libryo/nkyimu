@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { OnlyNumbers } from "../SimpleTypes/OnlyNumbers";
 
 export class CellspacingAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'CellspacingAttribute'; }
+
+  get className(): string { return 'CellspacingAttribute'; }
   /**
    * The name of the attribute.
    */

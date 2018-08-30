@@ -3,6 +3,10 @@ import { EventRefRef } from "../SimpleTypes/EventRefRef";
 
 export class EndAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'EndAttribute'; }
+
+  get className(): string { return 'EndAttribute'; }
+
   /**
    * The name of the attribute.
    */

@@ -3,6 +3,10 @@ import { AgentRef } from "../SimpleTypes/AgentRef";
 
 
 export class EmpoweredByAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'EmpoweredByAttribute'; }
+
+  get className(): string { return 'EmpoweredByAttribute'; }
   /**
    * The name of the attribute.
    */

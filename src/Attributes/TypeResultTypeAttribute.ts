@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { ResultType } from "../SimpleTypes/ResultType";
 
 export class TypeResultTypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeResultTypeAttribute'; }
+
+  get className(): string { return 'TypeResultTypeAttribute'; }
   /**
    * The name of the attribute.
    */

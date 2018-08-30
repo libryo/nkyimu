@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { Language } from "../SimpleTypes/Language";
 
 export class XMLLangNamespaceAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'XMLLangNamespaceAttribute'; }
+
+  get className(): string { return 'XMLLangNamespaceAttribute'; }
   /**
    * The name of the attribute.
    */

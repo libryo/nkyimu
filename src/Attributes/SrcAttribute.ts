@@ -3,6 +3,10 @@ import { ManifestationURI } from "../SimpleTypes/ManifestationURI";
 
 export class SrcAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'SrcAttribute'; }
+
+  get className(): string { return 'SrcAttribute'; }
+
   /**
    * The name of the attribute.
    */

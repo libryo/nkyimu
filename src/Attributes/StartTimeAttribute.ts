@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class StartTimeAttribute extends AbstractAttribute {
 
+  static getClassName(): string { return 'StartTimeAttribute'; }
+
+  get className(): string { return 'StartTimeAttribute'; }
+
   /**
    * The name of the attribute.
    */

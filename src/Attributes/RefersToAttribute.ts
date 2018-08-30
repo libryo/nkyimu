@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { ReferenceRef } from "../SimpleTypes/ReferenceRef";
 
 export class RefersToAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'RefersToAttribute'; }
+
+  get className(): string { return 'RefersToAttribute'; }
   /**
    * The name of the attribute.
    */

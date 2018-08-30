@@ -52,4 +52,12 @@ export abstract class AbstractAttribute {
   getValue(): string|number|boolean {
     return this.value;
   }
+
+  static getClassName(): string {
+    throw new Error('Implement the function getClassName');
+  }
+
+  get className(): string {
+    throw new Error('Implement the function className');
+  }
 }

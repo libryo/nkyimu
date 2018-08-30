@@ -5,6 +5,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
  * restrictions as to its values.
  */
 export class TypeAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'TypeAttribute'; }
+
+  get className(): string { return 'TypeAttribute'; }
   /**
    * The name of the attribute.
    */

@@ -1,6 +1,10 @@
 import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 
 export class XMLIdNamespaceAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'XMLIdNamespaceAttribute'; }
+
+  get className(): string { return 'XMLIdNamespaceAttribute'; }
   /**
    * The name of the attribute.
    */

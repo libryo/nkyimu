@@ -5,6 +5,10 @@ import { EIdRef } from "../SimpleTypes/EIdRef";
  * The attribute for is used in modification elements to specify the element this is a modification of.
  */
 export class ForTypeEIdRefAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ForTypeEIdRefAttribute'; }
+
+  get className(): string { return 'ForTypeEIdRefAttribute'; }
   /**
    * The name of the attribute.
    */

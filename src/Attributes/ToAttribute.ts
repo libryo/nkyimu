@@ -2,6 +2,10 @@ import { AbstractAttribute } from "../Abstracts/AbstractAttribute";
 import { AgentRef } from "../SimpleTypes/AgentRef";
 
 export class ToAttribute extends AbstractAttribute {
+
+  static getClassName(): string { return 'ToAttribute'; }
+
+  get className(): string { return 'ToAttribute'; }
   /**
    * The name of the attribute.
    */

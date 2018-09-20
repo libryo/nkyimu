@@ -26,6 +26,8 @@ export { ModType } from './ModType';
 export { Preambleopt } from './Preambleopt';
 export { Prefaceopt } from './Prefaceopt';
 export { RecitalHierarchy } from './RecitalHierarchy';
+export { RefItems } from './RefItems';
+export { ReferenceType } from './ReferenceType';
 export { SrcType } from './SrcType';
 export { SubFlowStructure } from './SubFlowStructure';
 export { ValueType } from './ValueType';

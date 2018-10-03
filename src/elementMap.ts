@@ -51,6 +51,7 @@ export const elementMap: { [key: string]: string } = {
   'notes': 'Notes',
   'original': 'Original',
   'passiveRef': 'PassiveRef',
+  'publication': 'Publication',
   'references': 'References',
   'TLCConcept': 'TLCConcept',
   'TLCEvent': 'TLCEvent',

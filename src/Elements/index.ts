@@ -50,6 +50,7 @@ export { Note } from './Core/Note';
 export { Notes } from './Core/Notes';
 export { Original } from './Core/Original';
 export { PassiveRef } from './Core/PassiveRef';
+export { Publication } from './Core/Publication';
 export { References } from './Core/References';
 export { TLCConcept } from './Core/TLCConcept';
 export { TLCEvent } from './Core/TLCEvent';

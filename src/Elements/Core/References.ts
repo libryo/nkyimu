@@ -1,7 +1,6 @@
 import { AbstractNode } from "../../Abstracts/AbstractNode";
 import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
-import { Source } from "../../AttributeGroups/Source";
 import { RefItems } from "../../ComplexTypes";
 
 const refItems = new RefItems();

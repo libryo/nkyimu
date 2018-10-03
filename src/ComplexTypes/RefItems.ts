@@ -3,7 +3,7 @@ import { HasChildrenMap } from "../Interfaces/HasChildrenMap";
 import { NodeRules } from "../Interfaces/NodeRules";
 import { TLCs } from "../ElementGroups/TLCs";
 import { DocRefs } from "../ElementGroups/DocRefs";
-import { ReferenceType } from "./ReferenceType";
+import { Source } from "../AttributeGroups";
 
 /**
  * The complex type refItems is a list of types of references
@@ -32,6 +32,6 @@ export class RefItems implements HasChildrenMap {
   };
 
   readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
-    ...(new ReferenceType()).ATTRIBUTE_GROUPS
+    ...(new Source()).items
   ];
 }

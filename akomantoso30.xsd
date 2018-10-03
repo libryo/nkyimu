@@ -5421,8 +5421,7 @@ The element preservation is the metadata property containing an arbitrary list o
 			<xsd:documentation>
 				<type>Element</type>
 				<name>publication</name>
-				<comment>
-The element publication is the metadata container specifying an official publication event for the FRBR expression of the document.</comment>
+				<comment>The element publication is the metadata container specifying an official publication event for the FRBR expression of the document.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>

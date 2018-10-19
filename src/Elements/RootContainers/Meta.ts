@@ -3,7 +3,7 @@ import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Meta extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'meta';
 
   getNodeName(): string { return 'meta'; }
 

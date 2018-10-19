@@ -12,7 +12,7 @@ const type = new Markeropt();
  * as in HTML, for including an image. It is a marker.
  */
 export class Img extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'img';
 
   getNodeName(): string { return 'img'; }
 

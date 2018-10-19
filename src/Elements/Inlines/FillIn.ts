@@ -15,7 +15,7 @@ const type = new Inline();
  * the reader and deliver to some server-side process.
  */
 export class FillIn extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'fillin';
 
   getNodeName(): string { return 'fillIn'; }
 

@@ -4,7 +4,7 @@ import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Toc extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'toc';
 
   getNodeName(): string { return 'toc'; }
 

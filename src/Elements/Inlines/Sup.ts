@@ -10,7 +10,7 @@ const type = new Inline();
  * as in HTML, for the generic inline.
  */
 export class Sup extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'sup';
 
   getNodeName(): string { return 'sup'; }
 

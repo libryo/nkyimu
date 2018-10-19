@@ -12,7 +12,7 @@ const type = new Inline();
  * representation in the date attribute.
  */
 export class Date extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'date';
 
   getNodeName(): string { return 'date'; }
 

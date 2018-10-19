@@ -11,7 +11,7 @@ const type = new Inline();
  * (e.g., dots, spaces, the word "omissis", etc.
  */
 export class Omissis extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'omissis';
 
   getNodeName(): string { return 'omissis'; }
 

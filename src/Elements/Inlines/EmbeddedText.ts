@@ -15,7 +15,7 @@ const type = new Inline();
  * in the text; quote="" implies that there is no quote character.
  */
 export class EmbeddedText extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'embeddedtext';
 
   getNodeName(): string { return 'embeddedText'; }
 

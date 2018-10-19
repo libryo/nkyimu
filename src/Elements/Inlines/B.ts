@@ -10,7 +10,7 @@ const type = new Inline();
  * as in HTML, for the bold style (an inline)
  */
 export class B extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'b';
 
   getNodeName(): string { return 'b'; }
 

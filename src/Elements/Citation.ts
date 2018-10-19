@@ -10,7 +10,7 @@ const type = new ItemType();
  * that is called citation
  */
 export class Citation extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'citation';
 
   getNodeName(): string { return 'citation'; }
 

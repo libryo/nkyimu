@@ -11,7 +11,7 @@ const type = new SubFlowStructure();
  * an authorial (non-editorial) note in the main flow of the text.
  */
 export class AuthorialNote extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'authorialnote';
 
   getNodeName(): string { return 'authorialNote'; }
 

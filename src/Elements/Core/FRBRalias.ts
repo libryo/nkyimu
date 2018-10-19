@@ -10,7 +10,7 @@ const type = new ValueType();
  * names of the document in the respective level of the FRBR hierarchy
  */
 export class FRBRalias extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbralias';
 
   getNodeName(): string { return 'FRBRalias'; }
 

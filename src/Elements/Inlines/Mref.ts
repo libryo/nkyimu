@@ -10,7 +10,7 @@ const type = new Inline();
  * references (each in turn represented by a ref element)
  */
 export class Mref extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'mref';
 
   getNodeName(): string { return 'mref'; }
 

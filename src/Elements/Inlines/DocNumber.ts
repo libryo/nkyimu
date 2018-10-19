@@ -10,7 +10,7 @@ const type = new Inline();
  * to identify the string used by the document for its own number
  */
 export class DocNumber extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docnumber';
 
   getNodeName(): string { return 'docNumber'; }
 

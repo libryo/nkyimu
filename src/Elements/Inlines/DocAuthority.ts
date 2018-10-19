@@ -11,7 +11,7 @@ const type = new Inline();
  * Authority to which the document was submitted.
  */
 export class DocAuthority extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docauthority';
 
   getNodeName(): string { return 'docAuthority'; }
 

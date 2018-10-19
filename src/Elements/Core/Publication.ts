@@ -10,7 +10,7 @@ const type = new Metaopt();
  * publication event for the FRBR expression of the document.
  */
 export class Publication extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'publication';
 
   getNodeName(): string { return 'publication'; }
 

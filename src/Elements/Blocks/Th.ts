@@ -11,7 +11,7 @@ const type = new Blocksopt();
  * a header cell of a table
  */
 export class Th extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'th';
 
   getNodeName(): string { return 'th'; }
 

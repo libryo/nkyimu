@@ -9,7 +9,7 @@ const type = new ItemType();
  * The element item is a container belonging to a blockList
  */
 export class Item extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'item';
 
   getNodeName(): string { return 'item'; }
 

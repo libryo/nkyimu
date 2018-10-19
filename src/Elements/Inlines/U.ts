@@ -10,7 +10,7 @@ const type = new Inline();
  * as in HTML, for the underline style (an inline)
  */
 export class U extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'u';
 
   getNodeName(): string { return 'u'; }
 

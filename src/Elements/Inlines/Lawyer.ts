@@ -13,7 +13,7 @@ const type = new Inlinereqreq();
  * delegation of power in some role
  */
 export class Lawyer extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'lawyer';
 
   getNodeName(): string { return 'lawyer'; }
 

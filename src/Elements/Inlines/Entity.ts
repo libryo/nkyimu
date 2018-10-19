@@ -12,7 +12,7 @@ const type = new Inlinereqreq();
  * the ontology
  */
 export class Entity extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'entity';
 
   getNodeName(): string { return 'entity'; }
 

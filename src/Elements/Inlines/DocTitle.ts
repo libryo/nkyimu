@@ -11,7 +11,7 @@ const type = new Inline();
  * title
  */
 export class DocTitle extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'doctitle';
 
   getNodeName(): string { return 'docTitle'; }
 

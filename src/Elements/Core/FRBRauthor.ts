@@ -13,7 +13,7 @@ const type = new Metaopt();
  * specifies the role of the author.
  */
 export class FRBRauthor extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrauthor';
 
   getNodeName(): string { return 'FRBRauthor'; }
 

@@ -12,7 +12,7 @@ const type = new Inline();
  * Use #refersTo to a TLCEvent to refer to the event of the specific session.
  */
 export class Session extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'session';
 
   getNodeName(): string { return 'session'; }
 

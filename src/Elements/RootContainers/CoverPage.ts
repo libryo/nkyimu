@@ -10,7 +10,7 @@ const type = new Basicopt();
  * that acts as a cover page
  */
 export class CoverPage extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'coverpage';
 
   getNodeName(): string { return 'coverPage'; }
 

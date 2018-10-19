@@ -11,7 +11,7 @@ const type = new Inlinereqreq();
  * in the ontology
  */
 export class Organization extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'organization';
 
   getNodeName(): string { return 'organization'; }
 

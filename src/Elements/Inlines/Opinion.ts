@@ -11,7 +11,7 @@ const type = new Inline();
  * the document defines the opinion of an actor
  */
 export class Opinion extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'opinion';
 
   getNodeName(): string { return 'opinion'; }
 

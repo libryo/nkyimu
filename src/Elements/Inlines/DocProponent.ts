@@ -11,7 +11,7 @@ const type = new Inline();
  * to identify the string used by the document for its proponent
  */
 export class DocProponent extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docproponent';
 
   getNodeName(): string { return 'docProponent'; }
 

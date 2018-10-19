@@ -11,7 +11,7 @@ const type = new Metaopt();
  * (three-letter code) of the main human language used in the content of this expression
  */
 export class FRBRlanguage extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrlanguage';
 
   getNodeName(): string { return 'FRBRlanguage'; }
 

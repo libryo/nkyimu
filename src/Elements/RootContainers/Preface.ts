@@ -9,7 +9,7 @@ const type = new Prefaceopt();
  * material (e.g. headers, formulas, etc.)
  */
 export class Preface extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'preface';
 
   getNodeName(): string { return 'preface'; }
 

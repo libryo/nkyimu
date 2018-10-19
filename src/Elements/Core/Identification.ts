@@ -5,7 +5,7 @@ import { Source } from "../../AttributeGroups/Source";
 
 
 export class Identification extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'identification';
 
   getNodeName(): string { return 'identification'; }
 

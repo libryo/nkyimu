@@ -17,7 +17,7 @@ const type = new Inline();
  * to point to the eId of the corresponding ref element.
  */
 export class QuotedText extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'quotedtext'
 
   getNodeName(): string { return 'quotedText'; }
 

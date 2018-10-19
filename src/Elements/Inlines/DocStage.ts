@@ -11,7 +11,7 @@ const type = new Inline();
  * the stage in which the document sits
  */
 export class DocStage extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docstage';
 
   getNodeName(): string { return 'docStage'; }
 

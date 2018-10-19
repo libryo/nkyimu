@@ -10,7 +10,7 @@ const type = new Inline();
  * of editorial deletions
  */
 export class Del extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'del';
 
   getNodeName(): string { return 'del'; }
 

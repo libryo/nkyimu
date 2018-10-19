@@ -10,7 +10,7 @@ const type = new Inline();
  * of a term used in the rest of the document
  */
 export class Def extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'def';
 
   getNodeName(): string { return 'def'; }
 

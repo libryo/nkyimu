@@ -9,7 +9,7 @@ import { AkomaNtosoType } from "../../ComplexTypes/AkomaNtosoType";
 const aknType = new AkomaNtosoType();
 
 export class AKNDocument extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'akomantoso';
 
   readonly CHILDREN_MAP: NodeRules = aknType.CHILDREN_MAP;
 

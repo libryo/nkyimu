@@ -10,7 +10,7 @@ const type = new Blocksopt();
  * judgments (e.g. headers, formulas, etc.)
  */
 export class Header extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'header';
 
   getNodeName(): string { return 'header'; }
 

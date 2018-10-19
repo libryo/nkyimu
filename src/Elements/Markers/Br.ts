@@ -10,7 +10,7 @@ const type = new Markeropt();
  * as in HTML, for the breaking of a line.
  */
 export class Br extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'br';
 
   getNodeName(): string { return 'br'; }
 

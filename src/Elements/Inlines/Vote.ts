@@ -12,7 +12,7 @@ const type = new Inline();
  * (when organized by name) in a voting report.
  */
 export class Vote extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'vote';
 
   getNodeName(): string { return 'vote'; }
 

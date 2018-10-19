@@ -10,7 +10,7 @@ const type = new Inlinereq();
  * by side with hierarchical containers.
  */
 export class CrossHeading extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'crossheading';
 
   getNodeName(): string { return 'crossHeading'; }
 

@@ -10,7 +10,7 @@ const type = new Inline();
  * as in HTML, for the superscript style (an inline)
  */
 export class Span extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'span';
 
   getNodeName(): string { return 'span'; }
 

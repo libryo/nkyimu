@@ -11,7 +11,7 @@ const type = new Inline();
  * detailing the individual introducing of the document.
  */
 export class DocIntroducer extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docintroducer';
 
   getNodeName(): string { return 'docIntroducer'; }
 

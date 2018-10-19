@@ -10,7 +10,7 @@ const type = new Inline();
  * as in HTML, for the italic style (an inline)
  */
 export class I extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'i';
 
   getNodeName(): string { return 'i'; }
 

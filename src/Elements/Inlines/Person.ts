@@ -13,7 +13,7 @@ const type = new Inlinereqreq();
  * holding in the context of the document's mention
  */
 export class Person extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'person';
 
   getNodeName(): string { return 'person'; }
 

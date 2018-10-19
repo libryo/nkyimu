@@ -10,7 +10,7 @@ const type = new CoreProperties();
  * related to the Expression level according to the FRBR hierarchy
  */
 export class FRBRExpression extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrexpression';
 
   getNodeName(): string { return 'FRBRExpression'; }
 

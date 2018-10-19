@@ -12,7 +12,7 @@ const type = new Markeropt();
  * placed in the notes metadata section
  */
 export class NoteRef extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'noteref';
 
   getNodeName(): string { return 'noteRef'; }
 

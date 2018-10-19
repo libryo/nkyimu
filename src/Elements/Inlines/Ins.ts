@@ -10,7 +10,7 @@ const type = new Inline();
  * of editorial insertions
  */
 export class Ins extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'ins';
 
   getNodeName(): string { return 'ins'; }
 

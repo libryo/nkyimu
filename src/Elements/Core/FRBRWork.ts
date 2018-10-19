@@ -11,7 +11,7 @@ const type = new CoreProperties();
  * hierarchy
  */
 export class FRBRWork extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrwork';
 
   getNodeName(): string { return 'FRBRWork'; }
 

@@ -10,7 +10,7 @@ const type = new ReferenceType();
  * document (i.e., an active references)
  */
 export class ActiveRef extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'activeRef';
 
   getNodeName(): string {
     return 'activeRef';

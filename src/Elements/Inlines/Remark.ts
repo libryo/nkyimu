@@ -12,7 +12,7 @@ const type = new Inline();
  * especially within debate records
  */
 export class Remark extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'remark';
 
   getNodeName(): string { return 'remark'; }
 

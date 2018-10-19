@@ -10,7 +10,7 @@ const type = new Inlinereqreq();
  * fragment introducing or referring to an event in the ontology
  */
 export class Event extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'event';
 
   getNodeName(): string { return 'event'; }
 

@@ -11,7 +11,7 @@ const type = new Inlinereqreq();
  * fragment introducing or referring to a process in the ontology
  */
 export class Process extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'process';
 
   getNodeName(): string { return 'process'; }
 

@@ -10,7 +10,7 @@ const type = new Inlinereqreq();
  * fragment introducing or referring to a location in the ontology
  */
 export class Location extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'location';
 
   getNodeName(): string { return 'location'; }
 

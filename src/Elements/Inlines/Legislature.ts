@@ -13,7 +13,7 @@ const type = new Inline();
  * TLCEvent to refer to the event of the specific legislature.
  */
 export class Legislature extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'legislature';
 
   getNodeName(): string { return 'legislature'; }
 

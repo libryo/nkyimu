@@ -9,7 +9,7 @@ const type = new Basicopt();
  * material (e.g. dates, signatures, formulas, etc.)
  */
 export class Conclusions extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'conclusions';
 
   getNodeName(): string { return 'conclusions'; }
 

@@ -10,7 +10,7 @@ const type = new Inlinereq();
  * The element ref is an inline element containing a legal reference
  */
 export class Ref extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'ref';
 
   getNodeName(): string { return 'ref'; }
 

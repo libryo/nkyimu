@@ -4,7 +4,7 @@ import { NodeRules } from "../../Interfaces/NodeRules";
 import { Coreopt } from "../../AttributeGroups";
 
 export class Tr extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'tr';
 
   getNodeName(): string { return 'tr'; }
 

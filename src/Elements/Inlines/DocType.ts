@@ -11,7 +11,7 @@ const type = new Inline();
  * type
  */
 export class DocType extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'doctype';
 
   getNodeName(): string { return 'docType'; }
 

@@ -10,7 +10,7 @@ const type = new Inline();
  * for classifying the arguments in the motivation part of the judgment
  */
 export class Argument extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'argument';
 
   getNodeName(): string { return 'argument'; }
 

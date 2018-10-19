@@ -11,7 +11,7 @@ const type = new ListItems();
  * as in HTML, for an unordered list of list item (elements li)
  */
 export class Ul extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'ul';
 
   getNodeName(): string { return 'ul'; }
 

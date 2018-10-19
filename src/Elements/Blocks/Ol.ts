@@ -10,7 +10,7 @@ const type = new ListItems();
  * as in HTML, for an ordered list of list item (elements li)
  */
 export class Ol extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'ol';
 
   getNodeName(): string { return 'ol'; }
 

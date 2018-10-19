@@ -13,7 +13,7 @@ const type = new Metaopt();
  * name specifies which actual date is contained here.
  */
 export class FRBRdate extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrdate';
 
   getNodeName(): string { return 'FRBRdate'; }
 

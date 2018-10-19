@@ -13,7 +13,7 @@ const type = new Inline();
  * (e.g., in a debate)
  */
 export class RecordedTime extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'recordedtime';
 
   getNodeName(): string { return 'recordedTime'; }
 

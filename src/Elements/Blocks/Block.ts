@@ -12,7 +12,7 @@ const type = new Inline();
  * The attribute name is required and gives a name to the element.
  */
 export class Block extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'block';
 
   getNodeName(): string { return 'block'; }
 

@@ -10,7 +10,7 @@ const type = new ValueType();
  * to be used in the work-level IRI of this document
  */
 export class FRBRname extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrname';
 
   getNodeName(): string { return 'FRBRname'; }
 

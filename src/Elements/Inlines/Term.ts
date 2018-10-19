@@ -10,7 +10,7 @@ const type = new Inlinereqreq();
  * fragment introducing or referring to a term in the ontology
  */
 export class Term extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'term';
 
   getNodeName(): string { return 'term'; }
 

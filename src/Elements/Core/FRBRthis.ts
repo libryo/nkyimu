@@ -9,7 +9,7 @@ const type = new ValueType();
  * specific component of the document
  */
 export class FRBRthis extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrthis';
 
   getNodeName(): string { return 'FRBRthis'; }
 

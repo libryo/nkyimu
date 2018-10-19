@@ -10,7 +10,7 @@ const type = new Inline();
  * after all items of the list itself.
  */
 export class ListWrapUp extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'listwrapup';
 
   getNodeName(): string { return 'listWrapUp'; }
 

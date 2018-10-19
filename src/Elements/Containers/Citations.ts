@@ -9,7 +9,7 @@ const type = new CitationHierarchy();
  * The element container is a generic element for a container.
  */
 export class Citations extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'citations';
 
   getNodeName(): string { return 'citations'; }
 

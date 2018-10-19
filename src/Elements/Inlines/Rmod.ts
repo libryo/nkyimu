@@ -11,7 +11,7 @@ const type = new ModType();
  * specification of a range of modifications on another document.
  */
 export class Rmod extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'rmod';
 
   getNodeName(): string { return 'rmod'; }
 

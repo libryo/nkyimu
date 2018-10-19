@@ -3,7 +3,7 @@ import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Attachments extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'attachments';
 
   getNodeName(): string { return 'attachments'; }
 

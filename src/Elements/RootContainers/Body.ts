@@ -10,7 +10,7 @@ const type = new BodyType();
  * document (e.g, an act or a bill)
  */
 export class Body extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'body';
 
   getNodeName(): string { return 'body'; }
 

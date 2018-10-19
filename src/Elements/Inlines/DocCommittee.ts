@@ -13,7 +13,7 @@ const type = new Inline();
  * originated
  */
 export class DocCommittee extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'doccommittee';
 
   getNodeName(): string { return 'docCommittee'; }
 

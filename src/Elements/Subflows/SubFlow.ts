@@ -10,7 +10,7 @@ const type = new SubFlowStructure();
  * The element subFlow is a generic element for a subFlow.
  */
 export class SubFlow extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'subflow';
 
   getNodeName(): string { return 'subFlow'; }
 

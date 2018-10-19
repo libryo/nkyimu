@@ -11,7 +11,7 @@ const type = new Blocksreq();
  * elements.
  */
 export class WrapUp extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'wrapup';
 
   getNodeName(): string { return 'wrapUp'; }
 

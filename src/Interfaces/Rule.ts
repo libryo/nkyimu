@@ -7,4 +7,5 @@ export interface Rule {
   isChoice?: boolean;
   options: NodeRules;
   parentRule?: Rule;
+  nodes?;
 }

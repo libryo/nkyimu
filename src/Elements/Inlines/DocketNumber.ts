@@ -11,7 +11,7 @@ const type = new Inline();
  * of the docket, case, file, etc which the document belongs to
  */
 export class DocketNumber extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docketnumber';
 
   getNodeName(): string { return 'docketNumber'; }
 

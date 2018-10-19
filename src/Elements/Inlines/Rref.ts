@@ -12,7 +12,7 @@ const type = new Inlinereq();
  * and the one specified in the upTo attribute.
  */
 export class Rref extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'rref';
 
   getNodeName(): string { return 'rref'; }
 

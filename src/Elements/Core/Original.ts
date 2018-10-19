@@ -10,7 +10,7 @@ const type = new ReferenceType();
  * document (i.e., the first expression)
  */
 export class Original extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'original';
 
   getNodeName(): string {
     return 'original';

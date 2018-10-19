@@ -13,7 +13,7 @@ const type = new Inline();
  * the rest of the document
  */
 export class TocItem extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'tocitem';
 
   getNodeName(): string { return 'tocItem'; }
 

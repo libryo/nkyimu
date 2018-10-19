@@ -10,7 +10,7 @@ const type = new Inline();
  * as in HTML, for the subscript style (an inline)
  */
 export class Sub extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'sub';
 
   getNodeName(): string { return 'sub'; }
 

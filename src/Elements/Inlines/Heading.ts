@@ -11,7 +11,7 @@ const type = new Inlinereq();
  * the structure.
  */
 export class Heading extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'heading';
 
   getNodeName(): string { return 'heading'; }
 

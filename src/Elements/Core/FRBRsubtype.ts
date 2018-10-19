@@ -9,7 +9,7 @@ const type = new ValueType();
  * subtype of the document to be used in the work-level IRI of this document
  */
 export class FRBRsubtype extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrsubtype';
 
   getNodeName(): string { return 'FRBRsubtype'; }
 

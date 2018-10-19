@@ -9,7 +9,7 @@ const type = new HierarchicalStructure();
  * Element act is used for describing the structure and content of an act
  */
 export class Act extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'act';
 
   getNodeName(): string { return 'act'; }
 

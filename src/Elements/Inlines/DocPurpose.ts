@@ -11,7 +11,7 @@ const type = new Inline();
  * own purpose
  */
 export class DocPurpose extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docpurpose';
 
   getNodeName(): string { return 'docPurpose'; }
 

@@ -4,7 +4,7 @@ import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Components extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'components';
 
   getNodeName(): string { return 'components'; }
 

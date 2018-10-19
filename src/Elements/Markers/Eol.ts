@@ -14,7 +14,7 @@ const type = new EolType();
  * the end of the line with the attribute breakWith.
  */
 export class Eol extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'eol';
 
   getNodeName(): string { return 'eol'; }
 

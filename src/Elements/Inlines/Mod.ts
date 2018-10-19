@@ -10,7 +10,7 @@ const type = new ModType();
  * specification of a modification on another document
  */
 export class Mod extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'mod';
 
   getNodeName(): string { return 'mod'; }
 

@@ -9,7 +9,7 @@ const type = new Inline();
  * The element outcome is an inline that wraps the outcome of a vote
  */
 export class Outcome extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'outcome';
 
   getNodeName(): string { return 'outcome'; }
 

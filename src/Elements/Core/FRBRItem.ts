@@ -9,7 +9,7 @@ const type = new CoreProperties();
  * to the Item level according to the FRBR hierarchy.
  */
 export class FRBRItem extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbritem';
 
   getNodeName(): string { return 'FRBRItem'; }
 

@@ -13,7 +13,7 @@ const type = new SrcType();
  * internal (within the components element)
  */
 export class ComponentRef extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'componentref';
 
   getNodeName(): string { return 'componentRef'; }
 

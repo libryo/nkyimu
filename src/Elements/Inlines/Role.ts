@@ -10,7 +10,7 @@ const type = new Inlinereqreq();
  * fragment introducing or referring to a role in the ontology
  */
 export class Role extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'role';
 
   getNodeName(): string { return 'role'; }
 

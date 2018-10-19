@@ -10,7 +10,7 @@ const type = new Preambleopt();
  * the main body of the document as a preamble
  */
 export class Preamble extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'preamble';
 
   getNodeName(): string { return 'preamble'; }
 

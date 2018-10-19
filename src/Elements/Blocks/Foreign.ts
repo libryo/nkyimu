@@ -11,7 +11,7 @@ const type = new AnyOtherType();
  * block element and thus can be placed in a container.
  */
 export class Foreign extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'foreign';
 
   getNodeName(): string { return 'foreign'; }
 

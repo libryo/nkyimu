@@ -11,7 +11,7 @@ const type = new Inline();
  * detailing the jurisdiction of the document
  */
 export class DocJurisdiction extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docjurisdiction';
 
   getNodeName(): string { return 'docJurisdiction'; }
 

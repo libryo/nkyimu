@@ -10,7 +10,7 @@ const type = new Inline();
  * identify where the document defines one of the signatures
  */
 export class Signature extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'signature';
 
   getNodeName(): string { return 'signature'; }
 

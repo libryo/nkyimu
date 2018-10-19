@@ -13,7 +13,7 @@ const type = new Inline();
  * docDate elements.
  */
 export class DocDate extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docdate';
 
   getNodeName(): string { return 'docDate'; }
 

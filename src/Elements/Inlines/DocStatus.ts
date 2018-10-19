@@ -11,7 +11,7 @@ const type = new Inline();
  * status of the document
  */
 export class DocStatus extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'docstatus';
 
   getNodeName(): string { return 'docStatus'; }
 

@@ -1,3 +1,4 @@
+import {intersection} from 'lodash';
 import { NodeType } from '../common/enums';
 import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
@@ -191,12 +192,30 @@ export abstract class AbstractNode implements HasChildrenMap {
     keys.forEach((key) => {
       if (Object.keys(rules[key].options).length > 0) {
         children = children.concat(this.extractNodeNames(rules[key].options));
+        const nodes = [];
+
+        Object.keys(rules[key].options)
+          .forEach((e) => {
+            // @ts-ignore
+            nodes.push(this.flattenNode(rules[key].options[e].nodes).split(','));
+          });
+
+        rules[key].nodes = [nodes];
+        return;
       }
 
       children.push(key);
+      rules[key].nodes = [key];
     });
 
     return children;
+  }
+
+  private flattenNode(node: string|string[]) {
+    if (!Array.isArray(node)) return node;
+
+    return node.map((e) => this.flattenNode(e))
+      .join(',');
   }
 
   /**
@@ -319,7 +338,8 @@ export abstract class AbstractNode implements HasChildrenMap {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
     }
 
-    const rule = this.optimiseRule(this.extractRule(node, this.CHILDREN_MAP));
+    // const rule = this.optimiseRule(this.extractRule(node, this.CHILDREN_MAP));
+    const rule = this.extractRule(node, this.CHILDREN_MAP);
 
     if (!rule) {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
@@ -356,7 +376,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       };
     }
 
-    let rule = null;
+    let rule;
 
     keys.some((key) => {
       if (Object.keys(rules[key].options).length > 0) {
@@ -383,26 +403,6 @@ export abstract class AbstractNode implements HasChildrenMap {
     return null;
   }
 
-  private optimiseRule(rule: Rule|null): Rule|null {
-    if (!rule) return null;
-
-    if (!rule.parentRule) return { ...rule };
-
-    const parentRule = this.optimiseRule({ ...rule.parentRule });
-
-    // rule.parentRule = undefined;
-
-    if (!parentRule) return { ...rule };
-
-    if (parentRule.choice && !parentRule.maxOccur) {
-      return {
-        ...rule,
-        maxOccur: parentRule.maxOccur,
-      };
-    }
-
-    return { ...rule };
-  }
 
   /**
    * Validate the child being added. If invalid throw Error Exception.
@@ -413,23 +413,10 @@ export abstract class AbstractNode implements HasChildrenMap {
    * @throws Error
    */
   private validateNode(node: AbstractNode, rule: Rule) {
-    /** The node we are attempting to add exists */
-    const exists = this.childrenOrder.indexOf(node.getNodeName()) !== -1;
+    this.validateNodeCounts(node, rule);
 
-    /** The node already exists and can only exist once as a child. */
-    // if (exists && rule.maxOccur === 1) {
-    //   throw new Error(`The child node ${node.getNodeName()} should only appear once`);
-    // }
-
-    // /** The node exists but as a choice with a max occurrence of one. */
-    // // if (exists && rule.isChoice === true && rule.choiceMaxOccur === 1) {
-    // if (exists && rule.isChoice === true) {
-    //   throw new Error(`The child node ${node.getNodeName()} should only appear once`);
-    // }
-
-    /** If the current node has a predefined sequence. */
     if (this.SEQUENCE && this.SEQUENCE.length > 0) {
-      let expected = null;
+      let expected;
 
       /** Get the last child node */
       /** Remove the modifiers to the node names */
@@ -490,6 +477,88 @@ export abstract class AbstractNode implements HasChildrenMap {
           return false;
         });
     }
+  }
+
+
+  validateNodeCounts(node: AbstractNode, rule: Rule) {
+    /** The node we are attempting to add exists */
+    const exists = this.childrenOrder.indexOf(node.getNodeName()) !== -1;
+    const name = node.getNodeName();
+
+    if (!rule.parentRule) {
+      if (exists && rule.maxOccur === 1) {
+        throw new Error(`The child node ${name} should only appear once`);
+      }
+
+      this.validateExclusivity(node, rule);
+      return;
+    }
+
+    let parentAllowsMore = false;
+    let current = rule;
+
+    while (current.parentRule) {
+      if (current.maxOccur !== 1) {
+        parentAllowsMore = true;
+        break;
+      }
+      if (!current.parentRule) {
+        break;
+      }
+      current = {...current.parentRule};
+    }
+
+    if (rule !== current && current.maxOccur !== 1) parentAllowsMore = true;
+
+    if (exists && !parentAllowsMore) {
+      throw new Error(`The child node ${name} should only appear once`);
+    }
+
+    // @ts-ignore
+    current = parentAllowsMore ? current : {...rule.parentRule};
+
+    this.validateExclusivity(node, current);
+
+    while (current.parentRule) {
+      this.validateExclusivity(node, current);
+
+      current = {...current.parentRule};
+    }
+
+    this.validateExclusivity(node, current);
+  }
+
+  validateExclusivity(node: AbstractNode, rule: Rule) {
+    const name = node.getNodeName();
+
+    if (!rule.choice || rule.maxOccur !== 1) {
+      return;
+    }
+
+    rule.nodes.forEach((ruleNode) => {
+      if (!Array.isArray(ruleNode) && ruleNode !== name) {
+        if (this.childrenOrder.indexOf(ruleNode) !== -1) {
+          throw new Error(`The child node ${name} cannot be added when ${ruleNode} is present.`);
+        }
+      }
+
+      ruleNode.forEach((e) => {
+        if (!Array.isArray(e)) {
+          if (e === name) return;
+          if (this.childrenOrder.indexOf(e) !== -1) {
+            throw new Error(`The child node ${name} cannot be added when ${e} is present.`);
+          }
+        }
+
+        if (e.indexOf(name) !== -1) return;
+
+        const inter = intersection(this.childrenOrder, e);
+
+        if (inter.length > 0) {
+          throw new Error(`The child node ${name} cannot be added when ${inter.join(', ')} exist.`);
+        }
+      });
+    });
   }
 
   /**

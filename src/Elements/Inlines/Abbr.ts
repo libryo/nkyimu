@@ -12,7 +12,7 @@ const type = new Inline();
  * the full expansion of the abbreviation or acronym.
  */
 export class Abbr extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'abbr';
 
   getNodeName(): string { return 'abbr'; }
 

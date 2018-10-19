@@ -9,7 +9,7 @@ const type = new ValueType();
  * Media Type specification for the data format to be used in the manifestation-level IRI of this document.
  */
 export class FRBRformat extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrformat';
 
   getNodeName(): string { return 'FRBRformat'; }
 

@@ -13,7 +13,7 @@ const type = new Inline();
  * inserted structure.
  */
 export class Decoration extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'decoration';
 
   getNodeName(): string { return 'decoration'; }
 

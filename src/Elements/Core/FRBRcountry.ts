@@ -9,7 +9,7 @@ const type = new ValueType();
  * code for the country or jurisdiction to be used in the work-level IRI of this document
  */
 export class FRBRcountry extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbrcountry';
 
   getNodeName(): string { return 'FRBRcountry'; }
 

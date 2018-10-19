@@ -10,7 +10,7 @@ const type = new Inline();
  * a number or any other ordered mechanism to identify the structure.
  */
 export class Num extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'num';
 
   getNodeName(): string { return 'num'; }
 

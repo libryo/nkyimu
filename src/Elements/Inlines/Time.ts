@@ -12,7 +12,7 @@ const type = new Inline();
  * representation in the time attribute.
  */
 export class Time extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'time';
 
   getNodeName(): string { return 'time'; }
 

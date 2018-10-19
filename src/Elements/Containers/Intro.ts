@@ -10,7 +10,7 @@ const type = new Blocksreq();
  * contains paragraphs introducing one or more lower hierarchical elements.
  */
 export class Intro extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'intro';
 
   getNodeName(): string { return 'intro'; }
 

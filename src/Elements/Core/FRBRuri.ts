@@ -8,7 +8,7 @@ const type = new ValueType();
  * The element FRBRuri is the metadata property containing the IRI of the whole document.
  */
 export class FRBRuri extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'frbruri';
 
   getNodeName(): string { return 'FRBRuri'; }
 

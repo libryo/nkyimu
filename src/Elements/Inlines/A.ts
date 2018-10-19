@@ -14,7 +14,7 @@ const type = new Inline();
  * It is an inline.
  */
 export class A extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'a';
 
   getNodeName(): string { return 'a'; }
 

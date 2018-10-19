@@ -15,7 +15,7 @@ const type = new Inlinereqreq();
  * appropriate.
  */
 export class Quantity extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'quantity';
 
   getNodeName(): string { return 'quantity'; }
 

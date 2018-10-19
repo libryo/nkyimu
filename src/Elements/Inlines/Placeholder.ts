@@ -12,7 +12,7 @@ const type = new Inline();
  * that can be replaced editorially with an actual value
  */
 export class Placeholder extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'placeholder';
 
   getNodeName(): string { return 'placeholder'; }
 

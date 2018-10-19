@@ -10,7 +10,7 @@ const type = new Inline();
  * for the caption of a table (a block)
  */
 export class Caption extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'caption';
 
   getNodeName(): string { return 'caption'; }
 

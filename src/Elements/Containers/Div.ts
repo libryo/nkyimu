@@ -11,7 +11,7 @@ const type = new Blocksreq();
  * uses div as a generic container (as in common practice).
  */
 export class Div extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'div';
 
   getNodeName(): string { return 'div'; }
 

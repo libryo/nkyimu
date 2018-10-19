@@ -16,7 +16,7 @@ const type = new SubFlowStructure();
  * character.
  */
 export class EmbeddedStructure extends AbstractNode {
-  abbreviation = '';
+  abbreviation = 'embeddedstructure';
 
   getNodeName(): string { return 'embeddedStructure'; }
 

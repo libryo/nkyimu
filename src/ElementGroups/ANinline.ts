@@ -32,7 +32,6 @@ export class ANinline implements HasChildrenMap {
         placeholder: { minOccur: 1, maxOccur: 1, options: {} },
         fillIn: { minOccur: 1, maxOccur: 1, options: {} },
         decoration: { minOccur: 1, maxOccur: 1, options: {} },
-        '': { minOccur: 0, options: {} },
       },
     },
   };

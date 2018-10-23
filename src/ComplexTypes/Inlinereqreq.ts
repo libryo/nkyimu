@@ -19,6 +19,7 @@ export class Inlinereqreq implements HasChildrenMap {
         ...(new InlineCM()).CHILDREN_MAP,
       }
     },
+    '': { minOccur: 0, options: {} },
   };
 
   readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [

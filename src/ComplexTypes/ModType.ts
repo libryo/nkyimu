@@ -30,6 +30,7 @@ export class ModType implements HasChildrenMap {
         quotedStructure: { minOccur: 1, maxOccur: 1, options: {} },
       }
     },
+    '': { minOccur: 0, options: {} },
   };
 
   readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [

@@ -5465,6 +5465,7 @@ The element keyword is a metadata element specifying a keyword  associated to th
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
+
 	<xsd:element name="lifecycle">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -5478,8 +5479,7 @@ The element keyword is a metadata element specifying a keyword  associated to th
 			<xsd:documentation>
 				<type>Element</type>
 				<name>eventRef</name>
-				<comment>
-The element eventRef is a metadata element specifying facts about an event that had an effect on the document. For each event, a date, a type and a document that generated the event must be referenced.</comment>
+				<comment>The element eventRef is a metadata element specifying facts about an event that had an effect on the document. For each event, a date, a type and a document that generated the event must be referenced.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -6294,8 +6294,7 @@ The element domain is a metadata element containing (in some non-managed form) t
 			<xsd:documentation>
 				<type>Element</type>
 				<name>timeInterval</name>
-				<comment>
-The element timeInterval contains all the data needed to identify a specific time interval. It is built either with two dates or with a date and a duration (exactly two of the 'start', 'end' and 'duration' attributes can be specified). Values of the 'start' and 'end' attributes are NOT dates, but references to event elements in the corresponding metadata section. The refers attribute is a reference to a temporal concept belonging to the Akoma Ntoso ontology and specified in the references section</comment>
+				<comment>The element timeInterval contains all the data needed to identify a specific time interval. It is built either with two dates or with a date and a duration (exactly two of the 'start', 'end' and 'duration' attributes can be specified). Values of the 'start' and 'end' attributes are NOT dates, but references to event elements in the corresponding metadata section. The refers attribute is a reference to a temporal concept belonging to the Akoma Ntoso ontology and specified in the references section</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>

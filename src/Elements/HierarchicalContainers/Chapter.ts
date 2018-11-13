@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "chapter" either explicitly or due to the local tradition
  */
 export class Chapter extends AbstractNode {
-  abbreviation = 'ch';
+  abbreviation = 'chp';
 
   getNodeName(): string { return 'chapter'; }
 

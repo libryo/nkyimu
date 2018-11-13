@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "indent" either explicitly or due to the local tradition
  */
 export class Indent extends AbstractNode {
-  abbreviation = 'in';
+  abbreviation = 'indent';
 
   getNodeName(): string { return 'indent'; }
 

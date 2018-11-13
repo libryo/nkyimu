@@ -10,7 +10,7 @@ const type = new Hierarchy();
  * "article" either explicitly or due to the local tradition
  */
 export class Article extends AbstractNode {
-  abbreviation = 'ar';
+  abbreviation = 'art';
 
   getNodeName(): string { return 'article'; }
 

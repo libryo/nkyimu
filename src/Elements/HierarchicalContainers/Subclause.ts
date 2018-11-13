@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subclause" either explicitly or due to the local tradition
  */
 export class Subclause extends AbstractNode {
-  abbreviation = 'scl';
+  abbreviation = 'subcl';
 
   getNodeName(): string { return 'subclause'; }
 

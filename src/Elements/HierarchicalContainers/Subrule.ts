@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subrule" either explicitly or due to the local tradition
  */
 export class Subrule extends AbstractNode {
-  abbreviation = 'sru';
+  abbreviation = 'subrule';
 
   getNodeName(): string { return 'subrule'; }
 

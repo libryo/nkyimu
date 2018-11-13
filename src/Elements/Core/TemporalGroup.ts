@@ -4,7 +4,7 @@ import { NodeRules } from '../../Interfaces/NodeRules';
 import { Core, Idreq } from '../../AttributeGroups';
 
 export class TemporalGroup extends AbstractNode {
-  abbreviation = 'temporalgroup';
+  abbreviation = 'tmpg';
 
   getNodeName(): string {
     return 'temporalGroup';

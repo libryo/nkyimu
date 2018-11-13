@@ -5,7 +5,7 @@ import { Source } from "../../AttributeGroups/Source";
 import { Xmllang } from "../../AttributeGroups/Xmllang";
 
 export class Notes extends AbstractNode {
-  abbreviation = 'nts';
+  abbreviation = 'notes';
 
   getNodeName(): string { return 'notes'; }
 

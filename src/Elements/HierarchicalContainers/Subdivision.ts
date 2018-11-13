@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subdivision" either explicitly or due to the local tradition
  */
 export class Subdivision extends AbstractNode {
-  abbreviation = 'sdi';
+  abbreviation = 'subdvs';
 
   getNodeName(): string { return 'subdivision'; }
 

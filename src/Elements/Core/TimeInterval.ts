@@ -16,7 +16,7 @@ const type = new Metaopt();
  * specified in the references section
  */
 export class TimeInterval extends AbstractNode {
-  abbreviation = 'timeInterval';
+  abbreviation = 'timeinterval';
 
   getNodeName(): string {
     return 'timeInterval';

@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "point" either explicitly or due to the local tradition
  */
 export class Point extends AbstractNode {
-  abbreviation = 'pt';
+  abbreviation = 'point';
 
   getNodeName(): string { return 'point'; }
 

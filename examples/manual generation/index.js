@@ -1,4 +1,4 @@
-import { Elements, Attributes, Helpers } from 'nkyimu';
+import { Elements, Attributes, Helpers, Engine } from 'nkyimu';
 
 // Generation of Wet Tropics of Queensland World Heritage Area Conservation Act 1994
 class TestDocument {
@@ -154,8 +154,28 @@ class TestDocument {
 
   getBody() {
     const body = new Elements.Body();
+    const { root, last } = Engine.Generator.fromSelector('chapter>part[num:1,heading:Some Part]>section>subsection>content>p');
+    const noteRef = this.createNote();
+    const sampleBody = new Elements.TextElement('Always have notes.');
+    last.appendChild(sampleBody);
+    last.appendChild(noteRef);
+
+    body.appendChild(root);
+
+    console.log(root, last);
+
 
     return body;
+  }
+
+  createNote() {
+    const note = new Elements.Note();
+    const p = new Elements.P();
+
+    p.appendChild(new Elements.TextElement('This is a note'));
+    note.appendChild(p);
+
+    return this.doc.addNote(note);
   }
 }
 

@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subparagraph" either explicitly or due to the local tradition
  */
 export class Subparagraph extends AbstractNode {
-  abbreviation = 'spg';
+  abbreviation = 'subpara';
 
   getNodeName(): string { return 'subparagraph'; }
 

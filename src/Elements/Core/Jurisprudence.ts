@@ -10,7 +10,7 @@ const type = new ReferenceType();
  * document is an attachment
  */
 export class Jurisprudence extends AbstractNode {
-  abbreviation = "";
+  abbreviation = "jurisprudence";
 
   getNodeName(): string {
     return "jurisprudence";

@@ -9,7 +9,7 @@ const type = new ContainerType();
  * The element container is a generic element for a container.
  */
 export class Container extends AbstractNode {
-  abbreviation = 'co';
+  abbreviation = 'container';
 
   getNodeName(): string { return 'container'; }
 

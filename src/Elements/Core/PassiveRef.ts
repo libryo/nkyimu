@@ -10,7 +10,7 @@ const type = new ReferenceType();
  * on this document (i.e., a passive references)
  */
 export class PassiveRef extends AbstractNode {
-  abbreviation = "";
+  abbreviation = "passiveref";
 
   getNodeName(): string {
     return "passiveRef";

@@ -10,7 +10,7 @@ const type = new DocContainerType();
  * attachment elements
  */
 export class Attachment extends AbstractNode {
-  abbreviation = 'attachment';
+  abbreviation = 'att';
 
   getNodeName(): string { return 'attachment'; }
 

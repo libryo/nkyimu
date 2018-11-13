@@ -11,7 +11,7 @@ const type = new ReferenceType();
  * document is an attachment
  */
 export class HasAttachment extends AbstractNode {
-  abbreviation = "";
+  abbreviation = "hasattachment";
 
   getNodeName(): string {
     return "hasAttachment";

@@ -10,7 +10,7 @@ const type = new BlockContainerType();
  * individual block elements in a block context
  */
 export class BlockContainer extends AbstractNode {
-  abbreviation = 'blc';
+  abbreviation = 'blockcontainer';
 
   getNodeName(): string { return 'blockContainer'; }
 

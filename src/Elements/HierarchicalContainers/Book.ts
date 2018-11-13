@@ -10,7 +10,7 @@ const type = new Hierarchy();
  * "book" either explicitly or due to the local tradition
  */
 export class Book extends AbstractNode {
-  abbreviation = 'bo';
+  abbreviation = 'book';
 
   getNodeName(): string { return 'book'; }
 

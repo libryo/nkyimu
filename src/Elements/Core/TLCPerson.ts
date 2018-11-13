@@ -9,7 +9,7 @@ const type = new ReferenceType();
  * Akoma Ntoso IRI of an ontology instance of the class Concept
  */
 export class TLCPerson extends AbstractNode {
-  abbreviation = "";
+  abbreviation = "tlcperson";
 
   getNodeName(): string {
     return "TLCPerson";

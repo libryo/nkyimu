@@ -14,7 +14,7 @@ const type = new Blocksreq();
  * specification of the actual type of formula.
  */
 export class Formula extends AbstractNode {
-  abbreviation = 'fo';
+  abbreviation = 'formula';
 
   getNodeName(): string { return 'formula'; }
 

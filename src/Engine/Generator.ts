@@ -17,7 +17,13 @@ export class Generator {
 
   fromText(source: string): AbstractNode {
     const parser = new DOMParser();
-    this.doc = parser.parseFromString(source.trim(), "text/xml");
+    const sanitised = source
+      .replace(/>\n(\s)*</g, '><')
+      .replace(/\n/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    this.doc = parser.parseFromString(sanitised, "text/xml");
 
     return this.generateNodes();
   }
@@ -36,31 +42,21 @@ export class Generator {
     return created;
   }
 
-  generateChildNodes(node: Element): AbstractNode[] {
+  generateChildNodes(node: Node): AbstractNode[] {
     const children: AbstractNode[] = [];
 
-    if (node.children.length !== 0) {
-      Object.keys(node.children).forEach((key: string) => {
-        const createdNode:AbstractNode = Generator.createNodeAndAttributes(node.children[Number(key)]);
+    Object.keys(node.childNodes)
+      .forEach((key: string) => {
+        const currentNode = node.childNodes[Number(key)];
+        const createdNode: AbstractNode = Generator.createNodeAndAttributes(currentNode);
 
-        this.generateChildNodes(node.children[Number(key)])
+        this.generateChildNodes(currentNode)
           .forEach((childNode: AbstractNode) => {
             createdNode.appendChild(childNode);
           });
 
         children.push(createdNode);
       });
-
-      return children;
-    }
-
-    Object.keys(node.childNodes).forEach((key: string) => {
-      const child = node.childNodes[Number(key)];
-
-      const createdNode:AbstractNode|null = this.generateAlternateChildNodes(child);
-
-      if (createdNode) children.push(createdNode);
-    });
 
     return children;
   }
@@ -73,14 +69,20 @@ export class Generator {
     return null;
   }
 
-  static createNodeAndAttributes(node: Element): AbstractNode {
+  static createNodeAndAttributes(node: Node): AbstractNode {
+    if (node instanceof Text) {
+      return Generator.createNode('', node.textContent);
+    }
+
     const created = Generator.createNode(node.nodeName);
 
-    Object.keys(node.attributes).forEach((attr: string) => {
-      const currentAttr: Attr = node.attributes[Number(attr)];
-
-      created.setAttribute(Generator.createAttribute(currentAttr.name, currentAttr.value));
-    });
+    if (node instanceof Element) {
+      // @ts-ignore
+      node.getAttributeNames()
+        .forEach((attr: string) => {
+          created.setAttribute(Generator.createAttribute(attr, node.getAttribute(attr) || ''));
+        });
+    }
 
     return created;
   }
@@ -99,5 +101,64 @@ export class Generator {
     }
 
     return new Attributes[attributeMap[name] as T](value);
+  }
+
+  static fromSelector(selector: string): { root: AbstractNode, last: AbstractNode} {
+    const childComparators = ['>'];
+    const nodes = selector.split(/>/g);
+    const nodesLength = nodes.length;
+
+    const generatedNode: AbstractNode = Generator.generateNodeAndSiblings(nodes[0]);
+    let currentNodeLastIndex = selector.indexOf(nodes[0]) + nodes[0].length;
+    let currentNode: AbstractNode = generatedNode;
+
+    for (let i = 1; i < nodesLength; i++) {
+      const comparator = selector.substr(currentNodeLastIndex, 1);
+      if (childComparators.indexOf(comparator) === -1) {
+        continue;
+      }
+
+      const childNode = Generator.generateNodeAndSiblings(nodes[i]);
+      currentNode.appendChild(childNode);
+      currentNode = childNode;
+      currentNodeLastIndex = selector.indexOf(nodes[i]) + nodes[i].length;
+    }
+
+    return { root: generatedNode, last: currentNode };
+  }
+
+  private static generateNodeAndSiblings(selector: string): AbstractNode {
+    const hasChildren = selector.indexOf('[') !== -1 && selector.indexOf(']') !== -1;
+    const nodeSelector = selector.split(/[^A-Za-z]/)[0];
+
+    if (!elementMap[nodeSelector]) {
+      throw new Error(`Invalid element ${nodeSelector}`);
+    }
+
+    const node = new Elements[elementMap[nodeSelector]]();
+
+    if (!hasChildren) return node;
+
+    selector
+      .substr(nodeSelector.length)
+      .slice(1, -1)
+      .split(',')
+      .forEach((e) => {
+        const parts = e.split(':');
+
+        if (!elementMap[parts[0]]) {
+          throw new Error(`Invalid element ${parts[0]}`);
+        }
+
+        const element = new Elements[elementMap[parts[0]]]();
+
+        if (parts.length > 1) {
+          element.appendChild(new Elements.TextElement(parts[1]));
+        }
+
+        node.appendChild(element);
+      });
+
+    return node;
   }
 }

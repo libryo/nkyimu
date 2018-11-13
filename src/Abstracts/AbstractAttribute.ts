@@ -47,6 +47,13 @@ export abstract class AbstractAttribute {
   }
 
   /**
+   * Get the name of the attribute
+   */
+  static getName(): string {
+    throw new Error('Implement the function getClassName');
+  }
+
+  /**
    * Get the value of the attribute
    */
   getValue(): string|number|boolean {

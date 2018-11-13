@@ -11,7 +11,7 @@ const type = new Blocksreq();
  * specified
  */
 export class Content extends AbstractNode {
-  abbreviation = 'cnt';
+  abbreviation = 'content';
 
   getNodeName(): string { return 'content'; }
 

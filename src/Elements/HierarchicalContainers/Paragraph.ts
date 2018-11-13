@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "paragraph" either explicitly or due to the local tradition
  */
 export class Paragraph extends AbstractNode {
-  abbreviation = 'pg';
+  abbreviation = 'para';
 
   getNodeName(): string { return 'paragraph'; }
 

@@ -13,7 +13,7 @@ const type = new AnyOtherType();
  * that generated the event must be referenced.
  */
 export class EventRef extends AbstractNode {
-  abbreviation = 'eventref';
+  abbreviation = 'eref';
 
   getNodeName(): string {
     return 'eventRef';

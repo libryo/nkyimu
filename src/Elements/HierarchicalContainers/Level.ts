@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "level" either explicitly or due to the local tradition
  */
 export class Level extends AbstractNode {
-  abbreviation = 'le';
+  abbreviation = 'level';
 
   getNodeName(): string { return 'level'; }
 

@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "division" either explicitly or due to the local tradition
  */
 export class Division extends AbstractNode {
-  abbreviation = 'di';
+  abbreviation = 'dvs';
 
   getNodeName(): string { return 'division'; }
 

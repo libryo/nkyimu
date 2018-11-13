@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "sublist" either explicitly or due to the local tradition
  */
 export class Sublist extends AbstractNode {
-  abbreviation = 'sl';
+  abbreviation = 'sublist';
 
   getNodeName(): string { return 'sublist'; }
 

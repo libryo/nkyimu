@@ -5,7 +5,7 @@ import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
 import { NodeRules } from "../../Interfaces/NodeRules";
 
 export class Table extends AbstractNode {
-  abbreviation = 'tbl';
+  abbreviation = 'table';
 
   getNodeName(): string { return 'table'; }
 

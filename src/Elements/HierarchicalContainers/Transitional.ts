@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "transitional" either explicitly or due to the local tradition
  */
 export class Transitional extends AbstractNode {
-  abbreviation = 'tra';
+  abbreviation = 'transitional';
 
   getNodeName(): string { return 'transitional'; }
 

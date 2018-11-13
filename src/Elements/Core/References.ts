@@ -12,7 +12,7 @@ const refItems = new RefItems();
  * anything else is managed by the Akoma Ntoso ontology.
  */
 export class References extends AbstractNode {
-  abbreviation = "";
+  abbreviation = "references";
   getNodeName(): string {
     return "references";
   }

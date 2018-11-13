@@ -11,7 +11,7 @@ const type = new SubFlowStructure();
  * endnote specified.
  */
 export class Note extends AbstractNode {
-  abbreviation = 'nt';
+  abbreviation = 'note';
 
   getNodeName(): string { return 'note'; }
 

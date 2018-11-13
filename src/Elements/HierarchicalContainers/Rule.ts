@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "rule" either explicitly or due to the local tradition
  */
 export class Rule extends AbstractNode {
-  abbreviation = 'ru';
+  abbreviation = 'rule';
 
   getNodeName(): string { return 'rule'; }
 

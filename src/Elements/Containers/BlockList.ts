@@ -10,7 +10,7 @@ const type = new BlockListType();
  * of many individual item elements to be treated as in a list.
  */
 export class BlockList extends AbstractNode {
-  abbreviation = 'bll';
+  abbreviation = 'list';
 
   getNodeName(): string { return 'blockList'; }
 

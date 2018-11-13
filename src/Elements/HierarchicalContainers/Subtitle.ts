@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subtitle" either explicitly or due to the local tradition
  */
 export class Subtitle extends AbstractNode {
-  abbreviation = 'st';
+  abbreviation = 'subtitle';
 
   getNodeName(): string { return 'subtitle'; }
 

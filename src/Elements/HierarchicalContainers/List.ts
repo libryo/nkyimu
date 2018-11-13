@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "list" either explicitly or due to the local tradition
  */
 export class List extends AbstractNode {
-  abbreviation = 'l';
+  abbreviation = 'list';
 
   getNodeName(): string { return 'list'; }
 

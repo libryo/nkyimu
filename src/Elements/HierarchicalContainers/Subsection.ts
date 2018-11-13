@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subsection" either explicitly or due to the local tradition
  */
 export class Subsection extends AbstractNode {
-  abbreviation = 'ss';
+  abbreviation = 'subsec';
 
   getNodeName(): string { return 'subsection'; }
 

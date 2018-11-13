@@ -8,7 +8,7 @@ const type = new RecitalHierarchy();
  * The element recitals is the section of the preamble that contains recitals.
  */
 export class Recitals extends AbstractNode {
-  abbreviation = 'recitals';
+  abbreviation = 'recs';
 
   getNodeName(): string { return 'recitals'; }
 

@@ -12,7 +12,7 @@ const type = new LinkType();
  * and are (an expression or any expression of) a separate Work.
  */
 export class DocumentRef extends AbstractNode {
-  abbreviation = 'documentref';
+  abbreviation = 'dref';
 
   getNodeName(): string { return 'documentRef'; }
 

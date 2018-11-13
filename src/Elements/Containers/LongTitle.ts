@@ -9,7 +9,7 @@ const type = new Blocksreq();
  * or coverPage that is called long title.
  */
 export class LongTitle extends AbstractNode {
-  abbreviation = 'lt';
+  abbreviation = 'longtitle';
 
   getNodeName(): string { return 'longTitle'; }
 

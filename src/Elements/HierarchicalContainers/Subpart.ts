@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "subpart" either explicitly or due to the local tradition
  */
 export class Subpart extends AbstractNode {
-  abbreviation = 'sp';
+  abbreviation = 'subpart';
 
   getNodeName(): string { return 'subpart'; }
 

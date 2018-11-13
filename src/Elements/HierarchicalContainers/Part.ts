@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "part" either explicitly or due to the local tradition
  */
 export class Part extends AbstractNode {
-  abbreviation = 'pa';
+  abbreviation = 'pt';
 
   getNodeName(): string { return 'part'; }
 

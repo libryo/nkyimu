@@ -10,7 +10,7 @@ const type = new ItemType();
  * that is called recital
  */
 export class Recital extends AbstractNode {
-  abbreviation = 'recital';
+  abbreviation = 'rec';
 
   getNodeName(): string { return 'recital'; }
 

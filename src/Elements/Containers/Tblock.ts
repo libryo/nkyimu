@@ -10,7 +10,7 @@ const type = new ItemType();
  * hierarchical structure
  */
 export class Tblock extends AbstractNode {
-  abbreviation = 'tbl';
+  abbreviation = 'tblock';
 
   getNodeName(): string { return 'tblock'; }
 

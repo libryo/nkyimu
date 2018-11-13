@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "tome" either explicitly or due to the local tradition
  */
 export class Tome extends AbstractNode {
-  abbreviation = 'to';
+  abbreviation = 'tome';
 
   getNodeName(): string { return 'tome'; }
 

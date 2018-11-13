@@ -4,7 +4,7 @@ import { NodeRules } from '../../Interfaces/NodeRules';
 import { Source } from '../../AttributeGroups/Source';
 
 export class TemporalData extends AbstractNode {
-  abbreviation = 'temporalData';
+  abbreviation = 'temporaldata';
 
   getNodeName(): string {
     return 'temporalData';

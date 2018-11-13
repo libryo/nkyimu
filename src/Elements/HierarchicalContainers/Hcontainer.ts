@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "hcontainer" either explicitly or due to the local tradition
  */
 export class Hcontainer extends AbstractNode {
-  abbreviation = 'hc';
+  abbreviation = 'hcontainer';
 
   getNodeName(): string { return 'hcontainer'; }
 

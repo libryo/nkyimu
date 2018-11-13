@@ -10,7 +10,7 @@ const type =  new Hierarchy();
  * "proviso" either explicitly or due to the local tradition
  */
 export class Proviso extends AbstractNode {
-  abbreviation = 'pr';
+  abbreviation = 'proviso';
 
   getNodeName(): string { return 'proviso'; }
 

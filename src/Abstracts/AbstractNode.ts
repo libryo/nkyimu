@@ -249,23 +249,59 @@ export abstract class AbstractNode implements HasChildrenMap {
    * @returns AbstractNode
    */
   appendChild(node: AbstractNode): AbstractNode {
+    return this.insertChild(node);
+  }
+
+  /**
+   * Insert a child node at a given index.
+   *
+   * @param insertionIndex number|null
+   * @param node AbstractNode
+   *
+   * @returns AbstractNode
+   */
+  insertChildAtPosition(node: AbstractNode, insertionIndex: number): AbstractNode {
+    return this.insertChild(node, insertionIndex);
+  }
+
+  /**
+   * Insert a child node at a given index and update the node tree.
+   *
+   * @param node AbstractNode
+   * @param insertionIndex number|null
+   *
+   * @returns AbstractNode
+   */
+  private insertChild(node: AbstractNode, insertionIndex: number|null = null): AbstractNode {
     if (this.node instanceof Text || this.node instanceof Comment) {
       throw new Error('This node does not accepts any children.');
+    }
+
+    const lastNodeIndex = this.node.childNodes.length - 1;
+
+    if (insertionIndex !== null && (lastNodeIndex < insertionIndex)) {
+      throw new Error('The selected position is not valid.');
     }
 
     if (this._allowedChildren.length < 1) {
       this.setupValidationParams();
     }
 
-    this.validateChild(node);
+    this.validateChild(node, insertionIndex);
 
-    this.childrenOrder.push(node.getNodeName());
+    if (insertionIndex === null) {
+      this.childrenOrder.push(node.getNodeName());
+      node._parent = this;
+      this._children.push(node);
+      this.node.appendChild(node.getNode());
 
+      return this;
+    }
+
+    this.childrenOrder = [...this.getUpdatedChildOrder(node, insertionIndex)];
     node._parent = this;
-
-    this._children.push(node);
-
-    this.node.appendChild(node.getNode());
+    this._children.splice(insertionIndex, 0, node);
+    this.node.insertBefore(node.getNode(), this.node.childNodes[insertionIndex]);
 
     return this;
   }
@@ -342,8 +378,9 @@ export abstract class AbstractNode implements HasChildrenMap {
    * Validate the child being added.
    *
    * @param node AbstractNode
+   * @param insertionIndex number|null
    */
-  validateChild(node: AbstractNode): void {
+  validateChild(node: AbstractNode, insertionIndex: number|null = null): void {
     /** Check if the node is allowed as a child. We also validate for any that matches AnyOtherType complexType */
     if (this._allowedChildren.indexOf('any') === -1 && this._allowedChildren.indexOf(node.getNodeName()) === -1) {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
@@ -356,7 +393,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
     }
 
-    this.validateNode(node, rule);
+    this.validateNode(node, rule, insertionIndex);
 
     /** let's finally check if the node has valid children and attributes */
     node.validate();
@@ -420,74 +457,86 @@ export abstract class AbstractNode implements HasChildrenMap {
    *
    * @param node AbstractNode
    * @param rule Rule
+   * @param insertionIndex number|null
    *
    * @throws Error
    */
-  private validateNode(node: AbstractNode, rule: Rule) {
+  private validateNode(node: AbstractNode, rule: Rule, insertionIndex: number|null = null) {
     this.validateNodeCounts(node, rule);
+    this.validateChildrenSequence(node, insertionIndex);
+  }
 
-    if (this.SEQUENCE && this.SEQUENCE.length > 0) {
-      let expected;
+  /**
+   * Validate the child sequence.
+   *
+   * @param node AbstractNode
+   * @param insertionIndex number|null
+   */
+  private validateChildrenSequence(node: AbstractNode, insertionIndex: number|null = null) {
+    if (!this.SEQUENCE || this.SEQUENCE.length < 1) return;
 
-      /** Get the last child node */
-      /** Remove the modifiers to the node names */
-      const cleanSequence = this.SEQUENCE.map(e => e.split(':')[0]);
+    const cleanSequence = this.SEQUENCE.map(e => e.split(':')[0]);
+    const updatedOrder = this.getUpdatedChildOrder(node, insertionIndex);
 
-      /** The last child node if any */
-      const lastNode = this.childrenOrder.length > 0 ? this.childrenOrder[this.childrenOrder.length - 1] : null;
+    const absent: string[] = [];
 
-      /** The index of the last child node or -1 if none exists */
-      const lastNodeSequenceIndex = lastNode ? cleanSequence.indexOf(lastNode) : -1;
+    updatedOrder.forEach((item, index) => {
+      const orderBeforeNode = updatedOrder.slice(0, index);
+      const orderAfterNode = updatedOrder.slice(index + 1);
+      const sequenceBefore = cleanSequence.slice(0, cleanSequence.indexOf(item));
 
-      /** The index of the current node */
-      const nodeIndex = cleanSequence.indexOf(node.getNodeName());
+      /** Get the sequence before the current order node. */
+      sequenceBefore.forEach((sequenceNode, sequenceIndex) => {
+        /**
+         * check if the sequence node is required,
+         * if its present after the current node in the order
+         * and if its present before the order node.
+         */
+        const isRequired = this.requiredIndices.indexOf(sequenceIndex) !== -1;
+        const isPresentAfter = orderAfterNode.indexOf(sequenceNode) !== -1;
+        const isPresentBefore = orderBeforeNode.indexOf(sequenceNode) !== -1;
 
-      /**
-       * if the node we are attempting to add appears before the last child node in the sequence,
-       * then we cannot add it and can only add anything that comes after the last child.
-       */
-      if (lastNodeSequenceIndex > nodeIndex) {
-        expected = cleanSequence.slice(lastNodeSequenceIndex + 1);
-        expected = expected.length > 1 ? 'one of ' + expected.join(', ') : expected.join(', ');
+        if (isPresentAfter) {
+          throw new Error(`The child node ${sequenceNode} should appear before the child node ${item}`);
+        }
 
-        throw new Error(`The child node ${node.getNodeName()} is expected before the current last child(${lastNode}). Expected is ${expected}`);
-      }
+        if (!isPresentBefore) {
+          absent.push(sequenceNode);
+        }
 
-      cleanSequence
-        .some((seqNode, index) => {
-          /** if the current sequence node is required */
-          const isRequired = this.requiredIndices.indexOf(index) !== -1;
+        if (!isPresentBefore && isRequired) {
+          const expected = absent.length > 1 ? 'one of ' + absent.join(', ') : absent.join(', ');
 
-          /** if the current sequence node is already a child */
-          const isPresent = this.childrenOrder.indexOf(seqNode) !== -1;
+          throw new Error(`The child node ${node.getNodeName()} is unexpected. Expected is ${expected}`);
+        }
+      });
+    });
+  }
 
-          /** if the current sequence node is the node we are attempting to add */
-          const isNode = node.getNodeName() === seqNode;
+  private generateMovementMap() {
 
-          /**
-           * if the node appears before the last child but a required node is missing,
-           * then we can only add the required node or anything before the node we
-           * are attempting to add.
-           */
-          if (isRequired && !isPresent && !isNode) {
-            expected = cleanSequence.slice(lastNodeSequenceIndex + 1, index + 1);
-            expected = expected.length > 1 ? 'one of ' + expected.join(', ') : expected.join(', ');
+  }
 
-            throw new Error(`The child node ${node.getNodeName()} is unexpected. Expected is ${expected}`);
-          }
+  /**
+   * Insert the current node to the child order and return the updated order.
+   *
+   * @param node AbstractNode
+   * @param insertionIndex number|null
+   *
+   * @return string[]
+   */
+  private getUpdatedChildOrder(node: AbstractNode, insertionIndex: number|null = null): string[] {
+    const updated = [...this.childrenOrder];
 
-          /**
-           * if nothing is required before the node and the node we are attempting to add
-           * is the current node in the sequence, then we can add it.
-           */
-          if (isNode) {
-            return true;
-          }
+    if (insertionIndex !== null) {
+      updated.splice(insertionIndex, 0, node.getNodeName());
 
-          /** Carry on to the next sequence item */
-          return false;
-        });
+      return updated;
     }
+
+    updated.push(node.getNodeName());
+
+    return updated;
   }
 
 

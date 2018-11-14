@@ -154,16 +154,23 @@ class TestDocument {
 
   getBody() {
     const body = new Elements.Body();
-    const { root, last } = Engine.Generator.fromSelector('chapter>part[num:1,heading:Some Part]>section>subsection>content>p');
-    const noteRef = this.createNote();
-    const sampleBody = new Elements.TextElement('Always have notes.');
-    last.appendChild(sampleBody);
-    last.appendChild(noteRef);
+    let generated = Engine.Generator.fromSelector('chapter>part[num:2,heading:Some Part]>section>subsection>content>p');
+    let noteRef = this.createNote();
+    let sampleBody = new Elements.TextElement('Always have notes.');
+    generated.last.appendChild(sampleBody);
+    generated.last.appendChild(noteRef);
 
-    body.appendChild(root);
+    /** Append the first child */
+    body.appendChild(generated.root);
 
-    console.log(root, last);
+    generated = Engine.Generator.fromSelector('chapter>part[num:1,heading:First Part]>section>subsection>content>p');
+    noteRef = this.createNote();
+    sampleBody = new Elements.TextElement('Never forget a part.');
+    generated.last.appendChild(sampleBody);
+    generated.last.appendChild(noteRef);
 
+    /** Append the new node as the first child */
+    body.insertChildAtPosition(generated.root, 0);
 
     return body;
   }

@@ -4916,8 +4916,7 @@ the element marker is a generic element for a marker. It can be placed in a bloc
 				<comment>
 TYPE
 Element
-NAME
-li
+NAME li
 The element li is an HTML element and is used in Akoma Ntoso as in HTML, for the generic list item (not a pattern)</comment>
 			</xsd:documentation>
 		</xsd:annotation>

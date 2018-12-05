@@ -130,6 +130,7 @@ export { Inline } from './Inlines/Inline';
 export { Ins } from './Inlines/Ins';
 export { Lawyer } from './Inlines/Lawyer';
 export { Legislature } from './Inlines/Legislature';
+export { Li } from './Inlines/Li';
 export { ListIntroduction } from './Inlines/ListIntroduction';
 export { ListWrapUp } from './Inlines/ListWrapUp';
 export { Location } from './Inlines/Location';

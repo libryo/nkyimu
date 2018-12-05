@@ -131,6 +131,7 @@ export const elementMap: { [key: string]: string } = {
   'ins': 'Ins',
   'lawyer': 'Lawyer',
   'legislature': 'Legislature',
+  'li': 'Li',
   'listIntroduction': 'ListIntroduction',
   'listWrapUp': 'ListWrapUp',
   'location': 'Location',

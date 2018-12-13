@@ -1,5 +1,6 @@
 export { Agent } from './Agent';
 export { Alt } from './Alt';
+export { Authoritative } from './Authoritative';
 export { Booleanvalue } from './Booleanvalue';
 export { Cellattrs } from './Cellattrs';
 export { Contains } from './Contains';
@@ -35,6 +36,7 @@ export { Optvalue } from './Optvalue';
 export { OriginalText } from './OriginalText';
 export { Originating } from './Originating';
 export { Period } from './Period';
+export { Pivot } from './Pivot';
 export { Pos } from './Pos';
 export { Quote } from './Quote';
 export { Range } from './Range';

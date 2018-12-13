@@ -7,6 +7,7 @@ export { BlockListType } from './BlockListType';
 export { Blocksopt } from './Blocksopt';
 export { Blocksreq } from './Blocksreq';
 export { BodyType } from './BodyType';
+export { BooleanValueType } from './BooleanValueType';
 export { CitationHierarchy } from './CitationHierarchy';
 export { ContainerType } from './ContainerType';
 export { CoreProperties } from './CoreProperties';

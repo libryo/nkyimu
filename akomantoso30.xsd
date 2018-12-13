@@ -5361,8 +5361,7 @@ The element FRBRprescriptive is the metadata property containing a boolean value
 			<xsd:documentation>
 				<type>Element</type>
 				<name>FRBRversionNumber</name>
-				<comment>
-The element FRBRversionNumber is the metadata property containing the value of the version number if appropriate to identify the specific expression here contained. It allows an arbitrary string.</comment>
+				<comment>The element FRBRversionNumber is the metadata property containing the value of the version number if appropriate to identify the specific expression here contained. It allows an arbitrary string.</comment>
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>

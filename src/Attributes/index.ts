@@ -1,6 +1,7 @@
 export { AltAttribute } from './AltAttribute';
 export { AlternativeToAttribute } from './AlternativeToAttribute';
 export { AsAttribute } from './AsAttribute';
+export { AuthoritativeAttribute } from './AuthoritativeAttribute';
 export { BorderAttribute } from './BorderAttribute';
 export { BreakAtAttribute } from './BreakAtAttribute';
 export { BreakWithAttribute } from './BreakWithAttribute';
@@ -37,6 +38,7 @@ export { NumberAttribute } from './NumberAttribute';
 export { OriginalTextAttribute } from './OriginalTextAttribute';
 export { OriginatingExpressionAttribute } from './OriginatingExpressionAttribute';
 export { PeriodAttribute } from './PeriodAttribute';
+export { PivotAttribute } from './PivotAttribute';
 export { PlacementAttribute } from './PlacementAttribute';
 export { PlacementBaseAttribute } from './PlacementBaseAttribute';
 export { PosAttribute } from './PosAttribute';

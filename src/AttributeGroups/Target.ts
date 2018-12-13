@@ -3,7 +3,7 @@ import { TargetAttribute } from "../Attributes/TargetAttribute";
 import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
 
 /**
- * The attribute name is used to give a name to all generic elements.
+ * the attribute target specifies the target of the a element.
  */
 export class Target extends AbstractAttributeGroup {
 
@@ -11,6 +11,6 @@ export class Target extends AbstractAttributeGroup {
    * The items contained in the group.
    */
   readonly items: AttributeGroupItem[] = [
-    { attribute: TargetAttribute, required: true },
+    { attribute: TargetAttribute, required: false },
   ];
 }

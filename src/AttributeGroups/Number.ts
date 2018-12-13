@@ -11,6 +11,6 @@ export class Number extends AbstractAttributeGroup {
    * The items contained in the group.
    */
   readonly items: AttributeGroupItem[] = [
-    { attribute: NumberAttribute, required: true },
+    { attribute: NumberAttribute, required: false },
   ];
 }

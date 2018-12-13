@@ -11,6 +11,6 @@ export class Originating extends AbstractAttributeGroup {
    * The items contained in the group.
    */
   readonly items: AttributeGroupItem[] = [
-    { attribute: OriginatingExpressionAttribute, required: true },
+    { attribute: OriginatingExpressionAttribute, required: false },
   ];
 }

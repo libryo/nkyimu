@@ -12,6 +12,6 @@ export class Type extends AbstractAttributeGroup {
    * The items contained in the group.
    */
   readonly items: AttributeGroupItem[] = [
-    { attribute: TypeAttribute, required: true },
+    { attribute: TypeAttribute, required: false },
   ];
 }

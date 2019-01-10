@@ -7,7 +7,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class SpeechSection implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     speechSecChoice: {
       choice: true,
       minOccur: 1,
@@ -37,6 +37,6 @@ export class SpeechSection implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

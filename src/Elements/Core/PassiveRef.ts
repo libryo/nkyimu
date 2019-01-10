@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { ReferenceType } from "../../ComplexTypes/ReferenceType";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { ReferenceType } from '../../ComplexTypes/ReferenceType';
 
 const type = new ReferenceType();
 /**
@@ -10,15 +10,15 @@ const type = new ReferenceType();
  * on this document (i.e., a passive references)
  */
 export class PassiveRef extends AbstractNode {
-  abbreviation = "passiveref";
+  abbreviation = 'passiveref';
 
-  getNodeName(): string {
-    return "passiveRef";
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+
+  public readonly SEQUENCE: string[] = [];
+
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
+
+  public getNodeName(): string {
+    return 'passiveRef';
   }
-
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
-
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 }

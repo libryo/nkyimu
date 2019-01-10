@@ -10,7 +10,7 @@ import { BlockElements } from "../ElementGroups/BlockElements";
  */
 export class Blocksopt implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     blkOptSeq: {
       minOccur: 0,
       options: {
@@ -25,7 +25,7 @@ export class Blocksopt implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Coreopt()).items
   ];
 }

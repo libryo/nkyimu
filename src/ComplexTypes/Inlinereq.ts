@@ -11,7 +11,7 @@ import { HasChildrenMap } from "../Interfaces/HasChildrenMap";
  */
 export class Inlinereq implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     inReqChoice: {
       minOccur: 0,
       choice: true,
@@ -22,7 +22,7 @@ export class Inlinereq implements HasChildrenMap {
     '': { minOccur: 0, options: {} },
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,
   ];
 }

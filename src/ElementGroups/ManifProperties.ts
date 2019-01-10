@@ -7,16 +7,16 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class ManifProperties implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     FRBRportion: { minOccur:0, maxOccur: 1, options: {} },
     FRBRformat: { minOccur:0, maxOccur: 1, options: {} },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     'FRBRportion:?',
     'FRBRformat:?',
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

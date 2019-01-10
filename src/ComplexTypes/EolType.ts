@@ -14,9 +14,9 @@ import { Markeropt } from "./Markeropt";
  */
 export class EolType extends Markeropt implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {};
+  public readonly CHILDREN_MAP: NodeRules = {};
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Markeropt()).ATTRIBUTE_GROUPS,
     ...(new NumberGroup()).items,
     { attribute: BreakAtAttribute, required: false },

@@ -13,7 +13,7 @@ import { HierElements } from "../ElementGroups/HierElements";
  * the elements that are subFlows.
  */
 export class SubFlowStructure implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     subfStrChoice: {
       choice: true,
       minOccur: 1,
@@ -81,7 +81,7 @@ export class SubFlowStructure implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,
   ];
 }

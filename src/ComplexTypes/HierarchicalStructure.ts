@@ -10,7 +10,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  * acts and bills.
  */
 export class HierarchicalStructure implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     meta: { maxOccur: 1, minOccur: 1, options: {} },
     coverPage: { minOccur: 0, maxOccur: 1, options: {} },
     preface: { minOccur: 0, maxOccur: 1, options: {} },
@@ -21,7 +21,7 @@ export class HierarchicalStructure implements HasChildrenMap {
     components: { minOccur: 0, maxOccur: 1, options: {} },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     'meta',
     'coverPage:?',
     'preface:?',
@@ -32,7 +32,7 @@ export class HierarchicalStructure implements HasChildrenMap {
     'components:?'
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Name()).items,
     ...(new Contains()).items,
   ];

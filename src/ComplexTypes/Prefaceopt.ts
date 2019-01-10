@@ -11,7 +11,7 @@ import { PrefaceContainers } from "../ElementGroups/PrefaceContainers";
  */
 export class Prefaceopt implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     prefOptsChoice: {
       choice: true,
       minOccur: 1,
@@ -34,7 +34,7 @@ export class Prefaceopt implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Coreopt()).items,
   ];
 }

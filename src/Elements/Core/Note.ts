@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { SubFlowStructure } from "../../ComplexTypes/SubFlowStructure";
-import { Notes } from "../../AttributeGroups/Notes";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { SubFlowStructure } from '../../ComplexTypes/SubFlowStructure';
+import { Notes } from '../../AttributeGroups/Notes';
 
 const type = new SubFlowStructure();
 
@@ -11,18 +11,20 @@ const type = new SubFlowStructure();
  * endnote specified.
  */
 export class Note extends AbstractNode {
-  abbreviation = 'note';
+  public abbreviation = 'note';
 
-  getNodeName(): string { return 'note'; }
-
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
   };
 
-  readonly SEQUENCE: string[] = [];
+  public readonly SEQUENCE: string[] = [];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Notes()).items,
   ];
+
+  public getNodeName(): string {
+    return 'note';
+  }
 }

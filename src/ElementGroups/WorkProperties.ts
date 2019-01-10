@@ -7,7 +7,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class WorkProperties implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     FRBRcountry: { minOccur:1, maxOccur: 1, options: {} },
     FRBRsubtype: { minOccur:0, maxOccur: 1, options: {} },
     FRBRnumber: { minOccur:0, options: {} },
@@ -16,7 +16,7 @@ export class WorkProperties implements HasChildrenMap {
     FRBRauthoritative: { minOccur:0, maxOccur: 1, options: {} },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     'FRBRcountry',
     'FRBRsubtype:?',
     'FRBRnumber:?',
@@ -25,6 +25,6 @@ export class WorkProperties implements HasChildrenMap {
     'FRBRauthoritative:?',
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

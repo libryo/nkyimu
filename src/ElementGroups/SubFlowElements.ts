@@ -8,7 +8,7 @@ import { ANsubFlow } from "./ANsubFlow";
  */
 export class SubFlowElements implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     subFlowElsChoice: {
       choice: true,
       maxOccur: 1,
@@ -26,6 +26,6 @@ export class SubFlowElements implements HasChildrenMap {
     },
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

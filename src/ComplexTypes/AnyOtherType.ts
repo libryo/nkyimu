@@ -11,7 +11,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class AnyOtherType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     aots: {
       choice: true,
       minOccur: 1,
@@ -22,7 +22,7 @@ export class AnyOtherType implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Core()).items,
     ...(new Idopt()).items,
     ...(new Linkopt()).items,

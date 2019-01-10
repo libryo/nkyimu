@@ -14,7 +14,7 @@ import { InlineCM } from "../ElementGroups/InlineCM";
  */
 export class ModType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     modTypeChoice: {
       choice: true,
       minOccur: 0,
@@ -33,7 +33,7 @@ export class ModType implements HasChildrenMap {
     '': { minOccur: 0, options: {} },
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,
     ...(new For()).items,
   ];

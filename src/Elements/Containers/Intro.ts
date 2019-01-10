@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Blocksreq } from "../../ComplexTypes/Blocksreq";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Blocksreq } from '../../ComplexTypes/Blocksreq';
 
 const type = new Blocksreq();
 
@@ -10,15 +10,17 @@ const type = new Blocksreq();
  * contains paragraphs introducing one or more lower hierarchical elements.
  */
 export class Intro extends AbstractNode {
-  abbreviation = 'intro';
+  public abbreviation = 'intro';
 
-  getNodeName(): string { return 'intro'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'intro';
+  }
 }

@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { BodyType } from "../../ComplexTypes/BodyType";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { BodyType } from '../../ComplexTypes/BodyType';
 
 const type = new BodyType();
 
@@ -10,15 +10,17 @@ const type = new BodyType();
  * document (e.g, an act or a bill)
  */
 export class Body extends AbstractNode {
-  abbreviation = 'body';
+  public abbreviation = 'body';
 
-  getNodeName(): string { return 'body'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = type.SEQUENCE;
 
-  readonly SEQUENCE: string[] = type.SEQUENCE;
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'body';
+  }
 }

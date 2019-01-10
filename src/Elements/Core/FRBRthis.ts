@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { ValueType } from "../../ComplexTypes/ValueType";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { ValueType } from '../../ComplexTypes/ValueType';
 
 const type = new ValueType();
 /**
@@ -9,13 +9,15 @@ const type = new ValueType();
  * specific component of the document
  */
 export class FRBRthis extends AbstractNode {
-  abbreviation = 'frbrthis';
+  public abbreviation = 'frbrthis';
 
-  getNodeName(): string { return 'FRBRthis'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
+  public getNodeName(): string {
+    return 'FRBRthis';
+  }
 }

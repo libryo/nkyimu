@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Optvalue } from "../../AttributeGroups/Optvalue";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Optvalue } from '../../AttributeGroups/Optvalue';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -13,16 +13,18 @@ const type = new Inline();
  * TLCEvent to refer to the event of the specific legislature.
  */
 export class Legislature extends AbstractNode {
-  abbreviation = 'legislature';
+  public abbreviation = 'legislature';
 
-  getNodeName(): string { return 'legislature'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Optvalue()).items,
   ];
+
+  public getNodeName(): string {
+    return 'legislature';
+  }
 }

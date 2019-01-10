@@ -8,7 +8,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class HTMLcontainers implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     htmlContSeq: {
       maxOccur: 1,
       minOccur: 1,
@@ -18,6 +18,6 @@ export class HTMLcontainers implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

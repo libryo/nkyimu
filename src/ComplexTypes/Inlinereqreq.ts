@@ -11,7 +11,7 @@ import { InlineCM } from "../ElementGroups/InlineCM";
  */
 export class Inlinereqreq implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     inReqReqChoice: {
       minOccur: 0,
       choice: true,
@@ -22,7 +22,7 @@ export class Inlinereqreq implements HasChildrenMap {
     '': { minOccur: 0, options: {} },
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereqreq()).items,
   ];
 }

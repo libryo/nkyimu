@@ -13,9 +13,9 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class SrcType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {};
+  public readonly CHILDREN_MAP: NodeRules = {};
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Core()).items,
     ...(new Idopt()).items,
     ...(new Src()).items,

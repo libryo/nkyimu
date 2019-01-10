@@ -1,7 +1,7 @@
-import { AbstractNode } from "../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../Interfaces/NodeRules";
-import { LinkType } from "../ComplexTypes/LinkType";
+import { AbstractNode } from '../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../Interfaces/NodeRules';
+import { LinkType } from '../ComplexTypes/LinkType';
 
 const type = new LinkType();
 
@@ -12,16 +12,17 @@ const type = new LinkType();
  * and are (an expression or any expression of) a separate Work.
  */
 export class DocumentRef extends AbstractNode {
-  abbreviation = 'dref';
+  public abbreviation = 'dref';
 
-  getNodeName(): string { return 'documentRef'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
 
+  public getNodeName(): string {
+    return 'documentRef';
+  }
 }

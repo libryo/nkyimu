@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Range } from "../../AttributeGroups/Range";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inlinereq } from "../../ComplexTypes/Inlinereq";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Range } from '../../AttributeGroups/Range';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inlinereq } from '../../ComplexTypes/Inlinereq';
 
 const type = new Inlinereq();
 
@@ -12,16 +12,18 @@ const type = new Inlinereq();
  * and the one specified in the upTo attribute.
  */
 export class Rref extends AbstractNode {
-  abbreviation = 'rref';
+  public abbreviation = 'rref';
 
-  getNodeName(): string { return 'rref'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Range()).items,
   ];
+
+  public getNodeName(): string {
+    return 'rref';
+  }
 }

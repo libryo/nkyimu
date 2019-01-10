@@ -11,7 +11,7 @@ import { PreambleContainers } from "../ElementGroups/PreambleContainers";
  */
 export class Preambleopt implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     preOptsChoice: {
       choice: true,
       minOccur: 1,
@@ -34,7 +34,7 @@ export class Preambleopt implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Coreopt()).items,
   ];
 }

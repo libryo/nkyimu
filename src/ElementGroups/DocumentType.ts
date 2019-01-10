@@ -7,7 +7,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  * managed by Akoma Ntoso.
  */
 export class DocumentType implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     docTypeChoice: {
       choice: true,
       maxOccur: 1,
@@ -29,7 +29,7 @@ export class DocumentType implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }
 

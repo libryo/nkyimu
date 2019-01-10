@@ -1,8 +1,10 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Metaopt } from "../../ComplexTypes";
-import { Date as DateGroup, Show, Name, Number as NumberGroup, Refers } from "../../AttributeGroups";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import {
+  Date as DateGroup, Name, Number as NumberGroup, Refers, Show,
+} from '../../AttributeGroups';
+import { Metaopt } from '../../ComplexTypes';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
 
 const type = new Metaopt();
 /**
@@ -10,15 +12,13 @@ const type = new Metaopt();
  * publication event for the FRBR expression of the document.
  */
 export class Publication extends AbstractNode {
-  abbreviation = 'publication';
+  public abbreviation = 'publication';
 
-  getNodeName(): string { return 'publication'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new DateGroup()).items,
     ...(new Show()).items,
@@ -26,4 +26,8 @@ export class Publication extends AbstractNode {
     ...(new NumberGroup()).items,
     ...(new Refers()).items,
   ];
+
+  public getNodeName(): string {
+    return 'publication';
+  }
 }

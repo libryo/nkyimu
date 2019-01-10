@@ -1,8 +1,8 @@
 import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Duration, Interval, Refersreq } from '../../AttributeGroups';
+import { Metaopt } from '../../ComplexTypes';
 import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
 import { NodeRules } from '../../Interfaces/NodeRules';
-import { Core, Idreq, Interval, Duration, Refersreq } from '../../AttributeGroups';
-import { Metaopt } from '../../ComplexTypes';
 
 const type = new Metaopt();
 
@@ -16,20 +16,21 @@ const type = new Metaopt();
  * specified in the references section
  */
 export class TimeInterval extends AbstractNode {
-  abbreviation = 'timeinterval';
+  public abbreviation = 'timeinterval';
 
-  getNodeName(): string {
-    return 'timeInterval';
-  }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Interval()).items,
     ...(new Duration()).items,
     ...(new Refersreq()).items,
   ];
+
+
+  public getNodeName(): string {
+    return 'timeInterval';
+  }
 }

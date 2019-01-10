@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Range } from "../../AttributeGroups/Range";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { ModType } from "../../ComplexTypes/ModType";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Range } from '../../AttributeGroups/Range';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { ModType } from '../../ComplexTypes/ModType';
 
 const type = new ModType();
 
@@ -11,16 +11,18 @@ const type = new ModType();
  * specification of a range of modifications on another document.
  */
 export class Rmod extends AbstractNode {
-  abbreviation = 'rmod';
+  public abbreviation = 'rmod';
 
-  getNodeName(): string { return 'rmod'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Range()).items,
   ];
+
+  public getNodeName(): string {
+    return 'rmod';
+  }
 }

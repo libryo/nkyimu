@@ -4,20 +4,20 @@ import { NodeRules } from '../../Interfaces/NodeRules';
 import { Core, Idreq } from '../../AttributeGroups';
 
 export class TemporalGroup extends AbstractNode {
-  abbreviation = 'tmpg';
+  public abbreviation = 'tmpg';
 
-  getNodeName(): string {
-    return 'temporalGroup';
-  }
-
-  readonly CHILDREN_MAP: NodeRules = {
-    timeInterval: { minOccur: 0, options: {}, }
+  public readonly CHILDREN_MAP: NodeRules = {
+    timeInterval: { minOccur: 0, options: {} },
   };
 
-  readonly SEQUENCE: string[] = [];
+  public readonly SEQUENCE: string[] = [];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Core()).items,
     ...(new Idreq()).items,
   ];
+
+  public getNodeName(): string {
+    return 'temporalGroup';
+  }
 }

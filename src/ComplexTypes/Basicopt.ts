@@ -12,7 +12,7 @@ import { BlockElements } from "../ElementGroups/BlockElements";
  */
 export class Basicopt implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     bOpts: {
       choice: true,
       minOccur: 1,
@@ -35,7 +35,7 @@ export class Basicopt implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Coreopt()).items
   ];
 }

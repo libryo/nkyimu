@@ -1,9 +1,9 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Linkopt } from "../../AttributeGroups/Linkopt";
-import { Quote } from "../../AttributeGroups/Quote";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Linkopt } from '../../AttributeGroups/Linkopt';
+import { Quote } from '../../AttributeGroups/Quote';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -15,17 +15,19 @@ const type = new Inline();
  * in the text; quote="" implies that there is no quote character.
  */
 export class EmbeddedText extends AbstractNode {
-  abbreviation = 'embeddedtext';
+  public abbreviation = 'embeddedtext';
 
-  getNodeName(): string { return 'embeddedText'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Quote()).items,
     ...(new Linkopt()).items,
   ];
+
+  public getNodeName(): string {
+    return 'embeddedText';
+  }
 }

@@ -1,9 +1,9 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { For } from "../../AttributeGroups/For";
-import { Quote } from "../../AttributeGroups/Quote";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { For } from '../../AttributeGroups/For';
+import { Quote } from '../../AttributeGroups/Quote';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -17,17 +17,19 @@ const type = new Inline();
  * to point to the eId of the corresponding ref element.
  */
 export class QuotedText extends AbstractNode {
-  abbreviation = 'qtext';
+  public abbreviation = 'qtext';
 
-  getNodeName(): string { return 'quotedText'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Quote()).items,
     ...(new For()).items,
   ];
+
+  public getNodeName(): string {
+    return 'quotedText';
+  }
 }

@@ -8,7 +8,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class CoreProperties implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     FRBRthis: { minOccur: 1, maxOccur: 1, options: {} },
     FRBRuri: { minOccur: 1, options: {} },
     FRBRalias: { minOccur: 0, options: {} },
@@ -18,7 +18,7 @@ export class CoreProperties implements HasChildrenMap {
     preservation: { minOccur: 0, options: {} },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     'FRBRthis',
     'FRBRuri',
     'FRBRalias:?',
@@ -28,5 +28,5 @@ export class CoreProperties implements HasChildrenMap {
     'preservation:?',
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [];
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [];
 }

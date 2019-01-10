@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Blocksopt } from "../../ComplexTypes";
-import { Cellattrs } from "../../AttributeGroups";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Blocksopt } from '../../ComplexTypes';
+import { Cellattrs } from '../../AttributeGroups';
 
 const type = new Blocksopt();
 
@@ -11,16 +11,18 @@ const type = new Blocksopt();
  * data cell of a table
  */
 export class Td extends AbstractNode {
-  abbreviation = 'td';
+  public abbreviation = 'td';
 
-  getNodeName(): string { return 'td'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Cellattrs()).items,
   ];
+
+  public getNodeName(): string {
+    return 'td';
+  }
 }

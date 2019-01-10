@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Name } from "../../AttributeGroups/Name";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline as InlineType } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Name } from '../../AttributeGroups/Name';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline as InlineType } from '../../ComplexTypes/Inline';
 
 const type = new InlineType();
 
@@ -12,16 +12,18 @@ const type = new InlineType();
  * The attribute name is required and gives a name to the element.
  */
 export class Inline extends AbstractNode {
-  abbreviation = 'inline';
+  public abbreviation = 'inline';
 
-  getNodeName(): string { return 'inline'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Name()).items,
   ];
+
+  public getNodeName(): string {
+    return 'inline';
+  }
 }

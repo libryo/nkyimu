@@ -1,7 +1,7 @@
-import { AbstractNode } from "../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../Interfaces/NodeRules";
-import { SrcType } from "../ComplexTypes/SrcType";
+import { AbstractNode } from '../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../Interfaces/NodeRules';
+import { SrcType } from '../ComplexTypes/SrcType';
 
 const type = new SrcType();
 
@@ -13,16 +13,17 @@ const type = new SrcType();
  * internal (within the components element)
  */
 export class ComponentRef extends AbstractNode {
-  abbreviation = 'cref';
+  public abbreviation = 'cref';
 
-  getNodeName(): string { return 'componentRef'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
 
+  public getNodeName(): string {
+    return 'componentRef';
+  }
 }

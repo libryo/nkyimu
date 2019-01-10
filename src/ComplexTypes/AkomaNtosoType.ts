@@ -11,7 +11,7 @@ const docType = new DocumentType();
  */
 export class AkomaNtosoType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     aknSeq: {
       minOccur: 1,
       maxOccur: 1,
@@ -28,8 +28,8 @@ export class AkomaNtosoType implements HasChildrenMap {
     },
   };
 
-  readonly SEQUENCE: string[] = [];
+  public readonly SEQUENCE: string[] = [];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

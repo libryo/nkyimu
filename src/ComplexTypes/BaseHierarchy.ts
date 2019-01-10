@@ -9,7 +9,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class BaseHierarchy implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     bHies: {
       choice: true,
       minOccur: 0,
@@ -21,6 +21,6 @@ export class BaseHierarchy implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

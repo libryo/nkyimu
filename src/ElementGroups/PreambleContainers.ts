@@ -8,7 +8,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class PreambleContainers implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     preContChoice: {
       choice: true,
       minOccur: 1,
@@ -22,6 +22,6 @@ export class PreambleContainers implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

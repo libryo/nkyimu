@@ -1,5 +1,7 @@
 import { AbstractNode } from '../../Abstracts/AbstractNode';
-import { Dictionary, Linkopt, Refers, Show, Value } from '../../AttributeGroups';
+import {
+  Dictionary, Linkopt, Refers, Show, Value,
+} from '../../AttributeGroups';
 import { Metaopt } from '../../ComplexTypes';
 import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
 import { NodeRules } from '../../Interfaces/NodeRules';

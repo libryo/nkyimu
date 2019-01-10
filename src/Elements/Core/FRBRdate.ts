@@ -1,9 +1,9 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Name } from "../../AttributeGroups/Name";
-import { Metaopt } from "../../ComplexTypes/Metaopt";
-import { Date as DateGroup } from "../../AttributeGroups/Date";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Name } from '../../AttributeGroups/Name';
+import { Metaopt } from '../../ComplexTypes/Metaopt';
+import { Date as DateGroup } from '../../AttributeGroups/Date';
 
 const type = new Metaopt();
 
@@ -13,17 +13,19 @@ const type = new Metaopt();
  * name specifies which actual date is contained here.
  */
 export class FRBRdate extends AbstractNode {
-  abbreviation = 'frbrdate';
+  public abbreviation = 'frbrdate';
 
-  getNodeName(): string { return 'FRBRdate'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new DateGroup()).items,
     ...(new Name()).items,
   ];
+
+  public getNodeName(): string {
+    return 'FRBRdate';
+  }
 }

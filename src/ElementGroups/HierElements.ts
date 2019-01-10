@@ -8,7 +8,7 @@ import { ANhier } from './ANhier';
  */
 export class HierElements implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     hierElsChoice: {
       choice: true,
       minOccur: 1, maxOccur: 1,
@@ -25,6 +25,6 @@ export class HierElements implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

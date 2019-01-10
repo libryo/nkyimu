@@ -13,11 +13,11 @@ const type = new Metaopt();
  */
 export class ValueType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Value()).items,
     ...(new Refers()).items,

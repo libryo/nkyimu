@@ -9,7 +9,7 @@ import { HTMLmarker } from "./HTMLmarker";
  */
 export class MarkerElements implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     mElsEChoice: {
       choice: true,
       maxOccur: 1,
@@ -34,6 +34,6 @@ export class MarkerElements implements HasChildrenMap {
     },
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

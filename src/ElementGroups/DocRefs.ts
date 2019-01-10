@@ -6,7 +6,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  * The group docrefs is a list of types of legal references to documents.
  */
 export class DocRefs implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     docRefChoices: {
       choice: true,
       maxOccur: 1,
@@ -22,5 +22,5 @@ export class DocRefs implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [];
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [];
 }

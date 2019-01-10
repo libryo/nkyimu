@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { LawyerAtts } from "../../AttributeGroups/LawyerAtts";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inlinereqreq } from "../../ComplexTypes/Inlinereqreq";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { LawyerAtts } from '../../AttributeGroups/LawyerAtts';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inlinereqreq } from '../../ComplexTypes/Inlinereqreq';
 
 const type = new Inlinereqreq();
 
@@ -13,16 +13,18 @@ const type = new Inlinereqreq();
  * delegation of power in some role
  */
 export class Lawyer extends AbstractNode {
-  abbreviation = 'lawyer';
+  public abbreviation = 'lawyer';
 
-  getNodeName(): string { return 'lawyer'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new LawyerAtts()).items,
   ];
+
+  public getNodeName(): string {
+    return 'lawyer';
+  }
 }

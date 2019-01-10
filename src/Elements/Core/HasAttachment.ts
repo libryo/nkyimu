@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { ReferenceType } from "../../ComplexTypes/ReferenceType";
-import { Type } from "../../AttributeGroups";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { ReferenceType } from '../../ComplexTypes/ReferenceType';
+import { Type } from '../../AttributeGroups';
 
 const type = new ReferenceType();
 /**
@@ -11,18 +11,18 @@ const type = new ReferenceType();
  * document is an attachment
  */
 export class HasAttachment extends AbstractNode {
-  abbreviation = "hasattachment";
+  abbreviation = 'hasattachment';
 
-  getNodeName(): string {
-    return "hasAttachment";
-  }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
-    ...(new Type()).items
+    ...(new Type()).items,
   ];
+
+  public getNodeName(): string {
+    return 'hasAttachment';
+  }
 }

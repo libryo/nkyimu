@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { FillInWidth } from "../../AttributeGroups/FillInWidth";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { FillInWidth } from '../../AttributeGroups/FillInWidth';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -15,16 +15,18 @@ const type = new Inline();
  * the reader and deliver to some server-side process.
  */
 export class FillIn extends AbstractNode {
-  abbreviation = 'fillin';
+  public abbreviation = 'fillin';
 
-  getNodeName(): string { return 'fillIn'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new FillInWidth()).items,
   ];
+
+  public getNodeName(): string {
+    return 'fillIn';
+  }
 }

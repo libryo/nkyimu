@@ -12,7 +12,7 @@ const type = new BaseHierarchy();
  */
 export class DocContainerType extends BaseHierarchy {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
     docConType: {
       choice: true,
@@ -33,7 +33,7 @@ export class DocContainerType extends BaseHierarchy {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Corereq()).items,
   ];

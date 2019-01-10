@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { BooleanValueType } from "../../ComplexTypes/BooleanValueType";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { BooleanValueType } from '../../ComplexTypes/BooleanValueType';
 
 const type = new BooleanValueType();
 /**
@@ -11,13 +11,15 @@ const type = new BooleanValueType();
  * or not (such as, for instance, a non-normative resolution from an assembly.
  */
 export class FRBRprescriptive extends AbstractNode {
-  abbreviation = 'frbrprescriptive';
+  public abbreviation = 'frbrprescriptive';
 
-  getNodeName(): string { return 'FRBRprescriptive'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
+  public getNodeName(): string {
+    return 'FRBRprescriptive';
+  }
 }

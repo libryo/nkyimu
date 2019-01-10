@@ -1,25 +1,27 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Corereq } from "../../AttributeGroups/Corereq";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Corereq } from '../../AttributeGroups/Corereq';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
 
 export class Toc extends AbstractNode {
-  abbreviation = 'toc';
+  public abbreviation = 'toc';
 
-  getNodeName(): string { return 'toc'; }
-
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     tocSeq: {
       minOccur: 1,
       options: {
         tocItem: { minOccur: 1, maxOccur: 1, options: {} },
-      }
-    }
+      },
+    },
   };
 
-  readonly SEQUENCE: string[] = [];
+  public readonly SEQUENCE: string[] = [];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,
   ];
+
+  public getNodeName(): string {
+    return 'toc';
+  }
 }

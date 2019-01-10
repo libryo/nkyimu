@@ -10,15 +10,15 @@ const type = new ReferenceType();
  * document (i.e., the first expression)
  */
 export class Original extends AbstractNode {
-  abbreviation = 'original';
+  public abbreviation = 'original';
 
-  getNodeName(): string {
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+
+  public readonly SEQUENCE: string[] = [];
+
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
+
+  public getNodeName(): string {
     return 'original';
   }
-
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
-
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 }

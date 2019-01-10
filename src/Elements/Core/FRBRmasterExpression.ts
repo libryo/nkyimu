@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { LinkType } from "../../ComplexTypes";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { LinkType } from '../../ComplexTypes';
 
 const type = new LinkType();
 /**
@@ -19,13 +19,15 @@ const type = new LinkType();
  * used in this expression as wIds.
  */
 export class FRBRmasterExpression extends AbstractNode {
-  abbreviation = 'frbrmasterexpression';
+  public abbreviation = 'frbrmasterexpression';
 
-  getNodeName(): string { return 'FRBRmasterExpression'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
+  public getNodeName(): string {
+    return 'FRBRmasterExpression';
+  }
 }

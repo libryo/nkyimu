@@ -14,16 +14,18 @@ const type = new Blocksreq();
  * specification of the actual type of formula.
  */
 export class Formula extends AbstractNode {
-  abbreviation = 'formula';
+  public abbreviation = 'formula';
 
-  getNodeName(): string { return 'formula'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Name()).items,
   ];
+
+  public getNodeName(): string {
+    return 'formula';
+  }
 }

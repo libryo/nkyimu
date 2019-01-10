@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { OriginalText } from "../../AttributeGroups/OriginalText";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { OriginalText } from '../../AttributeGroups/OriginalText';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -12,16 +12,18 @@ const type = new Inline();
  * that can be replaced editorially with an actual value
  */
 export class Placeholder extends AbstractNode {
-  abbreviation = 'placeholder';
+  public abbreviation = 'placeholder';
 
-  getNodeName(): string { return 'placeholder'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new OriginalText()).items,
   ];
+
+  public getNodeName(): string {
+    return 'placeholder';
+  }
 }

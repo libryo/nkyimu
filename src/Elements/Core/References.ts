@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { RefItems } from "../../ComplexTypes";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { RefItems } from '../../ComplexTypes';
 
 const refItems = new RefItems();
 /**
@@ -12,11 +12,15 @@ const refItems = new RefItems();
  * anything else is managed by the Akoma Ntoso ontology.
  */
 export class References extends AbstractNode {
-  abbreviation = "references";
-  getNodeName(): string {
-    return "references";
+  public abbreviation = 'references';
+
+  public readonly CHILDREN_MAP: NodeRules = refItems.CHILDREN_MAP;
+
+  public readonly SEQUENCE: string[] = [];
+
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = refItems.ATTRIBUTE_GROUPS;
+
+  public getNodeName(): string {
+    return 'references';
   }
-  readonly CHILDREN_MAP: NodeRules = refItems.CHILDREN_MAP;
-  readonly SEQUENCE: string[] = [];
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = refItems.ATTRIBUTE_GROUPS;
 }

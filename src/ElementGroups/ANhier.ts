@@ -8,7 +8,7 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class ANhier implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     anHierChoice: {
       choice: true,
       minOccur: 1,
@@ -45,7 +45,7 @@ export class ANhier implements HasChildrenMap {
     }},
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }
 

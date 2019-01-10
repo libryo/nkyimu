@@ -1,27 +1,27 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { XMLDateNamespaceAttribute } from "../../Attributes/XMLDateNamespaceAttribute";
-import { XMLNamespaceAttribute } from "../../Attributes/XMLNamespaceAttribute";
-import { XMLXSINamespaceAttribute } from "../../Attributes/XMLXSINamespaceAttribute";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { AkomaNtosoType } from "../../ComplexTypes/AkomaNtosoType";
-import { Note } from "../Core/Note";
-import { NoteRef } from "../Markers/NoteRef";
-import { HrefAttribute, EIdAttribute, SourceAttribute } from "../../Attributes";
-import { References } from "../Core/References";
-import { Meta } from "../RootContainers/Meta";
-import { Notes } from "../Core/Notes";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { XMLDateNamespaceAttribute } from '../../Attributes/XMLDateNamespaceAttribute';
+import { XMLNamespaceAttribute } from '../../Attributes/XMLNamespaceAttribute';
+import { XMLXSINamespaceAttribute } from '../../Attributes/XMLXSINamespaceAttribute';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { AkomaNtosoType } from '../../ComplexTypes/AkomaNtosoType';
+import { Note } from '../Core/Note';
+import { NoteRef } from '../Markers/NoteRef';
+import { HrefAttribute, EIdAttribute, SourceAttribute } from '../../Attributes';
+import { References } from '../Core/References';
+import { Meta } from '../RootContainers/Meta';
+import { Notes } from '../Core/Notes';
 
 const aknType = new AkomaNtosoType();
 
 export class AKNDocument extends AbstractNode {
-  abbreviation = 'akomantoso';
+  public abbreviation = 'akomantoso';
 
-  readonly CHILDREN_MAP: NodeRules = aknType.CHILDREN_MAP;
+  public readonly CHILDREN_MAP: NodeRules = aknType.CHILDREN_MAP;
 
-  readonly SEQUENCE: string[] = aknType.SEQUENCE;
+  public readonly SEQUENCE: string[] = aknType.SEQUENCE;
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...aknType.ATTRIBUTE_GROUPS,
   ];
 
@@ -29,11 +29,11 @@ export class AKNDocument extends AbstractNode {
 
   private references: AbstractNode[] = [];
 
-  getNodeName() {
+  public getNodeName() {
     return 'akomaNtoso';
   }
 
-  setRootAttributes() {
+  public setRootAttributes() {
     this.setAttribute(new XMLNamespaceAttribute('http://docs.oasis-open.org/legaldocml/ns/akn/3.0'));
     this.setAttribute(new XMLXSINamespaceAttribute('http://www.w3.org/2001/XMLSchema-instance'));
     this.setAttribute(new XMLDateNamespaceAttribute('http://exslt.org/dates-and-times'));
@@ -44,7 +44,7 @@ export class AKNDocument extends AbstractNode {
    *
    * @returns string
    */
-  toXML(): string {
+  public toXML(): string {
     const doc = new Document();
 
     this.setRootAttributes();
@@ -58,6 +58,36 @@ export class AKNDocument extends AbstractNode {
     doc.appendChild(this.getNode());
 
     return serializer.serializeToString(doc);
+  }
+
+  /**
+   * Add a new note to the body and receive a NoteRef in return.
+   *
+   * @param note Note
+   *
+   * @return NoteRef
+   */
+  public addNote(note: Note): NoteRef {
+    const noteId = `${note.abbreviation}_${this.notes.length + 1}`;
+
+    note.setElementId(noteId);
+
+    this.notes.push(note);
+
+    const ref = new NoteRef();
+
+    ref.setAttribute(new HrefAttribute(`#${noteId}`));
+
+    return ref;
+  }
+
+  /**
+   * Add a reference to the document.
+   *
+   * @param node Node
+   */
+  public addReference(node: AbstractNode) {
+    this.references.push(node);
   }
 
   private updateMetaItems() {
@@ -129,35 +159,5 @@ export class AKNDocument extends AbstractNode {
     }
 
     return notes[0];
-  }
-
-  /**
-   * Add a new note to the body and receive a NoteRef in return.
-   *
-   * @param note Note
-   *
-   * @return NoteRef
-   */
-  addNote(note: Note): NoteRef {
-    const noteId = `${note.abbreviation}_${this.notes.length + 1}`;
-
-    note.setElementId(noteId);
-
-    this.notes.push(note);
-
-    const ref = new NoteRef();
-
-    ref.setAttribute(new HrefAttribute(`#${noteId}`));
-
-    return ref;
-  }
-
-  /**
-   * Add a reference to the document.
-   *
-   * @param node Node
-   */
-  addReference(node: AbstractNode) {
-    this.references.push(node);
   }
 }

@@ -10,15 +10,15 @@ const type = new ReferenceType();
  * document (i.e., an active references)
  */
 export class ActiveRef extends AbstractNode {
-  abbreviation = 'activeref';
+  public abbreviation = 'activeref';
+
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+
+  public readonly SEQUENCE: string[] = [];
+
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 
   getNodeName(): string {
     return 'activeRef';
   }
-
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
-
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = type.ATTRIBUTE_GROUPS;
 }

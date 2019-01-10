@@ -10,7 +10,7 @@ import { BaseHierarchy } from "./BaseHierarchy";
  */
 export class BlockContainerType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...(new BaseHierarchy()).CHILDREN_MAP,
     blkConTypeSeq: {
       minOccur: 1,
@@ -37,7 +37,7 @@ export class BlockContainerType implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items
   ];
 }

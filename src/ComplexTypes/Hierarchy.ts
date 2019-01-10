@@ -12,7 +12,7 @@ const type = new BaseHierarchy();
  */
 export class Hierarchy extends BaseHierarchy {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
     hieChoice: {
       choice: true,
@@ -47,7 +47,7 @@ export class Hierarchy extends BaseHierarchy {
     },
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Corereq()).items,
   ];

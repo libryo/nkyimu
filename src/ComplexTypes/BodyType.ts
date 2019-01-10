@@ -11,7 +11,7 @@ const type = new HierElements();
  * of a hierarchical document (e.g, an act or a bill)
  */
 export class BodyType implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     bodyTypes: {
       choice: true,
       minOccur: 1,
@@ -28,9 +28,9 @@ export class BodyType implements HasChildrenMap {
     }
   };
 
-  readonly SEQUENCE: string[] = [];
+  public readonly SEQUENCE: string[] = [];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Coreopt()).items
   ];
 }

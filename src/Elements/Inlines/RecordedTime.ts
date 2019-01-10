@@ -1,9 +1,9 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { RecordedTimeType } from "../../AttributeGroups/RecordedTimeType";
-import { Time } from "../../AttributeGroups/Time";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { RecordedTimeType } from '../../AttributeGroups/RecordedTimeType';
+import { Time } from '../../AttributeGroups/Time';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -13,17 +13,19 @@ const type = new Inline();
  * (e.g., in a debate)
  */
 export class RecordedTime extends AbstractNode {
-  abbreviation = 'recordedtime';
+  public abbreviation = 'recordedtime';
 
-  getNodeName(): string { return 'recordedTime'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new RecordedTimeType()).items,
     ...(new Time()).items,
   ];
+
+  public getNodeName(): string {
+    return 'recordedTime';
+  }
 }

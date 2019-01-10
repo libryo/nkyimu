@@ -13,7 +13,7 @@ import { BlockElements } from "../ElementGroups/BlockElements";
  */
 export class ContainerType implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     conTypes: {
       minOccur: 1,
       options: {
@@ -29,7 +29,7 @@ export class ContainerType implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,
     ...(new Name()).items,
   ];

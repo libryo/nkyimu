@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { VoteAtts } from "../../AttributeGroups/VoteAtts";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Inline } from "../../ComplexTypes/Inline";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { VoteAtts } from '../../AttributeGroups/VoteAtts';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Inline } from '../../ComplexTypes/Inline';
 
 const type = new Inline();
 
@@ -12,16 +12,18 @@ const type = new Inline();
  * (when organized by name) in a voting report.
  */
 export class Vote extends AbstractNode {
-  abbreviation = 'vote';
+  public abbreviation = 'vote';
 
-  getNodeName(): string { return 'vote'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new VoteAtts()).items,
   ];
+
+  public getNodeName(): string {
+    return 'vote';
+  }
 }

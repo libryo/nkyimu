@@ -1,8 +1,10 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Metaopt } from "../../ComplexTypes";
-import { Link, FromLanguage, Agent, Authoritative, Pivot } from "../../AttributeGroups";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import {
+  Agent, Authoritative, FromLanguage, Link, Pivot,
+} from '../../AttributeGroups';
+import { Metaopt } from '../../ComplexTypes';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
 
 const type = new Metaopt();
 
@@ -13,11 +15,11 @@ const type = new Metaopt();
 export class FRBRtranslation extends AbstractNode {
   public abbreviation = 'frbrtranslation';
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly SEQUENCE: string[] = [];
+  public readonly SEQUENCE: string[] = [];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Link()).items,
     ...(new FromLanguage()).items,

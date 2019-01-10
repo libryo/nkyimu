@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { CoreProperties } from "../../ComplexTypes/CoreProperties";
-import { WorkProperties } from "../../ElementGroups/WorkProperties";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { CoreProperties } from '../../ComplexTypes/CoreProperties';
+import { WorkProperties } from '../../ElementGroups/WorkProperties';
 
 const type = new CoreProperties();
 /**
@@ -11,27 +11,29 @@ const type = new CoreProperties();
  * hierarchy
  */
 export class FRBRWork extends AbstractNode {
-  abbreviation = 'frbrwork';
+  public abbreviation = 'frbrwork';
 
-  getNodeName(): string { return 'FRBRWork'; }
-
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
     sequence: {
       minOccur: 1,
       maxOccur: 1,
       options: {
         ...(new WorkProperties()).CHILDREN_MAP,
-      }
-    }
+      },
+    },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     ...type.SEQUENCE,
-    ...(new WorkProperties()).SEQUENCE
+    ...(new WorkProperties()).SEQUENCE,
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'FRBRWork';
+  }
 }

@@ -1,24 +1,26 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Hierarchy } from "../../ComplexTypes/Hierarchy";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Hierarchy } from '../../ComplexTypes/Hierarchy';
 
-const type =  new Hierarchy();
+const type = new Hierarchy();
 
 /**
  * this element is a hierarchical container called
  * "subchapter" either explicitly or due to the local tradition
  */
 export class Subchapter extends AbstractNode {
-  abbreviation = 'subchp';
+  public abbreviation = 'subchp';
 
-  getNodeName(): string { return 'subchapter'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'subchapter';
+  }
 }

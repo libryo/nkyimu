@@ -10,7 +10,7 @@ import { Source } from "../AttributeGroups";
  * used in the references section.
  */
 export class RefItems implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     refItemsChoices: {
       choice: true,
       minOccur: 1,
@@ -31,7 +31,7 @@ export class RefItems implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Source()).items
   ];
 }

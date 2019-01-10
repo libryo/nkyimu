@@ -8,11 +8,11 @@ import { NodeRules } from "../Interfaces/NodeRules";
  */
 export class ANsubFlow implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     authorialNote: { maxOccur: 1, options: {} },
   };
 
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

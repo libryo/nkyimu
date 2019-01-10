@@ -12,7 +12,7 @@ const type = new BaseHierarchy();
  */
 export class CitationHierarchy implements HasChildrenMap {
 
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
     citHeiSeq: {
       minOccur: 1,
@@ -32,7 +32,7 @@ export class CitationHierarchy implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
     ...(new Corereq()).items
   ];

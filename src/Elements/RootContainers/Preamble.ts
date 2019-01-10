@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { Preambleopt } from "../../ComplexTypes/Preambleopt";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { Preambleopt } from '../../ComplexTypes/Preambleopt';
 
 const type = new Preambleopt();
 
@@ -10,15 +10,17 @@ const type = new Preambleopt();
  * the main body of the document as a preamble
  */
 export class Preamble extends AbstractNode {
-  abbreviation = 'preamble';
+  public abbreviation = 'preamble';
 
-  getNodeName(): string { return 'preamble'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'preamble';
+  }
 }

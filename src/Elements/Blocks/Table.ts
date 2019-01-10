@@ -1,15 +1,13 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { Corereq } from "../../AttributeGroups/Corereq";
-import { TableAtts } from "../../AttributeGroups/TableAtts";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Corereq } from '../../AttributeGroups/Corereq';
+import { TableAtts } from '../../AttributeGroups/TableAtts';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
 
 export class Table extends AbstractNode {
-  abbreviation = 'table';
+  public abbreviation = 'table';
 
-  getNodeName(): string { return 'table'; }
-
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     tblSeq: {
       minOccur: 1,
       maxOccur: 1,
@@ -20,13 +18,17 @@ export class Table extends AbstractNode {
     },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     'caption:?',
     'tr',
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...(new Corereq()).items,
     ...(new TableAtts()).items,
   ];
+
+  public getNodeName(): string {
+    return 'table';
+  }
 }

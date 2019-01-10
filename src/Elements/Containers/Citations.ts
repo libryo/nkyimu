@@ -1,7 +1,7 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { CitationHierarchy } from "../../ComplexTypes/CitationHierarchy";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { CitationHierarchy } from '../../ComplexTypes/CitationHierarchy';
 
 const type = new CitationHierarchy();
 
@@ -9,15 +9,17 @@ const type = new CitationHierarchy();
  * The element container is a generic element for a container.
  */
 export class Citations extends AbstractNode {
-  abbreviation = 'cits';
+  public abbreviation = 'cits';
 
-  getNodeName(): string { return 'citations'; }
+  public readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
 
-  readonly CHILDREN_MAP: NodeRules = type.CHILDREN_MAP;
+  public readonly SEQUENCE: string[] = [];
 
-  readonly SEQUENCE: string[] = [];
-
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'citations';
+  }
 }

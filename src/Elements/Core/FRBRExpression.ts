@@ -1,8 +1,8 @@
-import { AbstractNode } from "../../Abstracts/AbstractNode";
-import { AttributeGroupItem } from "../../Interfaces/AttributeGroupItem";
-import { NodeRules } from "../../Interfaces/NodeRules";
-import { CoreProperties } from "../../ComplexTypes/CoreProperties";
-import { ExprProperties } from "../../ElementGroups/ExprProperties";
+import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
+import { NodeRules } from '../../Interfaces/NodeRules';
+import { CoreProperties } from '../../ComplexTypes/CoreProperties';
+import { ExprProperties } from '../../ElementGroups/ExprProperties';
 
 const type = new CoreProperties();
 /**
@@ -10,27 +10,29 @@ const type = new CoreProperties();
  * related to the Expression level according to the FRBR hierarchy
  */
 export class FRBRExpression extends AbstractNode {
-  abbreviation = 'frbrexpression';
+  public abbreviation = 'frbrexpression';
 
-  getNodeName(): string { return 'FRBRExpression'; }
-
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     ...type.CHILDREN_MAP,
     sequence: {
       minOccur: 1,
       maxOccur: 1,
       options: {
         ...(new ExprProperties()).CHILDREN_MAP,
-      }
-    }
+      },
+    },
   };
 
-  readonly SEQUENCE: string[] = [
+  public readonly SEQUENCE: string[] = [
     ...type.SEQUENCE,
-    ...(new ExprProperties()).SEQUENCE
+    ...(new ExprProperties()).SEQUENCE,
   ];
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
   ];
+
+  public getNodeName(): string {
+    return 'FRBRExpression';
+  }
 }

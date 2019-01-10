@@ -10,7 +10,7 @@ import { SubFlowElements } from "./SubFlowElements";
  * and is composed of all the inlines and all the markers.
  */
 export class InlineCM implements HasChildrenMap {
-  readonly CHILDREN_MAP: NodeRules = {
+  public readonly CHILDREN_MAP: NodeRules = {
     inCMsChoice: {
       choice: true,
       minOccur: 1,
@@ -41,6 +41,6 @@ export class InlineCM implements HasChildrenMap {
     }
   };
 
-  readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
+  public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
   ];
 }

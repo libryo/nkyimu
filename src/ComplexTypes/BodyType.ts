@@ -1,8 +1,8 @@
-import { Coreopt } from "../AttributeGroups/Coreopt";
-import { AttributeGroupItem } from "../Interfaces/AttributeGroupItem";
-import { HasChildrenMap } from "../Interfaces/HasChildrenMap";
-import { NodeRules } from "../Interfaces/NodeRules";
-import { HierElements } from "../ElementGroups/HierElements";
+import { Coreopt } from '../AttributeGroups/Coreopt';
+import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
+import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
+import { NodeRules } from '../Interfaces/NodeRules';
+import { HierElements } from '../ElementGroups/HierElements';
 
 const type = new HierElements();
 
@@ -20,17 +20,17 @@ export class BodyType implements HasChildrenMap {
           minOccur: 1,
           maxOccur: 1,
           options: {
-            ...type.CHILDREN_MAP
+            ...type.CHILDREN_MAP,
           },
         },
         componentRef: { minOccur: 1, maxOccur: 1, options: {} },
-      }
-    }
+      },
+    },
   };
 
   public readonly SEQUENCE: string[] = [];
 
   public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
-    ...(new Coreopt()).items
+    ...(new Coreopt()).items,
   ];
 }

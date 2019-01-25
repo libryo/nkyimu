@@ -2,6 +2,7 @@ import { AbstractNode } from '../../Abstracts/AbstractNode';
 import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
 import { NodeRules } from '../../Interfaces/NodeRules';
 import { Preambleopt } from '../../ComplexTypes/Preambleopt';
+import { EIdAttribute } from '../../Attributes';
 
 const type = new Preambleopt();
 
@@ -18,6 +19,7 @@ export class Preamble extends AbstractNode {
 
   public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
+    { attribute: EIdAttribute, required: true },
   ];
 
   public getNodeName(): string {

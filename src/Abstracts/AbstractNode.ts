@@ -1,4 +1,4 @@
-import {intersection} from 'lodash';
+import { intersection } from 'lodash';
 import { NodeType } from '../common/enums';
 import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
@@ -96,6 +96,20 @@ export abstract class AbstractNode implements HasChildrenMap {
   }
 
   /**
+   * Validate whether the element's eid has count.
+   */
+  public hasCount(): boolean {
+    return true;
+  }
+
+  /**
+   * Validate whether the element's eid has count.
+   */
+  public prefixesEId(): boolean {
+    return true;
+  }
+
+  /**
    * Parent accessor.
    */
   get allowedChildren(): string[] {
@@ -164,7 +178,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    *  @param nth number
    */
   nthChild(nth: number): AbstractNode {
-    return this._children[nth -1];
+    return this._children[nth - 1];
   }
 
   /**
@@ -225,7 +239,7 @@ export abstract class AbstractNode implements HasChildrenMap {
   private flattenNode(node: string|string[]) {
     if (!Array.isArray(node)) return node;
 
-    return node.map((e) => this.flattenNode(e))
+    return node.map(e => this.flattenNode(e))
       .join(',');
   }
 
@@ -505,7 +519,7 @@ export abstract class AbstractNode implements HasChildrenMap {
         }
 
         if (!isPresentBefore && isRequired) {
-          const expected = absent.length > 1 ? 'one of ' + absent.join(', ') : absent.join(', ');
+          const expected = absent.length > 1 ? `one of ${absent.join(', ')}` : absent.join(', ');
 
           throw new Error(`The child node ${node.getNodeName()} is unexpected. Expected is ${expected}`);
         }
@@ -565,7 +579,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       if (!current.parentRule) {
         break;
       }
-      current = {...current.parentRule};
+      current = { ...current.parentRule };
     }
 
     if (rule !== current && current.maxOccur !== 1) parentAllowsMore = true;
@@ -575,14 +589,14 @@ export abstract class AbstractNode implements HasChildrenMap {
     }
 
     // @ts-ignore
-    current = parentAllowsMore ? current : {...rule.parentRule};
+    current = parentAllowsMore ? current : { ...rule.parentRule };
 
     this.validateExclusivity(node, current);
 
     while (current.parentRule) {
       this.validateExclusivity(node, current);
 
-      current = {...current.parentRule};
+      current = { ...current.parentRule };
     }
 
     this.validateExclusivity(node, current);
@@ -649,7 +663,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       throw new Error(`Element ${this.getNodeName()} is missing required attributes: ${required.join(', ')}`);
     }
 
-    required = required.filter((item) => this.currentAttributes.indexOf(item) === -1);
+    required = required.filter(item => this.currentAttributes.indexOf(item) === -1);
 
     const index = required.indexOf('EIdAttribute');
 
@@ -692,11 +706,21 @@ export abstract class AbstractNode implements HasChildrenMap {
 
       child.setElementId(childId);
 
-      this.generateIds(child, `${child.generatedId}_`);
+      if (child.prefixesEId()) {
+        this.generateIds(child, `${child.generatedId}_`);
+
+        return;
+      }
+
+      this.generateIds(child, prefix);
     });
   }
 
   private getCorrectNodeId(prefix: string, nodeCount: { [key:string]: number }, node: AbstractNode): string {
+    if (!node.hasCount()) {
+      return `${prefix}${node.abbreviation}`;
+    }
+
     const nodePrefix = `${prefix}${node.abbreviation}_`;
 
     const nodeNumber = this.getNodeNumberContent(node);
@@ -715,11 +739,11 @@ export abstract class AbstractNode implements HasChildrenMap {
   }
 
   private getNodeNumberContent(node: AbstractNode) {
-    const numTag = node.children.filter((e) => e.getNodeName() === 'num');
+    const numTag = node.children.filter(e => e.getNodeName() === 'num');
 
     if (numTag.length < 1 || numTag[0].children.length < 1) return null;
 
-    const text = numTag[0].children.filter((e) => e.getNodeName() === '');
+    const text = numTag[0].children.filter(e => e.getNodeName() === '');
 
     if (text.length < 1) return null;
 

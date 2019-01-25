@@ -1,4 +1,6 @@
-import { Elements, Attributes, Helpers, Engine } from 'nkyimu';
+import {
+ Elements, Attributes, Helpers, Engine 
+} from '../../build/src';
 
 // Generation of Wet Tropics of Queensland World Heritage Area Conservation Act 1994
 class TestDocument {
@@ -217,7 +219,3 @@ display = document.createElement('pre');
 display.innerHTML = Helpers.forDisplay(generated.render());
 
 document.querySelector('body').appendChild(display);
-
-
-
-

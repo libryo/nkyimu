@@ -1,4 +1,4 @@
-import { Engine, Helpers } from 'nkyimu';
+import { Engine, Helpers } from '../../build/src';
 
 function displayResult(source) {
   const generated = (new Engine.Generator()).fromText(source);
@@ -16,21 +16,18 @@ function displayResult(source) {
 }
 
 function handleFileSelect(evt) {
-  var file = evt.target.files[0];
+  const file = evt.target.files[0];
 
   if (file.type !== 'text/xml') {
     return;
   }
 
   const reader = new FileReader();
-  reader.onload = ((theFile) => {
-    return (e) =>  {
-      displayResult(e.target.result)
-    };
+  reader.onload = (theFile => (e) => {
+    displayResult(e.target.result);
   })(file);
 
   reader.readAsText(file);
 }
 
 document.getElementById('akn').addEventListener('change', handleFileSelect, false);
-

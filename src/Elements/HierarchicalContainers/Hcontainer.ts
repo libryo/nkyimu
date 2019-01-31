@@ -1,7 +1,8 @@
 import { AbstractNode } from '../../Abstracts/AbstractNode';
+import { Name } from '../../AttributeGroups';
+import { Hierarchy } from '../../ComplexTypes/Hierarchy';
 import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
 import { NodeRules } from '../../Interfaces/NodeRules';
-import { Hierarchy } from '../../ComplexTypes/Hierarchy';
 
 const type = new Hierarchy();
 
@@ -18,6 +19,7 @@ export class Hcontainer extends AbstractNode {
 
   public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
     ...type.ATTRIBUTE_GROUPS,
+    ...(new Name()).items,
   ];
 
   public getNodeName(): string {

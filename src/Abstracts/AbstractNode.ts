@@ -10,6 +10,8 @@ import { NkyimuComment } from '../Interfaces/NkyimuComment';
 import { NkyimuElement } from '../Interfaces/NkyimuElement';
 import { NkyimuText } from '../Interfaces/NkyimuText';
 
+const ELEMENT_NAMESPACE: string = 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0';
+
 export abstract class AbstractNode implements HasChildrenMap {
   /**
    * Abbreviation of the node.
@@ -84,7 +86,10 @@ export abstract class AbstractNode implements HasChildrenMap {
     switch (this.getNodeType()) {
       default:
       case NodeType.ELEMENT_NODE:
-        this.node = Object.assign((new Document()).createElement(this.getNodeName()), { source: this });
+        this.node = Object.assign(
+          (new Document()).createElementNS(ELEMENT_NAMESPACE, this.getNodeName()),
+          { source: this },
+        );
         break;
       case NodeType.TEXT_NODE:
         this.node = Object.assign((new Document()).createTextNode(content), { source: this });

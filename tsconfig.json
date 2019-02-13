@@ -6,6 +6,7 @@
     "lib": ["es2016", "dom"],
     "target": "es5",
     "noImplicitAny": false,
+    "types": ["node", "jest"]
   },
   "include": [
     "src/*.ts",

@@ -10,7 +10,7 @@ class XMLSerializer {
 }
 
 beforeAll(() => {
-  window.XMLSerializer = XMLSerializer;
+  window['XMLSerializer'] = XMLSerializer;
 });
 
 /**

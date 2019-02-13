@@ -1,6 +1,6 @@
 {
   "name": "nkyimu",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A library written in TypeScript that allows creating self validating AkomaNtoso documents",
   "author": "Libryo Ltd",
   "main": "build/src/index.js",
@@ -22,20 +22,21 @@
     "pretest": "npm run compile"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.0",
+    "@types/jest": "^24.0.3",
+    "@types/node": "^11.9.3",
+    "@typescript-eslint/eslint-plugin": "^1.3.0",
+    "@typescript-eslint/parser": "^1.3.0",
     "awesome-typescript-loader": "^5.2.0",
     "copy-webpack-plugin": "^4.5.2",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-typescript": "^0.14.0",
-    "gts": "^0.8.0",
+    "gts": "^0.9.0",
     "jest": "^23.4.1",
-    "jsdom": "^12.0.0",
+    "jsdom": "^13.2.0",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^23.0.1",
-    "typescript": "~2.8.0",
-    "typescript-eslint-parser": "^21.0.2",
+    "typescript": "^3.3.3",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
     "xmlserializer": "^0.6.1"
@@ -64,7 +65,7 @@
         "statements": 95
       }
     },
-    "collectCoverage": true
+    "collectCoverage": false
   },
   "dependencies": {
     "country-data": "^0.0.31",

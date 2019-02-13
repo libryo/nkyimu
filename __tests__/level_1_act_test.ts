@@ -1,16 +1,11 @@
 import { HrefAttribute, SourceAttribute } from '../src/Attributes';
 import {
   Act,
-  AKNDocument,
-  Attachments,
   Body,
-  Components,
   Conclusions,
-  CoverPage,
   Identification,
   Meta,
   Preamble,
-  Preface,
   References,
   TLCConcept,
 } from '../src/Elements';

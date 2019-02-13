@@ -57,8 +57,8 @@ import { XMLXSINamespaceAttribute } from '../src/Attributes/XMLXSINamespaceAttri
 /**
  * Attributes test
  */
-describe("Attributes test", () => {
-  it("validates the AlternativeToAttribute", () => {
+describe('Attributes test', () => {
+  it('validates the AlternativeToAttribute', () => {
     const attr = new AlternativeToAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('alternativeTo');
@@ -69,7 +69,7 @@ describe("Attributes test", () => {
     }).toThrow('alternativeTo: eIdRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the AsAttribute", () => {
+  it('validates the AsAttribute', () => {
     const attr = new AsAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('as');
@@ -80,7 +80,7 @@ describe("Attributes test", () => {
     }).toThrow('as: roleRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the BorderAttribute", () => {
+  it('validates the BorderAttribute', () => {
     const attr = new BorderAttribute(20);
 
     expect(attr.getName()).toBe('border');
@@ -91,7 +91,7 @@ describe("Attributes test", () => {
     }).toThrow('border: number should only contain numeric characters.');
   });
 
-  it("validates the ByAttribute", () => {
+  it('validates the ByAttribute', () => {
     const attr = new ByAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('by');
@@ -102,7 +102,7 @@ describe("Attributes test", () => {
     }).toThrow('by: agentRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the CellpaddingAttribute", () => {
+  it('validates the CellpaddingAttribute', () => {
     const attr = new CellpaddingAttribute('22');
 
     expect(attr.getName()).toBe('cellpadding');
@@ -113,7 +113,7 @@ describe("Attributes test", () => {
     }).toThrow('cellpadding: number should only contain numeric characters.');
   });
 
-  it("validates the CellspacingAttribute", () => {
+  it('validates the CellspacingAttribute', () => {
     const attr = new CellspacingAttribute('22');
 
     expect(attr.getName()).toBe('cellspacing');
@@ -124,7 +124,7 @@ describe("Attributes test", () => {
     }).toThrow('cellspacing: number should only contain numeric characters.');
   });
 
-  it("validates the ChoiceAttribute", () => {
+  it('validates the ChoiceAttribute', () => {
     const attr = new ChoiceAttribute('#something');
 
     expect(attr.getName()).toBe('choice');
@@ -135,14 +135,14 @@ describe("Attributes test", () => {
     }).toThrow('choice: voteRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the ClassAttribute", () => {
+  it('validates the ClassAttribute', () => {
     const attr = new ClassAttribute('white');
 
     expect(attr.getName()).toBe('class');
     expect(attr.getValue()).toBe('white');
   });
 
-  it("validates the ContainsAttribute", () => {
+  it('validates the ContainsAttribute', () => {
     let attr = new ContainsAttribute('originalVersion');
     expect(attr.getName()).toBe('contains');
     expect(attr.getValue()).toBe('originalVersion');
@@ -158,7 +158,7 @@ describe("Attributes test", () => {
     }).toThrow('contains: versionType should be either originalVersion, singleVersion or multipleVersions');
   });
 
-  it("validates the DateAttribute", () => {
+  it('validates the DateAttribute', () => {
     // implement this
     const attr = new DateAttribute('2017');
 
@@ -166,7 +166,7 @@ describe("Attributes test", () => {
     expect(attr.getValue()).toBe('2017');
   });
 
-  it("validates the DictionaryAttribute", () => {
+  it('validates the DictionaryAttribute', () => {
     const attr = new DictionaryAttribute('#something');
 
     expect(attr.getName()).toBe('dictionary');
@@ -177,14 +177,14 @@ describe("Attributes test", () => {
     }).toThrow('dictionary: referenceRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the DurationAttribute", () => {
+  it('validates the DurationAttribute', () => {
     const attr = new DurationAttribute('#something');
 
     expect(attr.getName()).toBe('duration');
     expect(attr.getValue()).toBe('#something');
   });
 
-  it("validates the EIdAttribute", () => {
+  it('validates the EIdAttribute', () => {
     const attr = new EIdAttribute('#something');
 
     expect(attr.getName()).toBe('eId');
@@ -195,7 +195,7 @@ describe("Attributes test", () => {
     }).toThrow('eId: noWhiteSpace should not contain any white spaces.');
   });
 
-  it("validates the EmpoweredByAttribute", () => {
+  it('validates the EmpoweredByAttribute', () => {
     const attr = new EmpoweredByAttribute('#something');
 
     expect(attr.getName()).toBe('empoweredBy');
@@ -206,7 +206,7 @@ describe("Attributes test", () => {
     }).toThrow('empoweredBy: agentRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the EndAttribute", () => {
+  it('validates the EndAttribute', () => {
     const attr = new EndAttribute('#something');
 
     expect(attr.getName()).toBe('end');
@@ -217,14 +217,14 @@ describe("Attributes test", () => {
     }).toThrow('end: eventRefRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the EndTimeAttribute", () => {
+  it('validates the EndTimeAttribute', () => {
     const attr = new EndTimeAttribute('21:00');
 
     expect(attr.getName()).toBe('endTime');
     expect(attr.getValue()).toBe('21:00');
   });
 
-  it("validates the ForTypeAgentRefAttribute", () => {
+  it('validates the ForTypeAgentRefAttribute', () => {
     const attr = new ForTypeAgentRefAttribute('#something');
 
     expect(attr.getName()).toBe('for');
@@ -235,7 +235,7 @@ describe("Attributes test", () => {
     }).toThrow('for: agentRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the FromAttribute", () => {
+  it('validates the FromAttribute', () => {
     const attr = new FromAttribute('#something');
 
     expect(attr.getName()).toBe('from');
@@ -246,7 +246,7 @@ describe("Attributes test", () => {
     }).toThrow('from: eIdRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the FromLanguageAttribute", () => {
+  it('validates the FromLanguageAttribute', () => {
     let attr = new FromLanguageAttribute('swa');
     expect(attr.getName()).toBe('fromLanguage');
     expect(attr.getValue()).toBe('swa');
@@ -263,14 +263,14 @@ describe("Attributes test", () => {
     }).toThrow('fromLanguage: language accepts only valid RFC 4646 languages');
   });
 
-  it("validates the FrozenAttribute", () => {
+  it('validates the FrozenAttribute', () => {
     const attr = new FrozenAttribute('chp');
 
     expect(attr.getName()).toBe('frozen');
     expect(attr.getValue()).toBe('chp');
   });
 
-  it("validates the GUIDAttribute", () => {
+  it('validates the GUIDAttribute', () => {
     const attr = new GUIDAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('GUID');
@@ -281,7 +281,7 @@ describe("Attributes test", () => {
     }).toThrow('GUID: noWhiteSpace should not contain any white spaces.');
   });
 
-  it("validates the HeightAttribute", () => {
+  it('validates the HeightAttribute', () => {
     const attr = new HeightAttribute('22');
 
     expect(attr.getName()).toBe('height');
@@ -292,14 +292,14 @@ describe("Attributes test", () => {
     }).toThrow('height: number should only contain numeric characters.');
   });
 
-  it("validates the HrefAttribute", () => {
+  it('validates the HrefAttribute', () => {
     const attr = new HrefAttribute('some link');
 
     expect(attr.getName()).toBe('href');
     expect(attr.getValue()).toBe('some link');
   });
 
-  it("validates the LanguageAttribute", () => {
+  it('validates the LanguageAttribute', () => {
     let attr = new LanguageAttribute('eng');
     expect(attr.getName()).toBe('language');
     expect(attr.getValue()).toBe('eng');
@@ -315,7 +315,7 @@ describe("Attributes test", () => {
     }).toThrow('language: language accepts only valid RFC 4646 languages');
   });
 
-  it("validates the LevelAttribute", () => {
+  it('validates the LevelAttribute', () => {
     const attr = new LevelAttribute('22');
 
     expect(attr.getName()).toBe('level');
@@ -326,14 +326,14 @@ describe("Attributes test", () => {
     }).toThrow('level: number should only contain numeric characters.');
   });
 
-  it("validates the NameAttribute", () => {
+  it('validates the NameAttribute', () => {
     const attr = new NameAttribute('22');
 
     expect(attr.getName()).toBe('name');
     expect(attr.getValue()).toBe('22');
   });
 
-  it("validates the NumberAttribute", () => {
+  it('validates the NumberAttribute', () => {
     const attr = new NumberAttribute('22');
 
     expect(attr.getName()).toBe('number');
@@ -344,21 +344,21 @@ describe("Attributes test", () => {
     }).toThrow('number: number should only contain numeric characters.');
   });
 
-  it("validates the OriginalTextAttribute", () => {
+  it('validates the OriginalTextAttribute', () => {
     const attr = new OriginalTextAttribute('some text');
 
     expect(attr.getName()).toBe('originalText');
     expect(attr.getValue()).toBe('some text');
   });
 
-  it("validates the OriginatingExpressionAttribute", () => {
+  it('validates the OriginatingExpressionAttribute', () => {
     const attr = new OriginatingExpressionAttribute('some text');
 
     expect(attr.getName()).toBe('originatingExpression');
     expect(attr.getValue()).toBe('some text');
   });
 
-  it("validates the PeriodAttribute", () => {
+  it('validates the PeriodAttribute', () => {
     const attr = new PeriodAttribute('#real_id');
 
     expect(attr.getName()).toBe('period');
@@ -369,7 +369,7 @@ describe("Attributes test", () => {
     }).toThrow('period: temporalGroupRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the PosAttribute", () => {
+  it('validates the PosAttribute', () => {
     let attr = new PosAttribute('start');
     expect(attr.getName()).toBe('pos');
     expect(attr.getValue()).toBe('start');
@@ -391,7 +391,7 @@ describe("Attributes test", () => {
     }).toThrow('pos: posType should be either start, before, inside, after, end or unspecified');
   });
 
-  it("validates the RefersToAttribute", () => {
+  it('validates the RefersToAttribute', () => {
     const attr = new RefersToAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('refersTo');
@@ -402,7 +402,7 @@ describe("Attributes test", () => {
     }).toThrow('refersTo: referenceRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the SourceAttribute", () => {
+  it('validates the SourceAttribute', () => {
     const attr = new SourceAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('source');
@@ -413,7 +413,7 @@ describe("Attributes test", () => {
     }).toThrow('source: agentRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the StartAttribute", () => {
+  it('validates the StartAttribute', () => {
     const attr = new StartAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('start');
@@ -424,14 +424,14 @@ describe("Attributes test", () => {
     }).toThrow('start: eventRefRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the StartTimeAttribute", () => {
+  it('validates the StartTimeAttribute', () => {
     const attr = new StartTimeAttribute('something');
 
     expect(attr.getName()).toBe('startTime');
     expect(attr.getValue()).toBe('something');
   });
 
-  it("validates the StatusAttribute", () => {
+  it('validates the StatusAttribute', () => {
     let attr = new StatusAttribute('removed');
     expect(attr.getName()).toBe('status');
     expect(attr.getValue()).toBe('removed');
@@ -468,21 +468,21 @@ describe("Attributes test", () => {
     }).toThrow('status: statusType should be either removed, temporarilyRemoved, translated, editorial, edited, verbatim, incomplete, unknown, undefined or ignored');
   });
 
-  it("validates the StyleAttribute", () => {
+  it('validates the StyleAttribute', () => {
     const attr = new StyleAttribute('some style');
 
     expect(attr.getName()).toBe('style');
     expect(attr.getValue()).toBe('some style');
   });
 
-  it("validates the TargetAttribute", () => {
+  it('validates the TargetAttribute', () => {
     const attr = new TargetAttribute('something');
 
     expect(attr.getName()).toBe('target');
     expect(attr.getValue()).toBe('something');
   });
 
-  it("validates the TimeAttribute", () => {
+  it('validates the TimeAttribute', () => {
     let attr = new TimeAttribute('04:00');
 
     expect(attr.getName()).toBe('time');
@@ -497,20 +497,20 @@ describe("Attributes test", () => {
     attr = new TimeAttribute('04:00 PM');
     expect(attr.getValue()).toBe('04:00 PM');
 
-    expect(() =>  new TimeAttribute('23:00 am')).toThrow('The time attribute expects a valid time');
-    expect(() =>  new TimeAttribute('13:00 pm')).toThrow('The time attribute expects a valid time');
-    expect(() =>  new TimeAttribute('24:00')).toThrow('The time attribute expects a valid time');
-    expect(() =>  new TimeAttribute('10:70')).toThrow('The time attribute expects a valid time');
+    expect(() => new TimeAttribute('23:00 am')).toThrow('The time attribute expects a valid time');
+    expect(() => new TimeAttribute('13:00 pm')).toThrow('The time attribute expects a valid time');
+    expect(() => new TimeAttribute('24:00')).toThrow('The time attribute expects a valid time');
+    expect(() => new TimeAttribute('10:70')).toThrow('The time attribute expects a valid time');
   });
 
-  it("validates the TitleAttribute", () => {
+  it('validates the TitleAttribute', () => {
     const attr = new TitleAttribute('This is Nkyimu');
 
     expect(attr.getName()).toBe('title');
     expect(attr.getValue()).toBe('This is Nkyimu');
   });
 
-  it("validates the ToAttribute", () => {
+  it('validates the ToAttribute', () => {
     const attr = new ToAttribute('#no_spaces');
 
     expect(attr.getName()).toBe('to');
@@ -521,14 +521,14 @@ describe("Attributes test", () => {
     }).toThrow('to: agentRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the TypeAttribute", () => {
+  it('validates the TypeAttribute', () => {
     const attr = new TypeAttribute('something');
 
     expect(attr.getName()).toBe('type');
     expect(attr.getValue()).toBe('something');
   });
 
-  it("validates the TypeEventTypeAttribute", () => {
+  it('validates the TypeEventTypeAttribute', () => {
     let attr = new TypeEventTypeAttribute('generation');
     expect(attr.getName()).toBe('type');
     expect(attr.getValue()).toBe('generation');
@@ -544,7 +544,7 @@ describe("Attributes test", () => {
     }).toThrow('type: eventType should be either generation, amendment or repeal');
   });
 
-  it("validates the TypeOpinionTypeAttribute", () => {
+  it('validates the TypeOpinionTypeAttribute', () => {
     let attr = new TypeOpinionTypeAttribute('dissenting');
     expect(attr.getName()).toBe('type');
     expect(attr.getValue()).toBe('dissenting');
@@ -560,7 +560,7 @@ describe("Attributes test", () => {
     }).toThrow('type: opinionType should be either dissenting, agreeing or null');
   });
 
-  it("validates the TypeRestrictionTypeAttribute", () => {
+  it('validates the TypeRestrictionTypeAttribute', () => {
     const attr = new TypeRestrictionTypeAttribute('jurisdiction');
     expect(attr.getName()).toBe('type');
     expect(attr.getValue()).toBe('jurisdiction');
@@ -570,7 +570,7 @@ describe("Attributes test", () => {
     }).toThrow('type: restrictionType should only be jurisdiction.');
   });
 
-  it("validates the TypeResultTypeAttribute", () => {
+  it('validates the TypeResultTypeAttribute', () => {
     let attr = new TypeResultTypeAttribute('deny');
     expect(attr.getName()).toBe('type');
     expect(attr.getValue()).toBe('deny');
@@ -601,7 +601,7 @@ describe("Attributes test", () => {
     }).toThrow('type: resultType should be either deny, dismiss, uphold, revert, replace, remit, decide or approve.');
   });
 
-  it("validates the UpToAttribute", () => {
+  it('validates the UpToAttribute', () => {
     const attr = new UpToAttribute('#real_id');
 
     expect(attr.getName()).toBe('upTo');
@@ -612,14 +612,14 @@ describe("Attributes test", () => {
     }).toThrow('upTo: eIdRef accepts only valid eIds in the form #abc');
   });
 
-  it("validates the ValueAttribute", () => {
+  it('validates the ValueAttribute', () => {
     const attr = new ValueAttribute('This is Nkyimu');
 
     expect(attr.getName()).toBe('value');
     expect(attr.getValue()).toBe('This is Nkyimu');
   });
 
-  it("validates the WIdAttribute", () => {
+  it('validates the WIdAttribute', () => {
     const attr = new WIdAttribute('#real_id');
 
     expect(attr.getName()).toBe('wId');
@@ -630,21 +630,21 @@ describe("Attributes test", () => {
     }).toThrow('wId: noWhiteSpace should not contain any white spaces.');
   });
 
-  it("validates the XMLDateNamespaceAttribute", () => {
+  it('validates the XMLDateNamespaceAttribute', () => {
     const attr = new XMLDateNamespaceAttribute('2017');
 
     expect(attr.getName()).toBe('xmlns:date');
     expect(attr.getValue()).toBe('2017');
   });
 
-  it("validates the XMLIdNamespaceAttribute", () => {
+  it('validates the XMLIdNamespaceAttribute', () => {
     const attr = new XMLIdNamespaceAttribute('real_id');
 
     expect(attr.getName()).toBe('xmlns:id');
     expect(attr.getValue()).toBe('real_id');
   });
 
-  it("validates the XMLLangNamespaceAttribute", () => {
+  it('validates the XMLLangNamespaceAttribute', () => {
     let attr = new XMLLangNamespaceAttribute('eng');
     expect(attr.getName()).toBe('xmlns:lang');
     expect(attr.getValue()).toBe('eng');
@@ -660,14 +660,14 @@ describe("Attributes test", () => {
     }).toThrow('xmlns:lang: language accepts only valid RFC 4646 languages');
   });
 
-  it("validates the XMLNamespaceAttribute", () => {
+  it('validates the XMLNamespaceAttribute', () => {
     const attr = new XMLNamespaceAttribute('https://nkyimu.com');
 
     expect(attr.getName()).toBe('xmlns');
     expect(attr.getValue()).toBe('https://nkyimu.com');
   });
 
-  it("validates the XMLSpaceNamespaceAttribute", () => {
+  it('validates the XMLSpaceNamespaceAttribute', () => {
     let attr = new XMLSpaceNamespaceAttribute('default');
     expect(attr.getName()).toBe('xmlns:space');
     expect(attr.getValue()).toBe('default');
@@ -680,7 +680,7 @@ describe("Attributes test", () => {
     }).toThrow('xmlns:space: xml:space should be either default or preserve');
   });
 
-  it("validates the XMLXSINamespaceAttribute", () => {
+  it('validates the XMLXSINamespaceAttribute', () => {
     const attr = new XMLXSINamespaceAttribute('real xsi');
 
     expect(attr.getName()).toBe('xmlns:xsi');

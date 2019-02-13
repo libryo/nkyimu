@@ -774,7 +774,8 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     return content
       .replace(nodeRegx, '')
-      .replace(/[.()-]/gi, '')
+      .replace(/[.]/gi, '_')
+      .replace(/[\W]/gi, '')
       .trim()
       .replace(/\s/g, '_');
   }

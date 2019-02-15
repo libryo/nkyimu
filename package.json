@@ -1,6 +1,6 @@
 {
   "name": "nkyimu",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "A library written in TypeScript that allows creating self validating AkomaNtoso documents",
   "author": "Libryo Ltd",
   "main": "build/src/index.js",

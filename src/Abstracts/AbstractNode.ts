@@ -748,7 +748,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     nodeCount[node.getNodeName()] += 1;
 
-    return `${nodePrefix}${nodeCount[node.getNodeName()]}`;
+    return `${nodePrefix}seq${nodeCount[node.getNodeName()]}`;
   }
 
   private getNodeNumberContent(node: AbstractNode) {

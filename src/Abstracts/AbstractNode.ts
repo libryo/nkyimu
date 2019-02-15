@@ -1,8 +1,4 @@
 import { intersection } from 'lodash';
-import { attributeMap } from '../attributeMap';
-import * as Attributes from '../Attributes';
-import { elementMap } from '../elementMap';
-import * as Elements from '../Elements';
 import { NodeType } from '../common/enums';
 import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
@@ -13,9 +9,10 @@ import { EIdAttribute } from '../Attributes/EIdAttribute';
 import { NkyimuComment } from '../Interfaces/NkyimuComment';
 import { NkyimuElement } from '../Interfaces/NkyimuElement';
 import { NkyimuText } from '../Interfaces/NkyimuText';
+// import { Generator } from '../Engine/Generator';
 
 
-const ELEMENT_NAMESPACE: string = 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0';
+const ELEMENT_NAMESPACE = 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0';
 
 export abstract class AbstractNode implements HasChildrenMap {
   /**
@@ -87,7 +84,7 @@ export abstract class AbstractNode implements HasChildrenMap {
   /**
    * Create a new node.
    */
-  constructor(content = '') {
+  public constructor(content = '') {
     switch (this.getNodeType()) {
       default:
       case NodeType.ELEMENT_NODE:
@@ -127,21 +124,21 @@ export abstract class AbstractNode implements HasChildrenMap {
   /**
    * Parent accessor.
    */
-  get allowedChildren(): string[] {
+  public get allowedChildren(): string[] {
     return this._allowedChildren;
   }
 
   /**
    * Parent accessor.
    */
-  get parent(): AbstractNode|null {
+  public get parent(): AbstractNode|null {
     return this._parent;
   }
 
   /**
    * Children accessor.
    */
-  get children(): AbstractNode[] {
+  public get children(): AbstractNode[] {
     return this._children;
   }
 
@@ -157,6 +154,13 @@ export abstract class AbstractNode implements HasChildrenMap {
    */
   public getNode(): NkyimuComment|NkyimuElement|NkyimuText {
     return Object.assign(this.node, { source: this });
+  }
+
+  /**
+   * Children Order accessor.
+   */
+  public getChildrenOrder(): string[] {
+    return this.childrenOrder;
   }
 
   /**
@@ -536,79 +540,6 @@ export abstract class AbstractNode implements HasChildrenMap {
   }
 
   /**
-   * Recursively set the attributes of the node using a key:value pair.
-   *
-   * @param map object
-   */
-  public setAttributes(map: {[key: string]: string}): AbstractNode {
-    Object.keys(map)
-      .forEach((attribute: string) => {
-        if (!attributeMap[attribute] || !Attributes[attributeMap[attribute]]) {
-          return;
-        }
-
-        this.setAttribute(new Attributes[attributeMap[attribute]](map[attribute]));
-      });
-
-    return this;
-  }
-
-  public setChildren(map: {[key: string]: string|object}): AbstractNode {
-    Object.keys(map)
-      .forEach((key: string) => {
-        const value = map[key];
-        if (typeof value === 'string') {
-          this.setAttributes({ [key]: value });
-          return;
-        }
-
-        if (typeof value !== 'object') {
-          return;
-        }
-
-        if (this.childrenOrder.indexOf(key) === -1) {
-          // @ts-ignore
-          this.createChildFromMap(key, value);
-
-          return;
-        }
-
-        const attributes = {};
-
-        Object.keys(value)
-          .forEach((childKey) => {
-            const childValue = map[childKey];
-            if (typeof childValue === 'string') {
-              attributes[childKey] = value;
-            }
-          });
-
-        this.setAttributes(attributes);
-      });
-
-    return this;
-  }
-
-  /**
-   * Create a child node from a key:value pair.
-   *
-   * @param elementName string
-   * @param map object
-   */
-  private createChildFromMap(elementName: string, map: {[key: string]: string|object}): void {
-    if (!elementMap[elementName] || !Elements[elementMap[elementName]]) {
-      return;
-    }
-
-    const element = new Elements[elementMap[elementName]]();
-
-    element.setChildren(map);
-
-    this.appendChild(element);
-  }
-
-
-  /**
    * Insert a child node at a given index and update the node tree.
    *
    * @param node AbstractNode
@@ -727,7 +658,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   private getCorrectNodeId(
     prefix: string,
-    nodeCount: { [key:string]: number },
+    nodeCount: { [key: string]: number },
     node: AbstractNode,
   ): string {
     if (!node.hasCount()) {

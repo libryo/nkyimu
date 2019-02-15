@@ -1,4 +1,5 @@
 import { Act, AKNDocument, Meta } from '../src/Elements';
+import { Generator } from '../src/Engine/Generator';
 
 /**
  * Setup XMLSerializer for nodejs to run the tests.
@@ -54,7 +55,7 @@ describe('Abstract Node test', () => {
       },
     };
 
-    act.setChildren(actChildren);
+    Generator.setNodeChildren(act, actChildren);
 
     doc.appendChild(act);
 

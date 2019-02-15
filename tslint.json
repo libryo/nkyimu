@@ -1,6 +1,7 @@
 {
   "extends": "gts/tslint.json",
   "rules": {
-    "ordered-imports": false
+    "ordered-imports": false,
+    "member-ordering": false
   }
 }

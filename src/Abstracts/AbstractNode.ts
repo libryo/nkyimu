@@ -231,6 +231,7 @@ export abstract class AbstractNode implements HasChildrenMap {
         this.requiredIndices.push(index);
       }
     });
+    this.computeChildrenOrder();
   }
 
   /**
@@ -269,6 +270,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     }
 
     this._children.splice(index, 1);
+    this.computeChildrenOrder();
 
     this.node.removeChild(node.getNode());
 
@@ -283,6 +285,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     }
 
     this._children.splice(index, 1, replacement);
+    this.computeChildrenOrder();
 
     replacement._parent = this;
 
@@ -854,5 +857,16 @@ export abstract class AbstractNode implements HasChildrenMap {
     updated.push(node.getNodeName());
 
     return updated;
+  }
+
+  /** 
+   * Get the current children order.
+   * 
+   * @return string[]
+   */
+  private computeChildrenOrder(): string[] {
+    this.childrenOrder = this._children.map(child => child.getNodeName());
+
+    return this.childrenOrder;
   }
 }

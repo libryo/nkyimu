@@ -199,7 +199,7 @@ describe('Base test', () => {
     TestDocument.generateDocument();
     const output = TestDocument.render();
 
-    expect(output).toBe('<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:date="http://exslt.org/dates-and-times"><act name="Wet Tropics of Queensland World Heritage Area Conservation Act 1994"><meta><identification source="#source"><FRBRWork><FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRdate date="2000-07-16" name="enacted"/><FRBRauthor href="https://www.legislation.gov.au"/><FRBRcountry value="au"/><FRBRnumber value="None"/><FRBRname value="Wet Tropics of Queensland World Heritage Area Conservation Act 1994"/></FRBRWork><FRBRExpression><FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRdate date="2000-07-16" name="publication"/><FRBRauthor href="https://www.legislation.gov.au"/><FRBRlanguage language="eng"/></FRBRExpression><FRBRManifestation><FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRdate date="2018-06-20" name="transform"/><FRBRauthor href="https://www.legislation.gov.au"/><FRBRformat value="application/akn+xml"/></FRBRManifestation></identification><notes source="#source"><note eId="note_1"><p>This is a note</p></note><note eId="note_2"><p>This is a note</p></note></notes></meta><preface eId="preface"><p><shortTitle>Wet Tropics of Queensland World Heritage Area Conservation Act 1994</shortTitle></p><longTitle eId="#long_title"><p>An Act relating to the conservation of the Wet Tropics of Queensland World Heritage Area</p></longTitle></preface><body eId="body"><chapter eId="chp_seq1"><part eId="chp_seq1_pt_1"><num>1</num><heading eId="chp_seq1_pt_1_heading_seq1">First Part</heading><section eId="chp_seq1_pt_1_sec_seq1"><subsection eId="chp_seq1_pt_1_sec_seq1_subsec_seq1"><content eId="chp_seq1_pt_1_sec_seq1_subsec_seq1_content_seq1"><p>Never forget a part.<noteRef href="#note_2"/></p></content></subsection></section></part></chapter><chapter eId="chp_seq2"><part eId="chp_seq2_pt_2"><num>2</num><heading eId="chp_seq2_pt_2_heading_seq1">Some Part</heading><section eId="chp_seq2_pt_2_sec_seq1"><subsection eId="chp_seq2_pt_2_sec_seq1_subsec_seq1"><content eId="chp_seq2_pt_2_sec_seq1_subsec_seq1_content_seq1"><p>Always have notes.<noteRef href="#note_1"/></p></content></subsection></section></part></chapter></body></act></akomaNtoso>');
+    expect(output).toBe('<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:date="http://exslt.org/dates-and-times"><act name="Wet Tropics of Queensland World Heritage Area Conservation Act 1994"><meta><identification source="#source"><FRBRWork><FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRdate date="2000-07-16" name="enacted"/><FRBRauthor href="https://www.legislation.gov.au"/><FRBRcountry value="au"/><FRBRnumber value="None"/><FRBRname value="Wet Tropics of Queensland World Heritage Area Conservation Act 1994"/></FRBRWork><FRBRExpression><FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRdate date="2000-07-16" name="publication"/><FRBRauthor href="https://www.legislation.gov.au"/><FRBRlanguage language="eng"/></FRBRExpression><FRBRManifestation><FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/><FRBRdate date="2018-06-20" name="transform"/><FRBRauthor href="https://www.legislation.gov.au"/><FRBRformat value="application/akn+xml"/></FRBRManifestation></identification><notes source="#source"><note eId="note_1"><p>This is a note</p></note><note eId="note_2"><p>This is a note</p></note></notes></meta><preface eId="preface"><p><shortTitle>Wet Tropics of Queensland World Heritage Area Conservation Act 1994</shortTitle></p><longTitle eId="#long_title"><p>An Act relating to the conservation of the Wet Tropics of Queensland World Heritage Area</p></longTitle></preface><body eId="body"><chapter eId="chp_seq1"><part eId="chp_seq1__pt_1"><num>1</num><heading eId="chp_seq1__pt_1__heading_seq1">First Part</heading><section eId="chp_seq1__pt_1__sec_seq1"><subsection eId="chp_seq1__pt_1__sec_seq1__subsec_seq1"><content eId="chp_seq1__pt_1__sec_seq1__subsec_seq1__content_seq1"><p>Never forget a part.<noteRef href="#note_2"/></p></content></subsection></section></part></chapter><chapter eId="chp_seq2"><part eId="chp_seq2__pt_2"><num>2</num><heading eId="chp_seq2__pt_2__heading_seq1">Some Part</heading><section eId="chp_seq2__pt_2__sec_seq1"><subsection eId="chp_seq2__pt_2__sec_seq1__subsec_seq1"><content eId="chp_seq2__pt_2__sec_seq1__subsec_seq1__content_seq1"><p>Always have notes.<noteRef href="#note_1"/></p></content></subsection></section></part></chapter></body></act></akomaNtoso>');
   });
 
   it('updates the children order on replacing the nodes', () => {
@@ -216,5 +216,25 @@ describe('Base test', () => {
     section.replaceChild(new Elements.Subsection(), content);
 
     expect(section.getChildrenOrder()).toEqual(['num', 'heading', 'subsection']);
+  });
+
+  it('overwrites generated eIds', () => {
+    const part = new Elements.Part();
+    part.setAttribute(new Attributes.EIdAttribute('part_1'));
+    let chapter = new Elements.Chapter();
+    chapter.setAttribute(new Attributes.EIdAttribute('part_1__chp_5'));
+    let section = new Elements.Section();
+    section.setAttribute(new Attributes.EIdAttribute('part_1__chp_5__sec_10'));
+
+    chapter.appendChild(section);
+    part.appendChild(chapter);
+
+    part.updateGeneratedIds(true);
+
+    chapter = part.firstChild();
+    section = chapter.firstChild();
+
+    expect(chapter.getNode().getAttribute('eId')).toBe('part_1__chp_seq1');
+    expect(section.getNode().getAttribute('eId')).toBe('part_1__chp_seq1__sec_seq1');
   });
 });

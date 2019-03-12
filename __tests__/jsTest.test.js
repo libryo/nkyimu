@@ -219,22 +219,22 @@ describe('Base test', () => {
   });
 
   it('overwrites generated eIds', () => {
+    const body = new Elements.Body();
     const part = new Elements.Part();
-    part.setAttribute(new Attributes.EIdAttribute('part_1'));
+    part.setAttribute(new Attributes.EIdAttribute('bodypart_1'));
     let chapter = new Elements.Chapter();
-    chapter.setAttribute(new Attributes.EIdAttribute('part_1__chp_5'));
+    chapter.setAttribute(new Attributes.EIdAttribute('bodypart_1__chp_5'));
     let section = new Elements.Section();
-    section.setAttribute(new Attributes.EIdAttribute('part_1__chp_5__sec_10'));
+    section.setAttribute(new Attributes.EIdAttribute('bodypart_1__chp_5__sec_10'));
 
     chapter.appendChild(section);
     part.appendChild(chapter);
+    body.appendChild(part);
 
-    part.updateGeneratedIds(true);
+    body.updateGeneratedIds(true);
 
-    chapter = part.firstChild();
-    section = chapter.firstChild();
-
-    expect(chapter.getNode().getAttribute('eId')).toBe('part_1__chp_seq1');
-    expect(section.getNode().getAttribute('eId')).toBe('part_1__chp_seq1__sec_seq1');
+    expect(part.getNode().getAttribute('eId')).toBe('pt_seq1');
+    expect(chapter.getNode().getAttribute('eId')).toBe('pt_seq1__chp_seq1');
+    expect(section.getNode().getAttribute('eId')).toBe('pt_seq1__chp_seq1__sec_seq1');
   });
 });

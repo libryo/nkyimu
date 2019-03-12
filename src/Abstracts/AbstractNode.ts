@@ -637,11 +637,12 @@ export abstract class AbstractNode implements HasChildrenMap {
     const nodeCount: { [key: string]: number } = {};
 
     node.children.forEach((child: AbstractNode) => {
+      let newPrefix = prefix;
       const requiresEId = child.ATTRIBUTE_GROUPS
         .some(e => e.attribute.getName() === 'eId' && e.required === true);
 
       if (child.getNodeType() === NodeType.TEXT_NODE || child.getNodeType() === NodeType.COMMENT_NODE) {
-        this.generateIds(child, prefix, overwrite);
+        this.generateIds(child, newPrefix, overwrite);
         
         return;
       }
@@ -650,28 +651,20 @@ export abstract class AbstractNode implements HasChildrenMap {
       const hasValidEId = currentEId && currentEId.indexOf('__replace__') === -1;
 
       if (!hasValidEId && (!requiresEId || child.abbreviation.length < 1)) {
-        this.generateIds(child, prefix, overwrite);
+        this.generateIds(child, newPrefix, overwrite);
         
         return;
+      }
+
+      if (overwrite || !currentEId || (currentEId && currentEId.indexOf('__replace__') !== -1)) {
+        const childId = this.getCorrectNodeId(newPrefix, nodeCount, child);
+
+        child.setElementId(childId, overwrite);
+
+        newPrefix = child.prefixesEId() ? `${child.generatedId}__` : newPrefix;
       }
       
-      if (!overwrite && currentEId && currentEId.indexOf('__replace__') === -1) {
-        this.generateIds(child, currentEId, overwrite);
-        
-        return;
-      }
-
-      const childId = this.getCorrectNodeId(prefix, nodeCount, child);
-
-      child.setElementId(childId, overwrite);
-
-      if (child.prefixesEId()) {
-        this.generateIds(child, `${child.generatedId}__`, overwrite);
-
-        return;
-      }
-
-      this.generateIds(child, prefix, overwrite);
+      this.generateIds(child, newPrefix, overwrite);
     });
   }
 

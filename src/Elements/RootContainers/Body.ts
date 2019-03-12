@@ -34,7 +34,7 @@ export class Body extends AbstractNode {
   }
 
   /**
-   * Validate whether the element's eid has count.
+   * Set whether the node's EID will be used as a prefix.
    */
   public prefixesEId(): boolean {
     return false;

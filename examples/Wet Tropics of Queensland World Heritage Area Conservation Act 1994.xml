@@ -1,477 +1,82 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<akomaNtoso xmlns:date="http://exslt.org/dates-and-times" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
-  <act name="Wet Tropics of Queensland World Heritage Area Conservation Act 1994">
-    <meta>
-      <identification source="#source">
-        <FRBRWork>
-          <FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/>
-          <FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/>
-          <FRBRdate date="2000-07-16" name="enacted"/>
-          <FRBRauthor href="https://www.legislation.gov.au"/>
-          <FRBRcountry value="au"/>
-          <FRBRnumber value="None"/>
-          <FRBRname value="Wet Tropics of Queensland World Heritage Area Conservation Act 1994"/>
-        </FRBRWork>
-        <FRBRExpression>
-          <FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/>
-          <FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/>
-          <FRBRdate date="2000-07-16" name="publication"/>
-          <FRBRauthor href="https://www.legislation.gov.au"/>
-          <FRBRlanguage language="eng"/>
-        </FRBRExpression>
-        <FRBRManifestation>
-          <FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809"/>
-          <FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809"/>
-          <FRBRdate date="2018-06-20" name="transform"/>
-          <FRBRauthor href="https://www.legislation.gov.au"/>
-          <FRBRformat value="application/akn+xml"/>
-        </FRBRManifestation>
-      </identification>
-    </meta>
-    <preface eId="preface">
-      <p>
-        <shortTitle>Wet Tropics of Queensland World Heritage Area Conservation Act 1994</shortTitle>
-      </p>
-      <longTitle eId="longTitle">
-        <p>An Act relating to the conservation of the Wet Tropics of Queensland World Heritage Area</p>
-      </longTitle>
-    </preface>
-    <body>
-      <subsection eId="subsec_1">
-        <point>
-          <content>
-            <p>This preamble sets out considerations taken into account by the Parliament of Australia in enacting the law that follows.</p>
-          </content>
-        </point>
-      </subsection>
-      <subsection eId="subsec_2">
-        <point>
-          <content>
-            <p>Aboriginal people have occupied, used, and enjoyed land in the Area since time immemorial.</p>
-          </content>
-        </point>
-      </subsection>
-      <subsection eId="subsec_3">
-        <point>
-          <content>
-            <p>The Area is part of the cultural landscape of Rainforest Aboriginal peoples and is important spiritually, socially, historically and culturally to aboriginal people particularly concerned with the land.</p>
-          </content>
-        </point>
-      </subsection>
-      <subsection eId="subsec_4">
-        <point>
-          <content>
-            <p>It is, therefore, the intention of the Parliament to recognise a role for Aboriginal peoples particularly concerned with land and waters in the Area, and give Aboriginal peoples a role to play in its management.</p>
-          </content>
-        </point>
-      </subsection>
-      <subsection eId="subsec_5">
-        <point>
-          <content>
-            <p>The Parliament of Australia therefore enacts:</p>
-          </content>
-        </point>
-      </subsection>
-      <section eId="sec_1">
-        <num>1</num>
-        <heading eId="sec_1__hd_1">Short title</heading>
-        <subsection eId="sec_1__subsec_1">
-          <point>
-            <content>
-              <p>This Act may be cited as the Wet Tropics of Queensland World Heritage Area Conservation Act 1994.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_2">
-        <num>2</num>
-        <heading eId="sec_2__hd_1">Commencement</heading>
-        <subsection eId="sec_2__subsec_1">
-          <point>
-            <content>
-              <p>This Act commences on the day on which it receives the Royal Assent.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_3">
-        <num>3</num>
-        <heading eId="sec_3__hd_1">Object of Act</heading>
-        <subsection eId="sec_3__subsec_1">
-          <point>
-            <content>
-              <p>The object of this Act is to give effect to an agreement made between the Commonwealth and Queensland on 16 November 1990 (a copy of which is set out in Schedule 1 to the Queensland Act), as amended from time to time, and to facilitate the implementation of Australia’s international duty for the protection, conservation, presentation, rehabilitation and transmission to future generations of the Wet Tropics of Queensland World Heritage Area.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_4">
-        <num>4</num>
-        <heading eId="sec_4__hd_1">Definitions</heading>
-        <subsection eId="sec_4__subsec_1">
-          <point>
-            <content>
-              <p>In this Act, unless the contrary intention appears:</p>
-            </content>
-          </point>
-          <point>
-            <content>
-              <p>Authority means the Wet Tropics Management Authority established by section 6 of the Queensland Act.</p>
-            </content>
-          </point>
-          <point>
-            <content>
-              <p>Queensland Act means the Wet Tropics World Heritage Protection and Management Act 1993 of Queensland.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_5">
-        <num>5</num>
-        <heading eId="sec_5__hd_1">Nomination of members of the board of the Wet Tropics Management Authority</heading>
-        <subsection eId="sec_5__subsec_1">
-          <point>
-            <content>
-              <p>Nominations for the purposes of paragraph 14(b) of the Queensland Act may be made on behalf of the Commonwealth by the Minister.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_6">
-        <num>6</num>
-        <heading eId="sec_6__hd_1">Aboriginal representation on the Authority</heading>
-        <subsection eId="sec_6__subsec_1">
-          <point>
-            <content>
-              <p>The Minister must include among his or her nominees under section 5 one or more Aboriginal representatives who have appropriate knowledge of, and experience in, the protection of cultural and natural heritage.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_7">
-        <num>7</num>
-        <heading eId="sec_7__hd_1">Secondment of staff to Authority</heading>
-        <subsection eId="sec_7__subsec_1">
-          <point>
-            <content>
-              <p>The Minister may make arrangements for the services of:</p>
-            </content>
-          </point>
-          <list>
-            <paragraph eId="sec_7__subsec_1__item_1">
-              <num>a</num>
-              <point>
-                <content>
-                  <p>persons engaged under the Public Service Act 1999; or</p>
-                </content>
-              </point>
-            </paragraph>
-            <paragraph eId="sec_7__subsec_1__item_2">
-              <num>b</num>
-              <point>
-                <content>
-                  <p>members of the staff of authorities of the Commonwealth;</p>
-                </content>
-              </point>
-            </paragraph>
-          </list>
-          <point>
-            <content>
-              <p>to be made available to the Authority.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_8">
-        <num>8</num>
-        <heading eId="sec_8__hd_1">Aboriginal representation on advisory committees</heading>
-        <subsection eId="sec_8__subsec_1">
-          <point>
-            <content>
-              <p>The Minister must use his or her best endeavours, through consultation with the Authority, to ensure that any advisory committee established by the Authority under the Queensland Act includes among its members Aboriginal representatives who have appropriate knowledge of, and experience in, the protection of cultural and natural heritage.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_9">
-        <num>9</num>
-        <heading eId="sec_9__hd_1">This Act does not affect the Environment Protection and Biodiversity Conservation Act 1999</heading>
-        <subsection eId="sec_9__subsec_1">
-          <point>
-            <content>
-              <p>This Act does not affect the operation of:</p>
-            </content>
-          </point>
-          <list>
-            <paragraph eId="sec_9__subsec_1__item_1">
-              <num>a</num>
-              <point>
-                <content>
-                  <p>the Environment Protection and Biodiversity Conservation Act 1999; or</p>
-                </content>
-              </point>
-            </paragraph>
-            <paragraph eId="sec_9__subsec_1__item_2">
-              <num>b</num>
-              <point>
-                <content>
-                  <p>the World Heritage Properties Conservation Act 1983, so far as it continues to apply to parts of the Wet Tropics of Queensland World Heritage Area because of Part 2 of Schedule 6 to the Environmental Reform (Consequential Provisions) Act 1999.</p>
-                </content>
-              </point>
-            </paragraph>
-          </list>
-        </subsection>
-      </section>
-      <section eId="sec_10">
-        <num>10</num>
-        <heading eId="sec_10__hd_1">Tabling of annual report of Authority</heading>
-        <subsection eId="sec_10__subsec_1">
-          <num>1</num>
-          <point>
-            <content>
-              <p>In this section, annual report means a report given to the Commonwealth under section 63 of the Queensland Act.</p>
-            </content>
-          </point>
-        </subsection>
-        <subsection eId="sec_10__subsec_2">
-          <num>2</num>
-          <point>
-            <content>
-              <p>The Minister must cause a copy of an annual report to be laid before each House of the Parliament within 15 sitting days of that House after the report is given to the Commonwealth.</p>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <section eId="sec_11">
-        <heading eId="sec_11__hd_1">Notes to the Wet Tropics of Queensland World Heritage Area Conservation Act 1994</heading>
-        <subsection eId="sec_11__subsec_1">
-          <point>
-            <content>
-              <p>Note 1</p>
-            </content>
-          </point>
-          <point>
-            <content>
-              <p>The Wet Tropics of Queensland World Heritage Area Conservation Act 1994 as shown in this compilation comprises Act No. 32, 1994 amended as indicated in the Tables below.</p>
-            </content>
-          </point>
-        </subsection>
-        <subsection eId="sec_11__subsec_2">
-          <point>
-            <content>
-              <p>Table of Acts</p>
-            </content>
-          </point>
-          <point>
-            <content>
-              <table>
-                <caption></caption>
-                <tr>
-                  <td>
-                    <p>Act</p>
-                  </td>
-                  <td>
-                    <p>Number    and Year</p>
-                  </td>
-                  <td>
-                    <p>Date    of Assent</p>
-                  </td>
-                  <td>
-                    <p>Date of commencement</p>
-                  </td>
-                  <td>
-                    <p>Application, saving or    transitional provisions</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>Wet Tropics of Queensland World   Heritage Area Conservation Act 1994</p>
-                  </td>
-                  <td>
-                    <p>32, 1994</p>
-                  </td>
-                  <td>
-                    <p>15 Mar 1994</p>
-                  </td>
-                  <td>
-                    <p>15 Mar 1994</p>
-                  </td>
-                  <td>
-                    <p></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>Environment, Sport and Territories   Legislation Amendment Act 1997</p>
-                  </td>
-                  <td>
-                    <p>118, 1997</p>
-                  </td>
-                  <td>
-                    <p>7 July 1997</p>
-                  </td>
-                  <td>
-                    <p>Schedule 1 (item 60): (a)</p>
-                  </td>
-                  <td>
-                    <p>—</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>Environmental Reform (Consequential   Provisions) Act 1999</p>
-                  </td>
-                  <td>
-                    <p>92, 1999</p>
-                  </td>
-                  <td>
-                    <p>16 July 1999</p>
-                  </td>
-                  <td>
-                    <p>Schedule 6 (item 9): 16 July   2000 (b)</p>
-                  </td>
-                  <td>
-                    <p>—</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>Public Employment (Consequential and   Transitional) Amendment Act 1999</p>
-                  </td>
-                  <td>
-                    <p>146, 1999</p>
-                  </td>
-                  <td>
-                    <p>11 Nov 1999</p>
-                  </td>
-                  <td>
-                    <p>Schedule 1 (item 979): 5 Dec 1999 (see Gazette 1999, No. S584) (c)</p>
-                  </td>
-                  <td>
-                    <p>—</p>
-                  </td>
-                </tr>
-              </table>
-            </content>
-          </point>
-        </subsection>
-      </section>
-      <hcontainer name="parent">
-        <paragraph eId="item_1">
-          <num>a</num>
-          <point>
-            <content>
-              <p>Section 2(4) of the Environment, Sport and Territories Legislation Amendment Act 1997 provides as follows:</p>
-            </content>
-          </point>
-          <subparagraph eId="item_1__subitem_1">
-            <num>4</num>
-            <point>
-              <content>
-                <p>Item 60 of Schedule 1 is taken to have commenced immediately after the commencement of the Wet Tropics of Queensland World Heritage Area Conservation Act 1994.</p>
-              </content>
-            </point>
-          </subparagraph>
-        </paragraph>
-        <paragraph eId="item_2">
-          <point>
-            <content>
-              <p>The Wet Tropics of Queensland World Heritage Area Conservation Act 1994 came into operation on 15 March 1994.</p>
-            </content>
-          </point>
-        </paragraph>
-        <paragraph eId="item_3">
-          <num>b</num>
-          <point>
-            <content>
-              <p>The Wet Tropics of Queensland World Heritage Area Conservation Act 1994 was amended by Schedule 6 (item 9) only of the Environmental Reform (Consequential Provisions) Act 1999, subsection 2(1) of which provides as follows:</p>
-            </content>
-          </point>
-          <subparagraph eId="item_3__subitem_1">
-            <num>1</num>
-            <point>
-              <content>
-                <p>Subject to this section, this Act commences when the Environment Protection and Biodiversity Conservation Act 1999 commences.</p>
-              </content>
-            </point>
-          </subparagraph>
-        </paragraph>
-        <paragraph eId="item_4">
-          <num>c</num>
-          <point>
-            <content>
-              <p>The Wet Tropics of Queensland World Heritage Area Conservation Act 1994 was amended by Schedule 1 (item 979) only of the Public Employment (Consequential and Transitional) Amendment Act 1999, subsections 2(1) and (2) of which provide as follows:</p>
-            </content>
-          </point>
-          <subparagraph eId="item_4__subitem_1">
-            <num>1</num>
-            <point>
-              <content>
-                <p>In this Act, commencing time means the time when the Public Service Act 1999 commences.</p>
-              </content>
-            </point>
-          </subparagraph>
-          <subparagraph eId="item_4__subitem_2">
-            <num>2</num>
-            <point>
-              <content>
-                <p>Subject to this section, this Act commences at the commencing time.</p>
-              </content>
-            </point>
-          </subparagraph>
-        </paragraph>
-      </hcontainer>
-      <subsection eId="subsec_6">
-        <point>
-          <content>
-            <p>Table of Amendments</p>
-          </content>
-        </point>
-        <point>
-          <content>
-            <table>
-              <caption></caption>
-              <tr>
-                <td>
-                  <p>ad. = added or inserted      am. =    amended      rep. = repealed      rs. = repealed and substituted</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Provision affected</p>
-                </td>
-                <td>
-                  <p>How affected</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>S. 3......................................</p>
-                </td>
-                <td>
-                  <p>am. No. 118, 1997</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>S. 7......................................</p>
-                </td>
-                <td>
-                  <p>am. No. 146, 1999</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>S. 9 .....................................</p>
-                </td>
-                <td>
-                  <p>rs. No. 92, 1999</p>
-                </td>
-              </tr>
-            </table>
-          </content>
-        </point>
-      </subsection>
-    </body>
-  </act>
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:date="http://exslt.org/dates-and-times" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <act name="Wet Tropics of Queensland World Heritage Area Conservation Act 1994">
+      <meta>
+         <identification source="#source">
+            <FRBRWork>
+               <FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809" />
+               <FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809" />
+               <FRBRdate date="2000-07-16" name="enacted" />
+               <FRBRauthor href="https://www.legislation.gov.au" />
+               <FRBRcountry value="au" />
+               <FRBRnumber value="None" />
+               <FRBRname value="Wet Tropics of Queensland World Heritage Area Conservation Act 1994" />
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809" />
+               <FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809" />
+               <FRBRdate date="2000-07-16" name="publication" />
+               <FRBRauthor href="https://www.legislation.gov.au" />
+               <FRBRlanguage language="eng" />
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value="https://www.legislation.gov.au/Details/C2004C00809" />
+               <FRBRuri value="https://www.legislation.gov.au/Details/C2004C00809" />
+               <FRBRdate date="2018-06-20" name="transform" />
+               <FRBRauthor href="https://www.legislation.gov.au" />
+               <FRBRformat value="application/akn+xml" />
+            </FRBRManifestation>
+         </identification>
+         <notes source="#source">
+            <note eId="note_1">
+               <p>This is a note</p>
+            </note>
+            <note eId="note_2">
+               <p>This is a note</p>
+            </note>
+         </notes>
+      </meta>
+      <preface eId="preface">
+         <p>
+            <shortTitle>Wet Tropics of Queensland World Heritage Area Conservation Act 1994</shortTitle>
+         </p>
+         <longTitle eId="#long_title">
+            <p>An Act relating to the conservation of the Wet Tropics of Queensland World Heritage Area</p>
+         </longTitle>
+      </preface>
+      <body eId="body">
+         <chapter eId="chp_seq1">
+            <part eId="chp_seq1_pt_1">
+               <num>1</num>
+               <heading eId="chp_seq1_pt_1_heading_seq1">First Part</heading>
+               <section eId="chp_seq1_pt_1_sec_seq1">
+                  <subsection eId="chp_seq1_pt_1_sec_seq1_subsec_seq1">
+                     <content eId="chp_seq1_pt_1_sec_seq1_subsec_seq1_content_seq1">
+                        <p>
+                           Never forget a part.
+                           <noteRef href="#note_2" />
+                        </p>
+                     </content>
+                  </subsection>
+               </section>
+            </part>
+         </chapter>
+         <chapter eId="chp_seq2">
+            <part eId="chp_seq2_pt_2">
+               <num>2</num>
+               <heading eId="chp_seq2_pt_2_heading_seq1">Some Part</heading>
+               <section eId="chp_seq2_pt_2_sec_seq1">
+                  <subsection eId="chp_seq2_pt_2_sec_seq1_subsec_seq1">
+                     <content eId="chp_seq2_pt_2_sec_seq1_subsec_seq1_content_seq1">
+                        <p>
+                           Always have notes.
+                           <noteRef href="#note_1" />
+                        </p>
+                     </content>
+                  </subsection>
+               </section>
+            </part>
+         </chapter>
+      </body>
+   </act>
 </akomaNtoso>

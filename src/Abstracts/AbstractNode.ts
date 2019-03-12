@@ -170,7 +170,6 @@ export abstract class AbstractNode implements HasChildrenMap {
     if (this.node instanceof Element) {
       return this.node;
     }
-
     throw new Error(`${this.getNodeName()} is not a node of type Element`);
   }
 
@@ -202,7 +201,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    *
    * @param str string
    */
-  public setTextContent(str: string) {
+  public setTextContent(str: string): void {
     if (this.getNodeType() !== NodeType.TEXT_NODE && this.getNodeType() !== NodeType.COMMENT_NODE) {
       throw new Error(`${this.getNodeName()} is a non-text node`);
     }
@@ -357,7 +356,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     node.validate();
   }
 
-  public validateNodeCounts(node: AbstractNode, rule: Rule) {
+  public validateNodeCounts(node: AbstractNode, rule: Rule): void {
     /** The node we are attempting to add exists */
     const exists = this.childrenOrder.indexOf(node.getNodeName()) !== -1;
     const name = node.getNodeName();
@@ -407,7 +406,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     this.validateExclusivity(node, current);
   }
 
-  public validateExclusivity(node: AbstractNode, rule: Rule) {
+  public validateExclusivity(node: AbstractNode, rule: Rule): void {
     const name = node.getNodeName();
 
     if (!rule.choice || rule.maxOccur !== 1) {
@@ -447,7 +446,7 @@ export abstract class AbstractNode implements HasChildrenMap {
   /**
    * Check whether the node is considered valid.
    */
-  public validate() {
+  public validate(): void {
     this.validateAttributes();
   }
 
@@ -456,7 +455,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    *
    * @throws Error
    */
-  public validateAttributes() {
+  public validateAttributes(): void {
     let required = this.ATTRIBUTE_GROUPS
       .filter(e => e.required === true)
       .map(e => e.attribute.getClassName());
@@ -467,7 +466,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
     if (this.currentAttributes.length === 0) {
       if (required.indexOf('EIdAttribute') !== -1) {
-        this.setAttribute(new EIdAttribute(`${this.abbreviation}___replace__`));
+        this.setAttribute(new EIdAttribute(`${this.abbreviation}____replace__`));
 
         return;
       }
@@ -479,7 +478,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     const index = required.indexOf('EIdAttribute');
 
     if (index !== -1) {
-      this.setAttribute(new EIdAttribute(`${this.abbreviation}___replace__`));
+      this.setAttribute(new EIdAttribute(`${this.abbreviation}____replace__`));
       required.splice(index, 1);
     }
 
@@ -488,11 +487,21 @@ export abstract class AbstractNode implements HasChildrenMap {
     }
   }
 
-  public updateGeneratedIds() {
-    this.generateIds(this);
+  public updateGeneratedIds(overwrite = false): void {
+    const currentEId = this.getElement().getAttribute('eId');
+
+    if (!currentEId) {
+      this.generateIds(this, '', overwrite);
+
+      return;
+    }
+
+    const prefix = currentEId.length > 0 ? `${currentEId}__` : '';
+
+    this.generateIds(this, prefix, overwrite);
   }
 
-  public setElementId(id: string) {
+  public setElementId(id: string, overwrite = false): void {
     this.generatedId = id;
 
     if (this.getNodeType() !== NodeType.ELEMENT_NODE) {
@@ -507,7 +516,7 @@ export abstract class AbstractNode implements HasChildrenMap {
       return;
     }
 
-    if (attr.indexOf('__replace__') !== -1) {
+    if (overwrite || attr.indexOf('__replace__') !== -1) {
       this.setAttribute(new EIdAttribute(id));
     }
   }
@@ -615,7 +624,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     return children;
   }
 
-  private flattenNode(node: string|string[]) {
+  private flattenNode(node: string|string[]): string {
     if (!Array.isArray(node)) {
       return node;
     }
@@ -624,38 +633,45 @@ export abstract class AbstractNode implements HasChildrenMap {
       .join(',');
   }
 
-  private generateIds(node: AbstractNode, prefix = '') {
+  private generateIds(node: AbstractNode, prefix = '', overwrite = false): void {
     const nodeCount: { [key: string]: number } = {};
 
     node.children.forEach((child: AbstractNode) => {
       const requiresEId = child.ATTRIBUTE_GROUPS
         .some(e => e.attribute.getName() === 'eId' && e.required === true);
 
-      const currentEId = this.getElement().getAttribute('eId');
-
-      if (!requiresEId || child.abbreviation.length < 1) {
-        this.generateIds(child, prefix);
-
+      if (child.getNodeType() === NodeType.TEXT_NODE || child.getNodeType() === NodeType.COMMENT_NODE) {
+        this.generateIds(child, prefix, overwrite);
+        
         return;
       }
 
-      if (currentEId && currentEId.indexOf('__replace__') === -1) {
-        this.generateIds(child, currentEId);
+      const currentEId = child.getElement().getAttribute('eId');
+      const hasValidEId = currentEId && currentEId.indexOf('__replace__') === -1;
 
+      if (!hasValidEId && (!requiresEId || child.abbreviation.length < 1)) {
+        this.generateIds(child, prefix, overwrite);
+        
+        return;
+      }
+      
+      if (!overwrite && currentEId && currentEId.indexOf('__replace__') === -1) {
+        this.generateIds(child, currentEId, overwrite);
+        
         return;
       }
 
       const childId = this.getCorrectNodeId(prefix, nodeCount, child);
 
-      child.setElementId(childId);
+      child.setElementId(childId, overwrite);
 
       if (child.prefixesEId()) {
-        this.generateIds(child, `${child.generatedId}_`);
+        this.generateIds(child, `${child.generatedId}__`, overwrite);
 
         return;
       }
 
-      this.generateIds(child, prefix);
+      this.generateIds(child, prefix, overwrite);
     });
   }
 

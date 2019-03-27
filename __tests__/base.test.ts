@@ -24,7 +24,7 @@ describe('Base test', () => {
     expect(doc).toBeInstanceOf(AKNDocument);
   });
 
-  it('thorws exception on when adding an incomplete node.', () => {
+  it('throws exception on when adding an incomplete node.', () => {
     expect(() => {
       const doc = new AKNDocument();
       doc.appendChild(new Act());

@@ -4,6 +4,7 @@ import * as Elements from '../Elements';
 import * as Attributes from '../Attributes';
 import { elementMap } from '../elementMap';
 import { attributeMap } from '../attributeMap';
+import NkyimuNodeParser from './Parsers/NkyimuNodeParser';
 
 export type ElementType = typeof Elements;
 
@@ -14,6 +15,18 @@ export class Generator {
 
   public constructor() {
     this.doc = new Document();
+  }
+
+  public toHTMLString(node: AbstractNode): Promise<string> {
+    const parser = new NkyimuNodeParser();
+    
+    return parser.toHTMLString(node);
+  }
+
+  public toHTMLNodeArray(node: AbstractNode): Promise<Array<HTMLParagraphElement>> {
+    const parser = new NkyimuNodeParser();
+    
+    return parser.toHTMLNodeArray(node);
   }
 
   public fromText(source: string): AbstractNode {

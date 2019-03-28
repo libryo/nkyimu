@@ -43,9 +43,13 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
    */
   private processNode(): HTMLElement[] {
     this.applyLevel();
-    // this.processNodeChildren();
+    this.processNodeChildren();
 
     this.nodeArray.push(this.wrapper);
     return this.nodeArray;
+  }
+
+  processNodeChildren(): void {
+    
   }
 }

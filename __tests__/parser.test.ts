@@ -76,6 +76,26 @@ describe('Node Parser Array Test', () => {
   });
 });
 
+describe('Node Parser String Test', () => {
+  let nkyimuNode: AbstractNode;
+  let generator: Generator;
+
+  beforeAll(() => {
+    generator = new Generator();
+    nkyimuNode = createGenericContentNode();
+  });
+
+  it('returns a string', () => {
+    expect.assertions(1);
+    return expect(generator.toHTMLString(nkyimuNode)).resolves.toMatch(/^<p/);
+  });
+
+  it('check string', async () => {
+    const string = await generator.toHTMLString(nkyimuNode);
+    console.log(string);
+  });
+});
+
 const createGenericContentNode = () => {
   const main = new Elements.Chapter();
   const num = new Elements.Num();

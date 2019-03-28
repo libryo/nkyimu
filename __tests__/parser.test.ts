@@ -76,13 +76,33 @@ describe('Node Parser Array Test', () => {
   });
 });
 
-describe('Node Parser String Test', () => {
+describe('Node Parser String Basic Test', () => {
   let nkyimuNode: AbstractNode;
   let generator: Generator;
 
   beforeAll(() => {
     generator = new Generator();
     nkyimuNode = createGenericContentNode();
+  });
+
+  it('returns a string', () => {
+    expect.assertions(1);
+    return expect(generator.toHTMLString(nkyimuNode)).resolves.toMatch(/^<p/);
+  });
+
+  it('check string', async () => {
+    const string = await generator.toHTMLString(nkyimuNode);
+    console.log(string);
+  });
+});
+
+describe('Node Parser String Advanced Test', () => {
+  let nkyimuNode: AbstractNode;
+  let generator: Generator;
+
+  beforeAll(() => {
+    generator = new Generator();
+    nkyimuNode = createAdvancedContentNode();
   });
 
   it('returns a string', () => {
@@ -111,5 +131,36 @@ const createGenericContentNode = () => {
   main.appendChild(num);
   main.appendChild(heading);
   main.appendChild(content);
+  return main;
+}
+
+const createAdvancedContentNode = () => {
+  const main = new Elements.Chapter();
+  const child = new Elements.Section();
+  const num = new Elements.Num();
+  const heading = new Elements.Heading();
+  const childNum = new Elements.Num();
+  const childHeading = new Elements.Heading();
+  const content = new Elements.Content();
+  const intro = new Elements.Intro();
+  const p = new Elements.P();
+  const introP = new Elements.P();
+
+  num.appendChild(Generator.createNode('', '1'));
+  heading.appendChild(Generator.createNode('', 'Definitions'));
+  p.appendChild(Generator.createNode('', 'Section test content'));
+  introP.appendChild(Generator.createNode('', 'Chapter Introduction'));
+  childHeading.appendChild(Generator.createNode('', 'The Section Heading'));
+  childNum.appendChild(Generator.createNode('', '1'));
+
+  content.appendChild(p);
+  intro.appendChild(introP);
+  child.appendChild(childNum);
+  child.appendChild(childHeading);
+  child.appendChild(content);
+  main.appendChild(num);
+  main.appendChild(heading);
+  main.appendChild(intro);
+  main.appendChild(child);
   return main;
 }

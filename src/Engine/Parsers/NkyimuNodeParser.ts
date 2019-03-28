@@ -32,10 +32,10 @@ export default class NkyimuNodeParser {
    * 
    * @param {AbstractNode} node the nkyimu node to be parsed
    * 
-   * @returns {Promise<HTMLParagraphElement[]>}
+   * @returns {Promise<HTMLElement[]>}
    */
-  public toHTMLNodeArray(node: AbstractNode): Promise<HTMLParagraphElement[]> {
-    return new Promise<HTMLParagraphElement[]>((resolve, reject) => {
+  public toHTMLNodeArray(node: AbstractNode): Promise<HTMLElement[]> {
+    return new Promise<HTMLElement[]>((resolve, reject) => {
       try {
         resolve(this.nodeToHTMLArray(node));
       } catch (err) {
@@ -50,9 +50,9 @@ export default class NkyimuNodeParser {
    * 
    * @param {AbstractNode} node the nkyimu node to be parsed
    * 
-   * @returns {HTMLParagraphElement[]}
+   * @returns {HTMLElement[]}
    */
-  private nodeToHTMLArray(node: AbstractNode): HTMLParagraphElement[] {
+  private nodeToHTMLArray(node: AbstractNode): HTMLElement[] {
     const htmlNode = new NkyimuHtmlNode(node);
 
     return htmlNode.output;
@@ -62,11 +62,11 @@ export default class NkyimuNodeParser {
    * function to loop through an array
    * of HTMLELements and build a continuos html string
    * 
-   * @param {HTMLParagraphElement[]} nodes the array of HTMLElements
+   * @param {HTMLElement[]} nodes the array of HTMLElements
    * 
    * @returns {string}
    */
-  private nodeArrayToString(nodes: HTMLParagraphElement[]): string {
+  private nodeArrayToString(nodes: HTMLElement[]): string {
     let htmlString: string = '';
 
     for (let index = 0; index < nodes.length; index++) {

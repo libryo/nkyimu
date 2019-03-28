@@ -1,45 +1,59 @@
 import { AbstractNode } from '../../../../Abstracts';
 
-export default class AbstractHtmlNode {
-  private node: AbstractNode;
-  private indentation: number;
-  private level: number;
-  private content: string[];
-  private wrapper: HTMLParagraphElement;
-  private nodeArray: HTMLParagraphElement[];
-  public output: HTMLParagraphElement[];
 
+export abstract class AbstractHtmlNode {
+
+  /**
+   * The nkyimu node to be parsed
+   */
+  protected node: AbstractNode;
+
+  /**
+   * The depth of the node relative to the base node
+   */
+  protected level: number;
+
+  /**
+   * The indentation (in px) used by the html editor to denote hierarchy
+   */
+  protected indentation: number;
+  
+  /**
+   * The parsed html element
+   */
+  protected abstract wrapper: HTMLElement;
+
+  /**
+   * The array of parsed elements for
+   * the node and it's children
+   */
+  protected nodeArray: HTMLElement[];
+
+  /**
+   * The parsed children
+   */
+  protected abstract children: AbstractHtmlNode[];
+
+  public abstract output: HTMLElement[];
+
+  /**
+   * Abstract class for creating parsed nkyimu nodes
+   * 
+   * @constructor
+   * 
+   * @param {AbstractNode} node - The nkyimu node to be parsed
+   * @param {number} level - The depth of the node relative to the base node
+   * @param {number} indentation - The indentation (in px) used by the html editor to denote hierarchy
+   */
   constructor(node: AbstractNode, level: number, indentation: number) {
     this.node = node;
     this.level = level;
     this.indentation = indentation;
-    this.content = [
-      'num',
-      'heading',
-      'content',
-      'intro',
-    ];
-    this.wrapper = <HTMLParagraphElement>document.createElement('p');
     this.nodeArray = [];
-    this.output = this.processNode();
   }
 
-  private processNode() {
-    this.applyLevel(this.wrapper);
-    this.setElement(this.wrapper);
-    this.nodeArray.push(this.wrapper);
-    return this.nodeArray;
-  }
-
-  private applyLevel(node: HTMLParagraphElement): void {
-    if (this.level > 0) {
-      const indentation = (this.indentation * this.level).toString()
-      node.style.marginLeft = `${indentation}px`;
-    }
-  }
-
-  private setElement(node: HTMLParagraphElement): void {
-    const name = this.node.getNodeName();
-    node.setAttribute('data-element', name);
-  }
+   /**
+   * Set the name of the element
+   */
+  protected abstract setElementName(): void;
 }

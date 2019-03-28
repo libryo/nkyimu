@@ -23,7 +23,7 @@ export class Generator {
     return parser.toHTMLString(node);
   }
 
-  public toHTMLNodeArray(node: AbstractNode): Promise<Array<HTMLParagraphElement>> {
+  public toHTMLNodeArray(node: AbstractNode): Promise<HTMLElement[]> {
     const parser = new NkyimuNodeParser();
     
     return parser.toHTMLNodeArray(node);

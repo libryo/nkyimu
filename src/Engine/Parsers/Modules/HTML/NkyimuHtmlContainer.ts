@@ -1,14 +1,13 @@
 import { AbstractHtmlNode } from './AbstractHtmlNode';
 import { AbstractNode } from '../../../../Abstracts';
-import * as styles from './styles';
 
 
-export default class NkyimuHtmlInline extends AbstractHtmlNode {
+export default class NkyimuHtmlContainer extends AbstractHtmlNode {
 
   /**
    * The parsed html element
    */
-  protected wrapper: HTMLElement = document.createElement('span');
+  protected wrapper: HTMLElement = <HTMLElement>document.createElement('p');
 
   /**
    * The parsed children
@@ -36,39 +35,17 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
   /**
    * Applies the name of the node to the wrapper element
    */
-  protected setElementName(): void {
-    const name = this.node.getNodeName();
-    this.wrapper.setAttribute('data-inline', name);
-  }
-
+  protected setElementName(): void {}
+  
   /**
    * Function to process and parse the nkyimu node and
    * it's children
    */
   private processNode(): HTMLElement[] {
-    this.setElementName();
-    this.addElementStyling();
-    this.processChildren();
+    this.applyLevel();
+    // this.processNodeChildren();
 
     this.nodeArray.push(this.wrapper);
     return this.nodeArray;
-  }
-
-  private processChildren(): void {
-    this.node.children.forEach((child) => {
-      
-    });
-  }
-
-  /**
-   * Adds element styling for clarity
-   */
-  private addElementStyling(): void {
-    const name = this.node.getNodeName();
-    const style = styles[name];
-
-    if (style) {
-      this.wrapper.setAttribute('style', style);
-    }
   }
 }

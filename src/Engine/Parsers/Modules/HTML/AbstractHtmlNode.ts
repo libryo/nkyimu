@@ -56,4 +56,15 @@ export abstract class AbstractHtmlNode {
    * Set the name of the element
    */
   protected abstract setElementName(): void;
+
+  /**
+   * Applies margin to the html element
+   * based on node level
+   */
+  protected applyLevel(): void {
+    if (this.level > 0) {
+      const indentation = (this.indentation * this.level).toString()
+      this.wrapper.style.marginLeft = `${indentation}px`;
+    }
+  }
 }

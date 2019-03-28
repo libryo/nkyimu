@@ -1,7 +1,8 @@
 import { AbstractNode } from '../../../../Abstracts';
 import { AbstractHtmlNode } from './AbstractHtmlNode';
 import NkyimuHtmlInline from './NkyimuHtmlInline';
-import { inlines, hContainers } from '../../Types';
+import { inlines, hContainers, containers } from '../../Types';
+import NkyimuHtmlContainer from './NkyimuHtmlContainer';
 
 
 export default class NkyimuHtmlNode extends AbstractHtmlNode {
@@ -22,6 +23,11 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
   public output: HTMLElement[] = this.processNode();
 
   /**
+   * Whether or not the node has a heading
+   */
+  private hasNodeContent: boolean = false;
+
+  /**
    * Create a parsed Nkyimu HTML HContainer node
    * 
    * @constructor
@@ -39,31 +45,75 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
    */
   protected setElementName(): void {
     const name = this.node.getNodeName();
+
     this.wrapper.setAttribute('data-element', name);
   }
 
   /**
-   * Function to process and parse the nkyimu node and
-   * it's children
+   * Function to process and parse the nkyimu node and it's children
    */
   private processNode(): HTMLElement[] {
     this.applyLevel();
     this.setElementName();
-    // this.processNodeChildren();
-
     this.nodeArray.push(this.wrapper);
+
+    this.appendNodeChildren();
     return this.nodeArray;
   }
 
   /**
-   * Applies margin to the html element
-   * based on node level
+   * Loop through the parsed children and determine how to append them
    */
-  private applyLevel(): void {
-    if (this.level > 0) {
-      const indentation = (this.indentation * this.level).toString()
-      this.wrapper.style.marginLeft = `${indentation}px`;
-    }
+  private appendNodeChildren(): void {
+    this.children.forEach((child) => {
+      if (child instanceof NkyimuHtmlInline) {
+        this.handleAppendInline(child);
+      } else if (child instanceof NkyimuHtmlNode) {
+        const childNodes = child.output;
+
+        this.nodeArray = [...this.nodeArray, ...childNodes];
+      } else if (child instanceof NkyimuHtmlContainer) {
+        const childNodes = child.output;
+
+        if (!this.hasNodeContent) {
+          this.wrapper.innerHTML += childNodes[0].innerHTML;
+        } else {
+          this.nodeArray = [...this.nodeArray, ...childNodes];
+        }
+      }
+    });
+  }
+
+  /**
+   * Handles appending the inline node to the main node
+   * 
+   * @param {NkyimuHtmlInline} node 
+   */
+  private handleAppendInline(node: NkyimuHtmlInline): void {
+    node.output.forEach((item) => {
+      const name = item.getAttribute('data-inline');
+      
+      switch (name) {
+        case 'num':
+          this.appendInlineToWrapperHTML(item);
+          break;
+        case 'heading':
+          if (!this.hasNodeContent) this.hasNodeContent = true;
+          this.appendInlineToWrapperHTML(item);
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
+  /**
+   * Take the html content of a node and insert it into the wrapper element
+   * 
+   * @param {HTMLElement} node The inline html element
+   */
+  private appendInlineToWrapperHTML(node: HTMLElement): void {
+    this.wrapper.innerHTML += node.outerHTML;
   }
 
   private processChildren(): AbstractHtmlNode[] {
@@ -80,7 +130,12 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
           break;
         case 'hcontainer':
           children.push(
-            new NkyimuHtmlNode(child, this.level, this.indentation + 1)
+            new NkyimuHtmlNode(child, this.level + 1, this.indentation)
+          );
+          break;
+        case 'container':
+          children.push(
+            new NkyimuHtmlContainer(child, this.level, this.indentation)
           );
           break;
         default:
@@ -98,9 +153,11 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
     const name = node.getNodeName();
 
     if (inlines.includes(name)) {
-      return 'inline'
+      return 'inline';
     } else if (hContainers.includes(name)) {
-      return 'hcontainer'
+      return 'hcontainer';
+    } else if (containers.includes(name)) {
+      return 'container';
     }
 
     return 'unknown';

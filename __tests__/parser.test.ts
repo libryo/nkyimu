@@ -145,6 +145,7 @@ const createAdvancedContentNode = () => {
   const intro = new Elements.Intro();
   const p = new Elements.P();
   const introP = new Elements.P();
+  const bold = new Elements.B();
 
   num.appendChild(Generator.createNode('', '1'));
   heading.appendChild(Generator.createNode('', 'Definitions'));
@@ -152,7 +153,9 @@ const createAdvancedContentNode = () => {
   introP.appendChild(Generator.createNode('', 'Chapter Introduction'));
   childHeading.appendChild(Generator.createNode('', 'The Section Heading'));
   childNum.appendChild(Generator.createNode('', '1'));
+  bold.appendChild(Generator.createNode('', 'bold text'));
 
+  heading.appendChild(bold);
   content.appendChild(p);
   intro.appendChild(introP);
   child.appendChild(childNum);

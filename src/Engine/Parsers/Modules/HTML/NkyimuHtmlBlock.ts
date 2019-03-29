@@ -4,7 +4,6 @@ import { NodeType } from '../../../../common/enums';
 import NkyimuHtmlInline from './NkyimuHtmlInline';
 import { inlines } from '../../Types';
 
-
 export default class NkyimuHtmlBlock extends AbstractHtmlNode {
 
   /**
@@ -43,6 +42,8 @@ export default class NkyimuHtmlBlock extends AbstractHtmlNode {
   /**
    * Function to process and parse the nkyimu node and
    * it's children
+   * 
+   * @returns {HTMLElement[]}
    */
   private processNode(): HTMLElement[] {
     this.applyLevel();
@@ -52,6 +53,11 @@ export default class NkyimuHtmlBlock extends AbstractHtmlNode {
     return this.nodeArray;
   }
 
+  /**
+   * Loop through the parsed children and determine how to append them
+   * 
+   * @returns {void}
+   */
   private appendNodeChildren(): void {
     this.node.children.forEach((child) => {
       if (child.getNodeType() === NodeType.TEXT_NODE) {

@@ -3,7 +3,6 @@ import { AbstractHtmlNode } from './AbstractHtmlNode';
 import NkyimuHtmlInline from './NkyimuHtmlInline';
 import NkyimuHtmlContainer from './NkyimuHtmlContainer';
 
-
 export default class NkyimuHtmlNode extends AbstractHtmlNode {
 
   /**
@@ -41,6 +40,8 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
 
   /**
    * Applies the name of the node to the wrapper element
+   * 
+   * @returns {void}
    */
   protected setElementName(): void {
     const name = this.node.getNodeName();
@@ -50,6 +51,8 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
 
   /**
    * Function to process and parse the nkyimu node and it's children
+   * 
+   * @returns {HTMLElement[]}
    */
   private processNode(): HTMLElement[] {
     this.applyLevel();
@@ -62,17 +65,19 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
 
   /**
    * Loop through the parsed children and determine how to append them
+   * 
+   * @returns {void}
    */
   private appendNodeChildren(): void {
-    this.children.forEach((child) => {
+    this.children.forEach((child: AbstractHtmlNode) => {
       if (child instanceof NkyimuHtmlInline) {
         this.handleAppendInline(child);
       } else if (child instanceof NkyimuHtmlNode) {
-        const childNodes = child.output;
+        const childNodes: HTMLElement[] = child.output;
 
         this.nodeArray = [...this.nodeArray, ...childNodes];
       } else if (child instanceof NkyimuHtmlContainer) {
-        const containerChildren = child.getContainerChildrenArray();
+        const containerChildren: HTMLElement[] = child.getContainerChildrenArray();
 
         if (!this.hasNodeContent) {
           containerChildren.forEach((item: HTMLElement, index: number) => {
@@ -93,15 +98,17 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
   /**
    * Handles appending the inline node to the main node
    * 
-   * @param {NkyimuHtmlInline} node 
+   * @param {NkyimuHtmlInline} node The inline node to be appended
+   * 
+   * @returns {void}
    */
   private handleAppendInline(node: NkyimuHtmlInline): void {
-    node.output.forEach((item) => {
-      const name = item.getAttribute('data-inline');
+    node.output.forEach((item: HTMLElement) => {
+      const name: string|null = item.getAttribute('data-inline');
       
       switch (name) {
         case 'num':
-          this.appendInlineToWrapperHTML(item);
+          this.appendInlineToWrapperHTML(item, ' ');
           break;
         case 'heading':
           if (!this.hasNodeContent) this.hasNodeContent = true;
@@ -117,19 +124,24 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
    * Take the html content of a node and insert it into the wrapper element
    * 
    * @param {HTMLElement} node The inline html element
+   * @param {string} spacing The spacing to come after the appended inline element
+   * 
+   * @returns {void}
    */
-  private appendInlineToWrapperHTML(node: HTMLElement): void {
-    this.wrapper.innerHTML += `${node.outerHTML} `;
+  private appendInlineToWrapperHTML(node: HTMLElement, spacing: string = ''): void {
+    this.wrapper.innerHTML += <string>(node.outerHTML + spacing);
   }
 
   /**
    * Parse each child of the nkyimu node
+   * 
+   * @returns {AbstractHtmlNode[]}
    */
   private processChildren(): AbstractHtmlNode[] {
     const children: AbstractHtmlNode[] = [];
 
-    this.node.children.forEach((child) => {
-      const type = this.getNodeType(child);
+    this.node.children.forEach((child: AbstractNode) => {
+      const type: string = this.getNodeType(child);
 
       switch (type) {
         case 'inline':

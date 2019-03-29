@@ -2,7 +2,6 @@ import { AbstractHtmlNode } from './AbstractHtmlNode';
 import { AbstractNode } from '../../../../Abstracts';
 import NkyimuHtmlBlock from './NkyimuHtmlBlock';
 
-
 export default class NkyimuHtmlContainer extends AbstractHtmlNode {
 
   /**
@@ -41,6 +40,8 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
   /**
    * Function to process and parse the nkyimu node and
    * it's children
+   * 
+   * @returns {HTMLElement[]}
    */
   private processNode(): HTMLElement[] {
     this.applyLevel();
@@ -52,12 +53,14 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
 
   /**
    * Parse each child of the nkyimu node
+   * 
+   * @returns {AbstractHtmlNode[]}
    */
   private processChildren(): AbstractHtmlNode[] {
     const children: AbstractHtmlNode[] = [];
 
     this.node.children.forEach((child: AbstractNode) => {
-      const type = this.getNodeType(child);
+      const type: string = this.getNodeType(child);
 
       switch (type) {
         case 'block':
@@ -75,6 +78,8 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
 
    /**
    * Loop through the parsed children and determine how to append them
+   * 
+   * @returns {void}
    */
   private appendNodeChildren(): void {
     this.children.forEach((child: AbstractHtmlNode) => {
@@ -88,6 +93,8 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
 
   /**
    * Gets all the container children as an array of nodes
+   * 
+   * @returns {HTMLParagraphElement[]}
    */
   public getContainerChildrenArray(): HTMLParagraphElement[] {
     const children: HTMLParagraphElement[] = [];

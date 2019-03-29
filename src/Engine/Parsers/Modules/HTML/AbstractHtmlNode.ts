@@ -1,7 +1,6 @@
 import { AbstractNode } from '../../../../Abstracts';
 import { inlines, hContainers, containers, blocks } from '../../Types';
 
-
 export abstract class AbstractHtmlNode {
 
   /**
@@ -35,6 +34,9 @@ export abstract class AbstractHtmlNode {
    */
   protected abstract children: AbstractHtmlNode[];
 
+  /**
+   * The html output of the parsed node
+   */
   public abstract output: HTMLElement[];
 
   /**
@@ -61,19 +63,25 @@ export abstract class AbstractHtmlNode {
   /**
    * Applies margin to the html element
    * based on node level
+   * 
+   * @returns {void}
    */
   protected applyLevel(): void {
     if (this.level > 0) {
-      const indentation = (this.indentation * this.level).toString()
+      const indentation: string = (this.indentation * this.level).toString()
       this.wrapper.style.marginLeft = `${indentation}px`;
     }
   }
 
   /**
    * Classifies the node based on it's name
+   * 
+   * @param {AbstractNode} node The node whose type is being retrieved
+   * 
+   * @returns {string}
    */
   protected getNodeType(node: AbstractNode): string {
-    const name = node.getNodeName();
+    const name: string = node.getNodeName();
 
     if (inlines.includes(name)) {
       return 'inline';

@@ -21,10 +21,14 @@ export class Generator {
    * Function to parse an nkyimu node into an HTML string
    * 
    * @param {AbstractNode} node The nkyimu node to be converted to an HTML string
+   * @param {number|null} indentation The indentation in px to be used to denote heirarchy
+   * 
+   * @returns {Promise<string>}
    */
-  public toHTMLString(node: AbstractNode): Promise<string> {
+  public toHTMLString(node: AbstractNode, indentation: number|null = null): Promise<string> {
     const parser = new NkyimuNodeParser();
-    
+    if (indentation) parser.setHtmlIndentation(indentation);
+
     return parser.toHTMLString(node);
   }
   
@@ -32,9 +36,13 @@ export class Generator {
    * Function to parse an nkyimu node into an array of HTML elements
    * 
    * @param {AbstractNode} node The nkyimu node to be converted to an HTML element array
+   * @param {number|null} indentation The indentation in px to be used to denote heirarchy
+   * 
+   * @returns {Promise<HTMLElement[]>}
    */
-  public toHTMLElementArray(node: AbstractNode): Promise<HTMLElement[]> {
+  public toHTMLElementArray(node: AbstractNode, indentation: number|null = null): Promise<HTMLElement[]> {
     const parser = new NkyimuNodeParser();
+    if (indentation) parser.setHtmlIndentation(indentation);
     
     return parser.toHTMLElementArray(node);
   }

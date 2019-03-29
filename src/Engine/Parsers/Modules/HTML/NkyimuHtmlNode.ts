@@ -1,7 +1,6 @@
 import { AbstractNode } from '../../../../Abstracts';
 import { AbstractHtmlNode } from './AbstractHtmlNode';
 import NkyimuHtmlInline from './NkyimuHtmlInline';
-import { inlines, hContainers, containers } from '../../Types';
 import NkyimuHtmlContainer from './NkyimuHtmlContainer';
 
 
@@ -73,12 +72,19 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
 
         this.nodeArray = [...this.nodeArray, ...childNodes];
       } else if (child instanceof NkyimuHtmlContainer) {
-        const childNodes = child.output;
+        const containerChildren = child.getContainerChildrenArray();
 
         if (!this.hasNodeContent) {
-          this.wrapper.innerHTML += childNodes[0].innerHTML;
+          containerChildren.forEach((item: HTMLElement, index: number) => {
+            if (index === 0) {
+              this.wrapper.innerHTML += item.innerHTML;
+            } else {
+              this.nodeArray.push(item);
+            }
+          }); 
+          
         } else {
-          this.nodeArray = [...this.nodeArray, ...childNodes];
+          this.nodeArray = [...this.nodeArray, ...containerChildren];
         }
       }
     });
@@ -113,9 +119,12 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
    * @param {HTMLElement} node The inline html element
    */
   private appendInlineToWrapperHTML(node: HTMLElement): void {
-    this.wrapper.innerHTML += node.outerHTML;
+    this.wrapper.innerHTML += `${node.outerHTML} `;
   }
 
+  /**
+   * Parse each child of the nkyimu node
+   */
   private processChildren(): AbstractHtmlNode[] {
     const children: AbstractHtmlNode[] = [];
 
@@ -144,22 +153,5 @@ export default class NkyimuHtmlNode extends AbstractHtmlNode {
     });
 
     return children;
-  }
-
-  /**
-   * Classifies the node based on it's name
-   */
-  private getNodeType(node: AbstractNode): string {
-    const name = node.getNodeName();
-
-    if (inlines.includes(name)) {
-      return 'inline';
-    } else if (hContainers.includes(name)) {
-      return 'hcontainer';
-    } else if (containers.includes(name)) {
-      return 'container';
-    }
-
-    return 'unknown';
   }
 }

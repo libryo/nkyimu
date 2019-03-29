@@ -16,7 +16,7 @@ describe('Node Parser Initialisation', () => {
   it('returns a promise<array> from generator', () => {
     const generator = new Generator();
     const node = new Elements.Body();
-    const output = generator.toHTMLNodeArray(node);
+    const output = generator.toHTMLElementArray(node);
 
     expect(output).toBeInstanceOf(Promise);
   });
@@ -34,7 +34,7 @@ describe('Node Parser Initialisation', () => {
     const node = new Elements.Body();
 
     expect.assertions(1);
-    return expect(generator.toHTMLNodeArray(node)).resolves.toBeInstanceOf(Array);
+    return expect(generator.toHTMLElementArray(node)).resolves.toBeInstanceOf(Array);
   });
 
   it('return value is string', () => {
@@ -57,12 +57,12 @@ describe('Node Parser Array Test', () => {
 
   it('returns an array', () => {
     expect.assertions(1);
-    return expect(generator.toHTMLNodeArray(nkyimuNode)).resolves.toBeInstanceOf(Array);
+    return expect(generator.toHTMLElementArray(nkyimuNode)).resolves.toBeInstanceOf(Array);
   });
 
   it('first paragraph has no margin', async () => {
     expect.assertions(2);
-    let nodes = await generator.toHTMLNodeArray(nkyimuNode);
+    let nodes = await generator.toHTMLElementArray(nkyimuNode);
     let { style } = nodes[0];
     expect(style.marginLeft).toBeDefined();
     expect(style.marginLeft).toEqual('');
@@ -70,7 +70,7 @@ describe('Node Parser Array Test', () => {
 
   it('has element name chapter', async () => {
     expect.assertions(1);
-    const nodes = await generator.toHTMLNodeArray(nkyimuNode);
+    const nodes = await generator.toHTMLElementArray(nkyimuNode);
     let name = nodes[0].getAttribute('data-element');
     expect(name).toEqual('chapter');
   });
@@ -125,7 +125,7 @@ const createGenericContentNode = () => {
 
   num.appendChild(Generator.createNode('', '1'));
   heading.appendChild(Generator.createNode('', 'Definitions'));
-  num.appendChild(Generator.createNode('', 'Chapter test content'));
+  p.appendChild(Generator.createNode('', 'Chapter test content'));
 
   content.appendChild(p);
   main.appendChild(num);
@@ -136,34 +136,38 @@ const createGenericContentNode = () => {
 
 const createAdvancedContentNode = () => {
   const main = new Elements.Chapter();
-  const child = new Elements.Section();
+  const section = new Elements.Section();
   const num = new Elements.Num();
   const heading = new Elements.Heading();
-  const childNum = new Elements.Num();
-  const childHeading = new Elements.Heading();
+  const secNum = new Elements.Num();
+  const secHeading = new Elements.Heading();
   const content = new Elements.Content();
   const intro = new Elements.Intro();
   const p = new Elements.P();
+  const p2 = new Elements.P();
   const introP = new Elements.P();
   const bold = new Elements.B();
 
-  num.appendChild(Generator.createNode('', '1'));
-  heading.appendChild(Generator.createNode('', 'Definitions'));
-  p.appendChild(Generator.createNode('', 'Section test content'));
-  introP.appendChild(Generator.createNode('', 'Chapter Introduction'));
-  childHeading.appendChild(Generator.createNode('', 'The Section Heading'));
-  childNum.appendChild(Generator.createNode('', '1'));
-  bold.appendChild(Generator.createNode('', 'bold text'));
+  num.appendChild(Generator.createNode('', 'Chapter 1'));
+  heading.appendChild(Generator.createNode('', 'The First Chapter'));
+  p.appendChild(Generator.createNode('', 'The content for the first '));
+  p2.appendChild(Generator.createNode('', 'Some more content'));
+  introP.appendChild(Generator.createNode('', 'The introduction to Chapter 1'));
+  secHeading.appendChild(Generator.createNode('', 'The First Section'));
+  secNum.appendChild(Generator.createNode('', 'Section 1'));
+  bold.appendChild(Generator.createNode('', 'Section.'));
 
-  heading.appendChild(bold);
+  p.appendChild(bold);
   content.appendChild(p);
+  content.appendChild(p2);
   intro.appendChild(introP);
-  child.appendChild(childNum);
-  child.appendChild(childHeading);
-  child.appendChild(content);
+  section.appendChild(secNum);
+  section.appendChild(secHeading);
+  section.appendChild(content);
+
   main.appendChild(num);
   main.appendChild(heading);
   main.appendChild(intro);
-  main.appendChild(child);
+  main.appendChild(section);
   return main;
 }

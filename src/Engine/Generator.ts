@@ -17,16 +17,26 @@ export class Generator {
     this.doc = new Document();
   }
 
+  /**
+   * Function to parse an nkyimu node into an HTML string
+   * 
+   * @param {AbstractNode} node The nkyimu node to be converted to an HTML string
+   */
   public toHTMLString(node: AbstractNode): Promise<string> {
     const parser = new NkyimuNodeParser();
     
     return parser.toHTMLString(node);
   }
-
-  public toHTMLNodeArray(node: AbstractNode): Promise<HTMLElement[]> {
+  
+  /**
+   * Function to parse an nkyimu node into an array of HTML elements
+   * 
+   * @param {AbstractNode} node The nkyimu node to be converted to an HTML element array
+   */
+  public toHTMLElementArray(node: AbstractNode): Promise<HTMLElement[]> {
     const parser = new NkyimuNodeParser();
     
-    return parser.toHTMLNodeArray(node);
+    return parser.toHTMLElementArray(node);
   }
 
   public fromText(source: string): AbstractNode {

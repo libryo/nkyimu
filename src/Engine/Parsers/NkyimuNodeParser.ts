@@ -14,8 +14,8 @@ export default class NkyimuNodeParser {
   public toHTMLString(node: AbstractNode): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       try {
-        this.toHTMLNodeArray(node).
-          then((array) => {
+        this.toHTMLElementArray(node).
+          then((array: HTMLElement[]) => {
             resolve(this.nodeArrayToString(array));
           }).catch((err) => {
             reject(err);
@@ -34,7 +34,7 @@ export default class NkyimuNodeParser {
    * 
    * @returns {Promise<HTMLElement[]>}
    */
-  public toHTMLNodeArray(node: AbstractNode): Promise<HTMLElement[]> {
+  public toHTMLElementArray(node: AbstractNode): Promise<HTMLElement[]> {
     return new Promise<HTMLElement[]>((resolve, reject) => {
       try {
         resolve(this.nodeToHTMLArray(node));
@@ -70,7 +70,7 @@ export default class NkyimuNodeParser {
     let htmlString: string = '';
 
     for (let index = 0; index < nodes.length; index++) {
-      const element = nodes[index];
+      const element: HTMLElement = nodes[index];
       if (element.outerHTML && element.outerHTML.length) {
         htmlString += element.outerHTML;
       }

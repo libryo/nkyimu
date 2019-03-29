@@ -1,4 +1,5 @@
 import { AbstractNode } from '../../../../Abstracts';
+import { inlines, hContainers, containers, blocks } from '../../Types';
 
 
 export abstract class AbstractHtmlNode {
@@ -66,5 +67,24 @@ export abstract class AbstractHtmlNode {
       const indentation = (this.indentation * this.level).toString()
       this.wrapper.style.marginLeft = `${indentation}px`;
     }
+  }
+
+  /**
+   * Classifies the node based on it's name
+   */
+  protected getNodeType(node: AbstractNode): string {
+    const name = node.getNodeName();
+
+    if (inlines.includes(name)) {
+      return 'inline';
+    } else if (hContainers.includes(name)) {
+      return 'hcontainer';
+    } else if (containers.includes(name)) {
+      return 'container';
+    } else if (blocks.includes(name)) {
+      return 'block';
+    }
+
+    return 'unknown';
   }
 }

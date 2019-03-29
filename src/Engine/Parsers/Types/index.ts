@@ -120,3 +120,18 @@ export const containers = [
   'toc',
   'wrapUp',
 ];
+
+export const blocks = [
+  'block',
+  'caption',
+  'foreign',
+  'ol',
+  'p',
+  'heading',
+  'num',
+  'table',
+  'td',
+  'th',
+  'tr',
+  'ul',
+];

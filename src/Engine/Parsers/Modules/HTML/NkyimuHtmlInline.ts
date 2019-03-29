@@ -67,7 +67,7 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
    * Applies the name of the node to the wrapper element
    */
   protected setElementName(): void {
-    const name = this.node.getNodeName();
+    const name: string = this.node.getNodeName();
     this.wrapper.setAttribute('data-inline', name);
   }
 
@@ -89,12 +89,12 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
    * Loop through the inline children and add their outpurs to the main node
    */
   private processChildren(): void {
-    this.node.children.forEach((child) => {
+    this.node.children.forEach((child: AbstractNode) => {
       if (child.getNodeType() === NodeType.TEXT_NODE) {
         this.wrapper.innerHTML += child.getNode().textContent;
       } else if (inlines.includes(child.getNodeName())) {
         const inline = new NkyimuHtmlInline(child, this.level, this.indentation);
-        inline.output.forEach((item) => {
+        inline.output.forEach((item: HTMLElement) => {
           this.wrapper.innerHTML += item.outerHTML;
         }) 
       }
@@ -105,8 +105,8 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
    * Adds element styling for clarity
    */
   private addElementStyling(): void {
-    const name = this.node.getNodeName();
-    const style = styles[name];
+    const name: string = this.node.getNodeName();
+    const style: string = styles[name];
 
     if (style) {
       this.wrapper.setAttribute('style', style);

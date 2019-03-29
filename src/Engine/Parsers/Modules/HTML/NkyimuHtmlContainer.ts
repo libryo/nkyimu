@@ -1,5 +1,6 @@
 import { AbstractHtmlNode } from './AbstractHtmlNode';
 import { AbstractNode } from '../../../../Abstracts';
+import NkyimuHtmlBlock from './NkyimuHtmlBlock';
 
 
 export default class NkyimuHtmlContainer extends AbstractHtmlNode {
@@ -12,7 +13,7 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
   /**
    * The parsed children
    */
-  protected children: AbstractHtmlNode[] = [];
+  protected children: AbstractHtmlNode[] = this.processChildren();
 
   /**
    * The array of Elements to be returned to the parser
@@ -43,13 +44,58 @@ export default class NkyimuHtmlContainer extends AbstractHtmlNode {
    */
   private processNode(): HTMLElement[] {
     this.applyLevel();
-    this.processNodeChildren();
+    this.appendNodeChildren();
 
     this.nodeArray.push(this.wrapper);
     return this.nodeArray;
   }
 
-  processNodeChildren(): void {
+  /**
+   * Parse each child of the nkyimu node
+   */
+  private processChildren(): AbstractHtmlNode[] {
+    const children: AbstractHtmlNode[] = [];
+
+    this.node.children.forEach((child: AbstractNode) => {
+      const type = this.getNodeType(child);
+
+      switch (type) {
+        case 'block':
+          children.push(
+            new NkyimuHtmlBlock(child, this.level, this.indentation)
+          );
+          break;
+        default:
+          break;
+      }
+    });
+
+    return children;
+  }
+
+   /**
+   * Loop through the parsed children and determine how to append them
+   */
+  private appendNodeChildren(): void {
+    this.children.forEach((child: AbstractHtmlNode) => {
+      if (child instanceof NkyimuHtmlBlock) {
+        child.output.forEach((item: HTMLElement) => {
+          this.wrapper.appendChild(item);
+        });
+      }
+    });
+  }
+
+  /**
+   * Gets all the container children as an array of nodes
+   */
+  public getContainerChildrenArray(): HTMLParagraphElement[] {
+    const children: HTMLParagraphElement[] = [];
     
+    Array.prototype.forEach.call(this.wrapper.children, (child: HTMLParagraphElement) => { 
+      children.push(child);
+    });
+
+    return children;
   }
 }

@@ -4,7 +4,6 @@ import * as styles from './styles';
 import { NodeType } from '../../../../common/enums';
 import { inlines } from '../../Types';
 
-
 export default class NkyimuHtmlInline extends AbstractHtmlNode {
 
   /**
@@ -51,6 +50,8 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
 
   /**
    * Creates the html wrapper for the inline element
+   * 
+   * @returns {HTMLElement}
    */
   private createWrapper(): HTMLElement {
     const name = this.node.getNodeName();
@@ -65,6 +66,8 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
 
   /**
    * Applies the name of the node to the wrapper element
+   * 
+   * @returns {void}
    */
   protected setElementName(): void {
     const name: string = this.node.getNodeName();
@@ -73,6 +76,8 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
 
   /**
    * Function to process and parse the nkyimu node and it's children
+   * 
+   * @returns {HTMLElement[]}
    */
   private processNode(): HTMLElement[] {
     if (this.identify) {
@@ -87,6 +92,8 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
 
   /**
    * Loop through the inline children and add their outpurs to the main node
+   * 
+   * @returns {void}
    */
   private processChildren(): void {
     this.node.children.forEach((child: AbstractNode) => {
@@ -103,6 +110,8 @@ export default class NkyimuHtmlInline extends AbstractHtmlNode {
 
   /**
    * Adds element styling for clarity
+   * 
+   * @returns {void}
    */
   private addElementStyling(): void {
     const name: string = this.node.getNodeName();

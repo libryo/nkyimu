@@ -1,6 +1,7 @@
 import { Generator } from '../src/Engine/Generator';
 import NkyimuNodeParser from '../src/Engine/Parsers/NkyimuNodeParser';
 import * as Elements from '../src/Elements';
+import * as data from './__data__/parser-data';
 import { AbstractNode } from '../src/Abstracts';
 
 /**
@@ -8,12 +9,12 @@ import { AbstractNode } from '../src/Abstracts';
  */
 describe('Node Parser Initialisation', () => {
   it('initializes', () => {
-    const parser = new NkyimuNodeParser();
+    const parser: NkyimuNodeParser = new NkyimuNodeParser();
 
     expect(parser).toBeInstanceOf(NkyimuNodeParser);
   });
 
-  it('returns a promise<array> from generator', () => {
+  it('array function returns a promise<array> from generator', () => {
     const generator = new Generator();
     const node = new Elements.Body();
     const output = generator.toHTMLElementArray(node);
@@ -21,15 +22,7 @@ describe('Node Parser Initialisation', () => {
     expect(output).toBeInstanceOf(Promise);
   });
 
-  it('returns a promise<string> from generator', () => {
-    const generator = new Generator();
-    const node = new Elements.Body();
-    const output = generator.toHTMLString(node);
-
-    expect(output).toBeInstanceOf(Promise);
-  });
-
-  it('return value is html element', () => {
+  it('array function resolve is array', () => {
     const generator: Generator = new Generator();
     const node = new Elements.Body();
 
@@ -37,137 +30,113 @@ describe('Node Parser Initialisation', () => {
     return expect(generator.toHTMLElementArray(node)).resolves.toBeInstanceOf(Array);
   });
 
-  it('return value is string', () => {
+  it('string function returns a promise<string> from generator', () => {
+    const generator = new Generator();
+    const node = new Elements.Body();
+    const output = generator.toHTMLString(node);
+
+    expect(output).toBeInstanceOf(Promise);
+  });
+
+
+  it('string function resolve is string', () => {
     const generator: Generator = new Generator();
     const node = new Elements.Body();
 
     expect.assertions(1);
     return expect(generator.toHTMLString(node)).resolves.toMatch(/^<p/);
   });
+
+  it('can change parser indentation level', () => {
+    expect.assertions(2);
+    const parser: NkyimuNodeParser = new NkyimuNodeParser();
+    expect(parser.getHtmlIndentation()).toEqual(30);
+    parser.setHtmlIndentation(60);
+
+    expect(parser.getHtmlIndentation()).toEqual(60);
+  });
 });
 
-describe('Node Parser Array Test', () => {
+/**
+ * Tests the array output from the parser
+ */
+describe('Node Parser Hierarchy Array Test', () => {
   let nkyimuNode: AbstractNode;
   let generator: Generator;
 
   beforeAll(() => {
     generator = new Generator();
-    nkyimuNode = createGenericContentNode();
+    nkyimuNode = generator.fromText(data.hierarchyTestXml);;
   });
 
-  it('returns an array', () => {
+  it('resolves to an array', () => {
     expect.assertions(1);
     return expect(generator.toHTMLElementArray(nkyimuNode)).resolves.toBeInstanceOf(Array);
   });
 
-  it('first paragraph has no margin', async () => {
-    expect.assertions(2);
+  it('returns correct number of elements', async () => {
+    expect.assertions(1);
     let nodes = await generator.toHTMLElementArray(nkyimuNode);
-    let { style } = nodes[0];
-    expect(style.marginLeft).toBeDefined();
-    expect(style.marginLeft).toEqual('');
+
+    expect(nodes.length).toEqual(9);
   });
 
-  it('has element name chapter', async () => {
+  it('elements are at correct level', async () => {
     expect.assertions(1);
+    const levelMap: number[] = [0, 0, 1, 1, 1, 1, 2, 2, 0];
+    const parser = new NkyimuNodeParser();
+    const output: number[] = [];
+    
+    let nodes = await generator.toHTMLElementArray(nkyimuNode);
+    nodes.forEach((item) => {
+      output.push(parser.getLevelFromMargin(item));
+    });
+
+    expect(output).toEqual(levelMap);
+  });
+
+  it('elements have correct name', async () => {
+    expect.assertions(1);
+    const nameMap: Array<string|null> = [
+      'chapter', 
+      null, 
+      'section', 
+      null, 
+      'section',
+      null,
+      'subsection',
+      null,
+      null,
+    ];
+    const output: Array<string|null> = [];
     const nodes = await generator.toHTMLElementArray(nkyimuNode);
-    let name = nodes[0].getAttribute('data-element');
-    expect(name).toEqual('chapter');
+
+    nodes.forEach((item) => {
+      output.push(NkyimuNodeParser.getNameFromElement(item));
+    });
+    
+    expect(output).toEqual(nameMap);
   });
 });
 
-describe('Node Parser String Basic Test', () => {
+/**
+ * Tests the string output from the parser
+ */
+describe('Node Parser Hierarchy String Test', () => {
   let nkyimuNode: AbstractNode;
   let generator: Generator;
 
   beforeAll(() => {
     generator = new Generator();
-    nkyimuNode = createGenericContentNode();
+    nkyimuNode = generator.fromText(data.hierarchyTestXml);
   });
 
-  it('returns a string', () => {
+  it('resolves to a string', () => {
     expect.assertions(1);
     return expect(generator.toHTMLString(nkyimuNode)).resolves.toMatch(/^<p/);
   });
 
-  it('check string', async () => {
-    const string = await generator.toHTMLString(nkyimuNode);
-    console.log(string);
+  it('string output is correct', async () => {
+    return expect(generator.toHTMLString(nkyimuNode)).resolves.toMatch(data.hierarchyTestOutput);
   });
 });
-
-describe('Node Parser String Advanced Test', () => {
-  let nkyimuNode: AbstractNode;
-  let generator: Generator;
-
-  beforeAll(() => {
-    generator = new Generator();
-    nkyimuNode = createAdvancedContentNode();
-  });
-
-  it('returns a string', () => {
-    expect.assertions(1);
-    return expect(generator.toHTMLString(nkyimuNode)).resolves.toMatch(/^<p/);
-  });
-
-  it('check string', async () => {
-    const string = await generator.toHTMLString(nkyimuNode);
-    console.log(string);
-  });
-});
-
-const createGenericContentNode = () => {
-  const main = new Elements.Chapter();
-  const num = new Elements.Num();
-  const heading = new Elements.Heading();
-  const content = new Elements.Content();
-  const p = new Elements.P();
-
-  num.appendChild(Generator.createNode('', '1'));
-  heading.appendChild(Generator.createNode('', 'Definitions'));
-  p.appendChild(Generator.createNode('', 'Chapter test content'));
-
-  content.appendChild(p);
-  main.appendChild(num);
-  main.appendChild(heading);
-  main.appendChild(content);
-  return main;
-}
-
-const createAdvancedContentNode = () => {
-  const main = new Elements.Chapter();
-  const section = new Elements.Section();
-  const num = new Elements.Num();
-  const heading = new Elements.Heading();
-  const secNum = new Elements.Num();
-  const secHeading = new Elements.Heading();
-  const content = new Elements.Content();
-  const intro = new Elements.Intro();
-  const p = new Elements.P();
-  const p2 = new Elements.P();
-  const introP = new Elements.P();
-  const bold = new Elements.B();
-
-  num.appendChild(Generator.createNode('', 'Chapter 1'));
-  heading.appendChild(Generator.createNode('', 'The First Chapter'));
-  p.appendChild(Generator.createNode('', 'The content for the first '));
-  p2.appendChild(Generator.createNode('', 'Some more content'));
-  introP.appendChild(Generator.createNode('', 'The introduction to Chapter 1'));
-  secHeading.appendChild(Generator.createNode('', 'The First Section'));
-  secNum.appendChild(Generator.createNode('', 'Section 1'));
-  bold.appendChild(Generator.createNode('', 'Section.'));
-
-  p.appendChild(bold);
-  content.appendChild(p);
-  content.appendChild(p2);
-  intro.appendChild(introP);
-  section.appendChild(secNum);
-  section.appendChild(secHeading);
-  section.appendChild(content);
-
-  main.appendChild(num);
-  main.appendChild(heading);
-  main.appendChild(intro);
-  main.appendChild(section);
-  return main;
-}

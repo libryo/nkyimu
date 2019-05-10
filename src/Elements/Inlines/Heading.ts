@@ -2,6 +2,7 @@ import { AbstractNode } from '../../Abstracts/AbstractNode';
 import { AttributeGroupItem } from '../../Interfaces/AttributeGroupItem';
 import { NodeRules } from '../../Interfaces/NodeRules';
 import { Inlinereq } from '../../ComplexTypes/Inlinereq';
+import { EIdAttribute } from '../../Attributes';
 
 const type = new Inlinereq();
 
@@ -18,7 +19,8 @@ export class Heading extends AbstractNode {
   public readonly SEQUENCE: string[] = [];
 
   public readonly ATTRIBUTE_GROUPS: AttributeGroupItem[] = [
-    ...type.ATTRIBUTE_GROUPS,
+    ...type.ATTRIBUTE_GROUPS.filter(group => group.attribute !== EIdAttribute),
+    { attribute: EIdAttribute, required: false },
   ];
 
   public getNodeName(): string {

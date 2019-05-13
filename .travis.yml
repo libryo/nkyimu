@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - "lts/*"
 before_script:
-  - yarn install
+  - travis_retry yarn install
 script:
-  - yarn test
+  - travis_retry yarn test

@@ -18,7 +18,7 @@ export class Corereq extends AbstractAttributeGroup {
   /**
    * The items contained in the group.
    */
-  readonly items: AttributeGroupItem[] = [
+  public readonly items: AttributeGroupItem[] = [
     ...(new Core()).items,
     ...(new HTMLattrs()).items,
     ...(new Enactment()).items,

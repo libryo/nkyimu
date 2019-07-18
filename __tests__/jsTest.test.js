@@ -227,7 +227,13 @@ describe('Base test', () => {
     chapter.setAttribute(new Attributes.EIdAttribute('bodypart_1__chp_5'));
     let section = new Elements.Section();
     section.setAttribute(new Attributes.EIdAttribute('bodypart_1__chp_5__sec_10'));
+    let content = new Elements.Content();
+    content.setAttribute(new Attributes.EIdAttribute('bodypart_1__chp_5__sec_10__content_1'));
+    let pTag = new Elements.P();
+    pTag.setAttribute(new Attributes.EIdAttribute('bodypart_1__chp_5__sec_10__content_1__p_1'));
 
+    content.appendChild(pTag);
+    section.appendChild(content);
     chapter.appendChild(section);
     part.appendChild(chapter);
     body.appendChild(part);
@@ -237,6 +243,8 @@ describe('Base test', () => {
     expect(part.getNode().getAttribute('eId')).toBe('pt_seq1');
     expect(chapter.getNode().getAttribute('eId')).toBe('pt_seq1__chp_seq1');
     expect(section.getNode().getAttribute('eId')).toBe('pt_seq1__chp_seq1__sec_seq1');
+    expect(content.getNode().getAttribute('eId')).toBe(null);
+    expect(pTag.getNode().getAttribute('eId')).toBe(null);
   });
 
   it('removes incorrectly prefixed eIds', () => {

@@ -20,6 +20,7 @@ export class Generator {
     const parser = new DOMParser();
     const sanitised = source
       .replace(/>\n(\s)*</g, '><')
+      .replace(/(<\/?(?!span).*?>)\s+(<\/?(?!span).*?>)/gim, '$1$2')
       .replace(/\n/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();

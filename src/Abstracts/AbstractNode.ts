@@ -488,6 +488,13 @@ export abstract class AbstractNode implements HasChildrenMap {
   }
 
   public updateGeneratedIds(overwrite = false): void {
+    if (overwrite && this.node instanceof Element) {
+      this.node.querySelectorAll('[eId]')
+        .forEach((item) => {
+          item.removeAttribute('eId');
+        });
+    }
+
     let currentEId = this.getElement().getAttribute('eId');
 
     if (!currentEId || currentEId.length < 1) {

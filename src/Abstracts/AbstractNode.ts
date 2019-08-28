@@ -1,4 +1,4 @@
-import { intersection } from 'lodash';
+import { intersection, cloneDeep, isEmpty } from 'lodash';
 import { NodeType } from '../common/enums';
 import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
 import { HasChildrenMap } from '../Interfaces/HasChildrenMap';
@@ -49,6 +49,11 @@ export abstract class AbstractNode implements HasChildrenMap {
    * are placed in the node.
    */
   protected childrenOrder: string[] = [];
+
+  /**
+   * The current node's rules.
+   */
+  protected currentRules: NodeRules = {};
 
   /**
    * The parent node.
@@ -224,7 +229,7 @@ export abstract class AbstractNode implements HasChildrenMap {
    * Setup the required validation parameters.
    */
   public setupValidationParams(): void {
-    this._allowedChildren = this.extractNodeNames(this.CHILDREN_MAP);
+    this._allowedChildren = this.extractNodeNames(this.getCurrentChildrenMap());
     this.SEQUENCE.forEach((e, index) => {
       if (e.indexOf('?') === -1) {
         this.requiredIndices.push(index);
@@ -344,7 +349,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     }
 
     // const rule = this.optimiseRule(this.extractRule(node, this.CHILDREN_MAP));
-    const rule = this.extractRule(node, this.CHILDREN_MAP);
+    const rule = this.extractRule(node, this.getCurrentChildrenMap());
 
     if (!rule) {
       throw new Error(`Node ${node.getNodeName()} is not allowed as a child.`);
@@ -892,5 +897,13 @@ export abstract class AbstractNode implements HasChildrenMap {
     this.childrenOrder = this._children.map(child => child.getNodeName());
 
     return this.childrenOrder;
+  }
+
+  private getCurrentChildrenMap(): NodeRules {
+    if (isEmpty(this.currentRules)) {
+      this.currentRules = cloneDeep(this.CHILDREN_MAP);
+    }
+
+    return this.currentRules;
   }
 }

@@ -663,7 +663,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
       if (child.getNodeType() === NodeType.TEXT_NODE || child.getNodeType() === NodeType.COMMENT_NODE) {
         this.generateIds(child, newPrefix, overwrite);
-        
+
         return;
       }
 
@@ -672,7 +672,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
       if (!hasValidEId && (!requiresEId || child.abbreviation.length < 1)) {
         this.generateIds(child, newPrefix, overwrite);
-        
+
         return;
       }
 
@@ -683,7 +683,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
         newPrefix = child.prefixesEId() ? `${child.generatedId}__` : newPrefix;
       }
-      
+
       this.generateIds(child, newPrefix, overwrite);
     });
   }
@@ -738,7 +738,7 @@ export abstract class AbstractNode implements HasChildrenMap {
     return content
       .replace(nodeRegx, '')
       .replace(/[.]/gi, '_')
-      .replace(/[\W]/gi, '')
+      .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-\/:;<=>?@\[\]^`{|}~]/gi, '')
       .trim()
       .replace(/\s/g, '_');
   }
@@ -888,9 +888,9 @@ export abstract class AbstractNode implements HasChildrenMap {
     return updated;
   }
 
-  /** 
+  /**
    * Get the current children order.
-   * 
+   *
    * @return string[]
    */
   private computeChildrenOrder(): string[] {

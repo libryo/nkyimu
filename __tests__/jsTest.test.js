@@ -7,146 +7,146 @@ const TestDocument = {
   render() {
     return this.doc.toXML();
   },
- 
+
   getDocument() {
     return this.doc;
   },
- 
+
   generateDocument() {
     const act = new Elements.Act();
     act.setAttribute(new Attributes.NameAttribute('Wet Tropics of Queensland World Heritage Area Conservation Act 1994'));
     act.appendChild(this.getMeta());
     act.appendChild(this.getPreface());
     act.appendChild(this.getBody());
- 
+
     this.doc.appendChild(act);
   },
- 
+
   getMeta() {
     const meta = new Elements.Meta();
     meta.appendChild(this.getIdentification());
- 
+
     return meta;
   },
- 
+
   getIdentification() {
     const identification = new Elements.Identification();
     identification.setAttribute(new Attributes.SourceAttribute('#source'));
     identification.appendChild(this.getFrbrWork());
     identification.appendChild(this.getFrbrExpression());
     identification.appendChild(this.getFrbrManifestation());
- 
+
     return identification;
   },
- 
+
   getFrbrWork() {
     const frbrWork = new Elements.FRBRWork();
- 
+
     const frbrThis = new Elements.FRBRthis();
     frbrThis.setAttribute(new Attributes.ValueAttribute(this.sourceUrl));
     frbrWork.appendChild(frbrThis);
- 
+
     const frbrUri = new Elements.FRBRuri();
     frbrUri.setAttribute(new Attributes.ValueAttribute(this.sourceUrl));
     frbrWork.appendChild(frbrUri);
- 
+
     const frbrDate = new Elements.FRBRdate();
     frbrDate.setAttribute(new Attributes.DateAttribute('2000-07-16'));
     frbrDate.setAttribute(new Attributes.NameAttribute('enacted'));
     frbrWork.appendChild(frbrDate);
- 
+
     const frbrAuthor = new Elements.FRBRauthor();
     frbrAuthor.setAttribute(new Attributes.HrefAttribute('https://www.legislation.gov.au'));
     frbrWork.appendChild(frbrAuthor);
- 
+
     const frbrCountry = new Elements.FRBRcountry();
     frbrCountry.setAttribute(new Attributes.ValueAttribute('au'));
     frbrWork.appendChild(frbrCountry);
- 
+
     const frbrNumber = new Elements.FRBRnumber();
     frbrNumber.setAttribute(new Attributes.ValueAttribute('None'));
     frbrWork.appendChild(frbrNumber);
- 
+
     const frbrName = new Elements.FRBRname();
     frbrName.setAttribute(new Attributes.ValueAttribute('Wet Tropics of Queensland World Heritage Area Conservation Act 1994'));
     frbrWork.appendChild(frbrName);
- 
+
     return frbrWork;
   },
- 
+
   getFrbrExpression() {
     const exp = new Elements.FRBRExpression();
- 
+
     const frbrThis = new Elements.FRBRthis();
     frbrThis.setAttribute(new Attributes.ValueAttribute(this.sourceUrl));
     exp.appendChild(frbrThis);
- 
+
     const frbrUri = new Elements.FRBRuri();
     frbrUri.setAttribute(new Attributes.ValueAttribute(this.sourceUrl));
     exp.appendChild(frbrUri);
- 
+
     const frbrDate = new Elements.FRBRdate();
     frbrDate.setAttribute(new Attributes.DateAttribute('2000-07-16'));
     frbrDate.setAttribute(new Attributes.NameAttribute('publication'));
     exp.appendChild(frbrDate);
- 
+
     const frbrAuthor = new Elements.FRBRauthor();
     frbrAuthor.setAttribute(new Attributes.HrefAttribute('https://www.legislation.gov.au'));
     exp.appendChild(frbrAuthor);
- 
+
     const frbrLang = new Elements.FRBRlanguage();
     frbrLang.setAttribute(new Attributes.LanguageAttribute('eng'));
     exp.appendChild(frbrLang);
- 
+
     return exp;
   },
- 
+
   getFrbrManifestation() {
     const man = new Elements.FRBRManifestation();
- 
+
     const frbrThis = new Elements.FRBRthis();
     frbrThis.setAttribute(new Attributes.ValueAttribute(this.sourceUrl));
     man.appendChild(frbrThis);
- 
+
     const frbrUri = new Elements.FRBRuri();
     frbrUri.setAttribute(new Attributes.ValueAttribute(this.sourceUrl));
     man.appendChild(frbrUri);
- 
+
     const frbrDate = new Elements.FRBRdate();
     frbrDate.setAttribute(new Attributes.DateAttribute('2018-06-20'));
     frbrDate.setAttribute(new Attributes.NameAttribute('transform'));
     man.appendChild(frbrDate);
- 
+
     const frbrAuthor = new Elements.FRBRauthor();
     frbrAuthor.setAttribute(new Attributes.HrefAttribute('https://www.legislation.gov.au'));
     man.appendChild(frbrAuthor);
- 
+
     const frbrFormat = new Elements.FRBRformat();
     frbrFormat.setAttribute(new Attributes.ValueAttribute('application/akn+xml'));
     man.appendChild(frbrFormat);
- 
+
     return man;
   },
- 
+
   getPreface() {
     const preface = new Elements.Preface();
- 
+
     let p = new Elements.P();
     const shortTitle = new Elements.ShortTitle();
     shortTitle.appendChild(new Elements.TextElement('Wet Tropics of Queensland World Heritage Area Conservation Act 1994'));
     p.appendChild(shortTitle);
     preface.appendChild(p);
- 
+
     p = new Elements.P();
     p.appendChild(new Elements.TextElement('An Act relating to the conservation of the Wet Tropics of Queensland World Heritage Area'));
     const longTitle = new Elements.LongTitle();
     longTitle.setAttribute(new Attributes.EIdAttribute('#long_title'));
     longTitle.appendChild(p);
     preface.appendChild(longTitle);
- 
+
     return preface;
   },
- 
+
   getBody() {
     const body = new Elements.Body();
     let generated = Engine.Generator.fromSelector('chapter>part[num:2,heading:Some Part]>section>subsection>content>p');
@@ -154,29 +154,29 @@ const TestDocument = {
     let sampleBody = new Elements.TextElement('Always have notes.');
     generated.last.appendChild(sampleBody);
     generated.last.appendChild(noteRef);
- 
+
     /** Append the first child */
     body.appendChild(generated.root);
- 
+
     generated = Engine.Generator.fromSelector('chapter>part[num:1,heading:First Part]>section>subsection>content>p');
     noteRef = this.createNote();
     sampleBody = new Elements.TextElement('Never forget a part.');
     generated.last.appendChild(sampleBody);
     generated.last.appendChild(noteRef);
- 
+
     /** Append the new node as the first child */
     body.insertChildAtPosition(generated.root, 0);
- 
+
     return body;
   },
- 
+
   createNote() {
     const note = new Elements.Note();
     const p = new Elements.P();
- 
+
     p.appendChild(new Elements.TextElement('This is a note'));
     note.appendChild(p);
- 
+
     return this.doc.addNote(note);
   },
 }
@@ -280,12 +280,50 @@ describe('Base test', () => {
     content.appendChild(p);
     part.appendChild(content);
     body.appendChild(part);
-    
+
 
     body.updateGeneratedIds(true);
 
     expect(part.getNode().getAttribute('eId')).toBe('pt_seq1');
     expect(heading.getNode().getAttribute('eId')).toBe(null);
     expect(content.getNode().getAttribute('eId')).toBe(null);
+  });
+
+  it('several eID test including unicode characters', () => {
+    const body = new Elements.Body();
+    body.setAttribute(new Attributes.EIdAttribute('body'));
+    const part = new Elements.Part();
+    part.setAttribute(new Attributes.EIdAttribute('bodypart_1'));
+    let num = new Elements.Num();
+    const originalNum = 'প্রথম অধ্যায়';
+    num.appendChild(new Elements.TextElement(originalNum));
+    part.appendChild(num);
+    body.appendChild(part);
+    body.updateGeneratedIds(true);
+    expect(part.getNode().getAttribute('eId')).toBe('pt_প্রথম_অধ্যায়');
+
+    let section = new Elements.Section();
+    num = new Elements.Num();
+    num.appendChild(new Elements.TextElement('Section 8.'));
+    section.appendChild(num);
+    body.appendChild(section);
+    body.updateGeneratedIds(true);
+    expect(section.getNode().getAttribute('eId')).toBe('sec_8_');
+
+    let subsection = new Elements.Subsection();
+    num = new Elements.Num();
+    num.appendChild(new Elements.TextElement('(aA)'));
+    subsection.appendChild(num);
+    body.appendChild(subsection);
+    body.updateGeneratedIds(true);
+    expect(subsection.getNode().getAttribute('eId')).toBe('subsec_aA');
+
+    let chapter = new Elements.Chapter();
+    num = new Elements.Num();
+    num.appendChild(new Elements.TextElement('Chapter XIII.5. '));
+    chapter.appendChild(num);
+    body.appendChild(chapter);
+    body.updateGeneratedIds(true);
+    expect(chapter.getNode().getAttribute('eId')).toBe('chp_XIII_5_');
   });
 });

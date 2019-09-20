@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { intersection, cloneDeep, isEmpty } from 'lodash';
 import { NodeType } from '../common/enums';
 import { AttributeGroupItem } from '../Interfaces/AttributeGroupItem';
@@ -655,6 +656,7 @@ export abstract class AbstractNode implements HasChildrenMap {
 
   private generateIds(node: AbstractNode, prefix = '', overwrite = false): void {
     const nodeCount: { [key: string]: number } = {};
+    const generatedIds: string[] = [];
 
     node.children.forEach((child: AbstractNode) => {
       let newPrefix = prefix;
@@ -677,7 +679,15 @@ export abstract class AbstractNode implements HasChildrenMap {
       }
 
       if (overwrite || !currentEId || (currentEId && currentEId.indexOf('__replace__') !== -1)) {
-        const childId = this.getCorrectNodeId(newPrefix, nodeCount, child);
+        let childId = this.getCorrectNodeId(newPrefix, nodeCount, child);
+
+        if (generatedIds.indexOf(childId) !== -1) {
+          nodeCount[child.getNodeName()] = nodeCount[child.getNodeName()] ? nodeCount[child.getNodeName()] : 0;
+          nodeCount[child.getNodeName()] += 1;
+          childId = `${childId}_seq${nodeCount[child.getNodeName()]}`;
+        }
+
+        generatedIds.push(childId);
 
         child.setElementId(childId, overwrite);
 

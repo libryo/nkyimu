@@ -247,6 +247,36 @@ describe('Base test', () => {
     expect(pTag.getNode().getAttribute('eId')).toBe(null);
   });
 
+  it('appends sequence on duplicate element ids', () => {
+    const body = new Elements.Body();
+    body.setAttribute(new Attributes.EIdAttribute('body'));
+
+    const num = new Elements.Num();
+    num.appendChild(new Elements.TextElement('1'));
+
+    const chapter = new Elements.Chapter();
+    chapter.appendChild(num);
+
+    const generated = [];
+
+    for (let i = 0; i < 5; i++) {
+      const part = new Elements.Part();
+      part.appendChild(num);
+      chapter.appendChild(part);
+
+      generated.push(part);
+    }
+
+    body.appendChild(chapter);
+
+    body.updateGeneratedIds(true);
+
+    generated.forEach((part, index) => {
+      const seq = `_seq${index}`;
+      expect(part.getNode().getAttribute('eId')).toBe(`chp_1__pt_1${index > 0 ? seq : ''}`);
+    });
+  });
+
   it('removes incorrectly prefixed eIds', () => {
     const body = new Elements.Body();
     body.setAttribute(new Attributes.EIdAttribute('akn__body'));
